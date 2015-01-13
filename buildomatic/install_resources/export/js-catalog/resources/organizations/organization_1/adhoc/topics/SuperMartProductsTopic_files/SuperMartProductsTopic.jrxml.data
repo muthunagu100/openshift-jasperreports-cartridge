@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SuperMartProductsTopic" pageWidth="612" pageHeight="792" columnWidth="552" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" resourceBundle="supermart" whenResourceMissingType="Key">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<style name="titleStyle" isDefault="false" mode="Opaque" forecolor="#FFFFFF" backcolor="#4A8797" fontName="SansSerif" fontSize="24" isBold="true">
+		<box padding="4">
+			<pen lineWidth="1.0" lineStyle="Solid" lineColor="#993200"/>
+			<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#993200"/>
+			<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#993200"/>
+			<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#993200"/>
+			<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#993200"/>
+		</box>
+	</style>
+	<style name="group1Style" isDefault="false" mode="Opaque" forecolor="#FFFFFF" backcolor="#003066" fontName="SansSerif" fontSize="18" isBold="true">
+		<box padding="2">
+			<pen lineWidth="1.0" lineStyle="Solid" lineColor="#993200"/>
+			<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#993200"/>
+			<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#993200"/>
+			<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#993200"/>
+			<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#993200"/>
+		</box>
+	</style>
+	<style name="group2Style" isDefault="false" forecolor="#003066" fontName="SansSerif" fontSize="14" isBold="true">
+		<box padding="4">
+			<pen lineWidth="2.0" lineStyle="Solid" lineColor="#003066"/>
+			<topPen lineWidth="2.0" lineStyle="Solid" lineColor="#003066"/>
+			<leftPen lineWidth="2.0" lineStyle="Solid" lineColor="#003066"/>
+			<bottomPen lineWidth="2.0" lineStyle="Solid" lineColor="#003066"/>
+			<rightPen lineWidth="2.0" lineStyle="Solid" lineColor="#003066"/>
+		</box>
+	</style>
+	<style name="group3Style" isDefault="false" mode="Opaque" forecolor="#FFFFFF" backcolor="#993200" fontName="SansSerif" fontSize="14" isBold="true">
+		<box padding="2">
+			<pen lineWidth="1.0" lineStyle="Solid" lineColor="#993200"/>
+			<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#993200"/>
+			<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#993200"/>
+			<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#993200"/>
+			<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#993200"/>
+		</box>
+	</style>
+	<style name="defaultStyle" isDefault="false" fontName="SansSerif">
+		<box padding="2"/>
+	</style>
+	<style name="pageStyle" isDefault="false" fontName="SansSerif">
+		<box padding="2"/>
+	</style>
+	<style name="group4Style" isDefault="false" forecolor="#993200" fontName="SansSerif" isBold="true">
+		<box padding="2">
+			<pen lineWidth="1.0" lineStyle="Solid" lineColor="#993200"/>
+			<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#993200"/>
+			<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#993200"/>
+			<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#993200"/>
+			<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#993200"/>
+		</box>
+	</style>
+	<parameter name="productFamily" class="java.lang.String">
+		<parameterDescription><![CDATA[Drink, Food, or Non-Consumable]]></parameterDescription>
+		<defaultValueExpression><![CDATA["Drink"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     sum(sales_fact_1997.store_sales)  AS store_sales,
+     sum(sales_fact_1997.unit_sales)   AS unit_sales,
+     product_class.product_department  AS pc_product_department,
+     product_class.product_category    AS pc_product_category,
+     product_class.product_subcategory AS pc_product_subcategory,
+     product_class.product_family      AS pc_product_family,
+     product.brand_name                AS product_brand_name,
+     product.product_name              AS product_product_name,
+     product.SKU                       AS product_SKU,
+     product.SRP                       AS product_SRP,
+     product.gross_weight              AS product_gross_weight,
+     product.net_weight                AS product_net_weight,
+     product.recyclable_package        AS product_recyclable_package,
+     product.low_fat                   AS product_low_fat,
+     product.units_per_case            AS product_units_per_case,
+     product.cases_per_pallet          AS product_cases_per_pallet,
+     product.shelf_width               AS product_shelf_width,
+     product.shelf_height              AS product_shelf_height,
+     product.shelf_depth               AS product_shelf_depth
+FROM
+     sales_fact_1997          sales_fact_1997
+     inner join product       product       on sales_fact_1997.product_id = product.product_id
+     inner join product_class product_class on product_class.product_class_id = product.product_class_id
+WHERE 
+     product_class.product_family = $P{productFamily}
+GROUP BY
+     product_class.product_department,
+     product_class.product_category,
+     product_class.product_subcategory,
+     product_class.product_family,
+     product.brand_name,
+     product.product_name,
+     product.SKU,
+     product.SRP,
+     product.gross_weight,
+     product.net_weight,
+     product.recyclable_package,
+     product.low_fat,
+     product.units_per_case,
+     product.cases_per_pallet,
+     product.shelf_width,
+     product.shelf_height,
+     product.shelf_depth]]>
+	</queryString>
+	<field name="store_sales" class="java.math.BigDecimal">
+		<property name="adhoc.display" value="$R{store_sales}"/>
+	</field>
+	<field name="unit_sales" class="java.math.BigDecimal">
+		<property name="adhoc.display" value="$R{unit_sales}"/>
+	</field>
+	<field name="pc_product_department" class="java.lang.String">
+		<property name="adhoc.display" value="$R{product_class_product_department}"/>
+	</field>
+	<field name="pc_product_category" class="java.lang.String">
+		<property name="adhoc.display" value="$R{product_class_product_category}"/>
+	</field>
+	<field name="pc_product_subcategory" class="java.lang.String">
+		<property name="adhoc.display" value="$R{product_class_product_subcategory}"/>
+	</field>
+	<field name="pc_product_family" class="java.lang.String">
+		<property name="adhoc.display" value="$R{product_class_product_family}"/>
+	</field>
+	<field name="product_brand_name" class="java.lang.String">
+		<property name="adhoc.display" value="$R{product_brand_name}"/>
+	</field>
+	<field name="product_product_name" class="java.lang.String">
+		<property name="adhoc.display" value="$R{product_product_name}"/>
+	</field>
+	<field name="product_SKU" class="java.lang.Long">
+		<property name="adhoc.display" value="$R{product_SKU}"/>
+	</field>
+	<field name="product_SRP" class="java.math.BigDecimal">
+		<property name="adhoc.display" value="$R{product_SRP}"/>
+	</field>
+	<field name="product_gross_weight" class="java.lang.Double">
+		<property name="adhoc.display" value="$R{product_gross_weight}"/>
+	</field>
+	<field name="product_net_weight" class="java.lang.Double">
+		<property name="adhoc.display" value="$R{product_net_weight}"/>
+	</field>
+	<field name="product_recyclable_package" class="java.lang.Boolean">
+		<property name="adhoc.display" value="$R{product_recyclable_package}"/>
+	</field>
+	<field name="product_low_fat" class="java.lang.Boolean">
+		<property name="adhoc.display" value="$R{product_low_fat}"/>
+	</field>
+	<field name="product_units_per_case" class="java.lang.Integer">
+		<property name="adhoc.display" value="$R{product_units_per_case}"/>
+	</field>
+	<field name="product_cases_per_pallet" class="java.lang.Integer">
+		<property name="adhoc.display" value="$R{product_cases_per_pallet}"/>
+	</field>
+	<field name="product_shelf_width" class="java.lang.Double">
+		<property name="adhoc.display" value="$R{product_shelf_width}"/>
+	</field>
+	<field name="product_shelf_height" class="java.lang.Double">
+		<property name="adhoc.display" value="$R{product_shelf_height}"/>
+	</field>
+	<field name="product_shelf_depth" class="java.lang.Double">
+		<property name="adhoc.display" value="$R{product_shelf_depth}"/>
+	</field>
+	<variable name="TotalPages" class="java.lang.String" incrementType="Report" calculation="Highest">
+		<variableExpression><![CDATA[$V{TotalPages}.toString()]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="57" splitType="Stretch">
+			<textField isBlankWhenNull="false">
+				<reportElement key="staticText" style="titleStyle" mode="Opaque" x="0" y="0" width="552" height="52"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="30"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{ReportTitle}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="390" splitType="Stretch">
+			<textField isBlankWhenNull="false">
+				<reportElement key="staticText-5" style="defaultStyle" positionType="Float" x="154" y="0" width="154" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{store_sales}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-10" style="defaultStyle" x="0" y="0" width="146" height="20"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[store_sales]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="staticText-5" style="defaultStyle" positionType="Float" x="154" y="20" width="154" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{unit_sales}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-10" style="defaultStyle" x="0" y="20" width="146" height="20"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[unit_sales]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="staticText-5" style="defaultStyle" positionType="Float" x="154" y="40" width="154" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{pc_product_department}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-10" style="defaultStyle" x="0" y="40" width="146" height="20"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[pc_product_department]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="staticText-5" style="defaultStyle" positionType="Float" x="154" y="60" width="154" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{pc_product_category}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-10" style="defaultStyle" x="0" y="60" width="146" height="20"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[pc_product_category]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="staticText-5" style="defaultStyle" positionType="Float" x="154" y="80" width="154" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{pc_product_subcategory}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-10" style="defaultStyle" x="0" y="80" width="146" height="20"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[pc_product_subcategory]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="staticText-5" style="defaultStyle" positionType="Float" x="154" y="100" width="154" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{pc_product_family}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-10" style="defaultStyle" x="0" y="100" width="146" height="20"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[pc_product_family]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="staticText-5" style="defaultStyle" positionType="Float" x="154" y="120" width="154" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{product_brand_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-10" style="defaultStyle" x="0" y="120" width="146" height="20"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[product_brand_name]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="staticText-5" style="defaultStyle" positionType="Float" x="154" y="140" width="154" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{product_product_name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-10" style="defaultStyle" x="0" y="140" width="146" height="20"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[product_product_name]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="staticText-5" style="defaultStyle" positionType="Float" x="154" y="160" width="154" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Long"><![CDATA[$F{product_SKU}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-10" style="defaultStyle" x="0" y="160" width="146" height="20"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[product_SKU]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="staticText-5" style="defaultStyle" positionType="Float" x="154" y="180" width="154" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{product_SRP}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-10" style="defaultStyle" x="0" y="180" width="146" height="20"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[product_SRP]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="staticText-5" style="defaultStyle" positionType="Float" x="154" y="200" width="154" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{product_gross_weight}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-10" style="defaultStyle" x="0" y="200" width="146" height="20"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[product_gross_weight]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="staticText-5" style="defaultStyle" positionType="Float" x="154" y="220" width="154" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{product_net_weight}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-10" style="defaultStyle" x="0" y="220" width="146" height="20"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[product_net_weight]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="staticText-5" style="defaultStyle" positionType="Float" x="154" y="240" width="154" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Boolean"><![CDATA[$F{product_recyclable_package}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-10" style="defaultStyle" x="0" y="240" width="146" height="20"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[product_recyclable_package]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="staticText-5" style="defaultStyle" positionType="Float" x="154" y="260" width="154" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Boolean"><![CDATA[$F{product_low_fat}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-10" style="defaultStyle" x="0" y="260" width="146" height="20"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[product_low_fat]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="staticText-5" style="defaultStyle" positionType="Float" x="154" y="280" width="154" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{product_units_per_case}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-10" style="defaultStyle" x="0" y="280" width="146" height="20"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[product_units_per_case]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="staticText-5" style="defaultStyle" positionType="Float" x="154" y="300" width="154" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Integer"><![CDATA[$F{product_cases_per_pallet}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-10" style="defaultStyle" x="0" y="300" width="146" height="20"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[product_cases_per_pallet]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="staticText-5" style="defaultStyle" positionType="Float" x="154" y="320" width="154" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{product_shelf_width}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-10" style="defaultStyle" x="0" y="320" width="146" height="20"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[product_shelf_width]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="staticText-5" style="defaultStyle" positionType="Float" x="154" y="340" width="154" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{product_shelf_height}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-10" style="defaultStyle" x="0" y="340" width="146" height="20"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[product_shelf_height]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="staticText-5" style="defaultStyle" positionType="Float" x="154" y="360" width="154" height="20" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression class="java.lang.Double"><![CDATA[$F{product_shelf_depth}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="staticText-10" style="defaultStyle" x="0" y="360" width="146" height="20"/>
+				<box leftPadding="4">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[product_shelf_depth]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="29" splitType="Stretch">
+			<line>
+				<reportElement key="line" x="0" y="3" width="552" height="1" forecolor="#993200"/>
+			</line>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField-6" style="pageStyle" x="0" y="6" width="209" height="19"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Page" pattern="" isBlankWhenNull="false">
+				<reportElement key="textField-7" style="pageStyle" x="325" y="6" width="161" height="19" forecolor="#000000" backcolor="#FFFFFF"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[msg($R{FooterPageNum}, $V{PAGE_NUMBER})]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" isBlankWhenNull="false">
+				<reportElement key="textField-8" style="pageStyle" x="486" y="6" width="64" height="19"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA["" + $V{PAGE_NUMBER} + ""]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="20" splitType="Stretch">
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField-5" style="pageStyle" positionType="FixRelativeToBottom" x="0" y="0" width="552" height="20"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[msg($R{NumRecordsFooter}, $V{REPORT_COUNT})]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

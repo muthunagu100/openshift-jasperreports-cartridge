@@ -1,0 +1,1 @@
+define(["require","exports","module","common/logging/LoggerManager"],function(g,e,n){var o=g("common/logging/LoggerManager"),r=n.config(),i=new o(r);return i});

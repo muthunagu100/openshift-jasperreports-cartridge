@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder exportedWithPermissions="true">
+    <parent>/public/Samples/Resources</parent>
+    <name>Input_Controls</name>
+    <label>Input Controls</label>
+    <description>Input Controls</description>
+    <creationDate>2014-12-18T02:01:26.090-08:00</creationDate>
+    <updateDate>2012-10-15T09:26:38.310-07:00</updateDate>
+    <resource>Country</resource>
+    <resource>customerId</resource>
+    <resource>CustomerNameIdQuery</resource>
+    <resource>decorate</resource>
+    <resource>endMonth</resource>
+    <resource>Gender</resource>
+    <resource>isJasperAnalysis</resource>
+    <resource>monthNumber</resource>
+    <resource>Product_Category</resource>
+    <resource>Product_Department</resource>
+    <resource>Product_Family</resource>
+    <resource>Product_Name</resource>
+    <resource>ProductFamily</resource>
+    <resource>ProductFamilyList</resource>
+    <resource>PromotionNameIDQuery</resource>
+    <resource>startMonth</resource>
+    <resource>states</resource>
+    <resource>YearlyIncome</resource>
+</folder>

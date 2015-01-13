@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="adhocReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30" uuid="f42b2937-306c-4dc4-b2cb-50a779861795">
+	<property name="com.jaspersoft.jasperserver.api.metadata.jasperreports.domain.TopicReportUnit" value="/organizations/organization_1/adhoc/topics/CrosstabDemo"/>
+	<property name="adhoc.metadata.version" value="21"/>
+	<property name="adhoc.topic.escape.variable.chars"/>
+	<parameter name="store_country_1" class="java.util.Collection" nestedType="java.lang.String">
+		<defaultValueExpression><![CDATA[java.util.Arrays.asList(new Object[]{})]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select    c.city  as c_city, c.state_province as c_state_province, c.country as c_country, c.gender as c_gender,
+        p.product_name, pc.product_family, pc.product_department, pc.product_category, pc.product_subcategory, 
+        st.store_name, st.store_city, st.store_state, st.store_country,
+        t.the_date, t.day_of_month, t.month_of_year, t.quarter, t.the_year,
+        s.store_sales, s.store_cost, s.unit_sales 
+    from sales_fact_1998 s
+    join customer c on (c.customer_id = s.customer_id) 
+    join time_by_day t on (t.time_id = s.time_id) 
+    join product p on (p.product_id = s.product_id) 
+    join product_class pc on (pc.product_class_id = p.product_class_id)
+    join store st on (st.store_id = s.store_id)]]>
+	</queryString>
+	<field name="c_country" class="java.lang.String">
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="adhoc.display" value="Customer Country"/>
+		<property name="kind" value="DIMENSION"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<fieldDescription><![CDATA[c_country]]></fieldDescription>
+	</field>
+	<field name="c_state_province" class="java.lang.String">
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="adhoc.display" value="Customer State"/>
+		<property name="kind" value="DIMENSION"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<fieldDescription><![CDATA[c_state_province]]></fieldDescription>
+	</field>
+	<field name="c_city" class="java.lang.String">
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="adhoc.display" value="Customer City"/>
+		<property name="kind" value="DIMENSION"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<fieldDescription><![CDATA[c_city]]></fieldDescription>
+	</field>
+	<field name="c_gender" class="java.lang.String">
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="adhoc.display" value="Customer Gender"/>
+		<property name="kind" value="DIMENSION"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<fieldDescription><![CDATA[c_gender]]></fieldDescription>
+	</field>
+	<field name="product_family" class="java.lang.String">
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="adhoc.display" value="Product Family"/>
+		<property name="kind" value="DIMENSION"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<fieldDescription><![CDATA[product_family]]></fieldDescription>
+	</field>
+	<field name="product_category" class="java.lang.String">
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="adhoc.display" value="Product Category"/>
+		<property name="kind" value="DIMENSION"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<fieldDescription><![CDATA[product_category]]></fieldDescription>
+	</field>
+	<field name="product_subcategory" class="java.lang.String">
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="adhoc.display" value="Product Subcategory"/>
+		<property name="kind" value="DIMENSION"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<fieldDescription><![CDATA[product_subcategory]]></fieldDescription>
+	</field>
+	<field name="product_name" class="java.lang.String">
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="adhoc.display" value="Product Name"/>
+		<property name="kind" value="DIMENSION"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<fieldDescription><![CDATA[product_name]]></fieldDescription>
+	</field>
+	<field name="product_department" class="java.lang.String">
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="adhoc.display" value="Product Department"/>
+		<property name="kind" value="DIMENSION"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<fieldDescription><![CDATA[product_department]]></fieldDescription>
+	</field>
+	<field name="store_country" class="java.lang.String">
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="adhoc.display" value="Store Country"/>
+		<property name="kind" value="DIMENSION"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<fieldDescription><![CDATA[store_country]]></fieldDescription>
+	</field>
+	<field name="store_state" class="java.lang.String">
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="adhoc.display" value="Store State"/>
+		<property name="kind" value="DIMENSION"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<fieldDescription><![CDATA[store_state]]></fieldDescription>
+	</field>
+	<field name="store_city" class="java.lang.String">
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="adhoc.display" value="Store City"/>
+		<property name="kind" value="DIMENSION"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<fieldDescription><![CDATA[store_city]]></fieldDescription>
+	</field>
+	<field name="store_name" class="java.lang.String">
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="adhoc.display" value="Store Name"/>
+		<property name="kind" value="DIMENSION"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<fieldDescription><![CDATA[store_name]]></fieldDescription>
+	</field>
+	<field name="the_year" class="java.lang.Integer">
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="aggregateExpression" value="Sum(the_year)"/>
+		<property name="adhoc.display" value="Year"/>
+		<property name="defaultMask" value="#,##0"/>
+		<property name="kind" value="MEASURE"/>
+		<property name="defaultAgg" value="Sum"/>
+		<fieldDescription><![CDATA[the_year]]></fieldDescription>
+	</field>
+	<field name="quarter" class="java.lang.String">
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="adhoc.display" value="Quarter"/>
+		<property name="kind" value="DIMENSION"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<fieldDescription><![CDATA[quarter]]></fieldDescription>
+	</field>
+	<field name="month_of_year" class="java.lang.Integer">
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="aggregateExpression" value="Sum(month_of_year)"/>
+		<property name="adhoc.display" value="Month"/>
+		<property name="defaultMask" value="#,##0"/>
+		<property name="kind" value="MEASURE"/>
+		<property name="defaultAgg" value="Sum"/>
+		<fieldDescription><![CDATA[month_of_year]]></fieldDescription>
+	</field>
+	<field name="day_of_month" class="java.lang.Integer">
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="aggregateExpression" value="Sum(day_of_month)"/>
+		<property name="adhoc.display" value="Day of Month"/>
+		<property name="defaultMask" value="#,##0"/>
+		<property name="kind" value="MEASURE"/>
+		<property name="defaultAgg" value="Sum"/>
+		<fieldDescription><![CDATA[day_of_month]]></fieldDescription>
+	</field>
+	<field name="the_date" class="java.sql.Timestamp">
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="adhoc.display" value="Date"/>
+		<property name="defaultMask" value="medium,hide"/>
+		<property name="kind" value="DIMENSION"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<fieldDescription><![CDATA[the_date]]></fieldDescription>
+	</field>
+	<field name="store_sales" class="java.lang.Double">
+		<property name="aggregateType" value="java.lang.Double"/>
+		<property name="aggregateExpression" value="Sum(store_sales)"/>
+		<property name="adhoc.display" value="Store Sales"/>
+		<property name="defaultMask" value="#,##0.00"/>
+		<property name="kind" value="MEASURE"/>
+		<property name="defaultAgg" value="Sum"/>
+		<fieldDescription><![CDATA[store_sales]]></fieldDescription>
+	</field>
+	<field name="store_cost" class="java.lang.Double">
+		<property name="aggregateType" value="java.lang.Double"/>
+		<property name="aggregateExpression" value="Sum(store_cost)"/>
+		<property name="adhoc.display" value="Store Cost"/>
+		<property name="defaultMask" value="#,##0.00"/>
+		<property name="kind" value="MEASURE"/>
+		<property name="defaultAgg" value="Sum"/>
+		<fieldDescription><![CDATA[store_cost]]></fieldDescription>
+	</field>
+	<field name="unit_sales" class="java.lang.Double">
+		<property name="aggregateType" value="java.lang.Double"/>
+		<property name="aggregateExpression" value="Sum(unit_sales)"/>
+		<property name="adhoc.display" value="Unit Sales"/>
+		<property name="defaultMask" value="#,##0.00"/>
+		<property name="kind" value="MEASURE"/>
+		<property name="defaultAgg" value="Sum"/>
+		<fieldDescription><![CDATA[unit_sales]]></fieldDescription>
+	</field>
+</jasperReport>

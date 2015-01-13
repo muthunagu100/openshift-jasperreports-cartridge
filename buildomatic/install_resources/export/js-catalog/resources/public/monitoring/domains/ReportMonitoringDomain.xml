@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<semanticLayerDataSource exportedWithPermissions="true">
+    <folder>/public/monitoring/domains</folder>
+    <name>ReportMonitoringDomain</name>
+    <version>0</version>
+    <label>Report Monitoring Domain</label>
+    <description>Use this domain to build report monitoring reports</description>
+    <creationDate>2014-12-18T02:01:20.864-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:20.864-08:00</updateDate>
+    <schema>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="ReportMonitoringDomain_schema.data" xsi:type="fileResource">
+            <folder>/public/monitoring/domains/ReportMonitoringDomain_files</folder>
+            <name>ReportMonitoringDomain_schema</name>
+            <version>0</version>
+            <label>ReportMonitoringDomain_schema</label>
+            <description>ReportMonitoringDomain_schema</description>
+            <creationDate>2014-12-18T02:01:20.864-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:20.864-08:00</updateDate>
+            <fileType>xml</fileType>
+        </localResource>
+    </schema>
+    <dataSource>
+        <alias>ReportMonitoringDataSource</alias>
+        <dataSourceReference>
+            <uri>/public/monitoring/datasources/ReportMonitoringDataSource</uri>
+        </dataSourceReference>
+    </dataSource>
+</semanticLayerDataSource>

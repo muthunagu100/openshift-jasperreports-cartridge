@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources>
+    <!--
+        http://bugzilla.jaspersoft.com/show_bug.cgi?id=24621
+
+        2013-09-25 thorick
+                    A couple of surprising facts about JBoss EAP6/AS7 'IronJacamar'
+                    Connection Pools:
+                    1.  no matter what you specify for <validate-in-match> it is forced to 'TRUE' at runtime
+                    2.  if you have validation on (and it's ALWAYS on by #1 above)
+                          you MUST provide a validation mechanism,
+                          if you DO NOT, then once the Connections are gone,
+                            they are never coming back, even when the DBMS service is restored.
+
+                    For JBoss we choose SQL Statement validation.
+                    We set <validate-on-match> to true for clarity (setting it to 'false' will not actually set it to false).
+
+
+                    Also:  if you do not specify a max pool size, the default value is apparently 20.
+
+    -->
+
+    <datasource jta="false" jndi-name="java:/jdbc/jasperserver" pool-name="jasperserver" enabled="true" use-ccm="false">
+        <connection-url>jdbc:postgresql://127.0.0.1:5433/jasperserver</connection-url>
+        <driver>postgresql-9.2-1002.jdbc4.jar</driver>
+        <security>
+            <user-name>postgres</user-name>
+            <password>postgres</password>
+        </security>
+        <pool>
+            <min-pool-size>5</min-pool-size>
+            <max-pool-size>50</max-pool-size>
+            <prefill>true</prefill>
+	</pool>
+	<validation>
+            <validate-on-match>false</validate-on-match>
+            <background-validation>false</background-validation>
+            <!-- check-valid-connection-sql>SELECT 1</check-valid-connection-sql -->
+        </validation>
+        <statement>
+            <share-prepared-statements>false</share-prepared-statements>
+        </statement>
+    </datasource>
+    <datasource jta="false" jndi-name="java:/jdbc/foodmart" pool-name="foodmart" enabled="true" use-ccm="false">
+        <connection-url>jdbc:postgresql://127.0.0.1:5433/foodmart</connection-url>
+        <driver>postgresql-9.2-1002.jdbc4.jar</driver>
+        <security>
+            <user-name>postgres</user-name>
+            <password>postgres</password>
+        </security>
+        <pool>
+            <min-pool-size>5</min-pool-size>
+            <max-pool-size>50</max-pool-size>
+            <prefill>true</prefill>
+	</pool>
+	<validation>
+            <validate-on-match>false</validate-on-match>
+            <background-validation>false</background-validation>
+            <!-- check-valid-connection-sql>SELECT 1</check-valid-connection-sql -->
+        </validation>
+        <statement>
+            <share-prepared-statements>false</share-prepared-statements>
+        </statement>
+    </datasource>
+    <datasource jta="false" jndi-name="java:/jdbc/sugarcrm" pool-name="sugarcrm" enabled="true" use-ccm="false">
+        <connection-url>jdbc:postgresql://127.0.0.1:5433/sugarcrm</connection-url>
+        <driver>postgresql-9.2-1002.jdbc4.jar</driver>
+        <security>
+            <user-name>postgres</user-name>
+            <password>postgres</password>
+        </security>
+        <pool>
+            <min-pool-size>5</min-pool-size>
+            <max-pool-size>50</max-pool-size>
+            <prefill>true</prefill>
+	</pool>
+	<validation>
+            <validate-on-match>false</validate-on-match>
+            <background-validation>false</background-validation>
+            <!-- check-valid-connection-sql>SELECT 1</check-valid-connection-sql -->
+        </validation>
+        <statement>
+            <share-prepared-statements>false</share-prepared-statements>
+        </statement>
+    </datasource>
+</datasources>

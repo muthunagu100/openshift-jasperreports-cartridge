@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="AllAccounts" pageWidth="585" pageHeight="720" whenNoDataType="AllSectionsNoDetail" columnWidth="585" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isSummaryWithPageHeaderAndFooter="true" uuid="2f7faf86-cd1f-4e11-a0ad-2f29cb5bab9f">
+	<property name="net.sf.jasperreports.export.pdf.tag.language" value="EN-US"/>
+	<property name="ireport.jasperserver.reportUnit" value="/public/Samples/Reports/5g.AccountsReport"/>
+	<property name="ireport.jasperserver.url" value="http://192.168.2.139:8095/jasperserver-pro/"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.jasperserver.report.resource" value="/public/Samples/Reports/5g.AccountsReport_files/main_jrxml"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<style name="Sans_Normal" isDefault="true" fontName="DejaVu Sans" fontSize="12"/>
+	<style name="Sans_Bold" fontName="DejaVu Sans" fontSize="12" isBold="true"/>
+	<style name="Sans_Italic" fontName="DejaVu Sans" fontSize="12" isItalic="true"/>
+	<style name="PageHeader" style="Sans_Bold" forecolor="#FFFFFF" backcolor="#333333"/>
+	<style name="detail" fontName="DejaVu Sans" fontSize="12">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{CityGroup_COUNT}.intValue() % 2 == 0)]]></conditionExpression>
+			<style mode="Opaque" backcolor="#EAEFDE"/>
+		</conditionalStyle>
+	</style>
+	<style name="evenodd">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2==0]]></conditionExpression>
+			<style mode="Transparent" forecolor="#FFFFFF" backcolor="#343433" hAlign="Left" vAlign="Middle" fontName="Calibri" fontSize="10"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2!=0]]></conditionExpression>
+			<style mode="Transparent" forecolor="#FFFFFF" backcolor="#676767" hAlign="Left" vAlign="Middle" fontName="Calibri" fontSize="10"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="49fa04cc-c488-4729-9e7d-6914ebb42321">
+		<queryString>
+			<![CDATA[SELECT name, phone_office, billing_address_city, billing_address_street, billing_address_country FROM accounts ORDER BY billing_address_country, billing_address_city]]>
+		</queryString>
+		<field name="name" class="java.lang.String"/>
+		<field name="phone_office" class="java.lang.String"/>
+		<field name="billing_address_city" class="java.lang.String"/>
+		<field name="billing_address_street" class="java.lang.String"/>
+		<field name="billing_address_country" class="java.lang.String"/>
+		<sortField name="billing_address_country"/>
+		<sortField name="billing_address_city"/>
+		<variable name="CityyNumber" class="java.lang.Integer" incrementType="Group" incrementGroup="CityGroup" calculation="Count">
+			<variableExpression><![CDATA[Boolean.TRUE]]></variableExpression>
+			<initialValueExpression><![CDATA[]]></initialValueExpression>
+		</variable>
+		<group name="CityGroup">
+			<groupExpression><![CDATA[$F{billing_address_city}]]></groupExpression>
+		</group>
+	</subDataset>
+	<parameter name="LoggedInUsername" class="java.lang.String" isForPrompting="false"/>
+	<background>
+		<band height="720">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="585" height="720" backcolor="#343433" uuid="4ff55007-4421-4214-badf-cf15d7626b76"/>
+			</frame>
+		</band>
+	</background>
+	<title>
+		<band height="35" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="19" y="5" width="121" height="28" forecolor="#FFFFFF" uuid="deee9a28-7326-47ec-b7a0-525d7ba7ed4c">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ACCOUNTS"]]></textFieldExpression>
+			</textField>
+			<textField pattern="MM/dd/yy">
+				<reportElement x="150" y="10" width="131" height="20" forecolor="#FFFFFF" uuid="53fd2336-42d6-45f1-953b-75e9ad17783e">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageFooter>
+		<band height="80">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="458" y="15" width="80" height="16" forecolor="#FFFFFF" uuid="e3de1926-447d-4841-bacb-c59e2b0cfcfc"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page " + String.valueOf($V{PAGE_NUMBER}) + " of"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" evaluationTime="Report">
+				<reportElement x="538" y="15" width="27" height="16" forecolor="#FFFFFF" uuid="10d04f85-a2c5-4c4e-abf1-259b61c72cb2"/>
+				<textElement textAlignment="Left">
+					<font fontName="Calibri" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + String.valueOf($V{PAGE_NUMBER})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="15" width="216" height="16" forecolor="#FFFFFF" uuid="5cd547ad-b274-472e-8f0c-ef7b58bd67e6">
+					<property name="local_mesure_unitx" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Calibri" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{LoggedInUsername}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="15" width="49" height="16" forecolor="#FFFFFF" uuid="0eda833c-2a93-4d96-8b34-462418fefa01"/>
+				<textElement>
+					<font fontName="Calibri" size="11"/>
+				</textElement>
+				<text><![CDATA[Run by: ]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="90" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table" x="15" y="12" width="555" height="70" uuid="dbb2aa5e-a75f-46f4-8d5d-1fd1fa6492ef"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="AllSectionsNoDetail">
+					<datasetRun subDataset="Table Dataset 1" uuid="a96cf327-7440-4de0-abbc-6e6c12febf5a">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:columnGroup width="555" uuid="ae8c7133-609f-45fd-9ef6-5724d8cf82e5">
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<jr:groupHeader groupName="CityGroup">
+							<jr:cell height="31" rowSpan="1">
+								<textField evaluationTime="Group" evaluationGroup="CityGroup">
+									<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="10" width="555" height="21" isPrintWhenDetailOverflows="true" forecolor="#343433" backcolor="#B1BB98" uuid="8dcb3252-792b-433b-a504-dd4c26f7b376">
+										<property name="local_mesure_unitheight" value="pixel"/>
+										<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									</reportElement>
+									<box leftPadding="0" bottomPadding="0" rightPadding="0">
+										<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+									</box>
+									<textElement textAlignment="Left" verticalAlignment="Middle">
+										<font fontName="Calibri" size="11" isBold="true"/>
+									</textElement>
+									<textFieldExpression><![CDATA["    " + String.valueOf($V{CityyNumber}) + "    " + $F{billing_address_city}+ ", " + $F{billing_address_country}]]></textFieldExpression>
+									<anchorNameExpression><![CDATA[String.valueOf($F{billing_address_city})]]></anchorNameExpression>
+								</textField>
+							</jr:cell>
+						</jr:groupHeader>
+						<jr:column width="30" uuid="98701c5e-7e68-40d0-907f-085ca891d6fb">
+							<property name="local_mesure_unitheight" value="pixel"/>
+							<jr:columnHeader height="20" rowSpan="1">
+								<textField isStretchWithOverflow="true">
+									<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="30" height="20" isPrintWhenDetailOverflows="true" forecolor="#343433" backcolor="#ADDF34" uuid="f481a6f4-6f55-4aa4-b197-0710f658771c">
+										<property name="net.sf.jasperreports.export.pdf.tag.th" value="full"/>
+										<property name="net.sf.jasperreports.export.pdf.tag.colspan" value="1"/>
+										<property name="local_mesure_unitheight" value="pixel"/>
+										<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									</reportElement>
+									<box topPadding="3">
+										<rightPen lineWidth="0.5" lineColor="#343433"/>
+									</box>
+									<textElement textAlignment="Center">
+										<font fontName="Calibri" size="11" isBold="true"/>
+									</textElement>
+									<textFieldExpression><![CDATA["#"]]></textFieldExpression>
+								</textField>
+							</jr:columnHeader>
+							<jr:detailCell height="20" rowSpan="1">
+								<textField>
+									<reportElement style="evenodd" positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="30" height="20" isPrintWhenDetailOverflows="true" forecolor="#FFFFFF" uuid="1c8a6de1-6291-490d-8ec2-20d9f65af899">
+										<property name="net.sf.jasperreports.export.pdf.tag.td" value="full"/>
+										<property name="com.jaspersoft.studio.unit.height" value="px"/>
+										<property name="local_mesure_unitheight" value="pixel"/>
+									</reportElement>
+									<box topPadding="0" bottomPadding="0">
+										<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#91AC56"/>
+										<rightPen lineWidth="0.5" lineColor="#343433"/>
+									</box>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="Calibri" size="10"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$V{CityGroup_COUNT}+""]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="265" uuid="d6beddcc-34c6-4b2e-b31f-3adb03b0ac92">
+							<jr:columnHeader height="20" rowSpan="1">
+								<textField isStretchWithOverflow="true">
+									<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="265" height="20" isPrintWhenDetailOverflows="true" forecolor="#343433" backcolor="#ADDF34" uuid="9a9e88bc-0797-485d-805e-106abd737bc6">
+										<property name="net.sf.jasperreports.export.pdf.tag.th" value="full"/>
+										<property name="net.sf.jasperreports.export.pdf.tag.colspan" value="2"/>
+										<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									</reportElement>
+									<box leftPadding="8" bottomPadding="0" rightPadding="0">
+										<leftPen lineWidth="0.5"/>
+										<rightPen lineWidth="0.5" lineColor="#343433"/>
+									</box>
+									<textElement verticalAlignment="Middle">
+										<font fontName="Calibri" size="11" isBold="true"/>
+									</textElement>
+									<textFieldExpression><![CDATA["NAME"]]></textFieldExpression>
+								</textField>
+							</jr:columnHeader>
+							<jr:detailCell height="20" rowSpan="1">
+								<textField isStretchWithOverflow="true">
+									<reportElement key="" style="evenodd" positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="265" height="20" isPrintWhenDetailOverflows="true" forecolor="#FFFFFF" uuid="f6f80726-ab51-47e0-84e1-88e4e543360e">
+										<property name="net.sf.jasperreports.export.pdf.tag.td" value="full"/>
+										<property name="local_mesure_unitheight" value="pixel"/>
+										<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									</reportElement>
+									<box topPadding="0" leftPadding="8" bottomPadding="0">
+										<leftPen lineWidth="0.5" lineColor="#343433"/>
+										<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#91AC56"/>
+										<rightPen lineWidth="0.5" lineColor="#343433"/>
+									</box>
+									<textElement verticalAlignment="Middle">
+										<font fontName="Calibri" size="10"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="130" uuid="3abec0f9-d381-46a1-b39d-5c78d233e387">
+							<jr:columnHeader height="20" rowSpan="1">
+								<textField isStretchWithOverflow="true">
+									<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="130" height="20" isPrintWhenDetailOverflows="true" forecolor="#343433" backcolor="#ADDF34" uuid="b479f0a1-ee5f-4e32-94f6-eb16dd5dde6d">
+										<property name="net.sf.jasperreports.export.pdf.tag.th" value="full"/>
+										<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									</reportElement>
+									<box leftPadding="8" bottomPadding="0" rightPadding="0">
+										<topPen lineColor="#343433"/>
+										<leftPen lineWidth="0.5" lineColor="#343433"/>
+										<bottomPen lineColor="#343433"/>
+										<rightPen lineWidth="0.5" lineColor="#343433"/>
+									</box>
+									<textElement verticalAlignment="Middle">
+										<font fontName="Calibri" size="11" isBold="true"/>
+									</textElement>
+									<textFieldExpression><![CDATA["PHONE"]]></textFieldExpression>
+								</textField>
+							</jr:columnHeader>
+							<jr:detailCell height="20" rowSpan="1">
+								<textField isStretchWithOverflow="true">
+									<reportElement key="" style="evenodd" positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="130" height="20" isPrintWhenDetailOverflows="true" forecolor="#FFFFFF" uuid="41ed6f5b-d5ad-47c0-a43b-233fbca75930">
+										<property name="net.sf.jasperreports.export.pdf.tag.td" value="full"/>
+										<property name="local_mesure_unitheight" value="pixel"/>
+										<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									</reportElement>
+									<box topPadding="0" leftPadding="8" bottomPadding="0">
+										<leftPen lineWidth="0.5" lineColor="#343433"/>
+										<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#91AC56"/>
+										<rightPen lineWidth="0.5" lineColor="#343433"/>
+									</box>
+									<textElement verticalAlignment="Middle">
+										<font fontName="Calibri" size="10"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{phone_office}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="130" uuid="43ec6f1a-106e-481c-8803-08ad517d3201">
+							<jr:columnHeader height="20" rowSpan="1">
+								<textField isStretchWithOverflow="true">
+									<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="130" height="20" isPrintWhenDetailOverflows="true" forecolor="#343433" backcolor="#ADDF34" uuid="5049bfa6-6adb-4b93-9bab-b1c67bf07229">
+										<property name="net.sf.jasperreports.export.pdf.tag.th" value="full"/>
+										<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									</reportElement>
+									<box leftPadding="8" bottomPadding="0" rightPadding="0">
+										<leftPen lineWidth="0.5" lineColor="#343433"/>
+									</box>
+									<textElement verticalAlignment="Middle">
+										<font fontName="Calibri" size="11" isBold="true"/>
+									</textElement>
+									<textFieldExpression><![CDATA["ADDRESS"]]></textFieldExpression>
+								</textField>
+							</jr:columnHeader>
+							<jr:detailCell height="20" rowSpan="1">
+								<textField isStretchWithOverflow="true">
+									<reportElement key="" style="evenodd" positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="130" height="20" isPrintWhenDetailOverflows="true" forecolor="#FFFFFF" uuid="0054b565-5fda-49bd-9639-48423acd425d">
+										<property name="net.sf.jasperreports.export.pdf.tag.td" value="full"/>
+										<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									</reportElement>
+									<box topPadding="0" leftPadding="8" bottomPadding="0">
+										<leftPen lineWidth="0.5" lineColor="#343433"/>
+										<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#91AC56"/>
+									</box>
+									<textElement verticalAlignment="Middle">
+										<font fontName="Calibri" size="10"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{billing_address_street}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>

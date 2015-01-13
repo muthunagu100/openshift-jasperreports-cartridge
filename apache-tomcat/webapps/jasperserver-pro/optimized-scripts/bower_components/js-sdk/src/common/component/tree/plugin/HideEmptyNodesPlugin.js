@@ -1,0 +1,1 @@
+define(["require","./TreePlugin"],function(e){var i=e("./TreePlugin");return i.extend({initialize:function(){this.$el.hide()},itemsRendered:function(){this.$el.hasClass("node")&&(this.$("> .subcontainer > .viewPortChunk > ul > li").length?this.$el.show():this.$el.hide())}})});

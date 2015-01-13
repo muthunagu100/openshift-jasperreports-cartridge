@@ -1,0 +1,48 @@
+---
+Name: jasper
+Cartridge-Short-Name: JASPER
+Display-Name: Jasper Report Cartridge 0.1
+Description: A Jasper Report cartridge for development use only.
+Version: '0.1'
+Versions:
+- '0.1'
+- '0.2'
+- '0.3'
+- '0.4'
+License: ASL 2.0
+Vendor: Custom Cartridgres Inc
+Cartridge-Version: 0.0.1
+Cartridge-Vendor: customcarts
+Categories:
+- service
+Provides:
+- jasper-0.1
+Cart-Data:
+- Key: OPENSHIFT_JASPER_EXAMPLE
+  Type: environment
+  Description: An example environment variable using ERB processing
+Publishes:
+Subscribes:
+  set-env:
+    Type: ENV:*
+    Required: false
+Endpoints:
+- Private-IP-Name: IP
+  Private-Port-Name: PORT
+  Private-Port: 8080
+  Public-Port-Name: PROXY_PORT
+  Protocols: [http]
+  Mappings:
+  - Frontend: ''
+    Backend: ''
+    Options:
+      websocket: false
+- Private-IP-Name: IP
+  Private-Port-Name: PORT
+  Private-Port: 8081
+  Public-Port-Name: PROXY_PORT
+Scaling:
+  Min: 1
+  Max: -1
+Metrics:
+- uptime

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.jaspersoft.com/2007/SL/XMLSchema"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:jsdomain="http://www.jaspersoft.com/2007/SL/XMLSchema"
+        elementFormDefault="qualified"
+        attributeFormDefault="unqualified"
+        version="1.0">
+
+  <xsd:annotation>
+    <xsd:documentation>
+      
+      Copyright (C) 2005-2014 TIBCO Software Inc. All rights reserved.
+      http://www.jaspersoft.com.
+      Licensed under commercial JasperSoft Subscription License Agreement
+    </xsd:documentation>
+  </xsd:annotation>
+
+  <!-- Root element -->
+
+  <xsd:element name="schema" type="jsdomain:SchemaType">
+  </xsd:element>
+
+  <xsd:complexType name="SchemaType">
+    <xsd:all>
+      <xsd:element name="itemGroups" type="jsdomain:ItemGroupsType" minOccurs="0"/>
+      <xsd:element name="items" type="jsdomain:ItemsType" minOccurs="0"/>
+      <xsd:element name="resources" type="jsdomain:ResourcesType"/>
+    </xsd:all>
+    <xsd:attribute name="version" type="xsd:decimal" use="required"/>
+  </xsd:complexType>
+
+  <!-- Presentation Objects -->
+
+  <xsd:complexType name="ObjectsType">
+    <xsd:all>
+      <xsd:element name="Items" type="jsdomain:ItemsType"/>
+      <xsd:element name="ItemGroups" type="jsdomain:ItemGroupsType" minOccurs="0"/>
+    </xsd:all>
+  </xsd:complexType>
+
+  <xsd:complexType name="ItemsType">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:element name="item" type="jsdomain:ItemType"/>
+    </xsd:choice>
+  </xsd:complexType>
+
+  <xsd:complexType name="ItemType">
+    <xsd:attribute name="id" type="xsd:ID" use="required"/>
+    <xsd:attribute name="resourceId" type="xsd:string" use="required"/>
+    <xsd:attribute name="label" type="xsd:string"/>
+    <xsd:attribute name="description" type="xsd:string"/>
+    <xsd:attribute name="labelId" type="xsd:string"/>
+    <xsd:attribute name="descriptionId" type="xsd:string"/>
+    <xsd:attribute name="dimensionOrMeasure" type="xsd:string"/>
+    <xsd:attribute name="defaultMask" type="xsd:string"/>
+    <xsd:attribute name="defaultAgg" type="xsd:string"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="ItemGroupsType">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:element name="itemGroup" type="jsdomain:ItemGroupType"/>
+    </xsd:choice>
+  </xsd:complexType>
+
+  <xsd:complexType name="ItemGroupType">
+    <xsd:complexContent>
+      <xsd:extension base="jsdomain:ItemType">
+        <xsd:all>
+          <xsd:element name="itemGroups" type="jsdomain:ItemGroupsType" minOccurs="0"/>
+          <xsd:element name="items" type="jsdomain:ItemsType" minOccurs="0"/>
+        </xsd:all>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+  <!-- Resources -->
+
+  <xsd:complexType name="ResourcesType">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:element name="jdbcTable" type="jsdomain:AnyDatasetType"/>
+      <xsd:element name="jdbcQuery" type="jsdomain:AnyDatasetType"/>
+      <xsd:element name="memory" type="jsdomain:AnyDatasetType"/>
+      <xsd:element name="null" type="jsdomain:AnyDatasetType"/>
+      <xsd:element name="dataSetRef" type="jsdomain:DataSetRefType"/>
+      <xsd:element name="jrQueryDataSet" type="jsdomain:JrQueryDataSetType"/>
+    </xsd:choice>
+  </xsd:complexType>
+
+<!-- xsd is a PITA because the only way to use extension is to restrict order of elements;
+     you can't just use xsd:all. The dataset types here are a grab bag of possible elements and attributes.
+     This is not ideal but I don't want to change everything I'm doing just for xsd.
+ -->
+  <xsd:complexType name="AnyDatasetType">
+    <xsd:all>
+      <xsd:element name="fieldList" minOccurs="1">
+        <xsd:complexType>
+          <xsd:choice minOccurs="1" maxOccurs="unbounded">
+            <xsd:element name="field" type="jsdomain:FieldType" />
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="groupList" minOccurs="0" maxOccurs="1">
+        <xsd:complexType>
+          <xsd:choice minOccurs="1" maxOccurs="unbounded">
+            <xsd:element name="group" type="jsdomain:GroupType" />
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="joinInfo" type="jsdomain:JoinInfoType" minOccurs="0" />
+      <xsd:element name="joinedDataSetList" type="jsdomain:JoinedDataSetListType" minOccurs="0" />
+      <xsd:element name="filterString" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+	  <!-- used for jrQuery and jdbcQuery -->
+      <xsd:element name="query" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+    </xsd:all>
+    <xsd:attribute name="id" type="xsd:string" use="required"/>
+    <xsd:attribute name="datasourceId" type="xsd:string"/>
+	  <!-- used for jdbcTable -->
+    <xsd:attribute name="tableName" type="xsd:string"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="FieldType">
+    <xsd:attribute name="id" type="xsd:string" use="required"/>
+    <xsd:attribute name="type" type="xsd:string" use="required"/>
+    <xsd:attribute name="dataSetExpression" type="xsd:string" use="optional"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="GroupType">
+    <xsd:attribute name="columnName" type="xsd:string" use="required"/>
+    <xsd:attribute name="ascending" type="xsd:string" use="optional"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="DataSetRefType">
+    <xsd:all>
+      <xsd:element name="fieldList" minOccurs="1">
+        <xsd:complexType>
+          <xsd:choice minOccurs="1" maxOccurs="unbounded">
+            <xsd:element name="fieldRef" type="jsdomain:FieldRefType"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="joinInfo" type="jsdomain:JoinInfoType" minOccurs="0"/>
+      <xsd:element name="joinedDataSetList" type="jsdomain:JoinedDataSetListType" minOccurs="0"/>
+    </xsd:all>
+    <xsd:attribute name="id" type="xsd:string" use="required"/>
+    <xsd:attribute name="referenceId" type="xsd:string" use="required"/>
+    <xsd:attribute name="dataSetType" type="xsd:string" use="required"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="JoinInfoType">
+    <xsd:attribute name="alias" type="xsd:string" use="required"/>
+    <xsd:attribute name="referenceId" type="xsd:string" use="required"/>
+    <xsd:attribute name="joinType" type="jsdomain:JointTypeType" default="inner"/>
+  </xsd:complexType>
+
+  <xsd:simpleType name="JointTypeType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="inner|left outer|right outer|full outer" />
+    </xsd:restriction>
+  </xsd:simpleType>
+    
+  <xsd:complexType name="FieldRefType">
+    <xsd:attribute name="id" type="xsd:string" use="required"/>
+    <xsd:attribute name="referenceId" type="xsd:string" use="required"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="JoinedDataSetListType">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:element name="joinedDataSetRef" type="jsdomain:JoinedDataSetRefType"/>
+    </xsd:choice>
+  </xsd:complexType>
+
+  <xsd:complexType name="JoinedDataSetRefType">
+    <xsd:choice minOccurs="1" maxOccurs="1">
+      <xsd:element name="joinString" type="xsd:string"/>
+    </xsd:choice>
+  </xsd:complexType>
+
+  <xsd:complexType name="JrQueryDataSetType">
+    <xsd:all>
+      <xsd:element name="fieldList" minOccurs="1">
+        <xsd:complexType>
+          <xsd:choice minOccurs="1" maxOccurs="unbounded">
+            <xsd:element name="field" type="jsdomain:FieldType"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="query" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+      <xsd:element name="dsReferenceURI" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+    </xsd:all>
+    <xsd:attribute name="id" type="xsd:string" use="required"/>
+    <xsd:attribute name="datasourceId" type="xsd:string" use="required"/>
+    <xsd:attribute name="queryLanguage" type="xsd:string" use="required"/>
+    <xsd:attribute name="maxRows" type="xsd:string" use="optional"/>
+  </xsd:complexType>
+
+</xsd:schema>
+

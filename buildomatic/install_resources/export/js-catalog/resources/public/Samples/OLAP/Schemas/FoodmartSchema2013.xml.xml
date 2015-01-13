@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fileResource exportedWithPermissions="true" dataFile="FoodmartSchema2013.xml.data">
+    <folder>/public/Samples/OLAP/Schemas</folder>
+    <name>FoodmartSchema2013.xml</name>
+    <version>0</version>
+    <label>FoodmartSchema</label>
+    <description>Foodmart OLAP schema with updated dates</description>
+    <creationDate>2014-12-18T02:01:26.794-08:00</creationDate>
+    <updateDate>2013-04-10T14:22:02.746-07:00</updateDate>
+    <fileType>olapMondrianSchema</fileType>
+</fileResource>

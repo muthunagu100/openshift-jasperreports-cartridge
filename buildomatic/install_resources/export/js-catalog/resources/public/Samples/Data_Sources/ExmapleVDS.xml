@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<virtualDataSource exportedWithPermissions="true">
+    <folder>/public/Samples/Data_Sources</folder>
+    <name>ExmapleVDS</name>
+    <version>0</version>
+    <label>ExampleVDS</label>
+    <description></description>
+    <creationDate>2014-12-18T02:01:36.518-08:00</creationDate>
+    <updateDate>2013-01-03T06:40:18.245-08:00</updateDate>
+    <dataSource>
+        <alias>SugarCRMDataSource</alias>
+        <dataSourceReference>
+            <uri>/public/Samples/Data_Sources/JServerJNDIDS</uri>
+        </dataSourceReference>
+    </dataSource>
+    <dataSource>
+        <alias>FoodmartDataSource</alias>
+        <dataSourceReference>
+            <uri>/public/Samples/Data_Sources/FoodmartDataSourceJNDI</uri>
+        </dataSourceReference>
+    </dataSource>
+    <timezone></timezone>
+</virtualDataSource>

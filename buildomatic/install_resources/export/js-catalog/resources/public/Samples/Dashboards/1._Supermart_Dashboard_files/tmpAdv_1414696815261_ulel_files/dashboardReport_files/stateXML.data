@@ -1,0 +1,177 @@
+<unifiedState dataSize="sample" filterPanelShowing="true" hasMargins="false" ignoreMaxRows="false" initedSubFilterList="true" launchType="ADH_045b_TOPIC" maxDisplayColumns="0" maxDisplayRows="0" maxRowChoices="0" maxRows="0" mode="ichart" pageOrientation="Portrait" paperSize="content" showTableDetails="true" showTableTotals="false" summaryRowTitle="Totals" theme="default" titleBarShowing="true" titleHeight="0" topicName="foodmart data for crosstab">
+  <chartState availableChartHeight="0" availableChartWidth="0" backgroundFilled="false" chartHeight="0" chartIsVertical="true" chartWidth="0" displayXAxisLabel="true" displayYAxisLabel="false" offsetX="0" offsetY="0">
+    <chartTitle />
+    <chartType>1_bar</chartType>
+    <displayLegendMap>
+      <entry key="5_scatter">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="2_pie">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="6_timeSeries">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="3_line">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="1_bar">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="4_area">
+        <boolean>true</boolean>
+      </entry>
+    </displayLegendMap>
+    <gradient>topDown</gradient>
+    <hasLinesMap>
+      <entry key="5_scatter">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="2_pie">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="6_timeSeries">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="3_line">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="1_bar">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="4_area">
+        <boolean>false</boolean>
+      </entry>
+    </hasLinesMap>
+    <hasPointsMap>
+      <entry key="5_scatter">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="2_pie">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="6_timeSeries">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="3_line">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="1_bar">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="4_area">
+        <boolean>false</boolean>
+      </entry>
+    </hasPointsMap>
+    <stackedMap>
+      <entry key="5_scatter">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="2_pie">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="6_timeSeries">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="3_line">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="1_bar">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="4_area">
+        <boolean>false</boolean>
+      </entry>
+    </stackedMap>
+    <threeDMap>
+      <entry key="5_scatter">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="2_pie">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="6_timeSeries">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="3_line">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="1_bar">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="4_area">
+        <boolean>true</boolean>
+      </entry>
+    </threeDMap>
+  </chartState>
+  <crosstabState numberOfColumns="0" safeColumnMode="true" safeRowMode="true" showLabels="true">
+    <columnGroups>
+      <queryDimension categorizerName="all" fieldName="product_family" includeAll="true" name="product_family" sortStatus="0" type="java.lang.String" uniqueName="product_family">
+        <expandedLevels>
+          <string>product_family</string>
+        </expandedLevels>
+        <visibleLevels>
+          <string>product_family</string>
+        </visibleLevels>
+      </queryDimension>
+      <queryDimension fieldName="Measures" includeAll="true" name="Measures" sortStatus="0" type="java.lang.String" uniqueName="Measures">
+        <visibleLevels>
+          <string>Measures</string>
+        </visibleLevels>
+      </queryDimension>
+    </columnGroups>
+    <rowGroups>
+      <queryDimension categorizerName="all" fieldName="store_state" includeAll="true" name="store_state" sortStatus="0" type="java.lang.String" uniqueName="store_state">
+        <expandedLevels>
+          <string>store_state</string>
+        </expandedLevels>
+        <visibleLevels>
+          <string>store_state</string>
+        </visibleLevels>
+      </queryDimension>
+    </rowGroups>
+    <sortingState />
+  </crosstabState>
+  <groups>
+    <queryDimension categorizerName="all" fieldName="store_state" includeAll="true" name="store_state" sortStatus="0" type="java.lang.String" uniqueName="store_state">
+      <expandedLevels>
+        <string>store_state</string>
+      </expandedLevels>
+      <visibleLevels>
+        <string>store_state</string>
+      </visibleLevels>
+    </queryDimension>
+  </groups>
+  <intelligentChartState XAxisRotation="-45" XAxisStep="1" YAxisRotation="0" YAxisStep="1" alignment="bottom" autoScaleFonts="false" color1Stop="0.1" color2Stop="0.5" color3Stop="0.9" decimalPoint="." donnutInnerSize="40" gaugesMaxValue="200.0" gaugesMinValue="0.0" invertedAxis="false" labelOffset="0.0" legend="bottom" legendBorder="false" rotateAllLevels="false" rotation="0.0" showDataPoints="true" showLabels="false" showMeasureOnValueAxis="true" showSingleMeasuresLabels="true" showXAxisLabels="true" showYAxisLabels="true" singleAxisComboChart="false" thousandSeparator="None" typeString="heat_map" />
+  <measures>
+    <measure aggregateType="java.lang.Double" fieldName="ASP" function="Sum" mask="#,##0.00" measure="true" name="ASP" showSummary="false" width="125" />
+  </measures>
+  <propertyMap>
+    <entry key="hideEmptyRows">
+      <string>false</string>
+    </entry>
+    <entry key="modFlags">
+      <string />
+    </entry>
+    <entry key="controlsAlwaysShow">
+      <string>false</string>
+    </entry>
+    <entry key="ADHOC_VERSION">
+      <string>4.5.0</string>
+    </entry>
+    <entry key="controlsRenderingView" />
+    <entry key="controlsLayout">
+      <string>1</string>
+    </entry>
+  </propertyMap>
+  <subFilterList>
+    <subFilter id="filter_1" letter="A" sourceString="DYNAMIC">
+      <expressionString>isAnyValue(product_family)</expressionString>
+      <parameterizedExpressionString>product_family in product_family_1</parameterizedExpressionString>
+    </subFilter>
+    <subFilter id="filter_2" letter="B" sourceString="DYNAMIC">
+      <expressionString>isAnyValue(store_country)</expressionString>
+      <parameterizedExpressionString>store_country in store_country_1</parameterizedExpressionString>
+    </subFilter>
+  </subFilterList>
+</unifiedState>

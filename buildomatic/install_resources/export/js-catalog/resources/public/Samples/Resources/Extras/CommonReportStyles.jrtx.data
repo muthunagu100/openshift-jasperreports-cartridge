@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jasperTemplate PUBLIC "-//JasperReports//DTD Template//EN" "http://jasperreports.sourceforge.net/dtds/jaspertemplate.dtd">
+
+<jasperTemplate>
+	<style name="default" isDefault="true" forecolor="#424242" hAlign="Center" vAlign="Middle" fontName="Verdana" fontSize="9">
+		<paragraph leftIndent="10"/>
+	</style>
+	<style name="table_TH" style="default" mode="Opaque" backcolor="#DEDEDC" isBold="false" isItalic="true" isUnderline="false">
+		<box>
+			<pen lineWidth="1.0" lineColor="#C5C5C5"/>
+			<topPen lineWidth="1.0" lineColor="#C5C5C5"/>
+			<leftPen lineWidth="1.0" lineColor="#C5C5C5"/>
+			<bottomPen lineWidth="1.0" lineColor="#C5C5C5"/>
+			<rightPen lineWidth="1.0" lineColor="#C5C5C5"/>
+		</box>
+	</style>
+	<style name="table_CH" style="table_TH"/>
+	<style name="table_TD" style="default"/>
+	<style name="title" style="default" hAlign="Left" vAlign="Middle" fontSize="12" isBold="true"/>
+	<style name="table_GH" style="default" mode="Opaque" backcolor="#D8E1EC" hAlign="Center" isBold="false">
+		<box>
+			<pen lineWidth="1.0" lineColor="#C5C5C5"/>
+			<topPen lineWidth="1.0" lineColor="#C5C5C5"/>
+			<leftPen lineWidth="1.0" lineColor="#C5C5C5"/>
+			<bottomPen lineWidth="1.0" lineColor="#C5C5C5"/>
+			<rightPen lineWidth="1.0" lineColor="#C5C5C5"/>
+		</box>
+	</style>
+	<style name="table_TF" style="default" mode="Opaque" backcolor="#F4F4F4" hAlign="Center" isBold="false" isItalic="false" isUnderline="false">
+		<box>
+			<pen lineWidth="1.0" lineColor="#C5C5C5"/>
+			<topPen lineWidth="1.0" lineColor="#C5C5C5"/>
+			<leftPen lineWidth="1.0" lineColor="#C5C5C5"/>
+			<bottomPen lineWidth="1.0" lineColor="#C5C5C5"/>
+			<rightPen lineWidth="1.0" lineColor="#C5C5C5"/>
+		</box>
+	</style>
+	<style name="detail"/>
+	<style name="Details" forecolor="#333333" backcolor="#EAEFDE" fontName="Arial"/>
+	<style name="Label" forecolor="#333333" backcolor="#D4DFBD" fontName="Arial"/>
+	<style name="TableHeader" forecolor="#333333" backcolor="#BDCE9B" fontName="Arial"/>
+	<style name="ColumnHeader" forecolor="#FFFFFF" backcolor="#333333" fontName="Arial" isBold="true"/>
+	<style name="GroupHeader" forecolor="#333333" backcolor="#A8BD79" fontName="Arial"/>
+	<style name="SerialNumber" forecolor="#333333" backcolor="#C3D3A3" fontName="Arial"/>
+	<style name="ReportHeader" forecolor="#333333" fontName="Arial"/>
+</jasperTemplate>

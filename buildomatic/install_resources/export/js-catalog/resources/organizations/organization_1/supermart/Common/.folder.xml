@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder exportedWithPermissions="true">
+    <parent>/organizations/organization_1/supermart</parent>
+    <name>Common</name>
+    <label>Common</label>
+    <description>Modifiable by Administrators. Resource bundles for localization, input controls, etc.</description>
+    <creationDate>2014-12-18T02:01:22.226-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:22.226-08:00</updateDate>
+    <resource>productFamily</resource>
+    <resource>ProductFamilyList</resource>
+    <resource>supermart_de.properties</resource>
+    <resource>supermart_en_US.properties</resource>
+    <resource>supermart_es.properties</resource>
+    <resource>supermart_fr.properties</resource>
+    <resource>supermart_ja.properties</resource>
+    <resource>supermart_zh_CN.properties</resource>
+    <resource>supermart.properties</resource>
+</folder>

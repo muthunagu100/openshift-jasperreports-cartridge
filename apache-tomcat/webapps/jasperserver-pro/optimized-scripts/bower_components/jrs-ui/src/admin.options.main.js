@@ -1,0 +1,1 @@
+define(["require","!domReady","administer.base","administer.options","jrs.configs","underscore"],function(e){var i=e("!domReady"),n=e("administer.base"),s=e("administer.options"),o=e("jrs.configs"),t=e("underscore");i(function(){t.extend(n._messages,o.Administer._messages),n.urlContext=o.urlContext,n.flowExecutionKey=o.Administer.flowExecutionKey,s.initialize()})});

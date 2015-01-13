@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder exportedWithPermissions="true">
+    <parent>/public/Samples</parent>
+    <name>Domains</name>
+    <label>Domains</label>
+    <description>Domains</description>
+    <creationDate>2014-12-18T02:01:25.523-08:00</creationDate>
+    <updateDate>2012-10-15T09:25:11.395-07:00</updateDate>
+    <resource>ExampleVDS</resource>
+    <resource>supermartDomain</resource>
+</folder>

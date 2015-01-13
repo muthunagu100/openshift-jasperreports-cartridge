@@ -1,0 +1,389 @@
+<!--
+  ~ Copyright (C) 2005 - 2014 TIBCO Software Inc. All rights reserved.
+  ~ http://www.jaspersoft.com.
+  ~ Licensed under commercial Jaspersoft Subscription License Agreement
+  -->
+
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+    <!--
+      - Sample configuration of SSO via CAS Spring API.
+      - Additional user details are extracted via an external LDAP (ldapContextSource)
+    -->
+
+    <bean id="proxyAuthenticationProcessingFilter" class="com.jaspersoft.jasperserver.api.security.externalAuth.cas.JSCasProcessingFilter">
+        <property name="authenticationManager">
+            <ref local="casAuthenticationManager"/>
+        </property>
+        <property name="authenticationFailureHandler" ref="failureHandler" />
+        <property name="authenticationSuccessHandler" ref="externalAuthSuccessHandler" />
+        <property name="filterProcessesUrl" value="/j_spring_security_check"/>
+        <property name="allowSessionCreation" value="true" />
+        <property name="sessionAuthenticationStrategy">
+            <ref local="casSessionAuthStrategy"/>
+        </property>
+
+        <property name="authenticationDetailsSource">
+            <bean class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.spring.JSAuthenticationDetailsSourceImpl">
+                <property name="clazz">
+                    <value>com.jaspersoft.jasperserver.multipleTenancy.MTWebAuthenticationDetails</value>
+                </property>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="proxyAuthenticationSoapProcessingFilter"
+          class="com.jaspersoft.jasperserver.api.security.externalAuth.cas.JSSoapProcessingFilter" parent="proxyAuthenticationProcessingFilter">
+        <property name="authenticationManager" ref="casSoapAuthenticationManager"/>
+        <property name="filterProcessesUrl" value="/services"/>
+    </bean>
+
+    <bean id="proxyAuthenticationRestProcessingFilter"
+          class="com.jaspersoft.jasperserver.api.security.externalAuth.cas.CasRestProcessingFilter" parent="proxyAuthenticationProcessingFilter">
+        <property name="authenticationManager" ref="casRestAuthenticationManager"/>
+        <property name="filterProcessesUrl" value="/rest/login"/>
+    </bean>
+
+    <bean id="externalAuthSuccessHandler"
+          class="com.jaspersoft.jasperserver.api.security.externalAuth.cas.JrsExternalCASAuthenticationSuccessHandler" parent="successHandler">
+        <property name="externalDataSynchronizer">
+            <ref local="externalDataSynchronizer"/>
+        </property>
+    </bean>
+
+    <!-- [40308] Single sign out START: links Spring's SessionFixationProtectionStrategy, creating a new session upon
+    authentication, with CAS SessionMappingStorage.  SessionFixationProtectionStrategy is thus able to enter the new
+    session into SessionMappingStorage as a CAS ticket-session id pair.  Upon CAS sign-out request, SingleSignOutFilter
+    in JasperReport Server locates the correct session SessionMappingStorage and invalidates it. -->
+    <bean name="casSingleSignOutFilter" class="org.jasig.cas.client.session.SingleSignOutFilter">
+        <property name="artifactParameterName"  value="ticket"/>
+        <property name="sessionMappingStorage">
+            <ref local="casSessionMappingStorage"/>
+        </property>
+    </bean>
+    <bean id="casSessionAuthStrategy" class="com.jaspersoft.jasperserver.api.security.externalAuth.cas.CasSessionFixationProtectionStrategy">
+        <property name="migrateSessionAttributes" value="true" />
+        <property name="sessionMappingStorage">
+            <ref local="casSessionMappingStorage"/>
+        </property>
+        <property name="artifactParameterName"  value="ticket"/>  <!-- MUST BE THE SAME AS artifactParameterName in casSingleSignOutFilter bean -->
+    </bean>
+    <bean id="casSessionMappingStorage" class="org.jasig.cas.client.session.HashMapBackedSessionMappingStorage"/>
+    <!-- Single sign out END -->
+
+    <bean id="proxyExceptionTranslationFilter" class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.spring.JSExceptionTranslationFilter" depends-on="externalAuthProperties">
+        <property name="authenticationEntryPoint">
+            <bean class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.spring.cas.JSCasAuthenticationEntryPoint">
+                <property name="loginUrl" value="#{externalAuthProperties.externalLoginUrl}"/>
+
+                <property name="serviceProperties">
+                    <ref local="casServiceProperties"/>
+                </property>
+            </bean>
+        </property>
+        <property name="accessDeniedHandler">
+            <bean class="com.jaspersoft.jasperserver.war.themes.ThemeAwareAccessDeniedHandlerImpl">
+                <property name="errorPage" value="/WEB-INF/jsp/modules/system/AccessDeniedPage.jsp"/>
+                <property name="themeResolver" ref="themeResolver" />
+                <property name="themeSource" ref="themeSource" />
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="casAuthenticationManager" class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.spring.JSProviderManager">
+        <property name="providers">
+            <list>
+                <ref local="casAuthenticationProvider"/>
+                <ref bean="${bean.daoAuthenticationProvider}"/>
+                <!-- anonymousAuthenticationProvider only needed if filterInvocationInterceptor.alwaysReauthenticate is set to true
+                <ref bean="anonymousAuthenticationProvider"/>-->
+            </list>
+        </property>
+    </bean>
+
+    <bean id="casRestAuthenticationManager" class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.spring.JSProviderManager">
+        <property name="providers">
+            <list>
+                <ref local="casRestAuthenticationProvider"/>
+                <ref bean="${bean.daoAuthenticationProvider}"/>
+                <!-- anonymousAuthenticationProvider only needed if filterInvocationInterceptor.alwaysReauthenticate is set to true
+                <ref bean="anonymousAuthenticationProvider"/>-->
+            </list>
+        </property>
+    </bean>
+
+    <bean id="casSoapAuthenticationManager" class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.spring.JSProviderManager">
+        <property name="providers">
+            <list>
+                <ref local="casSoapAuthenticationProvider"/>
+                <ref bean="${bean.daoAuthenticationProvider}"/>
+                <!-- anonymousAuthenticationProvider only needed if filterInvocationInterceptor.alwaysReauthenticate is set to true
+                <ref bean="anonymousAuthenticationProvider"/>-->
+            </list>
+        </property>
+    </bean>
+
+
+    <bean id="casAuthenticationProvider" class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.spring.cas.JSCasAuthenticationProvider" depends-on="externalAuthProperties">
+        <property name="userDetailsService"><ref local="ldapUserDetailsService"/></property>
+
+        <property name="serviceProperties">
+            <ref local="casServiceProperties"/>
+        </property>
+
+        <property name="ticketValidator">
+            <bean class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.jasig.JSCas20ServiceTicketValidator">
+                <constructor-arg index="0" value="#{externalAuthProperties.ssoServerLocation}" />
+            </bean>
+        </property>
+
+        <property name="statelessTicketCache">
+            <bean class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.spring.JSEhCacheBasedTicketCache">
+                <property name="cache">
+                    <bean id="ticketCache" class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.spring.JSEhCacheFactoryBean">
+                        <property name="cacheManager" ref="cacheManager"/>
+                        <property name="cacheName" value="casTicketCache"/>
+                    </bean>
+                </property>
+            </bean>
+        </property>
+
+        <property name="key" value="casCacheKey"/>
+    </bean>
+
+    <bean id="casRestAuthenticationProvider" class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.spring.cas.JSCasAuthenticationProvider" depends-on="externalAuthProperties">
+        <property name="userDetailsService"><ref local="ldapUserDetailsService"/></property>
+
+        <property name="serviceProperties">
+            <ref local="casRestServiceProperties"/>
+        </property>
+
+        <property name="ticketValidator">
+            <bean class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.jasig.JSCas20ServiceTicketValidator">
+                <constructor-arg index="0" value="#{externalAuthProperties.ssoServerLocation}" />
+            </bean>
+        </property>
+
+        <property name="statelessTicketCache">
+            <bean class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.spring.JSEhCacheBasedTicketCache">
+                <property name="cache">
+                    <bean id="ticketCache" class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.spring.JSEhCacheFactoryBean">
+                        <property name="cacheManager" ref="cacheManager"/>
+                        <property name="cacheName" value="casTicketCache"/>
+                    </bean>
+                </property>
+            </bean>
+        </property>
+
+        <property name="key" value="casCacheKey"/>
+    </bean>
+
+    <bean id="casSoapAuthenticationProvider" class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.spring.cas.JSCasAuthenticationProvider" depends-on="externalAuthProperties">
+        <property name="userDetailsService"><ref local="ldapUserDetailsService"/></property>
+
+        <property name="serviceProperties">
+            <ref local="casSoapServiceProperties"/>
+        </property>
+
+        <property name="ticketValidator">
+            <bean class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.jasig.JSCas20ServiceTicketValidator">
+                <constructor-arg index="0" value="#{externalAuthProperties.ssoServerLocation}" />
+            </bean>
+        </property>
+
+        <property name="statelessTicketCache">
+            <bean class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.spring.JSEhCacheBasedTicketCache">
+                <property name="cache">
+                    <bean id="ticketCache" class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.spring.JSEhCacheFactoryBean">
+                        <property name="cacheManager" ref="cacheManager"/>
+                        <property name="cacheName" value="casTicketCache"/>
+                    </bean>
+                </property>
+            </bean>
+        </property>
+
+        <property name="key" value="casCacheKey"/>
+    </bean>
+
+    <bean id="ldapUserDetailsService" class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.spring.ldap.JSLdapUserDetailsService">
+        <constructor-arg>
+            <bean class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.spring.ldap.JSFilterBasedLdapUserSearch">
+                <constructor-arg index="0">
+                    <value></value>
+                </constructor-arg>
+                <constructor-arg index="1">
+                    <value>(uid={0})</value>
+                </constructor-arg>
+                <constructor-arg index="2">
+                    <ref local="ldapContextSource" />
+                </constructor-arg>
+                <property name="searchSubtree">
+                    <value>true</value>
+                </property>
+            </bean>
+        </constructor-arg>
+        <constructor-arg>
+            <bean class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.spring.ldap.JSDefaultLdapAuthoritiesPopulator">
+                <constructor-arg index="0"><ref local="ldapContextSource"/></constructor-arg>
+                <constructor-arg index="1"><value></value></constructor-arg>
+                <property name="groupRoleAttribute" value="title"/>
+                <property name="groupSearchFilter" value="(uid={1})"/>
+                <property name="searchSubtree" value="true"/>
+                <!-- Can setup additional external default roles here  <property name="defaultRole" value="LDAP"/> -->
+            </bean>
+        </constructor-arg>
+    </bean>
+
+    <bean id="casServiceProperties" class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.spring.cas.JSCASServiceProperties">
+        <property name="service" value="http://localhost:8080/jasperserver-pro/j_spring_security_check"/>
+        <property name="sendRenew" value="false"/>
+    </bean>
+
+    <!--we rely on the customer coming with a ticket that was issued to their system. this is where they need to specify
+    the url-->
+    <bean id="casRestServiceProperties" class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.spring.cas.JSCASServiceProperties">
+        <property name="service" value="http://localhost:8080/jasperserver/rest/login"/>
+        <property name="sendRenew" value="false"/>
+    </bean>
+
+    <bean id="casSoapServiceProperties" class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.spring.cas.JSCASServiceProperties">
+        <property name="service" value="http://localhost:8080/jasperserver/services"/>
+        <property name="sendRenew" value="false"/>
+    </bean>
+
+    <!-- ############ SSO auth ############ -->
+
+    <!-- ############ Synchronizer ############ -->
+
+    <bean id="externalDataSynchronizer"
+          class="com.jaspersoft.jasperserver.api.security.externalAuth.ExternalDataSynchronizerImpl">
+        <property name="externalUserProcessors">
+            <list>
+                <ref local="ldapExternalTenantProcessor"/>
+                <ref local="mtExternalUserSetupProcessor"/>
+                <!-- Example processor for creating user folder-->
+                <!--<ref local="externalUserFolderProcessor"/>-->
+            </list>
+        </property>
+    </bean>
+
+    <bean id="abstractExternalProcessor" class="com.jaspersoft.jasperserver.api.security.externalAuth.processors.AbstractExternalUserProcessor" abstract="true">
+        <property name="repositoryService" ref="${bean.repositoryService}"/>
+        <property name="userAuthorityService" ref="${bean.userAuthorityService}"/>
+        <property name="tenantService" ref="${bean.tenantService}"/>
+        <property name="profileAttributeService" ref="profileAttributeService"/>
+        <property name="objectPermissionService" ref="objectPermissionService"/>
+    </bean>
+
+    <bean id="externalTenantSetupProcessor" class="com.jaspersoft.jasperserver.multipleTenancy.security.externalAuth.processors.MTExternalTenantSetupProcessor" parent="abstractExternalProcessor">
+        <property name="multiTenancyService"><ref bean="internalMultiTenancyService"/></property>
+        <property name="tenantIdNotSupportedSymbols" value="#{configurationBean.tenantIdNotSupportedSymbols}"/>
+
+        <!-- User credentials are setup in js.externalAuth.properties-->
+        <property name="externalTenantSetupUsers">
+            <list>
+                <bean class="com.jaspersoft.jasperserver.multipleTenancy.security.externalAuth.processors.MTAbstractExternalProcessor.ExternalTenantSetupUser">
+                    <property name="username" value="${new.tenant.user.name.1}"/>
+                    <property name="fullName" value="${new.tenant.user.fullname.1}"/>
+                    <property name="password" value="${new.tenant.user.password.1}"/>
+                    <property name="emailAddress" value="${new.tenant.user.email.1}"/>
+                    <property name="roleSet">
+                        <set>
+                            <value>ROLE_ADMINISTRATOR</value>
+                            <value>ROLE_USER</value>
+                        </set>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="mtExternalUserSetupProcessor" class="com.jaspersoft.jasperserver.multipleTenancy.security.externalAuth.processors.MTExternalUserSetupProcessor" parent="abstractExternalProcessor">
+        <!--Default permitted role characters; others are removed. Change regular expression to allow other chars.
+                    <property name="permittedExternalRoleNameRegex" value="[A-Za-z0-9_]+"/>-->
+
+        <property name="userAuthorityService">
+            <ref bean="${bean.internalUserAuthorityService}"/>
+        </property>
+
+        <!-- If the username is in adminUsernames list assign the user internal roles from defaultAdminRoles;
+          - otherwise, assign the user all the roles from defaultInternalRoles list.
+        -->
+        <property name="adminUsernames">
+            <list>
+                <value>myorgadmin</value>
+            </list>
+        </property>
+        <property name="defaultAdminRoles">
+            <list>
+                <value>ROLE_USER</value>
+                <value>ROLE_ADMINISTRATOR</value>
+            </list>
+        </property>
+        <property name="defaultInternalRoles">
+            <list>
+                <value>ROLE_USER</value>
+            </list>
+        </property>
+
+        <property name="organizationRoleMap">
+            <map>
+                <!-- Example of mapping customer roles to JRS roles, use this map to make a user an admin or superuser -->
+                <entry>
+                    <key>
+                        <value>ROLE_ADMIN_EXTERNAL_ORGANIZATION</value>
+                    </key>
+                    <!-- JRS role that the <key> external role is mapped to-->
+                    <value>ROLE_ADMINISTRATOR</value>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="ldapExternalTenantProcessor" class="com.jaspersoft.jasperserver.multipleTenancy.security.externalAuth.processors.ldap.LdapExternalTenantProcessor" parent="abstractExternalProcessor">
+        <property name="ldapContextSource" ref="ldapContextSource"/>
+        <property name="multiTenancyService"><ref bean="internalMultiTenancyService"/></property>
+        <property name="excludeRootDn" value="false"/>
+        <!--only following LDAP attributes will be used in creation of organization hierarchy.
+                Eg. cn=Smith,ou=Developement,o=Jaspersoft will produce tanant Development as child of
+                tenant Jaspersoft (if excludeRootDn=false) as child of default tenant organization_1-->
+        <property name="organizationRDNs">
+            <list>
+                <value>dc</value>
+                <value>c</value>
+                <value>o</value>
+                <value>ou</value>
+                <value>st</value>
+            </list>
+        </property>
+        <property name="rootOrganizationId" value="organization_1"/>
+    </bean>
+
+    <!-- EXAMPLE Processor
+    <bean id="externalUserFolderProcessor"
+          class="com.jaspersoft.jasperserver.api.security.externalAuth.processors.ExternalUserFolderProcessor"
+          parent="abstractExternalProcessor">
+        <property name="repositoryService" ref="${bean.unsecureRepositoryService}"/>
+    </bean>
+    -->
+    <!-- ############ Synchronizer ############ -->
+
+    <!-- ############## LDAP Context Source ############### -->
+    <bean id="ldapContextSource" class="com.jaspersoft.jasperserver.api.security.externalAuth.ldap.JSLdapContextSource">
+        <constructor-arg value="${external.ldap.url}"/>
+        <!-- manager user name and password (may not be needed)  -->
+        <property name="userDn" value="${external.ldap.username}"/>
+        <property name="password" value="${external.ldap.password}"/>
+    </bean>
+
+    <bean id="externalAuthProperties" class="com.jaspersoft.jasperserver.api.security.externalAuth.ExternalAuthProperties">
+        <property name="externalLoginUrl" value="#ssoServerLocation#/login"/>
+
+        <!-- external logout url. If specified, logout will redirect to that address. -->
+        <property name="logoutUrl" value="#ssoServerLocation#/logout"/>
+        <property name="ssoServerLocation" value="*** CAS server URL. E.g. https://localhost:8443/cas ***"/>
+    </bean>
+</beans>

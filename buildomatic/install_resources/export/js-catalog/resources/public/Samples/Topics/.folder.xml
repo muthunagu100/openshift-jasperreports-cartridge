@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder exportedWithPermissions="true">
+    <parent>/public/Samples</parent>
+    <name>Topics</name>
+    <label>Topics</label>
+    <description>Topics</description>
+    <creationDate>2014-12-18T02:01:25.716-08:00</creationDate>
+    <updateDate>2012-10-15T09:25:52.690-07:00</updateDate>
+    <resource>CrosstabDemo</resource>
+</folder>

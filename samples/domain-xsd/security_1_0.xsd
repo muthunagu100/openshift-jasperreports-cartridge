@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://www.w3.org/2001/XMLSchema"
+	    targetNamespace="http://www.jaspersoft.com/2007/SL/XMLSchema"
+	    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	    xmlns:jsdomain="http://www.jaspersoft.com/2007/SL/XMLSchema"
+	    elementFormDefault="qualified"
+	    attributeFormDefault="unqualified"
+	    version="1.0">
+
+  <xsd:annotation>
+    <xsd:documentation>
+      
+      Copyright (C) 2005-2014 TIBCO Software Inc. All rights reserved.
+      http://www.jaspersoft.com.
+      Licensed under commercial JasperSoft Subscription License Agreement
+
+    </xsd:documentation>
+  </xsd:annotation>
+
+  <!-- Root element -->
+
+  <xsd:element name="securityDefinition" type="jsdomain:SecurityDefinitionType">
+  </xsd:element>
+
+  <xsd:complexType name="SecurityDefinitionType">
+    <xsd:all>
+      <xsd:element name="resourceAccessGrants" type="jsdomain:ResourceAccessGrantsType" minOccurs="0"/>
+      <xsd:element name="itemGroupAccessGrants" type="jsdomain:ItemGroupAccessGrantsType" minOccurs="0"/>
+    </xsd:all>
+    <xsd:attribute name="version" type="xsd:decimal" use="required"/>
+    <xsd:attribute name="itemGroupDefaultAccess" type="jsdomain:AccessType" use="required"/>
+  </xsd:complexType>
+
+  <!-- Resource Access -->
+
+  <xsd:complexType name="ResourceAccessGrantsType">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:element name="resourceAccessGrantList" type="jsdomain:ResourceAccessGrantListType"/>
+    </xsd:choice>
+  </xsd:complexType>
+
+  <xsd:complexType name="ResourceAccessGrantListType">
+    <xsd:choice minOccurs="1" maxOccurs="1">
+      <xsd:element name="resourceAccessGrants">
+        <xsd:complexType>
+          <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="resourceAccessGrant" type="jsdomain:ResourceAccessGrantType"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:choice>
+    <xsd:attribute name="id" type="xsd:ID" use="required"/>
+    <xsd:attribute name="resourceId" type="xsd:string" use="required"/>
+    <xsd:attribute name="label" type="xsd:string"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="ResourceAccessGrantType">
+    <xsd:all>
+      <xsd:element name="principalExpression" type="xsd:string"/>
+      <xsd:element name="filterExpression" type="xsd:string" minOccurs="0"/>
+    </xsd:all>
+    <xsd:attribute name="id" type="xsd:ID" use="required"/>
+    <xsd:attribute name="orMultipleExpressions" type="xsd:boolean" default="false"/>
+  </xsd:complexType>
+
+  <!-- Items Access -->
+
+  <xsd:complexType name="ItemGroupAccessGrantsType">
+    <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:element name="itemGroupAccessGrantList" type="jsdomain:ItemGroupAccessGrantListType"/>
+    </xsd:choice>
+  </xsd:complexType>
+
+  <xsd:complexType name="ItemGroupAccessGrantListType">
+    <xsd:choice minOccurs="1" maxOccurs="1">
+      <xsd:element name="itemGroupAccessGrants">
+        <xsd:complexType>
+          <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="itemGroupAccessGrant" type="jsdomain:ItemGroupAccessGrantType"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:choice>
+    <xsd:attribute name="id" type="xsd:ID" use="required"/>
+    <xsd:attribute name="itemGroupId" type="xsd:string" use="required"/>
+    <xsd:attribute name="defaultAccess" type="jsdomain:AccessType" use="required"/>
+    <xsd:attribute name="label" type="xsd:string"/>
+  </xsd:complexType>
+
+  <xsd:simpleType name="AccessType">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="denied|granted" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <xsd:complexType name="ItemGroupAccessGrantType">
+    <xsd:all>
+      <xsd:element name="principalExpression" type="xsd:string"/>
+      <xsd:element name="itemAccessGrantList" type="jsdomain:ItemAccessGrantListType" minOccurs="0"/>
+    </xsd:all>
+    <xsd:attribute name="id" type="xsd:ID" use="required"/>
+    <xsd:attribute name="access" type="jsdomain:AccessType" use="required"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="ItemAccessGrantListType">
+    <xsd:choice minOccurs="1" maxOccurs="1">
+      <xsd:element name="itemAccessGrants">
+        <xsd:complexType>
+          <xsd:choice minOccurs="0" maxOccurs="unbounded">
+            <xsd:element name="itemAccessGrant" type="jsdomain:ItemAccessGrantType"/>
+          </xsd:choice>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:choice>
+    <xsd:attribute name="id" type="xsd:ID" use="required"/>
+    <xsd:attribute name="defaultAccess" type="jsdomain:AccessType" use="required"/>
+    <xsd:attribute name="label" type="xsd:string"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="ItemAccessGrantType">
+    <xsd:attribute name="id" type="xsd:ID" use="required"/>
+    <xsd:attribute name="itemId" type="xsd:string" use="required"/>
+    <xsd:attribute name="access" type="jsdomain:AccessType" use="required"/>
+  </xsd:complexType>
+
+</xsd:schema>
+

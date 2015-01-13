@@ -1,0 +1,229 @@
+# Strings for SuperMart reports
+Dashboard.Explore=\u81ea\u7531\u6d4f\u89c8
+Dashboard.Create=\u521b\u5efa\u65b0\u62a5\u8868
+Dashboard.Browse=\u6d4f\u89c8\u66f4\u591a\u7684 SuperMart \u6587\u4ef6
+Dashboard.MyReports=\u6211\u5df2\u4fdd\u5b58\u7684\u62a5\u8868
+FooterPageNum=\u9875\u9762 {0}/ 
+ReportTitle=\u62a5\u8868\u6807\u9898
+LastRunBy=\u4e0a\u6b21\u8fd0\u884c: {0}
+NumRecordsFooter=\u8bb0\u5f55\u603b\u6570: {0}
+Num=#
+CurrencySymbol=$
+Key=\u952e: 
+Total=\u5408\u8ba1
+ProfitGrowth=\u5229\u6da6\u589e\u957f
+Profit=\u5229\u6da6
+Revenue=\u6536\u5165
+Sales=\u9500\u552e\u91cf
+ShoppingDays=\u8d2d\u7269\u65e5
+BrandPreferences=\u54c1\u724c\u504f\u597d
+AverageSale=\u5e73\u5747\u9500\u552e\u91cf
+CountsAndTotals=\u8ba1\u6570\u548c\u5408\u8ba1
+UniqueProducts=\u72ec\u7279\u7684\u4ea7\u54c1
+Promotional=\u4fc3\u9500
+PurchaseDetail=\u5ba2\u6237 {0} \u7684\u8d2d\u4e70\u660e\u7ec6:
+CustomerCardNumber=\u5ba2\u6237\u7684\u4fe1\u7528\u5361\u53f7\u7801: {0}
+RevenueByCity=\u6309\u57ce\u5e02\u5212\u5206\u6536\u5165
+Revenue.ByLocation.ByProductFamily=\u6309\u5730\u70b9\u548c\u4ea7\u54c1\u7cfb\u5217\u5212\u5206\u6536\u5165
+Profit.ByLocation.ByProductFamily=\u6309\u5730\u70b9\u548c\u4ea7\u54c1\u7cfb\u5217\u5212\u5206\u5229\u6da6
+RowTotals=\u884c\u5408\u8ba1
+ColumnTotals=\u5217\u5408\u8ba1
+SubtotalState=\u5dde\u5c0f\u8ba1
+Subtotal=\u5c0f\u8ba1
+RevenueByStoreType=\u6309\u5e97\u94fa\u7c7b\u578b\u5212\u5206\u6536\u5165
+
+SalesGauges.ReportTitle=\u6536\u5165\u548c\u5229\u6da6
+SalesGauge.Tooltip.Revenue=\u6309\u4ea7\u54c1\u7c7b\u578b\u5206\u6790\u4e00\u6bb5\u65f6\u95f4\u7684\u6536\u5165
+SalesGauge.Tooltip.Profit=\u6309\u5730\u70b9\u548c\u4ea7\u54c1\u7c7b\u578b\u5206\u6790\u5229\u6da6
+
+MonthlySales.Title=\u6309\u5b63\u5ea6\u5212\u5206\u6bcf\u6708\u9500\u552e\u91cf
+MonthlySales.LowValue=\u4f4e\u4ef7\u503c
+MonthlySales.HighValue=\u9ad8\u4ef7\u503c
+ChangeView=\u9009\u62e9\u4e00\u4e2a\u5dde\u4ee5\u6539\u53d8\u62a5\u8868\u7684\u89c6\u56fe
+AllStates=\u6240\u6709\u5dde
+California=\u52a0\u5dde
+Oregon=\u4fc4\u52d2\u5188\u5dde
+Washington=\u534e\u76db\u987f\u5dde
+MonthlySales.Subtitle=\u5dde = {0}
+MonthlySales.Tooltip.AllStates=\u663e\u793a\u6240\u6709\u5dde\u7684\u6570\u636e
+MonthlySales.Tooltip.ShowState=\u663e\u793a {0} \u7684\u6570\u636e
+MonthlySales.Tooltip.Chart=\u5206\u6790 {0} \u7684\u6536\u5165\uff0c\u5dde = {1}
+MonthlySales.Tooltip.Table=\u5206\u6790\u5dde = {0} \u7684\u6536\u5165
+
+Drilldown.Tooltip=\u4e0b\u94bb\u5230 {0}
+
+Time.TimeId=\u65f6\u95f4 ID
+Customer.CustomerId=\u5ba2\u6237 ID
+Promotion.PromotionId=\u4fc3\u9500 ID
+Store.StoreId=\u5e97\u94fa ID
+Product.ProductId=\u4ea7\u54c1 ID
+
+StoreSales=\u5e97\u94fa\u9500\u552e\u91cf
+store_sales=\u9500\u552e\u91cf
+StoreCost=\u5e97\u94fa\u6210\u672c
+UnitSales=\u5355\u4f4d\u9500\u552e\u91cf
+unit_sales=\u5355\u4f4d\u9500\u552e\u91cf
+StoreCount=\u5e97\u94fa\u8ba1\u6570
+store_count=\u5e97\u94fa\u8ba1\u6570
+store_cost=\u5e97\u94fa\u6210\u672c
+
+Sales.Region=\u5730\u533a
+sales_region=\u5730\u533a
+sales_district=\u533a
+
+StoreType.ReportTitle=\u6309\u5e97\u94fa\u7c7b\u578b\u5212\u5206\u6536\u5165
+Store.StoreType=\u5e97\u94fa\u7c7b\u578b
+Store.RegionId=\u5730\u533a ID
+Store.StoreName=\u5e97\u94fa\u540d\u79f0
+Store.StoreNumber=\u5e97\u94fa\u7f16\u53f7
+Store.StreetAddress=\u5730\u5740
+Store.City=\u57ce\u5e02
+Store.State=\u72b6\u6001
+Store.PostalCode=\u90ae\u7f16
+Store.Country=\u56fd\u5bb6/\u5730\u533a
+Store.Phone=\u7535\u8bdd
+Store.Fax=\u4f20\u771f
+Store.FirstOpenedDate=\u5f00\u4e1a\u65e5\u671f
+Store.LastRemodelDate=\u6700\u540e\u6539\u5efa\u65e5\u671f
+Store.SQFT=\u5e73\u65b9\u82f1\u5c3a
+Store.GrocerySQFT=\u6742\u8d27\u5e97\u5e73\u65b9\u82f1\u5c3a
+Store.FrozenSQFT=\u51b7\u51bb\u5e73\u65b9\u82f1\u5c3a
+Store.MeatSQFT=\u8089\u7c7b\u5e73\u65b9\u82f1\u5c3a
+Store.CoffeeBar=\u5496\u5561\u5427
+Store.VideoStore=\u89c6\u9891\u5e97\u94fa
+Store.SaladBar=\u6c99\u62c9\u5427
+Store.PreparedFood=\u9884\u5236\u98df\u54c1
+Store.Florist=\u82b1\u5e97
+
+
+store_store_manager=\u5e97\u94fa\u7ecf\u7406
+store_store_type=\u5e97\u94fa\u7c7b\u578b
+store_region_id=\u5730\u533a ID
+store_store_name=\u5e97\u94fa\u540d\u79f0
+store_store_number=\u5e97\u94fa\u7f16\u53f7
+store_store_street_address=\u5730\u5740
+store_store_city=\u57ce\u5e02
+store_store_state=\u72b6\u6001
+store_store_postal_code=\u90ae\u7f16
+store_store_country=\u56fd\u5bb6/\u5730\u533a
+store_store_phone=\u7535\u8bdd
+store_store_fax=\u4f20\u771f
+store_first_opened_date=\u5f00\u4e1a\u65e5\u671f
+store_last_remodel_date=\u6700\u540e\u6539\u5efa\u65e5\u671f
+store_store_sqft=\u5e73\u65b9\u82f1\u5c3a
+store_grocery_sqft=\u6742\u8d27\u5e97\u5e73\u65b9\u82f1\u5c3a
+store_frozen_sqft=\u51b7\u51bb\u5e73\u65b9\u82f1\u5c3a
+store_meat_sqft=\u8089\u7c7b\u5e73\u65b9\u82f1\u5c3a
+store_coffee_bar=\u5496\u5561\u5427
+store_video_store=\u89c6\u9891\u5e97\u94fa
+store_salad_bar=\u6c99\u62c9\u5427
+store_prepared_food=\u9884\u5236\u98df\u54c1
+store_florist=\u82b1\u5e97
+store_store_id=\u5e97\u94fa ID
+
+Time.TheDate=\u65e5\u671f
+Time.TheDay=\u65e5
+Time.TheMonth=\u6708
+Time.TheYear=\u5e74
+Time.DayOfMonth=\u6708\u5929
+Time.WeekOfYear=\u5e74\u5468
+Time.MonthOfYear=\u5e74\u6708\u4efd
+Time.Quarter=\u5b63\u5ea6
+Time.FiscalPeriod=\u8d22\u52a1\u671f
+time_by_day_the_date=\u65e5\u671f
+time_by_day_the_day=\u65e5
+time_by_day_the_month=\u6708
+time_by_day_the_year=\u5e74
+time_by_day_week_of_year=\u5e74\u5468
+time_by_day_month_of_year=\u5e74\u6708\u4efd
+time_by_day_quarter=\u5b63\u5ea6
+
+
+Top5.Title=\u524d\u4e94\u9879
+Top5.CustomersTitle=\u5ba2\u6237
+Top5.ProductsTitle=\u4ea7\u54c1
+Top5.PromotionsTitle=\u4fc3\u9500
+Top5.Tooltip.DetailAllCustomers=\u6240\u6709\u5ba2\u6237\u7684\u68c0\u7d22\u660e\u7ec6 - \u957f\u62a5\u8868
+Top5.Tooltip.DetailAllProducts=\u6240\u6709\u4ea7\u54c1\u7684\u68c0\u7d22\u660e\u7ec6 - \u957f\u62a5\u8868
+Top5.Tooltip.DetailAllPromotions=\u6240\u6709\u4fc3\u9500\u7684\u68c0\u7d22\u660e\u7ec6 - \u957f\u62a5\u8868
+Top5.Tooltip.Detail={0} \u7684\u68c0\u7d22\u660e\u7ec6
+
+CityState={0}, {1}
+CustomerDetail.ReportTitle=SuperMart \u5ba2\u6237\u8be6\u7ec6\u8d44\u6599
+
+Customer.FullName=\u540d\u79f0
+customer_account_num=\u5e10\u53f7
+customer_fullname=\u540d\u79f0
+customer_lname=\u59d3\u6c0f
+customer_fname=\u540d\u5b57
+customer_mi=\u4e2d\u95f4\u540d\u9996\u5b57\u6bcd\u7f29\u5199
+customer_address1=\u5730\u5740 1
+customer_address2=\u5730\u5740 2
+customer_address3=\u5730\u5740 3
+customer_address4=\u5730\u5740 4
+customer_city=\u57ce\u5e02
+customer_state_province=\u72b6\u6001
+customer_postal_code=\u90ae\u7f16
+customer_country=\u56fd\u5bb6/\u5730\u533a
+customer_customer_region_id=\u5730\u533a ID
+customer_phone1=\u7535\u8bdd 1
+customer_phone2=\u7535\u8bdd 2
+customer_birthdate=\u51fa\u751f\u65e5\u671f
+customer_marital_status=\u5a5a\u59fb\u72b6\u51b5
+customer_yearly_income=\u5e74\u6536\u5165
+customer_gender=\u6027\u522b
+customer_total_children=\u5b69\u5b50\u603b\u4e2a\u6570
+customer_num_children_at_home=\u5728\u5bb6\u5b69\u5b50\u6570
+customer_education=\u6559\u80b2\u7a0b\u5ea6
+customer_date_accnt_opened=\u5e10\u6237\u5f00\u6237\u65e5\u671f
+customer_member_card=\u4f1a\u5458\u5361
+customer_occupation=\u804c\u4e1a
+customer_houseowner=\u623f\u4e3b
+customer_num_cars_owned=\u62e5\u6709\u8f66\u6570\u91cf
+
+
+Product.ReportTitle=SuperMart \u4ea7\u54c1\u660e\u7ec6
+product_product_name=\u4ea7\u54c1\u540d\u79f0
+product_brand_name=\u5546\u6807\u540d\u79f0
+product_SKU=SKU
+product_SRP=SRP
+product_gross_weight=\u6bdb\u91cd
+product_net_weight=\u51c0\u91cd
+product_recyclable_package=\u53ef\u56de\u6536\u5305\u88c5
+product_low_fat=\u4f4e\u8102
+product_units_per_case=\u6bcf\u7bb1\u5355\u4f4d\u6570
+product_cases_per_pallet=\u6bcf\u6258\u76d8\u7bb1\u6570
+product_shelf_Width=\u4ea7\u54c1\u8d27\u67b6\u5bbd\u5ea6
+product_shelf_Height=\u4ea7\u54c1\u8d27\u67b6\u9ad8\u5ea6
+product_class_product_subcategory=\u5b50\u7c7b\u522b
+product_class_product_category=\u7c7b\u522b
+product_class_product_department=\u90e8\u95e8
+product_class_product_family=\u4ea7\u54c1\u7cfb\u5217
+product_gross_weight=\u6bdb\u91cd
+product_net_weight=\u51c0\u91cd
+product_recyclable_package=\u53ef\u56de\u6536\u5305\u88c5
+product_low_fat=\u4f4e\u8102
+product_units_per_case=\u6bcf\u7bb1\u5355\u4f4d\u6570
+product_cases_per_pallet=\u6bcf\u6258\u76d8\u7bb1\u6570
+product_shelf_width=\u4ea7\u54c1\u8d27\u67b6\u5bbd\u5ea6
+product_shelf_height=\u4ea7\u54c1\u8d27\u67b6\u9ad8\u5ea6
+product_shelf_depth=\u4ea7\u54c1\u8d27\u67b6\u6df1\u5ea6
+product_product_id=\u4ea7\u54c1 ID
+
+Promotion.ReportTitle=\u4fc3\u9500\u660e\u7ec6
+promotion_promotion_name=\u4fc3\u9500\u540d\u79f0
+promotion_media_type=\u5a92\u4f53\u7c7b\u578b
+promotion_cost=\u6210\u672c
+promotion_start_date=\u5f00\u59cb\u65e5\u671f
+promotion_end_date=\u7ed3\u675f\u65e5\u671f
+promotion_promotion_district_id=\u533a ID
+promotion_promotion_id=\u4fc3\u9500 ID
+Promotion.Name=\u4fc3\u9500
+Promotion.MediaType=\u5a92\u4f53
+
+# Strings for input controls
+net.sf.jasperreports.prompt.label.productFamily=\u4ea7\u54c1\u7cfb\u5217
+net.sf.jasperreports.prompt.label.districtID=\u533a
+net.sf.jasperreports.prompt.label.promotionSalesMinThreshold=\u552f\u5176\u4ea7\u54c1\u6210\u672c\u8d85\u51fa\u4ee5\u4e0b
+net.sf.jasperreports.prompt.label.promotionName=\u4fc3\u9500\u540d\u79f0
+net.sf.jasperreports.prompt.label.customerState=\u72b6\u6001

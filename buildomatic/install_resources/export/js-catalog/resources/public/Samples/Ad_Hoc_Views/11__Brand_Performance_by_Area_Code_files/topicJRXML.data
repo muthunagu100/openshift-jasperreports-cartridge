@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="adhocReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30" resourceBundle="supermart_domain" uuid="8f2394db-18d3-4bb3-b061-f8993e39453f">
+	<property name="adhoc.metadata.version" value="45"/>
+	<property name="adhoc.topic.escape.variable.chars"/>
+	<parameter name="sales__product__low_fat_1" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[new java.lang.Boolean("true")]]></defaultValueExpression>
+	</parameter>
+	<parameter name="sales__product__recyclable_package_1" class="java.lang.Boolean">
+		<defaultValueExpression><![CDATA[new java.lang.Boolean("false")]]></defaultValueExpression>
+	</parameter>
+	<parameter name="StoreAreaCode_1" class="java.util.Collection" nestedType="java.lang.String">
+		<defaultValueExpression><![CDATA[java.util.Arrays.asList(new Object[]{"CA-111","DF-493","WA-170","WA-881"})]]></defaultValueExpression>
+	</parameter>
+	<queryString language="domain">
+		<![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<query xmlns="http://www.jaspersoft.com/2007/SL/XMLSchema">
+  <queryFields>
+    <queryField id="sales_fact_ALL.sales__product.sales__product__brand_name" />
+    <queryField id="sales_fact_ALL.sales__product.sales__product__product_name" />
+    <queryField id="sales_fact_ALL.sales__product.sales__product__SKU" />
+    <queryField id="sales_fact_ALL.sales__product.sales__product__SRP" />
+    <queryField id="sales_fact_ALL.sales__product.sales__product__gross_weight" />
+    <queryField id="sales_fact_ALL.sales__product.sales__product__net_weight" />
+    <queryField id="sales_fact_ALL.sales__product.sales__product__recyclable_package" />
+    <queryField id="sales_fact_ALL.sales__product.sales__product__low_fat" />
+    <queryField id="sales_fact_ALL.sales__product.sales__product__units_per_case" />
+    <queryField id="sales_fact_ALL.sales__product.sales__product__cases_per_pallet" />
+    <queryField id="sales_fact_ALL.sales__product.sales__product__shelf_width" />
+    <queryField id="sales_fact_ALL.sales__product.sales__product__shelf_height" />
+    <queryField id="sales_fact_ALL.sales__product.sales__product__shelf_depth" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_number" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_street_address" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_city" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_state" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_postal_code" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_country" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_manager" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_phone" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_fax" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_city" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_state_province" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_district" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_region" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_country" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__first_opened_date" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__last_remodel_date" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__store_sqft" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__grocery_sqft" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__frozen_sqft" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__meat_sqft" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__coffee_bar" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__video_store" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__salad_bar" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__prepared_food" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__florist" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__store_type" />
+    <queryField id="sales_fact_ALL.sales__store.sales__store__store_name" />
+    <queryField id="sales_fact_ALL.sales_fact_ALL__store_sales_2013" />
+    <queryField id="sales_fact_ALL.sales_fact_ALL__store_cost_2013" />
+    <queryField id="sales_fact_ALL.sales_fact_ALL__unit_sales_2013" />
+  </queryFields>
+</query>]]>
+	</queryString>
+	<field name="sales_fact_ALL.sales_fact_ALL__store_sales_2013" class="java.math.BigDecimal">
+		<property name="semantic.tree.sort.order" value="{&quot;sales__store__store_contact__store_postal_code&quot;:27,&quot;sales__store__store_features__coffee_bar&quot;:45,&quot;sales__product__shelf_width&quot;:16,&quot;sales__store__store_contact__store_street_address&quot;:24,&quot;sales_fact_ALL&quot;:1,&quot;sales__store__region__sales_state_province&quot;:34,&quot;sales__product__recyclable_package&quot;:12,&quot;sales__store__store_features__florist&quot;:49,&quot;sales__store__region__sales_region&quot;:36,&quot;sales__store__store_features&quot;:38,&quot;sales__store__store_features__last_remodel_date&quot;:40,&quot;sales__store__store_features__frozen_sqft&quot;:43,&quot;sales__product__SKU&quot;:8,&quot;sales_fact_ALL__store_cost_2013&quot;:3,&quot;sales__product__SRP&quot;:9,&quot;sales__product__low_fat&quot;:13,&quot;sales__store__store_name&quot;:21,&quot;sales__store__region__sales_country&quot;:37,&quot;sales__product__net_weight&quot;:11,&quot;sales_fact_ALL__unit_sales_2013&quot;:4,&quot;sales__store__store_type&quot;:20,&quot;sales_fact_ALL__store_sales_2013&quot;:2,&quot;sales__product__gross_weight&quot;:10,&quot;sales__store__region__sales_district&quot;:35,&quot;sales__product&quot;:5,&quot;sales__product__brand_name&quot;:6,&quot;sales__product__product_name&quot;:7,&quot;sales__store__store_features__meat_sqft&quot;:44,&quot;sales__product__cases_per_pallet&quot;:15,&quot;sales__store__store_contact__store_manager&quot;:29,&quot;sales__store__store_contact__store_country&quot;:28,&quot;sales__store&quot;:19,&quot;sales__store__store_features__salad_bar&quot;:47,&quot;sales__store__store_contact__store_state&quot;:26,&quot;sales__store__region&quot;:32,&quot;sales__store__store_features__store_sqft&quot;:41,&quot;sales__store__store_features__first_opened_date&quot;:39,&quot;sales__store__store_contact__store_phone&quot;:30,&quot;sales__store__region__sales_city&quot;:33,&quot;sales__product__shelf_height&quot;:17,&quot;sales__store__store_contact__store_number&quot;:23,&quot;sales__store__store_contact__store_city&quot;:25,&quot;sales__store__store_features__grocery_sqft&quot;:42,&quot;sales__store__store_features__video_store&quot;:46,&quot;sales__product__shelf_depth&quot;:18,&quot;sales__store__store_contact&quot;:22,&quot;sales__store__store_contact__store_fax&quot;:31,&quot;sales__product__units_per_case&quot;:14,&quot;sales__store__store_features__prepared_food&quot;:48}"/>
+		<property name="defaultAgg" value="Sum"/>
+		<property name="aggregateType" value="java.math.BigDecimal"/>
+		<property name="adhoc.display" value="$R{supermart.sales_fact_2013.store_sales.label}"/>
+		<property name="defaultMask" value="#,##0.00"/>
+		<property name="adhoc.tree.labels" value="[{&quot;resourceId&quot;:&quot;sales_join&quot;,&quot;label&quot;:&quot;Sales&quot;,&quot;uri&quot;:&quot;/sales_fact_ALL&quot;,&quot;labelId&quot;:&quot;supermart.sales_fact_ALL.label&quot;},{&quot;resourceId&quot;:&quot;sales_join&quot;,&quot;label&quot;:&quot;Products&quot;,&quot;uri&quot;:&quot;/sales_fact_ALL/sales__product&quot;,&quot;labelId&quot;:&quot;supermart.product.label&quot;},{&quot;resourceId&quot;:&quot;sales_join&quot;,&quot;label&quot;:&quot;Stores&quot;,&quot;uri&quot;:&quot;/sales_fact_ALL/sales__store&quot;,&quot;labelId&quot;:&quot;supermart.store.label&quot;},{&quot;resourceId&quot;:&quot;sales_join&quot;,&quot;label&quot;:&quot;Store Contact&quot;,&quot;uri&quot;:&quot;/sales_fact_ALL/sales__store/sales__store__store_contact&quot;,&quot;labelId&quot;:&quot;supermart.store_contact.label&quot;},{&quot;resourceId&quot;:&quot;sales_join&quot;,&quot;label&quot;:&quot;Regions&quot;,&quot;uri&quot;:&quot;/sales_fact_ALL/sales__store/sales__store__region&quot;,&quot;labelId&quot;:&quot;supermart.region.label&quot;},{&quot;resourceId&quot;:&quot;sales_join&quot;,&quot;label&quot;:&quot;Store Features&quot;,&quot;uri&quot;:&quot;/sales_fact_ALL/sales__store/sales__store__store_features&quot;,&quot;labelId&quot;:&quot;supermart.store_features.label&quot;}]"/>
+		<property name="slIsTableAsList" value="false"/>
+		<property name="kind" value="MEASURE"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales_fact_ALL__store_sales_2013"/>
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales_fact_ALL__store_sales_2013"/>
+		<property name="aggregateExpression" value="Sum(sales_fact_ALL.sales_fact_ALL__store_sales_2013)"/>
+		<property name="dimensionOrMeasure" value="Measure"/>
+		<property name="resourceId" value="sales_join.sales_fact_1998_1.store_sales"/>
+		<property name="semantic.item.desc.id" value="supermart.sales_fact_2013.store_sales.description"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales_fact_ALL__store_sales_2013]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales_fact_ALL__store_cost_2013" class="java.math.BigDecimal">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales_fact_ALL__store_cost_2013"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales_fact_ALL__store_cost_2013"/>
+		<property name="aggregateExpression" value="Sum(sales_fact_ALL.sales_fact_ALL__store_cost_2013)"/>
+		<property name="dimensionOrMeasure" value="Measure"/>
+		<property name="semantic.tree.sort.order" value="1"/>
+		<property name="resourceId" value="sales_join.sales_fact_1998_1.store_cost"/>
+		<property name="semantic.item.desc.id" value="supermart.sales_fact_2013.store_cost.description"/>
+		<property name="defaultAgg" value="Sum"/>
+		<property name="aggregateType" value="java.math.BigDecimal"/>
+		<property name="adhoc.display" value="$R{supermart.sales_fact_2013.store_cost.label}"/>
+		<property name="defaultMask" value="#,##0.00"/>
+		<property name="kind" value="MEASURE"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales_fact_ALL__store_cost_2013]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales_fact_ALL__unit_sales_2013" class="java.math.BigDecimal">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales_fact_ALL__unit_sales_2013"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales_fact_ALL__unit_sales_2013"/>
+		<property name="aggregateExpression" value="Sum(sales_fact_ALL.sales_fact_ALL__unit_sales_2013)"/>
+		<property name="dimensionOrMeasure" value="Measure"/>
+		<property name="semantic.tree.sort.order" value="2"/>
+		<property name="resourceId" value="sales_join.sales_fact_1998_1.unit_sales"/>
+		<property name="semantic.item.desc.id" value="supermart.sales_fact_2013.unit_sales.description"/>
+		<property name="defaultAgg" value="Sum"/>
+		<property name="aggregateType" value="java.math.BigDecimal"/>
+		<property name="adhoc.display" value="$R{supermart.sales_fact_2013.unit_sales.label}"/>
+		<property name="defaultMask" value="#,##0.00"/>
+		<property name="kind" value="MEASURE"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales_fact_ALL__unit_sales_2013]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__product.sales__product__brand_name" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__product/sales__product__brand_name"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__product/sales__product__brand_name"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="semantic.tree.sort.order" value="0"/>
+		<property name="resourceId" value="sales_join.product1.brand_name"/>
+		<property name="semantic.item.desc.id" value="supermart.product.brand_name.description"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.product.brand_name.label}"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__product.sales__product__brand_name]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__product.sales__product__product_name" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__product/sales__product__product_name"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__product/sales__product__product_name"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="semantic.tree.sort.order" value="1"/>
+		<property name="resourceId" value="sales_join.product1.product_name"/>
+		<property name="semantic.item.desc.id" value="supermart.product.product_name.description"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.product.product_name.label}"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__product.sales__product__product_name]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__product.sales__product__SKU" class="java.lang.Long">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__product/sales__product__SKU"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__product/sales__product__SKU"/>
+		<property name="aggregateExpression" value="Sum(sales_fact_ALL.sales__product.sales__product__SKU)"/>
+		<property name="semantic.tree.sort.order" value="2"/>
+		<property name="resourceId" value="sales_join.product1.sku"/>
+		<property name="semantic.item.desc.id" value="supermart.product.SKU.description"/>
+		<property name="defaultAgg" value="Sum"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.product.SKU.label}"/>
+		<property name="defaultMask" value="#,##0"/>
+		<property name="kind" value="MEASURE"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__product.sales__product__SKU]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__product.sales__product__SRP" class="java.math.BigDecimal">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__product/sales__product__SRP"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__product/sales__product__SRP"/>
+		<property name="aggregateExpression" value="Sum(sales_fact_ALL.sales__product.sales__product__SRP)"/>
+		<property name="semantic.tree.sort.order" value="3"/>
+		<property name="resourceId" value="sales_join.product1.srp"/>
+		<property name="semantic.item.desc.id" value="supermart.product.SRP.description"/>
+		<property name="defaultAgg" value="Sum"/>
+		<property name="aggregateType" value="java.math.BigDecimal"/>
+		<property name="adhoc.display" value="$R{supermart.product.SRP.label}"/>
+		<property name="defaultMask" value="#,##0.00"/>
+		<property name="kind" value="MEASURE"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__product.sales__product__SRP]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__product.sales__product__gross_weight" class="java.lang.Double">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__product/sales__product__gross_weight"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__product/sales__product__gross_weight"/>
+		<property name="aggregateExpression" value="Sum(sales_fact_ALL.sales__product.sales__product__gross_weight)"/>
+		<property name="semantic.tree.sort.order" value="4"/>
+		<property name="resourceId" value="sales_join.product1.gross_weight"/>
+		<property name="semantic.item.desc.id" value="supermart.product.gross_weight.description"/>
+		<property name="defaultAgg" value="Sum"/>
+		<property name="aggregateType" value="java.lang.Double"/>
+		<property name="adhoc.display" value="$R{supermart.product.gross_weight.label}"/>
+		<property name="defaultMask" value="#,##0.00"/>
+		<property name="kind" value="MEASURE"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__product.sales__product__gross_weight]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__product.sales__product__net_weight" class="java.lang.Double">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__product/sales__product__net_weight"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__product/sales__product__net_weight"/>
+		<property name="aggregateExpression" value="Sum(sales_fact_ALL.sales__product.sales__product__net_weight)"/>
+		<property name="semantic.tree.sort.order" value="5"/>
+		<property name="resourceId" value="sales_join.product1.net_weight"/>
+		<property name="semantic.item.desc.id" value="supermart.product.net_weight.description"/>
+		<property name="defaultAgg" value="Sum"/>
+		<property name="aggregateType" value="java.lang.Double"/>
+		<property name="adhoc.display" value="$R{supermart.product.net_weight.label}"/>
+		<property name="defaultMask" value="#,##0.00"/>
+		<property name="kind" value="MEASURE"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__product.sales__product__net_weight]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__product.sales__product__recyclable_package" class="java.lang.Boolean">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__product/sales__product__recyclable_package"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__product/sales__product__recyclable_package"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="semantic.tree.sort.order" value="6"/>
+		<property name="resourceId" value="sales_join.product1.recyclable_package"/>
+		<property name="semantic.item.desc.id" value="supermart.product.recyclable_package.description"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.product.recyclable_package.label}"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__product.sales__product__recyclable_package]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__product.sales__product__low_fat" class="java.lang.Boolean">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__product/sales__product__low_fat"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__product/sales__product__low_fat"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="semantic.tree.sort.order" value="7"/>
+		<property name="resourceId" value="sales_join.product1.low_fat"/>
+		<property name="semantic.item.desc.id" value="supermart.product.low_fat.description"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.product.low_fat.label}"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__product.sales__product__low_fat]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__product.sales__product__units_per_case" class="java.lang.Short">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__product/sales__product__units_per_case"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__product/sales__product__units_per_case"/>
+		<property name="aggregateExpression" value="Sum(sales_fact_ALL.sales__product.sales__product__units_per_case)"/>
+		<property name="semantic.tree.sort.order" value="8"/>
+		<property name="resourceId" value="sales_join.product1.units_per_case"/>
+		<property name="semantic.item.desc.id" value="supermart.product.units_per_case.description"/>
+		<property name="defaultAgg" value="Sum"/>
+		<property name="aggregateType" value="java.lang.Integer"/>
+		<property name="adhoc.display" value="$R{supermart.product.units_per_case.label}"/>
+		<property name="defaultMask" value="#,##0"/>
+		<property name="kind" value="MEASURE"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__product.sales__product__units_per_case]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__product.sales__product__cases_per_pallet" class="java.lang.Short">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__product/sales__product__cases_per_pallet"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__product/sales__product__cases_per_pallet"/>
+		<property name="aggregateExpression" value="Sum(sales_fact_ALL.sales__product.sales__product__cases_per_pallet)"/>
+		<property name="semantic.tree.sort.order" value="9"/>
+		<property name="resourceId" value="sales_join.product1.cases_per_pallet"/>
+		<property name="semantic.item.desc.id" value="supermart.product.cases_per_pallet.description"/>
+		<property name="defaultAgg" value="Sum"/>
+		<property name="aggregateType" value="java.lang.Integer"/>
+		<property name="adhoc.display" value="$R{supermart.product.cases_per_pallet.label}"/>
+		<property name="defaultMask" value="#,##0"/>
+		<property name="kind" value="MEASURE"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__product.sales__product__cases_per_pallet]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__product.sales__product__shelf_width" class="java.lang.Double">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__product/sales__product__shelf_width"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__product/sales__product__shelf_width"/>
+		<property name="aggregateExpression" value="Sum(sales_fact_ALL.sales__product.sales__product__shelf_width)"/>
+		<property name="semantic.tree.sort.order" value="10"/>
+		<property name="resourceId" value="sales_join.product1.shelf_width"/>
+		<property name="semantic.item.desc.id" value="supermart.product.shelf_width.description"/>
+		<property name="defaultAgg" value="Sum"/>
+		<property name="aggregateType" value="java.lang.Double"/>
+		<property name="adhoc.display" value="$R{supermart.product.shelf_width.label}"/>
+		<property name="defaultMask" value="#,##0.00"/>
+		<property name="kind" value="MEASURE"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__product.sales__product__shelf_width]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__product.sales__product__shelf_height" class="java.lang.Double">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__product/sales__product__shelf_height"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__product/sales__product__shelf_height"/>
+		<property name="aggregateExpression" value="Sum(sales_fact_ALL.sales__product.sales__product__shelf_height)"/>
+		<property name="semantic.tree.sort.order" value="11"/>
+		<property name="resourceId" value="sales_join.product1.shelf_height"/>
+		<property name="semantic.item.desc.id" value="supermart.product.shelf_height.description"/>
+		<property name="defaultAgg" value="Sum"/>
+		<property name="aggregateType" value="java.lang.Double"/>
+		<property name="adhoc.display" value="$R{supermart.product.shelf_height.label}"/>
+		<property name="defaultMask" value="#,##0.00"/>
+		<property name="kind" value="MEASURE"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__product.sales__product__shelf_height]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__product.sales__product__shelf_depth" class="java.lang.Double">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__product/sales__product__shelf_depth"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__product/sales__product__shelf_depth"/>
+		<property name="aggregateExpression" value="Sum(sales_fact_ALL.sales__product.sales__product__shelf_depth)"/>
+		<property name="semantic.tree.sort.order" value="12"/>
+		<property name="resourceId" value="sales_join.product1.shelf_depth"/>
+		<property name="semantic.item.desc.id" value="supermart.product.shelf_depth.description"/>
+		<property name="defaultAgg" value="Sum"/>
+		<property name="aggregateType" value="java.lang.Double"/>
+		<property name="adhoc.display" value="$R{supermart.product.shelf_depth.label}"/>
+		<property name="defaultMask" value="#,##0.00"/>
+		<property name="kind" value="MEASURE"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__product.sales__product__shelf_depth]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__store_type" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_type"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_type"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="semantic.tree.sort.order" value="0"/>
+		<property name="resourceId" value="sales_join.store1.store_type"/>
+		<property name="semantic.item.desc.id" value="supermart.store.store_type.description"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.store.store_type.label}"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__store_type]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__store_name" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_name"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_name"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="semantic.tree.sort.order" value="1"/>
+		<property name="resourceId" value="sales_join.store1.store_name"/>
+		<property name="semantic.item.desc.id" value="supermart.store.store_name.description"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.store.store_name.label}"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__store_name]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_number" class="java.lang.Integer">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_contact/sales__store__store_contact__store_number"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_contact/sales__store__store_contact__store_number"/>
+		<property name="aggregateExpression" value="Sum(sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_number)"/>
+		<property name="semantic.tree.sort.order" value="0"/>
+		<property name="resourceId" value="sales_join.store1.store_number"/>
+		<property name="semantic.item.desc.id" value="supermart.store.store_number.description"/>
+		<property name="defaultAgg" value="Sum"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.store.store_number.description}"/>
+		<property name="defaultMask" value="#,##0"/>
+		<property name="kind" value="MEASURE"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_number]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_street_address" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_contact/sales__store__store_contact__store_street_address"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_contact/sales__store__store_contact__store_street_address"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="semantic.tree.sort.order" value="1"/>
+		<property name="resourceId" value="sales_join.store1.store_street_address"/>
+		<property name="semantic.item.desc.id" value="supermart.store.store_street_address.description"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.store.store_street_address.label}"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_street_address]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_city" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_contact/sales__store__store_contact__store_city"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_contact/sales__store__store_contact__store_city"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="semantic.tree.sort.order" value="2"/>
+		<property name="resourceId" value="sales_join.store1.store_city"/>
+		<property name="semantic.item.desc.id" value="supermart.store.store_city.description"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.store.store_city.label}"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_city]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_state" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_contact/sales__store__store_contact__store_state"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_contact/sales__store__store_contact__store_state"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="semantic.tree.sort.order" value="3"/>
+		<property name="resourceId" value="sales_join.store1.store_state"/>
+		<property name="semantic.item.desc.id" value="supermart.store.store_state.description"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.store.store_state.label}"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_state]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_postal_code" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_contact/sales__store__store_contact__store_postal_code"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_contact/sales__store__store_contact__store_postal_code"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="semantic.tree.sort.order" value="4"/>
+		<property name="resourceId" value="sales_join.store1.store_postal_code"/>
+		<property name="semantic.item.desc.id" value="supermart.store.store_postal_code.description"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.store.store_postal_code.label}"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_postal_code]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_country" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_contact/sales__store__store_contact__store_country"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_contact/sales__store__store_contact__store_country"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="semantic.tree.sort.order" value="5"/>
+		<property name="resourceId" value="sales_join.store1.store_country"/>
+		<property name="semantic.item.desc.id" value="supermart.store.store_country.description"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.store.store_country.label}"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_country]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_manager" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_contact/sales__store__store_contact__store_manager"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_contact/sales__store__store_contact__store_manager"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="semantic.tree.sort.order" value="6"/>
+		<property name="resourceId" value="sales_join.store1.store_manager"/>
+		<property name="semantic.item.desc.id" value="supermart.store.store_manager.description"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.store.store_manager.label}"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_manager]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_phone" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_contact/sales__store__store_contact__store_phone"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_contact/sales__store__store_contact__store_phone"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="semantic.tree.sort.order" value="7"/>
+		<property name="resourceId" value="sales_join.store1.store_phone"/>
+		<property name="semantic.item.desc.id" value="supermart.store.store_phone.description"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.store.store_phone.label}"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_phone]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_fax" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_contact/sales__store__store_contact__store_fax"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_contact/sales__store__store_contact__store_fax"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="semantic.tree.sort.order" value="8"/>
+		<property name="resourceId" value="sales_join.store1.store_fax"/>
+		<property name="semantic.item.desc.id" value="supermart.store.store_fax.description"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.store.store_fax.label}"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_fax]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_city" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__region/sales__store__region__sales_city"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__region/sales__store__region__sales_city"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="semantic.tree.sort.order" value="0"/>
+		<property name="resourceId" value="sales_join.region11.sales_city"/>
+		<property name="semantic.item.desc.id" value="supermart.region.sales_city.description"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.region.sales_city.label}"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_city]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_state_province" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__region/sales__store__region__sales_state_province"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__region/sales__store__region__sales_state_province"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="semantic.tree.sort.order" value="1"/>
+		<property name="resourceId" value="sales_join.region11.sales_state_province"/>
+		<property name="semantic.item.desc.id" value="supermart.region.sales_state_province.description"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.region.sales_state_province.label}"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_state_province]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_district" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__region/sales__store__region__sales_district"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__region/sales__store__region__sales_district"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="semantic.tree.sort.order" value="2"/>
+		<property name="resourceId" value="sales_join.region11.sales_district"/>
+		<property name="semantic.item.desc.id" value="supermart.region.sales_district.description"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.region.sales_district.label}"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_district]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_region" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__region/sales__store__region__sales_region"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__region/sales__store__region__sales_region"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="semantic.tree.sort.order" value="3"/>
+		<property name="resourceId" value="sales_join.region11.sales_region"/>
+		<property name="semantic.item.desc.id" value="supermart.region.sales_region.description"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.region.sales_region.label}"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_region]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_country" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__region/sales__store__region__sales_country"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__region/sales__store__region__sales_country"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="semantic.tree.sort.order" value="4"/>
+		<property name="resourceId" value="sales_join.region11.sales_country"/>
+		<property name="semantic.item.desc.id" value="supermart.region.sales_country.description"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.region.sales_country.label}"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_country]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__first_opened_date" class="java.sql.Timestamp">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_features/sales__store__store_features__first_opened_date"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_features/sales__store__store_features__first_opened_date"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="semantic.tree.sort.order" value="0"/>
+		<property name="resourceId" value="sales_join.store1.first_opened_date"/>
+		<property name="semantic.item.desc.id" value="supermart.store.first_opened_date.description"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.store.first_opened_date.label}"/>
+		<property name="defaultMask" value="medium,hide"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__first_opened_date]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__last_remodel_date" class="java.sql.Timestamp">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_features/sales__store__store_features__last_remodel_date"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_features/sales__store__store_features__last_remodel_date"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="semantic.tree.sort.order" value="1"/>
+		<property name="resourceId" value="sales_join.store1.last_remodel_date"/>
+		<property name="semantic.item.desc.id" value="supermart.store.last_remodel_date.description"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.store.last_remodel_date.label}"/>
+		<property name="defaultMask" value="medium,hide"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__last_remodel_date]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__store_sqft" class="java.lang.Integer">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_features/sales__store__store_features__store_sqft"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_features/sales__store__store_features__store_sqft"/>
+		<property name="aggregateExpression" value="Sum(sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__store_sqft)"/>
+		<property name="semantic.tree.sort.order" value="2"/>
+		<property name="resourceId" value="sales_join.store1.store_sqft"/>
+		<property name="semantic.item.desc.id" value="supermart.store.store_sqft.description"/>
+		<property name="defaultAgg" value="Sum"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.store.store_sqft.label}"/>
+		<property name="defaultMask" value="#,##0"/>
+		<property name="kind" value="MEASURE"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__store_sqft]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__grocery_sqft" class="java.lang.Integer">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_features/sales__store__store_features__grocery_sqft"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_features/sales__store__store_features__grocery_sqft"/>
+		<property name="aggregateExpression" value="Sum(sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__grocery_sqft)"/>
+		<property name="semantic.tree.sort.order" value="3"/>
+		<property name="resourceId" value="sales_join.store1.grocery_sqft"/>
+		<property name="semantic.item.desc.id" value="supermart.store.grocery_sqft.description"/>
+		<property name="defaultAgg" value="Sum"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.store.grocery_sqft.label}"/>
+		<property name="defaultMask" value="#,##0"/>
+		<property name="kind" value="MEASURE"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__grocery_sqft]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__frozen_sqft" class="java.lang.Integer">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_features/sales__store__store_features__frozen_sqft"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_features/sales__store__store_features__frozen_sqft"/>
+		<property name="aggregateExpression" value="Sum(sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__frozen_sqft)"/>
+		<property name="semantic.tree.sort.order" value="4"/>
+		<property name="resourceId" value="sales_join.store1.frozen_sqft"/>
+		<property name="semantic.item.desc.id" value="supermart.store.frozen_sqft.description"/>
+		<property name="defaultAgg" value="Sum"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.store.frozen_sqft.label}"/>
+		<property name="defaultMask" value="#,##0"/>
+		<property name="kind" value="MEASURE"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__frozen_sqft]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__meat_sqft" class="java.lang.Integer">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_features/sales__store__store_features__meat_sqft"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_features/sales__store__store_features__meat_sqft"/>
+		<property name="aggregateExpression" value="Sum(sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__meat_sqft)"/>
+		<property name="semantic.tree.sort.order" value="5"/>
+		<property name="resourceId" value="sales_join.store1.meat_sqft"/>
+		<property name="semantic.item.desc.id" value="supermart.store.meat_sqft.description"/>
+		<property name="defaultAgg" value="Sum"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.store.meat_sqft.label}"/>
+		<property name="defaultMask" value="#,##0"/>
+		<property name="kind" value="MEASURE"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__meat_sqft]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__coffee_bar" class="java.lang.Boolean">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_features/sales__store__store_features__coffee_bar"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_features/sales__store__store_features__coffee_bar"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="semantic.tree.sort.order" value="6"/>
+		<property name="resourceId" value="sales_join.store1.coffee_bar"/>
+		<property name="semantic.item.desc.id" value="supermart.store.coffee_bar.description"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.store.coffee_bar.label}"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__coffee_bar]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__video_store" class="java.lang.Boolean">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_features/sales__store__store_features__video_store"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_features/sales__store__store_features__video_store"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="semantic.tree.sort.order" value="7"/>
+		<property name="resourceId" value="sales_join.store1.video_store"/>
+		<property name="semantic.item.desc.id" value="supermart.store.video_store.description"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.store.video_store.label}"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__video_store]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__salad_bar" class="java.lang.Boolean">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_features/sales__store__store_features__salad_bar"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_features/sales__store__store_features__salad_bar"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="semantic.tree.sort.order" value="8"/>
+		<property name="resourceId" value="sales_join.store1.salad_bar"/>
+		<property name="semantic.item.desc.id" value="supermart.store.salad_bar.description"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.store.salad_bar.label}"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__salad_bar]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__prepared_food" class="java.lang.Boolean">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_features/sales__store__store_features__prepared_food"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_features/sales__store__store_features__prepared_food"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="semantic.tree.sort.order" value="9"/>
+		<property name="resourceId" value="sales_join.store1.prepared_food"/>
+		<property name="semantic.item.desc.id" value="supermart.store.prepared_food.description"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.store.prepared_food.label}"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__prepared_food]]></fieldDescription>
+	</field>
+	<field name="sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__florist" class="java.lang.Boolean">
+		<property name="semantic.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_features/sales__store__store_features__florist"/>
+		<property name="adhoc.tree.uri" value="/sales_fact_ALL/sales__store/sales__store__store_features/sales__store__store_features__florist"/>
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="semantic.tree.sort.order" value="10"/>
+		<property name="resourceId" value="sales_join.store1.florist"/>
+		<property name="semantic.item.desc.id" value="supermart.store.florist.description"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.display" value="$R{supermart.store.florist.label}"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__florist]]></fieldDescription>
+	</field>
+	<field name="StoreAreaCode" class="java.lang.String">
+		<property name="aggregateExpression" value="CountAll()"/>
+		<property name="aggregate" value="false"/>
+		<property name="defaultAgg" value="CountAll"/>
+		<property name="aggregateType" value="java.lang.Long"/>
+		<property name="adhoc.expression" value="Concatenate(sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_state_province, &apos;-&apos;, Mid(sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_phone, 1, 3))"/>
+		<property name="adhoc.display" value="State-Area Code"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[StoreAreaCode]]></fieldDescription>
+	</field>
+	<field name="$SquareFoot" class="java.math.BigDecimal">
+		<property name="aggregateExpression" value="Sum((sales_fact_ALL.sales_fact_ALL__store_sales_2013 / sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__store_sqft) * 10000)"/>
+		<property name="aggregate" value="false"/>
+		<property name="defaultAgg" value="Sum"/>
+		<property name="aggregateType" value="java.math.BigDecimal"/>
+		<property name="adhoc.expression" value="(sales_fact_ALL.sales_fact_ALL__store_sales_2013 / sales_fact_ALL.sales__store.sales__store__store_features.sales__store__store_features__store_sqft) * 10000"/>
+		<property name="adhoc.display" value="$/Square Foot"/>
+		<property name="defaultMask" value="#,##0.00"/>
+		<property name="kind" value="MEASURE"/>
+		<fieldDescription><![CDATA[$SquareFoot]]></fieldDescription>
+	</field>
+</jasperReport>

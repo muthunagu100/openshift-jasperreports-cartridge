@@ -1,0 +1,1 @@
+define(["require","home/util/standardTypeExtensions","underscore"],function(e){e("home/util/standardTypeExtensions");var t=e("underscore");return function(e){var n=function(){e.apply(this,arguments)};return n.prototype=Object.create(e.prototype),n.prototype.constructor=n,{extend:function(e){return t.extend(n.prototype,e),n}}}});

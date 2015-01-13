@@ -1,0 +1,1 @@
+define(["require","./TreePlugin","common/component/tooltip/Tooltip"],function(t){var o=t("./TreePlugin"),e=t("common/component/tooltip/Tooltip");return o.extend({initialize:function(){e.attachTo(this.$el),o.prototype.initialize.apply(this,arguments)},remove:function(){e.detachFrom(this.$el),o.prototype.remove.apply(this,arguments)}})});

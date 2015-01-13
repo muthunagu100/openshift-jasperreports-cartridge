@@ -1,0 +1,1 @@
+define(["require","backbone","underscore","../../model/filterManager/WiringConsumerViewModel"],function(e){var i=e("backbone"),n=e("underscore"),r=e("../../model/filterManager/WiringConsumerViewModel");return i.Collection.extend({model:r,isValid:function(e){return n.every(this.invoke("isValid",e),n.identity)}})});

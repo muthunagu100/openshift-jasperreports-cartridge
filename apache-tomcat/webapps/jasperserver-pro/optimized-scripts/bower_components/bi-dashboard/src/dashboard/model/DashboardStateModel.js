@@ -1,0 +1,1 @@
+define(["require","backbone"],function(e){var t=e("backbone");return t.Model.extend({defaults:{timestamp:void 0,state:void 0},initialize:function(e,t){t||(t={}),this.set("timestamp",(new Date).getTime()),this.dashboardModel=t.dashboardModel},applyState:function(){this.dashboardModel.applyJsonState(this.get("state"))}})});

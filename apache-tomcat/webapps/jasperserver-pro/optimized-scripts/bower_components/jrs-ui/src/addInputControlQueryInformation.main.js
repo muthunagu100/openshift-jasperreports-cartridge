@@ -1,0 +1,1 @@
+define(["require","!domReady","addinputcontrol.queryextra"],function(e){var i=e("!domReady"),n=e("addinputcontrol.queryextra");i(function(){n.initialize(),n.allowSubmit()})});

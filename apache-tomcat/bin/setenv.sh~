@@ -1,0 +1,7 @@
+JAVA_HOME=/home/vasanth/jasperreports-server-6.0.1/java
+JRE_HOME=/home/vasanth/jasperreports-server-6.0.1/java
+JAVA_OPTS="$JAVA_OPTS "
+export JAVA_HOME
+export JRE_HOME
+export JAVA_OPTS
+			    

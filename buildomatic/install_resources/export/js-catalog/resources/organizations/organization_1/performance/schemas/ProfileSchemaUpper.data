@@ -1,0 +1,59 @@
+<Schema name="JasperIntelligence Profiling">
+
+  <Cube name="ProfilingCube">
+    <Table name="PROFILINGRECORD"/>
+
+    <!-- TODO: user dimension -->
+    <!-- TODO: role-user dimension -->
+    
+    <!-- TODO: hours, minutes, seconds -->
+    <Dimension name="Time" type="TimeDimension">
+      <Hierarchy hasAll="true" primaryKey="ID">
+	<Level name="Year" column="BEGIN_YEAR" type="Numeric" uniqueMembers="false"
+               levelType="TimeYears"/>
+	<Level name="Month" column="BEGIN_MONTH" uniqueMembers="false" type="Numeric"
+               levelType="TimeMonths"/>
+	<Level name="Day" column="BEGIN_DAY" uniqueMembers="false" type="Numeric"
+               levelType="TimeDays"/>
+      </Hierarchy>
+    </Dimension>
+
+    <!-- TODO: parent-child relation -->
+    <Dimension name="Operation Description">
+      <Hierarchy hasAll="true" allMemberName="All Operations" primaryKey="ID">
+	<Level name="operation" column="DESCRIPTION" uniqueMembers="false"/>
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="Duration in ms" column="DURATION_MS" 
+	     aggregator="sum" formatString="#,##0"/>
+    <Measure name="Number of ops" column="ID" 
+	     aggregator="count" formatString="#,##0"/>
+    <Measure name="SQL queries" column="SQL_QUERY" 
+	     aggregator="sum" formatString="#,##0"/>
+    <Measure name="MDX queries" column="MDX_QUERY" 
+	     aggregator="sum" formatString="#,##0"/>
+    <Measure name="Cache hits" column="CACHE_HIT" 
+	     aggregator="sum" formatString="#,##0"/>
+    <Measure name="Aggregate hits" column="AGG_HIT" 
+	     aggregator="sum" formatString="#,##0"/>
+
+    <CalculatedMember name="Avg duration per operation" dimension="Measures"
+		      formatString="#,###"
+		      formula="[Measures].[Duration in ms]/[Measures].[Number of ops]"/>
+
+    <CalculatedMember name="Cache hit ratio" dimension="Measures"
+		      formatString="#,##0%"
+		      formula="[Measures].[Cache hits]/[Measures].[SQL queries]"/>
+    
+    <CalculatedMember name="Agg hit ratio" dimension="Measures"
+		      formatString="#,##0%"
+		      formula="[Measures].[Aggregate hits]/[Measures].[MDX queries]"/>
+    
+    <CalculatedMember name="Avg SQL queries per MDX query" dimension="Measures"
+		      formatString="#,##0"
+		      formula="[Measures].[SQL queries]/[Measures].[MDX queries]"/>
+    
+  </Cube>
+
+</Schema>

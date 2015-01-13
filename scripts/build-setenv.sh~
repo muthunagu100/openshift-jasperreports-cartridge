@@ -1,0 +1,8 @@
+#!/bin/sh
+LDFLAGS="-L/home/vasanth/jasperreports-server-6.0.1/common/lib $LDFLAGS"
+export LDFLAGS
+CFLAGS="-I/home/vasanth/jasperreports-server-6.0.1/common/include $CFLAGS"
+export CFLAGS
+		    
+PKG_CONFIG_PATH="/home/vasanth/jasperreports-server-6.0.1/common/lib/pkgconfig"
+export PKG_CONFIG_PATH

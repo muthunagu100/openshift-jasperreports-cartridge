@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<query exportedWithPermissions="true">
+    <folder>/public/Samples/Resources/Input_Controls</folder>
+    <name>PromotionNameIDQuery</name>
+    <version>0</version>
+    <label>Promotion Name ID Query</label>
+    <description>Retrieves promotion name and Id. Note inner join and hard coded table names.</description>
+    <creationDate>2014-12-18T02:01:43.545-08:00</creationDate>
+    <updateDate>2012-10-17T07:21:15.336-07:00</updateDate>
+    <language>sql</language>
+    <queryString>select distinct promotion.promotion_id, promotion.promotion_name from promotion INNER JOIN sales_fact_1997 sales_fact_1997 ON promotion.promotion_id = sales_fact_1997.promotion_id order by promotion.promotion_name ASC, promotion.promotion_id ASC</queryString>
+    <dataSource>
+        <uri>/public/Samples/Data_Sources/FoodmartDataSourceJNDI</uri>
+    </dataSource>
+</query>

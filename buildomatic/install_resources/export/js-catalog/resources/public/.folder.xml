@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder exportedWithPermissions="true">
+    <parent>/</parent>
+    <name>public</name>
+    <label>Public</label>
+    <description></description>
+    <creationDate>2014-12-18T02:01:12.494-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:12.494-08:00</updateDate>
+    <folder>adhoc</folder>
+    <folder>audit</folder>
+    <folder>diagnostic</folder>
+    <folder>monitoring</folder>
+    <folder>Samples</folder>
+    <folder>templates</folder>
+    <permission>
+        <permissionMask>2</permissionMask>
+        <recipient recipientType="role">ROLE_USER</recipient>
+    </permission>
+</folder>

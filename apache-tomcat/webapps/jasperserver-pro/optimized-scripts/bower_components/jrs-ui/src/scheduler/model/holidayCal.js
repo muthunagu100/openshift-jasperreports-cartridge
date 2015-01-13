@@ -1,0 +1,1 @@
+define("scheduler/model/holidayCal",["require","backbone","jrs.configs"],function(e){var o=e("backbone"),n=e("jrs.configs");return o.Model.extend({urlRoot:n.contextPath+"/rest_v2/jobs/calendars"})});

@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="test" pageWidth="1473" pageHeight="872" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="552" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" isFloatColumnFooter="true" uuid="7f45ecc3-f609-4784-b424-5e8d2c9c87e0">
+	<property name="com.jaspersoft.ji.adhoc.data.adapter" value="true"/>
+	<property name="com.jaspersoft.ji.adhoc" value="1"/>
+	<property name="com.jaspersoft.ji.adhoc.preferredDataStrategy" value="domainDataStrategy"/>
+	<property name="net.sf.jasperreports.export.pdf.tagged" value="true"/>
+	<property name="net.sf.jasperreports.export.pdf.tag.language" value="EN-US"/>
+	<property name="net.sf.jasperreports.text.truncate.suffix" value="..."/>
+	<property name="net.sf.jasperreports.print.keep.full.text" value="true"/>
+	<property name="net.sf.jasperreports.export.xls.collapse.row.span" value="false"/>
+	<import value="com.jaspersoft.ji.adhoc.service.AdhocEngineServiceImpl"/>
+	<import value="com.jaspersoft.ji.adhoc.jr.AdhocReportUtils"/>
+	<style name="ReportDefault" isDefault="true" mode="Transparent" forecolor="#666666" backcolor="#FFFFFF" hAlign="Left" vAlign="Middle" fontName="SansSerif" fontSize="11" pdfFontName="Helvetica">
+		<box>
+			<pen lineColor="#AAAAAA"/>
+		</box>
+	</style>
+	<style name="TableBaseFrameStyle" mode="Transparent">
+		<box padding="0">
+			<pen lineWidth="0.0"/>
+		</box>
+	</style>
+	<style name="TableColumnHeaderFrameStyle" style="TableBaseFrameStyle">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#AAAAAA"/>
+			<leftPen lineWidth="1.0" lineColor="#AAAAAA"/>
+			<bottomPen lineWidth="1.0" lineColor="#AAAAAA"/>
+			<rightPen lineWidth="1.0" lineColor="#AAAAAA"/>
+		</box>
+	</style>
+	<style name="TableColumnFooterFrameStyle" style="TableBaseFrameStyle">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#AAAAAA"/>
+		</box>
+	</style>
+	<style name="TableColumnHeaderTextStyle" style="ReportDefault" mode="Opaque" forecolor="#666666" backcolor="#D5DEE8" hAlign="Left" vAlign="Middle" fontName="SansSerif" fontSize="11" isBold="true" pdfFontName="Helvetica-Bold">
+		<box leftPadding="5" rightPadding="5">
+			<pen lineWidth="1.0" lineStyle="Solid"/>
+			<topPen lineWidth="1.0" lineColor="#FFFFFF"/>
+			<leftPen lineWidth="1.0" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="1.0" lineColor="#B1B6BB"/>
+			<rightPen lineWidth="1.0" lineColor="#B1B6BB"/>
+		</box>
+	</style>
+	<style name="TableGroupFrameStyle" style="TableBaseFrameStyle">
+		<box>
+			<leftPen lineWidth="1.0" lineColor="#AAAAAA"/>
+			<rightPen lineWidth="1.0" lineColor="#AAAAAA"/>
+		</box>
+	</style>
+	<style name="TableGroupTextStyle" style="ReportDefault" mode="Opaque" forecolor="#666666" backcolor="#E7ECF2" hAlign="Left" vAlign="Middle" fontName="SansSerif" fontSize="11" isBold="true" pdfFontName="Helvetica-Bold">
+		<box leftPadding="5" rightPadding="5">
+			<topPen lineWidth="0.0"/>
+			<leftPen lineWidth="0.0"/>
+			<bottomPen lineWidth="0.0"/>
+			<rightPen lineWidth="0.0"/>
+		</box>
+	</style>
+	<style name="TableSummaryFrameStyle" style="TableBaseFrameStyle">
+		<box>
+			<leftPen lineWidth="1.0" lineColor="#AAAAAA"/>
+			<rightPen lineWidth="1.0" lineColor="#AAAAAA"/>
+		</box>
+	</style>
+	<style name="TableSummaryTextNoBorderStyle" style="ReportDefault" mode="Opaque" forecolor="#666666" fontName="SansSerif" isBold="true" pdfFontName="Helvetica-Bold">
+		<box leftPadding="5" rightPadding="5"/>
+	</style>
+	<style name="TableSummaryTextStyle" style="TableSummaryTextNoBorderStyle">
+		<box>
+			<pen lineWidth="1.0"/>
+		</box>
+	</style>
+	<style name="TableTitleTextStyle" style="ReportDefault" mode="Opaque" forecolor="#333333" backcolor="#FFFFFF" hAlign="Center" fontSize="18" isBold="false" pdfFontName="Helvetica">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.0"/>
+		</box>
+	</style>
+	<style name="TableDetailFrameStyle" style="TableBaseFrameStyle">
+		<box>
+			<leftPen lineWidth="1.0" lineColor="#AAAAAA"/>
+			<rightPen lineWidth="1.0" lineColor="#AAAAAA"/>
+		</box>
+	</style>
+	<style name="TableDetailTextStyle" style="ReportDefault" mode="Opaque" forecolor="#666666" backcolor="#FFFFFF" hAlign="Left" vAlign="Middle" fontName="SansSerif" fontSize="11" isBold="false" pdfFontName="Helvetica">
+		<box leftPadding="5" rightPadding="5">
+			<pen lineWidth="1.0" lineStyle="Solid"/>
+			<topPen lineWidth="1.0" lineColor="#E3E9EF"/>
+			<leftPen lineWidth="1.0" lineColor="#E3E9EF"/>
+			<bottomPen lineWidth="1.0" lineColor="#E3E9EF"/>
+			<rightPen lineWidth="1.0" lineColor="#E3E9EF"/>
+		</box>
+	</style>
+	<style name="ChartReportTitle" style="ReportDefault" mode="Opaque" forecolor="#333333" backcolor="#FFFFFF" hAlign="Center" fontSize="18" isBold="false" pdfFontName="Helvetica">
+		<box>
+			<pen lineColor="#000000"/>
+			<topPen lineWidth="0.0" lineStyle="Solid"/>
+		</box>
+	</style>
+	<style name="ChartTitle" forecolor="#000000" fontName="SansSerif" fontSize="12" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="ChartSubtitle" forecolor="#000000" fontName="SansSerif" fontSize="9" isBold="false" pdfFontName="Helvetica"/>
+	<style name="ChartLegend" forecolor="#000000" backcolor="#FFFFFF" fontName="SansSerif" fontSize="9" isBold="false" pdfFontName="Helvetica"/>
+	<style name="ChartSeriesColor0" backcolor="#87C4FE"/>
+	<style name="ChartSeriesColor1" backcolor="#E96270"/>
+	<style name="ChartSeriesColor2" backcolor="#D1D1D1"/>
+	<style name="ChartSeriesColor3" backcolor="#FFEE99"/>
+	<style name="ChartSeriesColor4" backcolor="#6164FF"/>
+	<style name="ChartSeriesColor5" backcolor="#B0E992"/>
+	<style name="ChartSeriesColor6" backcolor="#AE9CEA"/>
+	<style name="ChartSeriesColor7" backcolor="#F5B05E"/>
+	<style name="ChartSeriesColor8" backcolor="#589EE1"/>
+	<style name="ChartSeriesColor9" backcolor="#AE4E59"/>
+	<style name="ChartSeriesColor10" backcolor="#747474"/>
+	<style name="ChartSeriesColor11" backcolor="#E2DC77"/>
+	<style name="ChartSeriesColor12" backcolor="#4749A5"/>
+	<style name="ChartSeriesColor13" backcolor="#81B963"/>
+	<style name="ChartSeriesColor14" backcolor="#7764B4"/>
+	<style name="ChartSeriesColor15" backcolor="#F27B4C"/>
+	<style name="ChartCategoryAxisLabelFormat" forecolor="#000000" fontName="SansSerif" fontSize="11" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="ChartCategoryAxisTickFormat" forecolor="#000000" fontName="SansSerif" fontSize="9" isBold="false" pdfFontName="Helvetica"/>
+	<style name="ChartValueAxisLabelFormat" forecolor="#000000" fontName="SansSerif" fontSize="11" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="ChartValueAxisTickFormat" forecolor="#000000" fontName="SansSerif" fontSize="9" isBold="false" pdfFontName="Helvetica"/>
+	<style name="ChartContext" backcolor="#D1CA67"/>
+	<style name="CrosstabElementStyle" mode="Transparent" forecolor="#000033" backcolor="#FFFFFF" hAlign="Center" vAlign="Middle" fontName="SansSerif" fontSize="11" pdfFontName="Helvetica">
+		<box>
+			<topPen lineWidth="0.0"/>
+			<leftPen lineWidth="0.0"/>
+			<bottomPen lineWidth="1.0" lineColor="#AAAAAA"/>
+			<rightPen lineWidth="1.0" lineColor="#AAAAAA"/>
+		</box>
+	</style>
+	<style name="CrosstabBaseCellStyle" mode="Transparent">
+		<box padding="0">
+			<pen lineWidth="0.0"/>
+		</box>
+	</style>
+	<style name="CrosstabBaseTextStyle" mode="Opaque" forecolor="#666666" backcolor="#FFFFFF" hAlign="Left" vAlign="Top" fontName="SansSerif" fontSize="11" isBold="true" pdfFontName="Helvetica-Bold">
+		<box topPadding="3" leftPadding="5" bottomPadding="3" rightPadding="5">
+			<topPen lineWidth="1.0" lineColor="#FFFFFF"/>
+			<leftPen lineWidth="1.0" lineColor="#FFFFFF"/>
+			<bottomPen lineWidth="1.0" lineColor="#B1B6BB"/>
+			<rightPen lineWidth="1.0" lineColor="#B1B6BB"/>
+		</box>
+	</style>
+	<style name="CrosstabTitleTextStyle" style="CrosstabBaseTextStyle" forecolor="#333333" fontSize="18" isBold="false" pdfFontName="Helvetica">
+		<box>
+			<pen lineWidth="0.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="CrosstabHeaderTextStyle" style="CrosstabBaseTextStyle" backcolor="#D5DEE8"/>
+	<style name="CrosstabMeasureHeaderTextStyle" style="CrosstabBaseTextStyle" backcolor="#D3C8EB"/>
+	<style name="CrosstabColumnMeasureHeaderTextStyle" style="CrosstabMeasureHeaderTextStyle"/>
+	<style name="CrosstabRowMeasureHeaderTextStyle" style="CrosstabMeasureHeaderTextStyle" isBold="false" pdfFontName="Helvetica"/>
+	<style name="CrosstabDimensionHeaderTextStyle" style="CrosstabBaseTextStyle" backcolor="#E7ECF2" isBold="false" pdfFontName="Helvetica"/>
+	<style name="CrosstabDetailTextStyle" style="CrosstabBaseTextStyle" backcolor="#FFFFFF" hAlign="Right" isBold="false" pdfFontName="Helvetica">
+		<box>
+			<pen lineWidth="1.0" lineColor="#E3E9EF"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{CROSSTAB_TOTAL_DISCRIMINATOR}]]></conditionExpression>
+			<style backcolor="#F0F4F8" hAlign="Right" isBold="true" pdfFontName="Helvetica-Bold">
+				<box>
+					<topPen lineWidth="1.0" lineColor="#E3E9EF"/>
+					<leftPen lineWidth="1.0" lineColor="#E3E9EF"/>
+					<bottomPen lineWidth="1.0" lineColor="#E3E9EF"/>
+					<rightPen lineWidth="1.0" lineColor="#E3E9EF"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<subDataset name="tableDataset">
+		<property name="net.sf.jasperreports.create.sort.fields.for.groups" value="true"/>
+		<field name="audit_join1.audit_event_group.audit_event_property_value" class="java.lang.String">
+			<fieldDescription><![CDATA[audit_join1.audit_event_group.audit_event_property_value]]></fieldDescription>
+		</field>
+		<field name="audit_join1.audit_event_group.event_type" class="java.lang.String">
+			<fieldDescription><![CDATA[audit_join1.audit_event_group.event_type]]></fieldDescription>
+		</field>
+		<field name="audit_join1.user_group.username" class="java.lang.String">
+			<fieldDescription><![CDATA[audit_join1.user_group.username]]></fieldDescription>
+		</field>
+		<field name="audit_join1.user_group.tenant_id" class="java.lang.String">
+			<fieldDescription><![CDATA[audit_join1.user_group.tenant_id]]></fieldDescription>
+		</field>
+		<field name="audit_join1.audit_event_group.audit_event_time" class="java.sql.Timestamp">
+			<fieldDescription><![CDATA[audit_join1.audit_event_group.audit_event_time]]></fieldDescription>
+		</field>
+		<field name="audit_join1.audit_event_group.audit_event_property_type" class="java.lang.String">
+			<fieldDescription><![CDATA[audit_join1.audit_event_group.audit_event_property_type]]></fieldDescription>
+		</field>
+		<field name="audit_join1.audit_event_group.resource_org_uri" class="java.lang.String">
+			<fieldDescription><![CDATA[audit_join1.audit_event_group.resource_org_uri]]></fieldDescription>
+		</field>
+		<field name="audit_join1.audit_event_group.audit_event_date" class="java.util.Date">
+			<fieldDescription><![CDATA[audit_join1.audit_event_group.audit_event_date]]></fieldDescription>
+		</field>
+		<field name="audit_join1.audit_event_group.request_type" class="java.lang.String">
+			<fieldDescription><![CDATA[audit_join1.audit_event_group.request_type]]></fieldDescription>
+		</field>
+		<field name="audit_join1.audit_event_group.resource_org_type" class="java.lang.String">
+			<fieldDescription><![CDATA[audit_join1.audit_event_group.resource_org_type]]></fieldDescription>
+		</field>
+		<variable name="InnerRowCount" class="java.lang.Integer" resetType="None">
+			<variableExpression><![CDATA[$V{REPORT_COUNT}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<parameter name="REPORT_TITLE" class="java.lang.String" isForPrompting="false">
+		<property name="net.sf.jasperreports.data.cache.included" value="true"/>
+		<defaultValueExpression><![CDATA[null]]></defaultValueExpression>
+	</parameter>
+	<title>
+		<band splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="58d1e4e3-803b-4b10-b5f6-2519ef78bda9" key="staticText" style="TableTitleTextStyle" x="0" y="0" width="1413" height="0">
+					<printWhenExpression><![CDATA[$P{REPORT_TITLE} != null && $P{REPORT_TITLE}.length() > 0]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{REPORT_TITLE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<summary>
+		<band height="25" splitType="Stretch">
+			<componentElement>
+				<reportElement uuid="0d3203a0-83fa-481a-a66f-2ea97c8997fb" style="TableColumnHeaderFrameStyle" x="0" y="0" width="1413" height="25"/>
+				<c:table xmlns:c="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="AllSectionsNoDetail">
+					<datasetRun subDataset="tableDataset" uuid="12d79b63-c370-4917-8a1e-6b097aeae247">
+						<dataSourceExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}.get("com.jaspersoft.ji.adhoc.report.data.source")]]></dataSourceExpression>
+					</datasetRun>
+					<c:columnGroup uuid="4acc69a9-8cb6-4993-aea7-312a68ff704a" width="1413">
+						<c:column uuid="f57f4d52-49d0-4e13-ba73-bff6ee22695c" width="70">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement uuid="14fe5a75-e535-4374-9686-cff6c6b82cf8" style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="70" height="25">
+										<property name="net.sf.jasperreports.export.pdf.tag.th" value="full"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Date"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" pattern="short,hide" isBlankWhenNull="true">
+									<reportElement uuid="870efce0-0d63-4f6b-985a-c3648bb7f0c2" key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="70" height="25">
+										<property name="net.sf.jasperreports.export.pdf.tag.td" value="full"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{audit_join1.audit_event_group.audit_event_date}]]></textFieldExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column uuid="175f9858-a7a2-4486-bc89-ba8aa8a2cffa" width="69">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement uuid="71a5a93b-68e2-430c-ba07-9e95f49835fd" style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="69" height="25">
+										<property name="net.sf.jasperreports.export.pdf.tag.th" value="full"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Time"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" pattern="HH:mm:ss" isBlankWhenNull="true">
+									<reportElement uuid="ecb17a38-f856-46c7-b0f1-9e41633c2c8f" key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="69" height="25">
+										<property name="net.sf.jasperreports.export.pdf.tag.td" value="full"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{audit_join1.audit_event_group.audit_event_time}]]></textFieldExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column uuid="8fd139cf-0f8e-433c-98b0-d4d054756b92" width="125">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement uuid="75621516-51b9-46c6-a23d-88513234d26e" style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25">
+										<property name="net.sf.jasperreports.export.pdf.tag.th" value="full"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Event Type"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement uuid="2f6f4ad1-14f3-41f0-a54f-10174b37a215" key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25">
+										<property name="net.sf.jasperreports.export.pdf.tag.td" value="full"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{audit_join1.audit_event_group.event_type}]]></textFieldExpression>
+									<patternExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Integer", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column uuid="e9e1ca7a-944b-43f5-a35c-b3ba93e472bb" width="118">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement uuid="52f05587-cc3e-44e4-8094-96500455b675" style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="118" height="25">
+										<property name="net.sf.jasperreports.export.pdf.tag.th" value="full"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Request Type"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement uuid="dd379e10-6cab-475e-9846-a0eaa75c2363" key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="118" height="25">
+										<property name="net.sf.jasperreports.export.pdf.tag.td" value="full"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{audit_join1.audit_event_group.request_type}]]></textFieldExpression>
+									<patternExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Integer", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column uuid="a8d1883b-122a-4d11-83cd-87925df24f17" width="125">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement uuid="69cd4ade-958f-4d90-b060-d47efdc9760a" style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25">
+										<property name="net.sf.jasperreports.export.pdf.tag.th" value="full"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Resource Type"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement uuid="1c638d76-bbcd-46a9-b5af-add86b34cdbe" key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="125" height="25">
+										<property name="net.sf.jasperreports.export.pdf.tag.td" value="full"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{audit_join1.audit_event_group.resource_org_type}]]></textFieldExpression>
+									<patternExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Integer", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column uuid="a222b957-3395-4a5b-bcb7-49672a005611" width="25">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement uuid="fa8fe26a-24bf-4960-8f58-6de639165f33" style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="25" height="25">
+										<property name="net.sf.jasperreports.export.pdf.tag.th" value="full"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement uuid="8890fad0-ce0e-40be-a8a1-aae00766f918" key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="25" height="25">
+										<property name="net.sf.jasperreports.export.pdf.tag.td" value="full"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<patternExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Integer", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column uuid="e1f4a680-8067-4937-ae3b-ffb86c7e6fd3" width="265">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement uuid="9b49d311-8a6f-45da-94dc-dc5b84a0204d" style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="265" height="25">
+										<property name="net.sf.jasperreports.export.pdf.tag.th" value="full"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Resource URI"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement uuid="c4cbb4ff-b574-48ba-bc55-27245818010b" key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="265" height="25">
+										<property name="net.sf.jasperreports.export.pdf.tag.td" value="full"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{audit_join1.audit_event_group.resource_org_uri}]]></textFieldExpression>
+									<patternExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Integer", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column uuid="b50ed3e7-f379-4f13-9d66-33c2b733563b" width="25">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement uuid="3be16e05-2b36-4e33-85fa-125dd8af5bad" style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="25" height="25">
+										<property name="net.sf.jasperreports.export.pdf.tag.th" value="full"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement uuid="443dfd56-ce92-4e4c-a750-b415efcabc44" key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="25" height="25">
+										<property name="net.sf.jasperreports.export.pdf.tag.td" value="full"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<patternExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Integer", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column uuid="d5c5c3d0-f242-4633-9b2d-0e91fef102db" width="114">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement uuid="9239d22e-e861-4478-bfe9-68170f0a9d7f" style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="114" height="25">
+										<property name="net.sf.jasperreports.export.pdf.tag.th" value="full"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["User Name"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement uuid="dd1b25c0-ac6c-443f-902e-5a9851a06b1a" key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="114" height="25">
+										<property name="net.sf.jasperreports.export.pdf.tag.td" value="full"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{audit_join1.user_group.username}]]></textFieldExpression>
+									<patternExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Integer", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column uuid="b7dcf77f-ad1d-4976-a087-8e44b85d7830" width="122">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement uuid="2739c1d4-d32f-470c-ab19-00363c9288d8" style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="122" height="25">
+										<property name="net.sf.jasperreports.export.pdf.tag.th" value="full"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Organization"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement uuid="50f2499d-36a4-4dd6-a4b1-7984cd79b742" key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="122" height="25">
+										<property name="net.sf.jasperreports.export.pdf.tag.td" value="full"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{audit_join1.user_group.tenant_id}]]></textFieldExpression>
+									<patternExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Integer", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column uuid="55410498-0dc8-464c-932f-5650012b3065" width="166">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement uuid="e0576366-4678-42a1-8ad4-5994d0f8bc1a" style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="166" height="25">
+										<property name="net.sf.jasperreports.export.pdf.tag.th" value="full"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Prop Type"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement uuid="220a4de7-d722-4ab0-b967-726fcb5541d3" key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="166" height="25">
+										<property name="net.sf.jasperreports.export.pdf.tag.td" value="full"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{audit_join1.audit_event_group.audit_event_property_type}]]></textFieldExpression>
+									<patternExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Integer", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+						<c:column uuid="fbe9a113-7206-42bb-9de4-f2ca883f728e" width="189">
+							<c:columnHeader height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement uuid="ca66e945-2ccf-4d9d-98da-9518283c5b07" style="TableColumnHeaderTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="189" height="25">
+										<property name="net.sf.jasperreports.export.pdf.tag.th" value="full"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA["Prop Value"]]></textFieldExpression>
+								</textField>
+							</c:columnHeader>
+							<c:detailCell height="25">
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement uuid="d731853e-20d5-485c-8e80-e5561acb2574" key="textField" style="TableDetailTextStyle" stretchType="RelativeToBandHeight" x="0" y="0" width="189" height="25">
+										<property name="net.sf.jasperreports.export.pdf.tag.td" value="full"/>
+									</reportElement>
+									<textElement textAlignment="Left"/>
+									<textFieldExpression><![CDATA[$F{audit_join1.audit_event_group.audit_event_property_value}]]></textFieldExpression>
+									<patternExpression><![CDATA[AdhocEngineServiceImpl.getInstance().getDefaultMask("java.lang.Integer", $P{REPORT_LOCALE}, $P{REPORT_TIME_ZONE})]]></patternExpression>
+								</textField>
+							</c:detailCell>
+						</c:column>
+					</c:columnGroup>
+				</c:table>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>

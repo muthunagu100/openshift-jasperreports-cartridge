@@ -1,0 +1,1 @@
+define(["jquery"],function(){var n=function(){};return n.prototype={processReport:function(){}},n});

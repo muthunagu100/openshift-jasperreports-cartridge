@@ -1,0 +1,520 @@
+Jan 13, 2015 12:02:02 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /home/vasanth/jasperreports-server-6.0.1/postgresql/lib:/home/vasanth/jasperreports-server-6.0.1/common/lib::/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+Jan 13, 2015 12:02:02 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+Jan 13, 2015 12:02:02 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Jan 13, 2015 12:02:02 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 625 ms
+Jan 13, 2015 12:02:02 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Jan 13, 2015 12:02:02 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.42
+Jan 13, 2015 12:02:02 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /home/vasanth/jasperreports-server-6.0.1/apache-tomcat/webapps/manager
+Jan 13, 2015 12:02:02 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /home/vasanth/jasperreports-server-6.0.1/apache-tomcat/webapps/host-manager
+Jan 13, 2015 12:02:02 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /home/vasanth/jasperreports-server-6.0.1/apache-tomcat/webapps/jasperserver-pro
+Jan 13, 2015 12:02:14 PM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://www.springframework.org/tags is already defined
+Jan 13, 2015 12:02:14 PM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://www.tonbeller.com/jpivot/core is already defined
+Jan 13, 2015 12:02:14 PM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://www.springframework.org/tags is already defined
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.servlet.SpringServlet getContext
+INFO: Using default applicationContext
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, metadataService, of type com.jaspersoft.ji.jaxrs.adhoc.MetadataService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, reportOptionsJaxrsService, of type com.jaspersoft.ji.jaxrs.reports.ReportOptionsJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, reportGeneratorJaxrsService, of type com.jaspersoft.ji.jaxrs.reports.ReportGeneratorJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, mtResourceNotVisibleExceptionMapper, of type com.jaspersoft.ji.jaxrs.common.MtResourceNotVisibleExceptionMapper as a provider class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, organizationsUsersJaxrsServiceWrapper, of type com.jaspersoft.ji.jaxrs.authority.OrganizationsUsersJaxrsServiceWrapper as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, organizationsAttributesJaxrsServiceWrapper, of type com.jaspersoft.ji.jaxrs.authority.OrganizationsAttributesJaxrsServiceWrapper as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, organizationsRolesJaxrsServiceWrapper, of type com.jaspersoft.ji.jaxrs.authority.OrganizationsRolesJaxrsServiceWrapper as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, organizationsJaxrsService, of type com.jaspersoft.ji.jaxrs.authority.OrganizationsJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, domainsJaxrsService, of type com.jaspersoft.ji.jaxrs.domain.DomainsJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, queryExecutorJaxrsService, of type com.jaspersoft.ji.jaxrs.query.QueryExecutorJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, settingsJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.settings.SettingsJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, scopedTarget.hypermediaRootDocumentJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.poc.hypermedia.root.service.HypermediaRootDocumentJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, hypermediaRootDocumentJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.poc.hypermedia.root.service.HypermediaRootDocumentJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, scopedTarget.hypermediaUserWorkflowJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.poc.hypermedia.workflow.service.HypermediaUserWorkflowJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, hypermediaUserWorkflowJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.poc.hypermedia.workflow.service.HypermediaUserWorkflowJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, scopedTarget.hypermediaContentReferenceJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.poc.hypermedia.content.service.HypermediaContentReferenceJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, hypermediaContentReferenceJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.poc.hypermedia.content.service.HypermediaContentReferenceJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, scopedTarget.hypermediaResourceLookupService, of type com.jaspersoft.jasperserver.jaxrs.poc.hypermedia.resource.service.HypermediaResourceLookupService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, hypermediaResourceLookupService, of type com.jaspersoft.jasperserver.jaxrs.poc.hypermedia.resource.service.HypermediaResourceLookupService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, customDataSourcesJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.customdatasources.CustomDataSourcesJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, cachesJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.cache.CachesJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, jobsJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.job.JobsJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, runReportsJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.report.RunReportsJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, reportExecutionsJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.report.ReportExecutionsJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, inputControlsJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.report.InputControlsJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, repositoryJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.resources.RepositoryJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, hypermediaRepositoryJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.resources.HypermediaRepositoryJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, importJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.importexport.ImportJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, exportJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.importexport.ExportJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, thumbnailsJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.thumbnails.ThumbnailsJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, repositoryPermissionsJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.permission.RepositoryPermissionsJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, jsonParseExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.JsonParseExceptionMapper as a provider class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, genericParamExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.GenericParamExceptionMapper as a provider class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, jacksonMapperProvider, of type com.jaspersoft.jasperserver.jaxrs.common.JacksonMapperProvider as a provider class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, resourceNotFoundExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.ResourceNotFoundExceptionMapper as a provider class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, JSResourceNotFoundExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.JSResourceNotFoundExceptionMapper as a provider class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, accessDeniedExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.AccessDeniedExceptionMapper as a provider class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, exportExecutionRejectedExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.ExportExecutionRejectedExceptionMapper as a provider class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, genericRemoteExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.GenericRemoteExceptionMapper as a provider class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, springSecurityAccessDeniedExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.SpringSecurityAccessDeniedExceptionMapper as a provider class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, genericExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.GenericExceptionMapper as a provider class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, JSValidationExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.JSValidationExceptionMapper as a provider class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, unsupportedOperationExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.UnsupportedOperationExceptionMapper as a provider class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, dataIntegrityViolationExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.DataIntegrityViolationExceptionMapper as a provider class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, jsonMappingExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.JsonMappingExceptionMapper as a provider class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, updateConflictExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.UpdateConflictExceptionMapper as a provider class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, connectionsJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.connection.ConnectionsJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, rolesJaxrsServiceWrapper, of type com.jaspersoft.jasperserver.jaxrs.authority.RolesJaxrsServiceWrapper as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, usersJaxrsServiceWrapper, of type com.jaspersoft.jasperserver.jaxrs.authority.UsersJaxrsServiceWrapper as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, serverAttributesJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.authority.ServerAttributesJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, jdbcDriversJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.jdbcdrivers.JdbcDriversJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, localizationBundleJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.bundle.LocalizationBundleJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, serverInfoJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.serverInfo.ServerInfoJaxrsService as a root resource class
+Jan 13, 2015 12:02:45 PM com.sun.jersey.server.impl.application.WebApplicationImpl _initiate
+INFO: Initiating Jersey application, version 'Jersey: 1.13-b01 03/09/2012 03:52 PM'
+Jan 13, 2015 12:02:46 PM com.sun.jersey.api.wadl.config.WadlGeneratorLoader loadWadlGenerator
+INFO: Loading wadlGenerator com.jaspersoft.jasperserver.jaxrs.wadl.PrivateFilteringWadlGenerator
+Jan 13, 2015 12:02:48 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /home/vasanth/jasperreports-server-6.0.1/apache-tomcat/webapps/ROOT
+Jan 13, 2015 12:02:48 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+Jan 13, 2015 12:02:48 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Jan 13, 2015 12:02:48 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 46136 ms
+Jan 13, 2015 12:02:49 PM org.apache.jasper.compiler.TldLocationsCache tldScanJar
+INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+Jan 13, 2015 1:46:31 PM org.apache.catalina.core.StandardServer await
+INFO: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+Jan 13, 2015 1:46:31 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-8080"]
+Jan 13, 2015 1:46:31 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Jan 13, 2015 1:46:31 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+ -- JasperServer:  EhCacheImpl shutdown called.  This normal shutdown operation. 
+ -- JasperServer:  EhCacheImpl calling cleanerTimer.cancel().  This normal shutdown operation. 
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/jasperserver-pro] registered the JDBC driver [tibcosoftware.jdbc.oracle.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/jasperserver-pro] registered the JDBC driver [tibcosoftware.jdbc.oracle.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/jasperserver-pro] registered the JDBC driver [tibcosoftware.jdbc.sqlserver.SQLServerDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/jasperserver-pro] registered the JDBC driver [tibcosoftware.jdbc.sqlserver.SQLServerDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/jasperserver-pro] registered the JDBC driver [tibcosoftware.jdbc.db2.DB2Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/jasperserver-pro] registered the JDBC driver [tibcosoftware.jdbc.db2.DB2Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/jasperserver-pro] registered the JDBC driver [tibcosoftware.jdbc.hive.HiveDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/jasperserver-pro] registered the JDBC driver [tibcosoftware.jdbc.hive.HiveDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/jasperserver-pro] registered the JDBC driver [org.teiid.jdbc.TeiidDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/jasperserver-pro] registered the JDBC driver [tibcosoftwareinc.jdbc.oracle.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/jasperserver-pro] registered the JDBC driver [tibcosoftwareinc.jdbc.sqlserver.SQLServerDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/jasperserver-pro] registered the JDBC driver [tibcosoftwareinc.jdbc.db2.DB2Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/jasperserver-pro] registered the JDBC driver [tibcosoftwareinc.jdbc.hive.HiveDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/jasperserver-pro] appears to have started a thread named [Thread-2] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/jasperserver-pro] appears to have started a thread named [quartzScheduler_Worker-1] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/jasperserver-pro] appears to have started a thread named [quartzScheduler_Worker-2] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/jasperserver-pro] appears to have started a thread named [Timer-1] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/jasperserver-pro] appears to have started a thread named [SessionMonitor] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/jasperserver-pro] appears to have started a thread named [bitronix-task-scheduler] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/jasperserver-pro] appears to have started a thread named [BufferManager Cleaner] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/jasperserver-pro] appears to have started a thread named [Scheduled-eviction-thread-0] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/jasperserver-pro] appears to have started a thread named [CascadeCacheCleaner] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/jasperserver-pro] appears to have started a thread named [Mondrian Monitor] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/jasperserver-pro] appears to have started a thread named [mondrian.rolap.agg.SegmentCacheManager$ACTOR] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/jasperserver-pro] appears to have started a thread named [mondrian.rolap.RolapResultShepherd#timer] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/jasperserver-pro] appears to have started a thread named [mondrian.rolap.agg.SegmentCacheManager$ACTOR] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/jasperserver-pro] appears to have started a thread named [mondrian.rolap.RolapResultShepherd#timer] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1] (value [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1@202d99cc]) and a value of type [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl] (value [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl@11cc3095]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1] (value [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1@74898f53]) and a value of type [com.jaspersoft.jasperserver.api.logging.audit.context.RequestType] (value [GUI]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1] (value [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1@202d99cc]) and a value of type [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl] (value [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl@7320cdea]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1] (value [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1@74898f53]) and a value of type [com.jaspersoft.jasperserver.api.logging.audit.context.RequestType] (value [GUI]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1] (value [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1@202d99cc]) and a value of type [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl] (value [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl@6eaef8b2]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1] (value [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1@74898f53]) and a value of type [com.jaspersoft.jasperserver.api.logging.audit.context.RequestType] (value [GUI]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1] (value [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1@202d99cc]) and a value of type [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl] (value [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl@2149a6e3]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1] (value [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1@74898f53]) and a value of type [com.jaspersoft.jasperserver.api.logging.audit.context.RequestType] (value [WEB_SERVICES]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1] (value [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1@202d99cc]) and a value of type [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl] (value [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl@6a6b9227]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1] (value [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1@74898f53]) and a value of type [com.jaspersoft.jasperserver.api.logging.audit.context.RequestType] (value [GUI]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1] (value [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1@74898f53]) and a value of type [com.jaspersoft.jasperserver.api.logging.audit.context.RequestType] (value [GUI]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1] (value [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1@202d99cc]) and a value of type [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl] (value [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl@3c487506]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [java.lang.InheritableThreadLocal] (value [java.lang.InheritableThreadLocal@38fafbd5]) and a value of type [com.jaspersoft.jasperserver.multipleTenancy.TenantContext] (value [Multitenancy context: no tenant]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [java.lang.InheritableThreadLocal] (value [java.lang.InheritableThreadLocal@65ab7a2c]) and a value of type [org.springframework.security.authentication.AnonymousAuthenticationToken] (value [org.springframework.security.authentication.AnonymousAuthenticationToken@905571d8: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@0: RemoteIpAddress: 127.0.0.1; SessionId: 9D996517A4DF2FBCCC509AE65E348408; Granted Authorities: ROLE_ANONYMOUS]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1] (value [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1@202d99cc]) and a value of type [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl] (value [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl@5ce212d9]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1] (value [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1@74898f53]) and a value of type [com.jaspersoft.jasperserver.api.logging.audit.context.RequestType] (value [GUI]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1] (value [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1@202d99cc]) and a value of type [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl] (value [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl@7e439432]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1] (value [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1@74898f53]) and a value of type [com.jaspersoft.jasperserver.api.logging.audit.context.RequestType] (value [GUI]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1] (value [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1@202d99cc]) and a value of type [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl] (value [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl@6b69f61]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1] (value [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1@74898f53]) and a value of type [com.jaspersoft.jasperserver.api.logging.audit.context.RequestType] (value [GUI]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1] (value [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1@202d99cc]) and a value of type [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl] (value [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl@3f999cb8]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1] (value [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1@74898f53]) and a value of type [com.jaspersoft.jasperserver.api.logging.audit.context.RequestType] (value [GUI]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:46:32 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-8080"]
+Jan 13, 2015 1:46:32 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Jan 13, 2015 1:46:32 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-8080"]
+Jan 13, 2015 1:46:32 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]
+Jan 13, 2015 1:46:32 PM org.apache.catalina.loader.WebappClassLoader findResourceInternal
+INFO: Illegal access: this web application instance has been stopped already.  Could not load META-INF/services/javax.xml.parsers.DocumentBuilderFactory.  The eventual following stack trace is caused by an error thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access, and has no functional impact.
+Jan 13, 2015 1:47:21 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /home/vasanth/jasperreports-server-6.0.1/postgresql/lib:/home/vasanth/jasperreports-server-6.0.1/common/lib::/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+Jan 13, 2015 1:47:21 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+Jan 13, 2015 1:47:21 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["ajp-bio-8009"]
+Jan 13, 2015 1:47:21 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 599 ms
+Jan 13, 2015 1:47:21 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Jan 13, 2015 1:47:21 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.42
+Jan 13, 2015 1:47:21 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /home/vasanth/jasperreports-server-6.0.1/apache-tomcat/webapps/manager
+Jan 13, 2015 1:47:21 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /home/vasanth/jasperreports-server-6.0.1/apache-tomcat/webapps/host-manager
+Jan 13, 2015 1:47:21 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /home/vasanth/jasperreports-server-6.0.1/apache-tomcat/webapps/jasperserver-pro
+Jan 13, 2015 1:47:32 PM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://www.springframework.org/tags is already defined
+Jan 13, 2015 1:47:32 PM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://www.tonbeller.com/jpivot/core is already defined
+Jan 13, 2015 1:47:32 PM org.apache.catalina.startup.TaglibUriRule body
+INFO: TLD skipped. URI: http://www.springframework.org/tags is already defined
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.servlet.SpringServlet getContext
+INFO: Using default applicationContext
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, metadataService, of type com.jaspersoft.ji.jaxrs.adhoc.MetadataService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, reportOptionsJaxrsService, of type com.jaspersoft.ji.jaxrs.reports.ReportOptionsJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, reportGeneratorJaxrsService, of type com.jaspersoft.ji.jaxrs.reports.ReportGeneratorJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, mtResourceNotVisibleExceptionMapper, of type com.jaspersoft.ji.jaxrs.common.MtResourceNotVisibleExceptionMapper as a provider class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, organizationsUsersJaxrsServiceWrapper, of type com.jaspersoft.ji.jaxrs.authority.OrganizationsUsersJaxrsServiceWrapper as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, organizationsAttributesJaxrsServiceWrapper, of type com.jaspersoft.ji.jaxrs.authority.OrganizationsAttributesJaxrsServiceWrapper as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, organizationsRolesJaxrsServiceWrapper, of type com.jaspersoft.ji.jaxrs.authority.OrganizationsRolesJaxrsServiceWrapper as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, organizationsJaxrsService, of type com.jaspersoft.ji.jaxrs.authority.OrganizationsJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, domainsJaxrsService, of type com.jaspersoft.ji.jaxrs.domain.DomainsJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, queryExecutorJaxrsService, of type com.jaspersoft.ji.jaxrs.query.QueryExecutorJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, settingsJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.settings.SettingsJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, scopedTarget.hypermediaRootDocumentJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.poc.hypermedia.root.service.HypermediaRootDocumentJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, hypermediaRootDocumentJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.poc.hypermedia.root.service.HypermediaRootDocumentJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, scopedTarget.hypermediaUserWorkflowJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.poc.hypermedia.workflow.service.HypermediaUserWorkflowJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, hypermediaUserWorkflowJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.poc.hypermedia.workflow.service.HypermediaUserWorkflowJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, scopedTarget.hypermediaContentReferenceJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.poc.hypermedia.content.service.HypermediaContentReferenceJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, hypermediaContentReferenceJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.poc.hypermedia.content.service.HypermediaContentReferenceJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, scopedTarget.hypermediaResourceLookupService, of type com.jaspersoft.jasperserver.jaxrs.poc.hypermedia.resource.service.HypermediaResourceLookupService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, hypermediaResourceLookupService, of type com.jaspersoft.jasperserver.jaxrs.poc.hypermedia.resource.service.HypermediaResourceLookupService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, customDataSourcesJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.customdatasources.CustomDataSourcesJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, cachesJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.cache.CachesJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, jobsJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.job.JobsJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, runReportsJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.report.RunReportsJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, reportExecutionsJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.report.ReportExecutionsJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, inputControlsJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.report.InputControlsJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, repositoryJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.resources.RepositoryJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, hypermediaRepositoryJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.resources.HypermediaRepositoryJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, importJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.importexport.ImportJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, exportJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.importexport.ExportJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, thumbnailsJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.thumbnails.ThumbnailsJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, repositoryPermissionsJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.permission.RepositoryPermissionsJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, jsonParseExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.JsonParseExceptionMapper as a provider class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, genericParamExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.GenericParamExceptionMapper as a provider class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, jacksonMapperProvider, of type com.jaspersoft.jasperserver.jaxrs.common.JacksonMapperProvider as a provider class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, resourceNotFoundExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.ResourceNotFoundExceptionMapper as a provider class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, JSResourceNotFoundExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.JSResourceNotFoundExceptionMapper as a provider class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, accessDeniedExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.AccessDeniedExceptionMapper as a provider class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, exportExecutionRejectedExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.ExportExecutionRejectedExceptionMapper as a provider class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, genericRemoteExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.GenericRemoteExceptionMapper as a provider class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, springSecurityAccessDeniedExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.SpringSecurityAccessDeniedExceptionMapper as a provider class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, genericExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.GenericExceptionMapper as a provider class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, JSValidationExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.JSValidationExceptionMapper as a provider class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, unsupportedOperationExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.UnsupportedOperationExceptionMapper as a provider class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, dataIntegrityViolationExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.DataIntegrityViolationExceptionMapper as a provider class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, jsonMappingExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.JsonMappingExceptionMapper as a provider class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, updateConflictExceptionMapper, of type com.jaspersoft.jasperserver.jaxrs.common.UpdateConflictExceptionMapper as a provider class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, connectionsJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.connection.ConnectionsJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, rolesJaxrsServiceWrapper, of type com.jaspersoft.jasperserver.jaxrs.authority.RolesJaxrsServiceWrapper as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, usersJaxrsServiceWrapper, of type com.jaspersoft.jasperserver.jaxrs.authority.UsersJaxrsServiceWrapper as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, serverAttributesJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.authority.ServerAttributesJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, jdbcDriversJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.jdbcdrivers.JdbcDriversJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, localizationBundleJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.bundle.LocalizationBundleJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.spi.spring.container.SpringComponentProviderFactory registerSpringBeans
+INFO: Registering Spring bean, serverInfoJaxrsService, of type com.jaspersoft.jasperserver.jaxrs.serverInfo.ServerInfoJaxrsService as a root resource class
+Jan 13, 2015 1:48:03 PM com.sun.jersey.server.impl.application.WebApplicationImpl _initiate
+INFO: Initiating Jersey application, version 'Jersey: 1.13-b01 03/09/2012 03:52 PM'
+Jan 13, 2015 1:48:04 PM com.sun.jersey.api.wadl.config.WadlGeneratorLoader loadWadlGenerator
+INFO: Loading wadlGenerator com.jaspersoft.jasperserver.jaxrs.wadl.PrivateFilteringWadlGenerator
+Jan 13, 2015 1:48:06 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory /home/vasanth/jasperreports-server-6.0.1/apache-tomcat/webapps/ROOT
+Jan 13, 2015 1:48:06 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+Jan 13, 2015 1:48:06 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["ajp-bio-8009"]
+Jan 13, 2015 1:48:06 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 44829 ms
+Jan 13, 2015 1:50:22 PM org.apache.catalina.core.StandardServer await
+INFO: A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+Jan 13, 2015 1:50:22 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["http-bio-8080"]
+Jan 13, 2015 1:50:22 PM org.apache.coyote.AbstractProtocol pause
+INFO: Pausing ProtocolHandler ["ajp-bio-8009"]
+Jan 13, 2015 1:50:22 PM org.apache.catalina.core.StandardService stopInternal
+INFO: Stopping service Catalina
+ -- JasperServer:  EhCacheImpl shutdown called.  This normal shutdown operation. 
+ -- JasperServer:  EhCacheImpl calling cleanerTimer.cancel().  This normal shutdown operation. 
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/jasperserver-pro] registered the JDBC driver [tibcosoftware.jdbc.oracle.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/jasperserver-pro] registered the JDBC driver [tibcosoftware.jdbc.oracle.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/jasperserver-pro] registered the JDBC driver [tibcosoftware.jdbc.sqlserver.SQLServerDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/jasperserver-pro] registered the JDBC driver [tibcosoftware.jdbc.sqlserver.SQLServerDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/jasperserver-pro] registered the JDBC driver [tibcosoftware.jdbc.db2.DB2Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/jasperserver-pro] registered the JDBC driver [tibcosoftware.jdbc.db2.DB2Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/jasperserver-pro] registered the JDBC driver [tibcosoftware.jdbc.hive.HiveDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/jasperserver-pro] registered the JDBC driver [tibcosoftware.jdbc.hive.HiveDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/jasperserver-pro] registered the JDBC driver [org.teiid.jdbc.TeiidDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/jasperserver-pro] registered the JDBC driver [tibcosoftwareinc.jdbc.oracle.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/jasperserver-pro] registered the JDBC driver [tibcosoftwareinc.jdbc.sqlserver.SQLServerDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/jasperserver-pro] registered the JDBC driver [tibcosoftwareinc.jdbc.db2.DB2Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/jasperserver-pro] registered the JDBC driver [tibcosoftwareinc.jdbc.hive.HiveDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/jasperserver-pro] appears to have started a thread named [Thread-2] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/jasperserver-pro] appears to have started a thread named [Timer-1] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/jasperserver-pro] appears to have started a thread named [SessionMonitor] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/jasperserver-pro] appears to have started a thread named [bitronix-task-scheduler] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/jasperserver-pro] appears to have started a thread named [BufferManager Cleaner] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/jasperserver-pro] appears to have started a thread named [Scheduled-eviction-thread-0] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/jasperserver-pro] appears to have started a thread named [CascadeCacheCleaner] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/jasperserver-pro] appears to have started a thread named [Mondrian Monitor] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/jasperserver-pro] appears to have started a thread named [mondrian.rolap.agg.SegmentCacheManager$ACTOR] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/jasperserver-pro] appears to have started a thread named [mondrian.rolap.RolapResultShepherd#timer] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/jasperserver-pro] appears to have started a thread named [mondrian.rolap.agg.SegmentCacheManager$ACTOR] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader clearReferencesThreads
+SEVERE: The web application [/jasperserver-pro] appears to have started a thread named [mondrian.rolap.RolapResultShepherd#timer] but has failed to stop it. This is very likely to create a memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1] (value [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1@4c13cecd]) and a value of type [com.jaspersoft.jasperserver.api.logging.audit.context.RequestType] (value [GUI]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1] (value [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1@286e1bc0]) and a value of type [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl] (value [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl@54dfeefc]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [java.lang.InheritableThreadLocal] (value [java.lang.InheritableThreadLocal@39c30dec]) and a value of type [com.jaspersoft.jasperserver.multipleTenancy.TenantContext] (value [Multitenancy context: no tenant]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [java.lang.InheritableThreadLocal] (value [java.lang.InheritableThreadLocal@34c71e94]) and a value of type [org.springframework.security.authentication.AnonymousAuthenticationToken] (value [org.springframework.security.authentication.AnonymousAuthenticationToken@6faa1b5a: Principal: anonymousUser; Credentials: [PROTECTED]; Authenticated: true; Details: org.springframework.security.web.authentication.WebAuthenticationDetails@ffff6a82: RemoteIpAddress: 127.0.0.1; SessionId: 68BA280E92B8264A02CB16C97F3EF378; Granted Authorities: ROLE_ANONYMOUS]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1] (value [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1@286e1bc0]) and a value of type [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl] (value [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl@7ca8a19d]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1] (value [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1@4c13cecd]) and a value of type [com.jaspersoft.jasperserver.api.logging.audit.context.RequestType] (value [GUI]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1] (value [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1@286e1bc0]) and a value of type [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl] (value [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl@230a8a5b]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1] (value [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1@4c13cecd]) and a value of type [com.jaspersoft.jasperserver.api.logging.audit.context.RequestType] (value [GUI]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1] (value [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1@286e1bc0]) and a value of type [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl] (value [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl@9016e56]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1] (value [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1@4c13cecd]) and a value of type [com.jaspersoft.jasperserver.api.logging.audit.context.RequestType] (value [WEB_SERVICES]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1] (value [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1@286e1bc0]) and a value of type [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl] (value [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl@3cf2d4b8]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1] (value [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1@4c13cecd]) and a value of type [com.jaspersoft.jasperserver.api.logging.audit.context.RequestType] (value [GUI]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1] (value [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1@286e1bc0]) and a value of type [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl] (value [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl@6a6b9b4a]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1] (value [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1@4c13cecd]) and a value of type [com.jaspersoft.jasperserver.api.logging.audit.context.RequestType] (value [GUI]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1] (value [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1@286e1bc0]) and a value of type [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl] (value [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl@3ea04ddb]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1] (value [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1@4c13cecd]) and a value of type [com.jaspersoft.jasperserver.api.logging.audit.context.RequestType] (value [GUI]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1] (value [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1@286e1bc0]) and a value of type [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl] (value [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl@e5784fc]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1] (value [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1@4c13cecd]) and a value of type [com.jaspersoft.jasperserver.api.logging.audit.context.RequestType] (value [GUI]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1] (value [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1@286e1bc0]) and a value of type [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl] (value [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl@13dbc3bf]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1] (value [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1@4c13cecd]) and a value of type [com.jaspersoft.jasperserver.api.logging.audit.context.RequestType] (value [GUI]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1] (value [com.jaspersoft.jasperserver.api.logging.context.impl.BasicLoggingContextProvider$1@286e1bc0]) and a value of type [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl] (value [com.jaspersoft.jasperserver.api.logging.context.impl.LoggingContextImpl@41103ac8]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.catalina.loader.WebappClassLoader checkThreadLocalMapForLeaks
+SEVERE: The web application [/jasperserver-pro] created a ThreadLocal with key of type [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1] (value [com.jaspersoft.ji.logging.audit.context.AuditContextImpl$1@4c13cecd]) and a value of type [com.jaspersoft.jasperserver.api.logging.audit.context.RequestType] (value [GUI]) but failed to remove it when the web application was stopped. Threads are going to be renewed over time to try and avoid a probable memory leak.
+Jan 13, 2015 1:50:22 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["http-bio-8080"]
+Jan 13, 2015 1:50:22 PM org.apache.coyote.AbstractProtocol stop
+INFO: Stopping ProtocolHandler ["ajp-bio-8009"]
+Jan 13, 2015 1:50:22 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["http-bio-8080"]
+Jan 13, 2015 1:50:22 PM org.apache.coyote.AbstractProtocol destroy
+INFO: Destroying ProtocolHandler ["ajp-bio-8009"]

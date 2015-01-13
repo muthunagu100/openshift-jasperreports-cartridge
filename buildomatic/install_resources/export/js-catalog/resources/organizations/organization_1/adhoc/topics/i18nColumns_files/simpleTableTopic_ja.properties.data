@@ -1,0 +1,14 @@
+ShippedDate=\u51fa\u8377\u65e5\u4ed8
+ShipCountry=\u51fa\u8377\u56fd 
+RequiredDate=\u4f9d\u983c\u65e5\u4ed8 
+CustomerID=\u9867\u5ba2 ID
+OrderId=\u6ce8\u6587 ID 
+ShipName=\u51fa\u8377\u540d
+ShipVia=\u51fa\u8377\u7d4c\u8def
+OrderDate=\u6ce8\u6587\u65e5\u4ed8
+ShipCity=\u51fa\u8377\u5e02\u533a\u753a\u6751
+ShipAddress=\u51fa\u8377\u4f4f\u6240
+EmployeeID=\u5f93\u696d\u54e1 ID
+ShipRegion=\u51fa\u8377\u5730\u57df
+Freight=\u8ca8\u7269
+

@@ -1,0 +1,1 @@
+JRS.Export.ServerErrorTrait=function(r,e,t,o){return t.extend(o,{statuses:{0:r.i18n["export.server.not.avaliable"],403:r.i18n["export.session.expired"],503:r.i18n["export.server.not.avaliable"],404:r.i18n["export.server.not.avaliable"]}})}(JRS.Export,jQuery,_,jaspersoft.components.ServerErrorsBackboneTrait);

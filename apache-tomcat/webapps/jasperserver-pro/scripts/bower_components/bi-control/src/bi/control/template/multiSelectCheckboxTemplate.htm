@@ -1,0 +1,25 @@
+<div id="{{id}}" class="leaf visibleOverflow">
+    <fieldset class="control select checkbox" title="{{description}}">
+        <legend>{{#mandatory}}* {{/mandatory}}{{label}}</legend>
+        <ul class="list inputSet">
+            {{#data}}
+            <li>
+                <div class="control checkBox">
+                    <label class="wrap" for="{{uuid}}" title="{{description}}">
+                        {{label}}&nbsp;
+                    </label>
+                    <input {{#selected}}checked="checked"{{/selected}} class="" id="{{uuid}}" type="checkbox" {{#readOnly}}disabled="disabled"{{/readOnly}} value="{{value}}"/>
+                </div>
+            </li>
+            {{/data}}
+        </ul>
+        <div class="{{#readOnly}}hidden{{/readOnly}}">
+            <a href="#" name="multiSelectAll">{{selectAllMsg}}</a>
+            <a href="#" name="multiSelectNone">{{selectNoneMsg}}</a>
+            <a href="#" name="multiSelectInverse">{{selectInverseMsg}}</a>
+        </div>
+    </fieldset>
+    <span class="warning">{{message}}</span>
+    <div class="resizeOverlay hidden"></div>
+    <div class="sizer vertical hidden"><span class="ui-icon ui-icon-grip-solid-horizontal"></span></div>
+</div>

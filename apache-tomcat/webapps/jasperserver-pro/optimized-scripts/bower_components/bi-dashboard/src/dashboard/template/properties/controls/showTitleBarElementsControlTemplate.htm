@@ -1,0 +1,22 @@
+<div class="section">
+    <span class="showTitleBarElements">
+        <span class="wrap title">{{-i18n["dashboard.dialog.properties.title.bar.elements"]}}</span>
+        <label class="control checkBox">
+            <span class="wrap">{{-i18n["dashboard.component.dialog.properties.show.title.bar"]}}</span>
+            <input name="showTitleBar" rv-checked="model:showTitleBar" type="checkbox"/>
+            <span class="message warning"></span>
+        </label>
+        <div class="subgroup">
+            <label class="control checkBox">
+                <span class="wrap">{{-i18n["dashboard.component.dialog.properties.refresh.button"]}}</span>
+                <input name="showRefreshButton" rv-checked="model:showRefreshButton" rv-enabled="model:showTitleBar" type="checkbox"/>
+                <span class="message warning"></span>
+            </label>
+            <label class="control checkBox">
+                <span class="wrap">{{-i18n["dashboard.component.dialog.properties.maximize.button"]}}</span>
+                <input name="showMaximizeButton" rv-checked="model:showMaximizeButton" rv-enabled="model:showTitleBar" type="checkbox"/>
+                <span class="message warning"></span>
+            </label>
+        </div>
+    </span>
+</div>

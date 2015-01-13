@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder exportedWithPermissions="true">
+    <parent>/organizations/organization_1</parent>
+    <name>supermart</name>
+    <label>SuperMart Demo</label>
+    <description>Sample Reports, Analysis Views, and Dashboards based on the SuperMart sample data</description>
+    <creationDate>2014-12-18T02:01:22.215-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:22.215-08:00</updateDate>
+    <folder>Common</folder>
+</folder>

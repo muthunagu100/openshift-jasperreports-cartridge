@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/organizations/organization_1/performance/reports</folder>
+    <name>queryTimings</name>
+    <version>0</version>
+    <label>Query Timings</label>
+    <description>Query Timings Report</description>
+    <creationDate>2014-12-18T02:01:10.147-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:10.147-08:00</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="queryTimings_JRXML.data" xsi:type="fileResource">
+            <folder>/organizations/organization_1/performance/reports/queryTimings_files</folder>
+            <name>queryTimings_JRXML</name>
+            <version>0</version>
+            <label>queryTimings_JRXML_label</label>
+            <description>queryTimings_JRXML description</description>
+            <creationDate>2014-12-18T02:01:10.147-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:10.147-08:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/organizations/organization_1/performance/datasources/ProfileDataSourceJNDI</uri>
+    </dataSource>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>1</controlsLayout>
+</reportUnit>

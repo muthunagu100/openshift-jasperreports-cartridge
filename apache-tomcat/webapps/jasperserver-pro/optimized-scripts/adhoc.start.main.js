@@ -1,0 +1,1 @@
+define(["require","jquery","adhoc/datachooser/view/DatachooserDialogView"],function(e){var o=e("jquery"),r=e("adhoc/datachooser/view/DatachooserDialogView");o("link[href*='overrides_custom.css']").remove(),e(["!domReady","css!overrides_custom.css"],function(){var e=new r;e.open()})});

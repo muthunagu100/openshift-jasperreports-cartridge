@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<adhocDataView exportedWithPermissions="true">
+    <folder>/public/Samples/Ad_Hoc_Views</folder>
+    <name>02__Sales_Mix_by_Demographic</name>
+    <version>0</version>
+    <label>02. Sales Mix by Demographic</label>
+    <description>Sample HTML5 Spider Line chart from OLAP source</description>
+    <creationDate>2014-12-18T02:01:26.943-08:00</creationDate>
+    <updateDate>2014-11-24T18:59:19.030-08:00</updateDate>
+    <dataSource>
+        <uri>/public/Samples/OLAP/XMLA/Foodmart</uri>
+    </dataSource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="topicJRXML.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/02__Sales_Mix_by_Demographic_files</folder>
+            <name>topicJRXML</name>
+            <version>0</version>
+            <label>topicJRXML</label>
+            <creationDate>2014-12-18T02:01:26.943-08:00</creationDate>
+            <updateDate>2014-09-24T09:14:42.661-07:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="stateXML.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/02__Sales_Mix_by_Demographic_files</folder>
+            <name>stateXML</name>
+            <version>0</version>
+            <label>stateXML</label>
+            <creationDate>2014-12-18T02:01:26.943-08:00</creationDate>
+            <updateDate>2014-09-24T09:14:42.661-07:00</updateDate>
+            <fileType>xml</fileType>
+        </localResource>
+    </resource>
+    <reports>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="reportUnit">
+            <folder>/public/Samples/Ad_Hoc_Views/02__Sales_Mix_by_Demographic_files</folder>
+            <name>dashboardReport</name>
+            <version>1</version>
+            <label>dashboardReport</label>
+            <creationDate>2014-12-18T02:01:26.943-08:00</creationDate>
+            <updateDate>2014-11-24T18:59:19.030-08:00</updateDate>
+            <mainReport>
+                <localResource exportedWithPermissions="false"
+                    dataFile="mainReportJrxml.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Ad_Hoc_Views/02__Sales_Mix_by_Demographic_files/dashboardReport_files</folder>
+                    <name>mainReportJrxml</name>
+                    <version>0</version>
+                    <label>mainReportJrxml</label>
+                    <creationDate>2014-12-18T02:01:26.943-08:00</creationDate>
+                    <updateDate>2014-11-24T18:59:19.030-08:00</updateDate>
+                    <fileType>jrxml</fileType>
+                </localResource>
+            </mainReport>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="stateXML.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Ad_Hoc_Views/02__Sales_Mix_by_Demographic_files/dashboardReport_files</folder>
+                    <name>stateXML</name>
+                    <version>0</version>
+                    <label>stateXML</label>
+                    <creationDate>2014-12-18T02:01:26.943-08:00</creationDate>
+                    <updateDate>2014-11-24T18:59:19.030-08:00</updateDate>
+                    <fileType>xml</fileType>
+                </localResource>
+            </resource>
+            <alwaysPromptControls>false</alwaysPromptControls>
+            <controlsLayout>1</controlsLayout>
+        </localResource>
+    </reports>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>1</controlsLayout>
+</adhocDataView>

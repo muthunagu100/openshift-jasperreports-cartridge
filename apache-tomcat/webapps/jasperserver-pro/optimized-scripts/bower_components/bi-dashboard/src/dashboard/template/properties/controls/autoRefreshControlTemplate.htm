@@ -1,0 +1,22 @@
+<div class="section">
+	<div class="refreshSettings">
+	    <span class="title">{{- i18n["dashboard.dialog.properties.refresh.settings"]}}</span>
+	    <div class="group">
+	        <label class="control checkBox">
+	            <span class="wrap">{{- options.autoRefreshTitle }}</span>
+	            <input name="autoRefresh" rv-checked="model:autoRefresh" type="checkbox"/>
+	            <span class="message warning"></span>
+	        </label>
+	
+	        <span class="control input text refreshIntervalProperty" rv-validation-error-class="model:refreshInterval">
+	            <span class="wrap">{{-i18n["dashboard.dialog.properties.refresh.interval"]}}</span>
+	            <input name="refreshInterval" rv-enabled="model:autoRefresh" rv-input="model:refreshInterval | toInteger" type="text"/>
+	            <select name="refreshIntervalUnit" rv-input="model:refreshIntervalUnit" rv-enabled="model:autoRefresh">
+	                <option value="second">{{-i18n["dashboard.dialog.properties.refresh.interval.second"]}}</option>
+	                <option value="minute">{{-i18n["dashboard.dialog.properties.refresh.interval.minute"]}}</option>
+	            </select>
+	            <span class="message warning" rv-validation-error-text="model:refreshInterval"></span>
+	        </span>
+	    </div>
+	</div>
+</div>

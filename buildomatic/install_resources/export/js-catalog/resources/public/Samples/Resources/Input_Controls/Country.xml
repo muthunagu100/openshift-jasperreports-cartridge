@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inputControl exportedWithPermissions="true">
+    <folder>/public/Samples/Resources/Input_Controls</folder>
+    <name>Country</name>
+    <version>0</version>
+    <label>Country</label>
+    <creationDate>2014-12-18T02:01:40.245-08:00</creationDate>
+    <updateDate>2013-09-15T23:21:55.920-07:00</updateDate>
+    <type>7</type>
+    <mandatory>true</mandatory>
+    <readOnly>false</readOnly>
+    <visible>true</visible>
+    <query>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="query">
+            <folder>/public/Samples/Resources/Input_Controls/Country_files</folder>
+            <name>Query</name>
+            <version>0</version>
+            <label>Query</label>
+            <creationDate>2014-12-18T02:01:40.245-08:00</creationDate>
+            <updateDate>2013-09-15T23:21:55.920-07:00</updateDate>
+            <language>sql</language>
+            <queryString>SELECT distinct sales_country as "country"
+FROM region
+WHERE region_id &gt; 0
+ORDER BY 1;</queryString>
+            <dataSource>
+                <uri>/public/Samples/Data_Sources/FoodmartDataSourceJNDI</uri>
+            </dataSource>
+        </localResource>
+    </query>
+    <queryVisibleColumn>country</queryVisibleColumn>
+    <queryValueColumn>country</queryValueColumn>
+</inputControl>

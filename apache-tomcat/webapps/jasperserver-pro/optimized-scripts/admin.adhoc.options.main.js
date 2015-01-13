@@ -1,0 +1,1 @@
+define(["require","administer.options","!domReady","administer.base","administer.options","jrs.configs"],function(i){i("administer.options");var n=i("!domReady"),e=i("administer.base"),t=i("administer.options"),o=i("jrs.configs");n(function(){e.urlContext=o.urlContext,t.initialize()})});

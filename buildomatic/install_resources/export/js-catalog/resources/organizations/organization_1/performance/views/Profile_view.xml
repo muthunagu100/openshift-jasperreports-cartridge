@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<olapUnit exportedWithPermissions="true">
+    <folder>/organizations/organization_1/performance/views</folder>
+    <name>Profile_view</name>
+    <version>0</version>
+    <label>Profile view</label>
+    <description>Simple Profiling View</description>
+    <creationDate>2014-12-18T02:01:10.036-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:10.036-08:00</updateDate>
+    <olapClientConnection>
+        <uri>/organizations/organization_1/performance/connections/Profile</uri>
+    </olapClientConnection>
+    <mdxQuery>select {[Measures].[Duration in ms], [Measures].[Number of ops], [Measures].[SQL queries], [Measures].[MDX queries], [Measures].[Cache hits], [Measures].[Aggregate hits], [Measures].[Cache hit ratio], [Measures].[Agg hit ratio], [Measures].[Avg SQL queries per MDX query]} ON COLUMNS from [ProfilingCube]</mdxQuery>
+</olapUnit>

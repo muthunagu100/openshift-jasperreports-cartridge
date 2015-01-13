@@ -1,0 +1,1 @@
+define(["require","adhoc/filter/valueEditor/numericTrait","adhoc/filter/valueEditor/InputValueEditor"],function(e){var r=e("adhoc/filter/valueEditor/numericTrait"),i=e("adhoc/filter/valueEditor/InputValueEditor");return i.extend(r)});

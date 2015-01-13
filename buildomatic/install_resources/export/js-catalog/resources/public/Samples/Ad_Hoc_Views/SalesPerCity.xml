@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<adhocDataView exportedWithPermissions="true">
+    <folder>/public/Samples/Ad_Hoc_Views</folder>
+    <name>SalesPerCity</name>
+    <version>0</version>
+    <label>20.3 SalesPerCity</label>
+    <description>Sample Ad Hoc View used to Create Report for basic Visualize.js demo</description>
+    <creationDate>2014-12-18T02:01:28.895-08:00</creationDate>
+    <updateDate>2014-04-24T14:21:44.932-07:00</updateDate>
+    <dataSource>
+        <uri>/public/Samples/Data_Sources/FoodmartDataSourceJNDI</uri>
+    </dataSource>
+    <inputControl>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="inputControl">
+            <folder>/public/Samples/Ad_Hoc_Views/SalesPerCity_files</folder>
+            <name>store_city_1</name>
+            <version>0</version>
+            <label>Store City</label>
+            <creationDate>2014-12-18T02:01:28.895-08:00</creationDate>
+            <updateDate>2014-04-24T14:21:44.932-07:00</updateDate>
+            <type>4</type>
+            <mandatory>false</mandatory>
+            <readOnly>false</readOnly>
+            <visible>true</visible>
+            <query>
+                <localResource exportedWithPermissions="false" xsi:type="query">
+                    <folder>/public/Samples/Ad_Hoc_Views/SalesPerCity_files/store_city_1_files</folder>
+                    <name>store_city_1</name>
+                    <version>0</version>
+                    <label>Store City</label>
+                    <creationDate>2014-12-18T02:01:28.895-08:00</creationDate>
+                    <updateDate>2014-04-24T14:21:44.932-07:00</updateDate>
+                    <language>domain</language>
+                    <queryString>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;query xmlns="http://www.jaspersoft.com/2007/SL/XMLSchema"&gt;
+  &lt;groupList&gt;
+    &lt;group columnName="store_city" /&gt;
+  &lt;/groupList&gt;
+  &lt;queryFields&gt;
+    &lt;queryField id="c_gender" resourceId="c_gender" /&gt;
+    &lt;queryField id="store_sales" resourceId="store_sales" /&gt;
+    &lt;queryField id="store_city" resourceId="store_city" /&gt;
+    &lt;queryField id="the_date" resourceId="the_date" /&gt;
+    &lt;queryField id="product_family" resourceId="product_family" /&gt;
+    &lt;queryField id="product_name" resourceId="product_name" /&gt;
+    &lt;queryField id="c_country" resourceId="c_country" /&gt;
+    &lt;queryField id="c_city" resourceId="c_city" /&gt;
+    &lt;queryField id="store_country" resourceId="store_country" /&gt;
+    &lt;queryField id="c_state_province" resourceId="c_state_province" /&gt;
+    &lt;queryField id="product_subcategory" resourceId="product_subcategory" /&gt;
+    &lt;queryField id="month_of_year" resourceId="month_of_year" /&gt;
+    &lt;queryField id="store_cost" resourceId="store_cost" /&gt;
+    &lt;queryField id="unit_sales" resourceId="unit_sales" /&gt;
+    &lt;queryField id="product_category" resourceId="product_category" /&gt;
+    &lt;queryField id="store_state" resourceId="store_state" /&gt;
+    &lt;queryField id="product_department" resourceId="product_department" /&gt;
+    &lt;queryField id="the_year" resourceId="the_year" /&gt;
+    &lt;queryField id="day_of_month" resourceId="day_of_month" /&gt;
+    &lt;queryField id="store_name" resourceId="store_name" /&gt;
+    &lt;queryField id="quarter" resourceId="quarter" /&gt;
+  &lt;/queryFields&gt;
+  &lt;resources&gt;
+    &lt;memory id="default"&gt;
+      &lt;fieldList&gt;
+        &lt;field id="c_country" type="java.lang.String" /&gt;
+        &lt;field id="c_state_province" type="java.lang.String" /&gt;
+        &lt;field id="c_city" type="java.lang.String" /&gt;
+        &lt;field id="c_gender" type="java.lang.String" /&gt;
+        &lt;field id="product_family" type="java.lang.String" /&gt;
+        &lt;field id="product_category" type="java.lang.String" /&gt;
+        &lt;field id="product_subcategory" type="java.lang.String" /&gt;
+        &lt;field id="product_name" type="java.lang.String" /&gt;
+        &lt;field id="product_department" type="java.lang.String" /&gt;
+        &lt;field id="store_country" type="java.lang.String" /&gt;
+        &lt;field id="store_state" type="java.lang.String" /&gt;
+        &lt;field id="store_city" type="java.lang.String" /&gt;
+        &lt;field id="store_name" type="java.lang.String" /&gt;
+        &lt;field id="the_year" type="java.lang.Integer" /&gt;
+        &lt;field id="quarter" type="java.lang.String" /&gt;
+        &lt;field id="month_of_year" type="java.lang.Integer" /&gt;
+        &lt;field id="day_of_month" type="java.lang.Integer" /&gt;
+        &lt;field id="the_date" type="java.sql.Timestamp" /&gt;
+        &lt;field id="store_sales" type="java.lang.Double" /&gt;
+        &lt;field id="store_cost" type="java.lang.Double" /&gt;
+        &lt;field id="unit_sales" type="java.lang.Double" /&gt;
+      &lt;/fieldList&gt;
+      &lt;sortList&gt;
+        &lt;sortColumn columnName="store_city" /&gt;
+      &lt;/sortList&gt;
+      &lt;source&gt;
+        &lt;jrQueryDataSet maxRows="200001" queryLanguage="sql"&gt;
+          &lt;fieldList&gt;
+            &lt;field id="c_country" type="java.lang.String"&gt;
+              &lt;propertyMap&gt;
+                &lt;entry key="kind"&gt;
+                  &lt;string&gt;DIMENSION&lt;/string&gt;
+                &lt;/entry&gt;
+                &lt;entry key="adhoc.display"&gt;
+                  &lt;string&gt;Customer Country&lt;/string&gt;
+                &lt;/entry&gt;
+              &lt;/propertyMap&gt;
+            &lt;/field&gt;
+            &lt;field id="c_state_province" type="java.lang.String"&gt;
+              &lt;propertyMap&gt;
+                &lt;entry key="kind"&gt;
+                  &lt;string&gt;DIMENSION&lt;/string&gt;
+                &lt;/entry&gt;
+                &lt;entry key="adhoc.display"&gt;
+                  &lt;string&gt;Customer State&lt;/string&gt;
+                &lt;/entry&gt;
+              &lt;/propertyMap&gt;
+            &lt;/field&gt;
+            &lt;field id="c_city" type="java.lang.String"&gt;
+              &lt;propertyMap&gt;
+                &lt;entry key="kind"&gt;
+                  &lt;string&gt;DIMENSION&lt;/string&gt;
+                &lt;/entry&gt;
+                &lt;entry key="adhoc.display"&gt;
+                  &lt;string&gt;Customer City&lt;/string&gt;
+                &lt;/entry&gt;
+              &lt;/propertyMap&gt;
+            &lt;/field&gt;
+            &lt;field id="c_gender" type="java.lang.String"&gt;
+              &lt;propertyMap&gt;
+                &lt;entry key="kind"&gt;
+                  &lt;string&gt;DIMENSION&lt;/string&gt;
+                &lt;/entry&gt;
+                &lt;entry key="adhoc.display"&gt;
+                  &lt;string&gt;Customer Gender&lt;/string&gt;
+                &lt;/entry&gt;
+              &lt;/propertyMap&gt;
+            &lt;/field&gt;
+            &lt;field id="product_family" type="java.lang.String"&gt;
+              &lt;propertyMap&gt;
+                &lt;entry key="kind"&gt;
+                  &lt;string&gt;DIMENSION&lt;/string&gt;
+                &lt;/entry&gt;
+                &lt;entry key="adhoc.display"&gt;
+                  &lt;string&gt;Product Family&lt;/string&gt;
+                &lt;/entry&gt;
+              &lt;/propertyMap&gt;
+            &lt;/field&gt;
+            &lt;field id="product_category" type="java.lang.String"&gt;
+              &lt;propertyMap&gt;
+                &lt;entry key="kind"&gt;
+                  &lt;string&gt;DIMENSION&lt;/string&gt;
+                &lt;/entry&gt;
+                &lt;entry key="adhoc.display"&gt;
+                  &lt;string&gt;Product Category&lt;/string&gt;
+                &lt;/entry&gt;
+              &lt;/propertyMap&gt;
+            &lt;/field&gt;
+            &lt;field id="product_subcategory" type="java.lang.String"&gt;
+              &lt;propertyMap&gt;
+                &lt;entry key="kind"&gt;
+                  &lt;string&gt;DIMENSION&lt;/string&gt;
+                &lt;/entry&gt;
+                &lt;entry key="adhoc.display"&gt;
+                  &lt;string&gt;Product Subcategory&lt;/string&gt;
+                &lt;/entry&gt;
+              &lt;/propertyMap&gt;
+            &lt;/field&gt;
+            &lt;field id="product_name" type="java.lang.String"&gt;
+              &lt;propertyMap&gt;
+                &lt;entry key="kind"&gt;
+                  &lt;string&gt;DIMENSION&lt;/string&gt;
+                &lt;/entry&gt;
+                &lt;entry key="adhoc.display"&gt;
+                  &lt;string&gt;Product Name&lt;/string&gt;
+                &lt;/entry&gt;
+              &lt;/propertyMap&gt;
+            &lt;/field&gt;
+            &lt;field id="product_department" type="java.lang.String"&gt;
+              &lt;propertyMap&gt;
+                &lt;entry key="kind"&gt;
+                  &lt;string&gt;DIMENSION&lt;/string&gt;
+                &lt;/entry&gt;
+                &lt;entry key="adhoc.display"&gt;
+                  &lt;string&gt;Product Department&lt;/string&gt;
+                &lt;/entry&gt;
+              &lt;/propertyMap&gt;
+            &lt;/field&gt;
+            &lt;field id="store_country" type="java.lang.String"&gt;
+              &lt;propertyMap&gt;
+                &lt;entry key="kind"&gt;
+                  &lt;string&gt;DIMENSION&lt;/string&gt;
+                &lt;/entry&gt;
+                &lt;entry key="adhoc.display"&gt;
+                  &lt;string&gt;Store Country&lt;/string&gt;
+                &lt;/entry&gt;
+              &lt;/propertyMap&gt;
+            &lt;/field&gt;
+            &lt;field id="store_state" type="java.lang.String"&gt;
+              &lt;propertyMap&gt;
+                &lt;entry key="kind"&gt;
+                  &lt;string&gt;DIMENSION&lt;/string&gt;
+                &lt;/entry&gt;
+                &lt;entry key="adhoc.display"&gt;
+                  &lt;string&gt;Store State&lt;/string&gt;
+                &lt;/entry&gt;
+              &lt;/propertyMap&gt;
+            &lt;/field&gt;
+            &lt;field id="store_city" type="java.lang.String"&gt;
+              &lt;propertyMap&gt;
+                &lt;entry key="kind"&gt;
+                  &lt;string&gt;DIMENSION&lt;/string&gt;
+                &lt;/entry&gt;
+                &lt;entry key="adhoc.display"&gt;
+                  &lt;string&gt;Store City&lt;/string&gt;
+                &lt;/entry&gt;
+              &lt;/propertyMap&gt;
+            &lt;/field&gt;
+            &lt;field id="store_name" type="java.lang.String"&gt;
+              &lt;propertyMap&gt;
+                &lt;entry key="kind"&gt;
+                  &lt;string&gt;DIMENSION&lt;/string&gt;
+                &lt;/entry&gt;
+                &lt;entry key="adhoc.display"&gt;
+                  &lt;string&gt;Store Name&lt;/string&gt;
+                &lt;/entry&gt;
+              &lt;/propertyMap&gt;
+            &lt;/field&gt;
+            &lt;field id="the_year" type="java.lang.Integer"&gt;
+              &lt;propertyMap&gt;
+                &lt;entry key="kind"&gt;
+                  &lt;string&gt;MEASURE&lt;/string&gt;
+                &lt;/entry&gt;
+                &lt;entry key="adhoc.display"&gt;
+                  &lt;string&gt;Year&lt;/string&gt;
+                &lt;/entry&gt;
+              &lt;/propertyMap&gt;
+            &lt;/field&gt;
+            &lt;field id="quarter" type="java.lang.String"&gt;
+              &lt;propertyMap&gt;
+                &lt;entry key="kind"&gt;
+                  &lt;string&gt;DIMENSION&lt;/string&gt;
+                &lt;/entry&gt;
+                &lt;entry key="adhoc.display"&gt;
+                  &lt;string&gt;Quarter&lt;/string&gt;
+                &lt;/entry&gt;
+              &lt;/propertyMap&gt;
+            &lt;/field&gt;
+            &lt;field id="month_of_year" type="java.lang.Integer"&gt;
+              &lt;propertyMap&gt;
+                &lt;entry key="kind"&gt;
+                  &lt;string&gt;MEASURE&lt;/string&gt;
+                &lt;/entry&gt;
+                &lt;entry key="adhoc.display"&gt;
+                  &lt;string&gt;Month&lt;/string&gt;
+                &lt;/entry&gt;
+              &lt;/propertyMap&gt;
+            &lt;/field&gt;
+            &lt;field id="day_of_month" type="java.lang.Integer"&gt;
+              &lt;propertyMap&gt;
+                &lt;entry key="kind"&gt;
+                  &lt;string&gt;MEASURE&lt;/string&gt;
+                &lt;/entry&gt;
+                &lt;entry key="adhoc.display"&gt;
+                  &lt;string&gt;Day of Month&lt;/string&gt;
+                &lt;/entry&gt;
+              &lt;/propertyMap&gt;
+            &lt;/field&gt;
+            &lt;field id="the_date" type="java.sql.Timestamp"&gt;
+              &lt;propertyMap&gt;
+                &lt;entry key="kind"&gt;
+                  &lt;string&gt;DIMENSION&lt;/string&gt;
+                &lt;/entry&gt;
+                &lt;entry key="adhoc.display"&gt;
+                  &lt;string&gt;Date&lt;/string&gt;
+                &lt;/entry&gt;
+              &lt;/propertyMap&gt;
+            &lt;/field&gt;
+            &lt;field id="store_sales" type="java.lang.Double"&gt;
+              &lt;propertyMap&gt;
+                &lt;entry key="kind"&gt;
+                  &lt;string&gt;MEASURE&lt;/string&gt;
+                &lt;/entry&gt;
+                &lt;entry key="adhoc.display"&gt;
+                  &lt;string&gt;Store Sales&lt;/string&gt;
+                &lt;/entry&gt;
+              &lt;/propertyMap&gt;
+            &lt;/field&gt;
+            &lt;field id="store_cost" type="java.lang.Double"&gt;
+              &lt;propertyMap&gt;
+                &lt;entry key="kind"&gt;
+                  &lt;string&gt;MEASURE&lt;/string&gt;
+                &lt;/entry&gt;
+                &lt;entry key="adhoc.display"&gt;
+                  &lt;string&gt;Store Cost&lt;/string&gt;
+                &lt;/entry&gt;
+              &lt;/propertyMap&gt;
+            &lt;/field&gt;
+            &lt;field id="unit_sales" type="java.lang.Double"&gt;
+              &lt;propertyMap&gt;
+                &lt;entry key="kind"&gt;
+                  &lt;string&gt;MEASURE&lt;/string&gt;
+                &lt;/entry&gt;
+                &lt;entry key="adhoc.display"&gt;
+                  &lt;string&gt;Unit Sales&lt;/string&gt;
+                &lt;/entry&gt;
+              &lt;/propertyMap&gt;
+            &lt;/field&gt;
+          &lt;/fieldList&gt;
+          &lt;dsReferenceURI&gt;/adhoc/topics/CrosstabDemo&lt;/dsReferenceURI&gt;
+          &lt;query&gt;select    c.city  as c_city, c.state_province as c_state_province, c.country as c_country, c.gender as c_gender,
+        p.product_name, pc.product_family, pc.product_department, pc.product_category, pc.product_subcategory, 
+        st.store_name, st.store_city, st.store_state, st.store_country,
+        t.the_date, t.day_of_month, t.month_of_year, t.quarter, t.the_year,
+        s.store_sales, s.store_cost, s.unit_sales 
+    from sales_fact_1998 s
+    join customer c on (c.customer_id = s.customer_id) 
+    join time_by_day t on (t.time_id = s.time_id) 
+    join product p on (p.product_id = s.product_id) 
+    join product_class pc on (pc.product_class_id = p.product_class_id)
+    join store st on (st.store_id = s.store_id)&lt;/query&gt;
+        &lt;/jrQueryDataSet&gt;
+      &lt;/source&gt;
+    &lt;/memory&gt;
+  &lt;/resources&gt;
+&lt;/query&gt;
+
+</queryString>
+                    <dataSource>
+                        <uri>/public/Samples/Data_Sources/FoodmartDataSourceJNDI</uri>
+                    </dataSource>
+                </localResource>
+            </query>
+            <queryVisibleColumn>store_city</queryVisibleColumn>
+            <queryValueColumn>store_city</queryValueColumn>
+        </localResource>
+    </inputControl>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="topicJRXML.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/SalesPerCity_files</folder>
+            <name>topicJRXML</name>
+            <version>0</version>
+            <label>topicJRXML</label>
+            <creationDate>2014-12-18T02:01:28.895-08:00</creationDate>
+            <updateDate>2014-04-24T14:20:57.751-07:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="stateXML.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/SalesPerCity_files</folder>
+            <name>stateXML</name>
+            <version>0</version>
+            <label>stateXML</label>
+            <creationDate>2014-12-18T02:01:28.895-08:00</creationDate>
+            <updateDate>2014-04-24T14:20:57.751-07:00</updateDate>
+            <fileType>xml</fileType>
+        </localResource>
+    </resource>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>1</controlsLayout>
+</adhocDataView>

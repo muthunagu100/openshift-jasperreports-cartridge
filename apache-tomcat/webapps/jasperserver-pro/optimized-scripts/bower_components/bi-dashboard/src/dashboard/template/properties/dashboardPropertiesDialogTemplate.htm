@@ -1,0 +1,22 @@
+<div class="section first">
+    <span class="title">{{- i18n["dashboard.dialog.properties.dashlet.settings"]}}</span>
+    <div class="group">
+        <label class="control checkBox">
+            <span class="wrap">{{-i18n["dashboard.dialog.properties.dashlet.borders"]}}</span>
+            <input name="showDashletBorders" rv-checked="model:showDashletBorders" type="checkbox"/>
+            <span class="message warning"></span>
+        </label>
+
+        <label class="control text" rv-validation-error-class="model:dashletMargin">
+            <span class="wrap">{{-i18n["dashboard.dialog.properties.dashlet.margin"]}}</span>
+            <input name="dashletMargin" rv-input="model:dashletMargin | toInteger" type="text"/>
+            <span class="message warning" rv-validation-error-text="model:dashletMargin"></span>
+        </label>
+
+        <label class="control text" rv-validation-error-class="model:dashletPadding">
+            <span class="wrap">{{-i18n["dashboard.dialog.properties.dashlet.padding"]}}</span>
+            <input name="dashletPadding" rv-input="model:dashletPadding | toInteger" type="text"/>
+            <span class="message warning" rv-validation-error-text="model:dashletPadding"></span>
+        </label>
+    </div>
+</div>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="top5Geographies" pageWidth="260" pageHeight="210" orientation="Landscape" columnWidth="260" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" resourceBundle="supermart" whenResourceMissingType="Key" uuid="ebb51791-0159-41f9-b4ac-83ce2737a960">
+	<property name="ireport.jasperserver.reportUnit" value="/public/Samples/Reports/14.PerformanceSummary"/>
+	<property name="ireport.jasperserver.url" value="http://192.168.2.141:8102/jasperserver-pro/"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.jasperserver.report.resource" value="/public/Samples/Reports/14.PerformanceSummary_files/top5Geographies.jrxml"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<template><![CDATA["repo:/public/Samples/Resources/Extras/SampleReportStyles.jrtx"]]></template>
+	<style name="detail">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[($V{REPORT_COUNT} % 2) == 0]]></conditionExpression>
+			<style backcolor="#E9E7E8"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[($V{REPORT_COUNT} % 2) != 0]]></conditionExpression>
+			<style backcolor="#F1F1F2"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="SparklineDatatset" uuid="eb17dcb0-f70c-4dcb-be84-26b0c5fd5984">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Foodmart"/>
+		<parameter name="Product_Family" class="java.lang.String">
+			<defaultValueExpression><![CDATA["All"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="State" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[SELECT 
+	sales_state_province,
+	sum(store_sales) as store_sales,
+	the_month as time
+FROM 
+	sales_fact_1998 s 
+inner join store st on s.store_id=st.store_id
+inner join time_by_day tim on tim.time_id = s.time_id
+inner join region r on r.region_id=st.region_id
+inner join product p on p.product_id=s.product_id
+inner join product_class pc on p.product_class_id=pc.product_class_id
+where ($P{Product_Family}='All' or pc.product_family=$P{Product_Family}) and sales_state_province = $P{State}
+group by sales_state_province,the_month
+order by store_sales desc limit 5]]>
+		</queryString>
+		<field name="sales_state_province" class="java.lang.String"/>
+		<field name="store_sales" class="java.math.BigDecimal"/>
+		<field name="time" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="Product_Family" class="java.lang.String">
+		<defaultValueExpression><![CDATA["All"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT sales_state_province,sum(store_sales) as store_sales
+FROM sales_fact_1998 s inner join store st on s.store_id=st.store_id
+inner join region r on r.region_id=st.region_id
+inner join product p on p.product_id=s.product_id
+inner join product_class pc on p.product_class_id=pc.product_class_id
+where ($P{Product_Family}='All' or pc.product_family=$P{Product_Family})
+group by sales_state_province
+order by store_sales desc limit 5]]>
+	</queryString>
+	<field name="sales_state_province" class="java.lang.String"/>
+	<field name="store_sales" class="java.math.BigDecimal"/>
+	<title>
+		<band height="35" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement mode="Opaque" x="0" y="0" width="259" height="35" forecolor="#58595B" backcolor="#E9E9E8" uuid="e6d827cb-dea2-4bbd-873d-a6467630f753">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box leftPadding="8">
+					<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="Calibri" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{Geographies}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="34" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement style="detail" mode="Opaque" x="25" y="0" width="75" height="34" forecolor="#0980BA" uuid="c9fe8bf7-50ee-4c67-82c6-aacfd8029205">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="4">
+					<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sales_state_province}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="detail" mode="Opaque" x="0" y="0" width="25" height="34" forecolor="#58595B" uuid="ec93b61b-aabe-4200-917d-a75760c851ac">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+				</reportElement>
+				<box leftPadding="0" rightPadding="5">
+					<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Calibri" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT} + " "]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement key="" style="detail" mode="Opaque" x="170" y="0" width="89" height="34" forecolor="#58595B" uuid="1ae3ca06-bba8-4c30-a745-9217bc30075d">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box rightPadding="10">
+					<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Calibri" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($R{CurrencySymbol}.equals("CurrencySymbol") ? "$" : $R{CurrencySymbol}) /* Uses dollar as default if key is not found */
++ " "
++ java.text.NumberFormat.getIntegerInstance($P{REPORT_LOCALE}).format( $F{store_sales}.longValue() )]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement style="detail" mode="Opaque" x="100" y="0" width="70" height="34" uuid="cd594d0a-4820-4ce6-a213-90f7907df7a4">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineColor="#D7DAD9"/>
+					<leftPen lineColor="#D7DAD9"/>
+					<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<rightPen lineColor="#D7DAD9"/>
+				</box>
+				<componentElement>
+					<reportElement style="detail" mode="Transparent" x="0" y="0" width="70" height="34" uuid="c97f4a6c-b775-4552-b1f6-3378b384c3d1">
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<fw:sparkLine xmlns:fw="http://jaspersoft.com/fusion" xsi:schemaLocation="http://jaspersoft.com/fusion http://jaspersoft.com/schema/fusion.xsd">
+						<fw:widgetProperty name="showHighLowValue">
+							<fw:propertyExpression><![CDATA[Boolean.FALSE]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="showOpenValue">
+							<fw:propertyExpression><![CDATA[Boolean.FALSE]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="showCloseValue">
+							<fw:propertyExpression><![CDATA[Boolean.FALSE]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="drawAnchors">
+							<fw:propertyExpression><![CDATA[Boolean.TRUE]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="anchorColor">
+							<fw:propertyExpression><![CDATA[new java.awt.Color(-16154438)]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="closeColor">
+							<fw:propertyExpression><![CDATA[new java.awt.Color(-11293993)]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="lineAlpha">
+							<fw:propertyExpression><![CDATA[new Integer(100)]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="lineColor">
+							<fw:propertyExpression><![CDATA[new java.awt.Color(-16777216)]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="lineThickness">
+							<fw:propertyExpression><![CDATA[new Integer(1)]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="openColor">
+							<fw:propertyExpression><![CDATA[new java.awt.Color(-11293993)]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="showBorder">
+							<fw:propertyExpression><![CDATA[Boolean.FALSE]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="bgColor">
+							<fw:propertyExpression><![CDATA[$V{REPORT_COUNT}%2==0 ? "#e6e7e8" : "#f1f1f2"]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="anchorRadius">
+							<fw:propertyExpression><![CDATA[new Integer(1)]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:valuesDataset>
+							<dataset>
+								<datasetRun subDataset="SparklineDatatset" uuid="d48ef23f-2132-4ba9-9718-4b43371cd363">
+									<datasetParameter name="Product_Family">
+										<datasetParameterExpression><![CDATA[$P{Product_Family}]]></datasetParameterExpression>
+									</datasetParameter>
+									<datasetParameter name="State">
+										<datasetParameterExpression><![CDATA[$F{sales_state_province}]]></datasetParameterExpression>
+									</datasetParameter>
+									<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+								</datasetRun>
+							</dataset>
+							<fw:valueExpression><![CDATA[$F{store_sales}]]></fw:valueExpression>
+						</fw:valuesDataset>
+					</fw:sparkLine>
+				</componentElement>
+			</frame>
+		</band>
+	</detail>
+</jasperReport>

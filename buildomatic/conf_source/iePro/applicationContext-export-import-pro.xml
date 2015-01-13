@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+    <bean class="com.jaspersoft.jasperserver.api.common.util.spring.BeanPropertyListAppender" lazy-init="false">
+    	<property name="order" value="10"/>
+    	<property name="beanName" value="repositorySerializer"/>
+    	<property name="propertyName" value="castorMappings"/>
+    	<property name="appended">
+    		<list>
+				<value>classpath:com/jaspersoft/ji/adhoc/export/AdhocReportUnit.xml</value>
+				<value>classpath:com/jaspersoft/ji/ja/export/SecureMondrianConnection.xml</value>
+				<value>classpath:com/jaspersoft/commons/semantic/datasource/export/SemanticLayerDatasource.xml</value>
+				<value>classpath:com/jaspersoft/commons/semantic/export/DataDefinerUnit.xml</value>
+				<value>classpath:com/jaspersoft/ji/adhoc/export/DashboardResource.xml</value>
+				<value>classpath:com/jaspersoft/ji/adhoc/export/DashboardState.xml</value>
+				<value>classpath:com/jaspersoft/ji/adhoc/export/Property.xml</value>
+				<value>classpath:com/jaspersoft/ji/dashboard/export/DashboardModelResource.xml</value>
+                <value>classpath:com/jaspersoft/ji/dashboard/export/DashboardModelFoundation.xml</value>
+    		</list>
+    	</property>
+    </bean>
+	
+    <bean class="com.jaspersoft.jasperserver.api.common.util.spring.BeanPropertyMapAppender" lazy-init="false">
+    	<property name="order" value="9"/>
+    	<property name="beanName" value="resourceBeanMappings"/>
+    	<property name="propertyName" value="implementationClassMappings"/>
+    	<property name="appended">
+    		<map>
+                <entry key="com.jaspersoft.ji.adhoc.AdhocReportUnit"
+                    value="com.jaspersoft.ji.adhoc.export.AdhocReportUnitBean"/>
+                <entry key="com.jaspersoft.ji.adhoc.AdhocDataView"
+                    value="com.jaspersoft.ji.adhoc.export.AdhocDataViewBean"/>
+                <entry key="com.jaspersoft.ji.ja.security.domain.SecureMondrianConnection"
+                    value="com.jaspersoft.ji.ja.export.SecureMondrianConnectionBean"/>
+<!--  commented out: bugfix #14575
+		<entry key="com.jaspersoft.jasperserver.api.metadata.olap.domain.MondrianConnection"
+                       value="com.jaspersoft.ji.ja.export.SecureMondrianConnectionBean"/>
+  -->
+                <entry key="com.jaspersoft.commons.semantic.datasource.SemanticLayerDataSource"
+                    value="com.jaspersoft.commons.semantic.datasource.export.SemanticLayerDatasourceBean"/>
+                <entry key="com.jaspersoft.commons.semantic.DataDefinerUnit"
+                    value="com.jaspersoft.commons.semantic.export.DataDefinerUnitBean"/>
+                <entry key="com.jaspersoft.ji.adhoc.DashboardResource"
+                    value="com.jaspersoft.ji.adhoc.export.DashboardResourceBean"/>
+                <entry key="com.jaspersoft.ji.dashboard.DashboardModelResource"
+                       value="com.jaspersoft.ji.dashboard.export.DashboardModelResourceBean"/>
+    		</map>
+    	</property>
+    </bean>
+
+	<bean id="repositoryExportFilter" class="com.jaspersoft.jasperserver.export.modules.repository.RepositoryExportPathFilter">
+		<property name="excludeContentsFolderPatterns">
+			<list>
+				<value><![CDATA[(/organizations/[^/]+)*/temp]]></value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="multiTenancyResourceExporter"
+ 	    parent="resourceExporter">
+            <property name="exportFilter"><ref bean="repositoryExportFilter"/></property>
+        </bean>
+
+    <!-- Temporarily added in order to make everything work. TODO: improve. -->
+    <bean id="proHibernateCompositeDeleteListenerListeners" class="java.util.ArrayList">
+        <constructor-arg index="0" type="java.util.Collection">
+            <list>
+            	<ref bean="hibernateReportJobsUserDeleteListener"/>
+            	<ref bean="hibernateLoggingServiceUserDeleteListener"/>
+            	<ref bean="reportUnitDeleteListener"/>
+                <ref bean="hibernateAccessEventDeleteListener"/>
+                <ref bean="hibernateRoleDeleteListener"/>
+                <!--<ref bean="proThemeHibernateListener" />-->
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="proHibernateCompositeSaveOrUpdateListeners" class="java.util.ArrayList">
+        <constructor-arg index="0" type="java.util.Collection">
+            <list>
+                <ref bean="dataSnapshotReportUnitListener" />
+                <!--<ref bean="proThemeHibernateListener" />-->
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>

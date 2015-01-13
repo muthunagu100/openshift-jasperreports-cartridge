@@ -1,0 +1,11 @@
+<div class="section">
+    <label class="control filtersPerRowProperty" rv-validation-error-class="model:filtersPerRow">
+        <span class="wrap">{{-i18n["dashboard.component.dialog.properties.filters.per.row"]}}</span>
+        <select name="filtersPerRow" rv-input="model:filtersPerRow | toInteger">
+            {{ _(16).times(function(n){ }}
+                <option value="{{- n+1 }}">{{- n+1 }}</option>
+            {{ }) }}
+        </select>
+        <span class="message warning" rv-validation-error-text="model:filtersPerRow"></span>
+    </label>
+</div>

@@ -1,0 +1,174 @@
+<unifiedState dataSize="sample" filterPanelShowing="true" hasMargins="false" ignoreMaxRows="false" initedSubFilterList="true" launchType="ADH_045a_DOMAIN" maxDisplayColumns="0" maxDisplayRows="0" maxRowChoices="0" maxRows="0" mode="ichart" pageOrientation="Portrait" paperSize="content" showTableDetails="true" showTableTotals="false" summaryRowTitle="Totals" theme="default" titleBarShowing="true" titleHeight="0" topicName="Supermart Domain">
+  <chartState availableChartHeight="0" availableChartWidth="0" backgroundFilled="false" chartHeight="0" chartIsVertical="true" chartWidth="0" displayXAxisLabel="true" displayYAxisLabel="false" offsetX="0" offsetY="0">
+    <chartTitle />
+    <chartType>1_bar</chartType>
+    <displayLegendMap>
+      <entry key="5_scatter">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="2_pie">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="6_timeSeries">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="3_line">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="1_bar">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="4_area">
+        <boolean>true</boolean>
+      </entry>
+    </displayLegendMap>
+    <gradient>topDown</gradient>
+    <hasLinesMap>
+      <entry key="5_scatter">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="2_pie">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="6_timeSeries">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="3_line">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="1_bar">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="4_area">
+        <boolean>false</boolean>
+      </entry>
+    </hasLinesMap>
+    <hasPointsMap>
+      <entry key="5_scatter">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="2_pie">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="6_timeSeries">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="3_line">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="1_bar">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="4_area">
+        <boolean>false</boolean>
+      </entry>
+    </hasPointsMap>
+    <stackedMap>
+      <entry key="5_scatter">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="2_pie">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="6_timeSeries">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="3_line">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="1_bar">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="4_area">
+        <boolean>false</boolean>
+      </entry>
+    </stackedMap>
+    <threeDMap>
+      <entry key="5_scatter">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="2_pie">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="6_timeSeries">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="3_line">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="1_bar">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="4_area">
+        <boolean>true</boolean>
+      </entry>
+    </threeDMap>
+  </chartState>
+  <crosstabState numberOfColumns="0" safeColumnMode="true" safeRowMode="true" showLabels="true">
+    <columnGroups>
+      <queryDimension categorizerName="all" fieldName="inventory_fact_ALL.inv__product.inv__product__brand_name" includeAll="true" name="inventory_fact_ALL.inv__product.inv__product__brand_name" sortStatus="0" type="java.lang.String" uniqueName="inventory_fact_ALL.inv__product.inv__product__brand_name">
+        <expandedLevels>
+          <string>inventory_fact_ALL.inv__product.inv__product__brand_name</string>
+        </expandedLevels>
+        <visibleLevels>
+          <string>inventory_fact_ALL.inv__product.inv__product__brand_name</string>
+        </visibleLevels>
+      </queryDimension>
+      <queryDimension fieldName="Measures" includeAll="true" name="Measures" sortStatus="0" type="java.lang.String" uniqueName="Measures">
+        <visibleLevels>
+          <string>Measures</string>
+        </visibleLevels>
+      </queryDimension>
+    </columnGroups>
+    <rowGroups>
+      <queryDimension categorizerName="all" fieldName="inventory_fact_ALL.inv_store.inv_store__region.inv_store__region__sales_district" includeAll="true" name="inventory_fact_ALL.inv_store.inv_store__region.inv_store__region__sales_district" sortStatus="0" type="java.lang.String" uniqueName="inventory_fact_ALL.inv_store.inv_store__region.inv_store__region__sales_district">
+        <expandedLevels>
+          <string>inventory_fact_ALL.inv_store.inv_store__region.inv_store__region__sales_district</string>
+        </expandedLevels>
+        <visibleLevels>
+          <string>inventory_fact_ALL.inv_store.inv_store__region.inv_store__region__sales_district</string>
+        </visibleLevels>
+      </queryDimension>
+    </rowGroups>
+    <sortingState />
+  </crosstabState>
+  <groups>
+    <queryDimension categorizerName="all" fieldName="inventory_fact_ALL.inv_store.inv_store__region.inv_store__region__sales_district" includeAll="true" name="inventory_fact_ALL.inv_store.inv_store__region.inv_store__region__sales_district" sortStatus="0" type="java.lang.String" uniqueName="inventory_fact_ALL.inv_store.inv_store__region.inv_store__region__sales_district">
+      <expandedLevels>
+        <string>inventory_fact_ALL.inv_store.inv_store__region.inv_store__region__sales_district</string>
+      </expandedLevels>
+      <visibleLevels>
+        <string>inventory_fact_ALL.inv_store.inv_store__region.inv_store__region__sales_district</string>
+      </visibleLevels>
+    </queryDimension>
+  </groups>
+  <intelligentChartState XAxisRotation="-45" XAxisStep="1" YAxisRotation="0" YAxisStep="1" alignment="bottom" autoScaleFonts="true" color1Stop="0.1" color2Stop="0.5" color3Stop="0.9" decimalPoint="." donnutInnerSize="40" gaugesMaxValue="200.0" gaugesMinValue="0.0" invertedAxis="false" labelOffset="0.0" legend="bottom" legendBorder="false" rotateAllLevels="false" rotation="0.0" showDataPoints="true" showLabels="false" showMeasureOnValueAxis="true" showSingleMeasuresLabels="true" showXAxisLabels="true" showYAxisLabels="true" singleAxisComboChart="false" thousandSeparator="None" typeString="heat_map" />
+  <measures>
+    <measure aggregateType="java.lang.Long" fieldName="inventory_fact_ALL.inventory_fact_ALL__units_ordered_2013" function="Sum" mask="#,##0" measure="true" name="inventory_fact_ALL.inventory_fact_ALL__units_ordered_2013" showSummary="false" width="125" />
+  </measures>
+  <propertyMap>
+    <entry key="hideEmptyRows">
+      <string>false</string>
+    </entry>
+    <entry key="modFlags">
+      <string />
+    </entry>
+    <entry key="ADHOC_VERSION">
+      <string>4.5.0</string>
+    </entry>
+  </propertyMap>
+  <subFilterList>
+    <subFilter id="filter_1" letter="A" sourceString="DYNAMIC">
+      <expressionString>inventory_fact_ALL.inv__product.inv__product__brand_name in ('Ebony', 'Hermanos', 'High Top', 'Tell Tale', 'Tri-State')</expressionString>
+      <parameterizedExpressionString>inventory_fact_ALL.inv__product.inv__product__brand_name in inv__product__brand_name_1</parameterizedExpressionString>
+    </subFilter>
+    <subFilter id="filter_2" letter="B" sourceString="DYNAMIC">
+      <expressionString>isAnyValue(inventory_fact_ALL.inv_store.inv_store__region.inv_store__region__sales_country)</expressionString>
+      <parameterizedExpressionString>inventory_fact_ALL.inv_store.inv_store__region.inv_store__region__sales_country in inv_store__region__sales_country_1</parameterizedExpressionString>
+    </subFilter>
+    <subFilter id="filter_3" letter="C" sourceString="DYNAMIC">
+      <expressionString>not (inventory_fact_ALL.inv_store.inv_store__region.inv_store__region__sales_district in ('Bellingham', 'Guadalajara', 'San Francisco'))</expressionString>
+      <parameterizedExpressionString>not (inventory_fact_ALL.inv_store.inv_store__region.inv_store__region__sales_district in inv_store__region__sales_district_1)</parameterizedExpressionString>
+    </subFilter>
+  </subFilterList>
+</unifiedState>

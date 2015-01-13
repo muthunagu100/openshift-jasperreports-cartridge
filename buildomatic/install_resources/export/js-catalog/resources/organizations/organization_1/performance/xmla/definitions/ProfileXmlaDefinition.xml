@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mondrianXmlaDefinition exportedWithPermissions="true">
+    <folder>/organizations/organization_1/performance/xmla/definitions</folder>
+    <name>ProfileXmlaDefinition</name>
+    <version>0</version>
+    <label>Profile XMLA Connection</label>
+    <description>Profile XML/A Connection</description>
+    <creationDate>2014-12-18T02:01:23.553-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:23.553-08:00</updateDate>
+    <catalog>Profile</catalog>
+    <mondrianConnection>
+        <uri>/organizations/organization_1/performance/connections/Profile</uri>
+    </mondrianConnection>
+</mondrianXmlaDefinition>

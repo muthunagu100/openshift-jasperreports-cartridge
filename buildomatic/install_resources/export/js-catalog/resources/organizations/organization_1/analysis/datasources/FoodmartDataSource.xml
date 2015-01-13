@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jdbcDataSource exportedWithPermissions="true">
+    <folder>/organizations/organization_1/analysis/datasources</folder>
+    <name>FoodmartDataSource</name>
+    <version>0</version>
+    <label>Foodmart Data Source</label>
+    <description>Foodmart Data Source</description>
+    <creationDate>2014-12-18T02:01:08.984-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:08.984-08:00</updateDate>
+    <driver>org.postgresql.Driver</driver>
+    <connectionUrl>jdbc:postgresql://127.0.0.1:5433/foodmart</connectionUrl>
+    <connectionUser>jasperdb</connectionUser>
+    <connectionPassword>ENC&lt;B7C77EB9023F241CECD504AD17BE454D&gt;</connectionPassword>
+</jdbcDataSource>

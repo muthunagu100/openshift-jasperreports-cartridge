@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<adhocDataView exportedWithPermissions="true">
+    <folder>/public/Samples/Ad_Hoc_Views</folder>
+    <name>01__Geographic_Results_by_Segment</name>
+    <version>0</version>
+    <label>01. Geographic Results by Segment</label>
+    <description>Sample HTML5 multi-axis column chart from Domain showing Sales, Units, and $ Per Square Foot by Country and Store Type with various filters</description>
+    <creationDate>2014-12-18T02:01:26.443-08:00</creationDate>
+    <updateDate>2014-10-21T14:49:09.375-07:00</updateDate>
+    <dataSource>
+        <uri>/public/Samples/Domains/supermartDomain</uri>
+    </dataSource>
+    <inputControl>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="inputControl">
+            <folder>/public/Samples/Ad_Hoc_Views/01__Geographic_Results_by_Segment_files</folder>
+            <name>sales_fact_ALL__store_sales_2013_1</name>
+            <version>0</version>
+            <label>$R{supermart.sales_fact_2013.store_sales.label} is greater than</label>
+            <creationDate>2014-12-18T02:01:26.443-08:00</creationDate>
+            <updateDate>2014-10-21T14:49:09.375-07:00</updateDate>
+            <type>2</type>
+            <mandatory>false</mandatory>
+            <readOnly>false</readOnly>
+            <visible>true</visible>
+            <dataType>
+                <localResource exportedWithPermissions="false" xsi:type="dataType">
+                    <folder>/public/Samples/Ad_Hoc_Views/01__Geographic_Results_by_Segment_files/sales_fact_ALL__store_sales_2013_1_files</folder>
+                    <name>number</name>
+                    <version>0</version>
+                    <label>Number</label>
+                    <creationDate>2014-12-18T02:01:26.443-08:00</creationDate>
+                    <updateDate>2014-10-21T14:49:09.375-07:00</updateDate>
+                    <type>2</type>
+                    <strictMin>false</strictMin>
+                    <strictMax>false</strictMax>
+                </localResource>
+            </dataType>
+        </localResource>
+    </inputControl>
+    <inputControl>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="inputControl">
+            <folder>/public/Samples/Ad_Hoc_Views/01__Geographic_Results_by_Segment_files</folder>
+            <name>sales__product__low_fat_1</name>
+            <version>0</version>
+            <label>$R{supermart.product.low_fat.label}</label>
+            <creationDate>2014-12-18T02:01:26.443-08:00</creationDate>
+            <updateDate>2014-10-21T14:49:09.375-07:00</updateDate>
+            <type>10</type>
+            <mandatory>false</mandatory>
+            <readOnly>false</readOnly>
+            <visible>true</visible>
+            <listOfValues>
+                <localResource exportedWithPermissions="false" xsi:type="listOfValues">
+                    <folder>/public/Samples/Ad_Hoc_Views/01__Geographic_Results_by_Segment_files/sales__product__low_fat_1_files</folder>
+                    <name>sales__product__low_fat_1</name>
+                    <version>0</version>
+                    <label>$R{supermart.product.low_fat.label}</label>
+                    <creationDate>2014-12-18T02:01:26.443-08:00</creationDate>
+                    <updateDate>2014-10-21T14:49:09.375-07:00</updateDate>
+                    <item>
+                        <itemLabel>true</itemLabel>
+                        <itemValue xsi:type="java:java.lang.Boolean">true</itemValue>
+                    </item>
+                    <item>
+                        <itemLabel>false</itemLabel>
+                        <itemValue xsi:type="java:java.lang.Boolean">false</itemValue>
+                    </item>
+                </localResource>
+            </listOfValues>
+        </localResource>
+    </inputControl>
+    <inputControl>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="inputControl">
+            <folder>/public/Samples/Ad_Hoc_Views/01__Geographic_Results_by_Segment_files</folder>
+            <name>sales__product__recyclable_package_1</name>
+            <version>0</version>
+            <label>$R{supermart.product.recyclable_package.label}</label>
+            <creationDate>2014-12-18T02:01:26.443-08:00</creationDate>
+            <updateDate>2014-10-21T14:49:09.375-07:00</updateDate>
+            <type>10</type>
+            <mandatory>false</mandatory>
+            <readOnly>false</readOnly>
+            <visible>true</visible>
+            <listOfValues>
+                <localResource exportedWithPermissions="false" xsi:type="listOfValues">
+                    <folder>/public/Samples/Ad_Hoc_Views/01__Geographic_Results_by_Segment_files/sales__product__recyclable_package_1_files</folder>
+                    <name>sales__product__recyclable_package_1</name>
+                    <version>0</version>
+                    <label>$R{supermart.product.recyclable_package.label}</label>
+                    <creationDate>2014-12-18T02:01:26.443-08:00</creationDate>
+                    <updateDate>2014-10-21T14:49:09.375-07:00</updateDate>
+                    <item>
+                        <itemLabel>true</itemLabel>
+                        <itemValue xsi:type="java:java.lang.Boolean">true</itemValue>
+                    </item>
+                    <item>
+                        <itemLabel>false</itemLabel>
+                        <itemValue xsi:type="java:java.lang.Boolean">false</itemValue>
+                    </item>
+                </localResource>
+            </listOfValues>
+        </localResource>
+    </inputControl>
+    <inputControl>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="inputControl">
+            <folder>/public/Samples/Ad_Hoc_Views/01__Geographic_Results_by_Segment_files</folder>
+            <name>sales__product__product_name_1</name>
+            <version>0</version>
+            <label>$R{supermart.product.product_name.label}</label>
+            <creationDate>2014-12-18T02:01:26.443-08:00</creationDate>
+            <updateDate>2014-10-21T14:49:09.375-07:00</updateDate>
+            <type>7</type>
+            <mandatory>false</mandatory>
+            <readOnly>false</readOnly>
+            <visible>true</visible>
+            <query>
+                <localResource exportedWithPermissions="false" xsi:type="query">
+                    <folder>/public/Samples/Ad_Hoc_Views/01__Geographic_Results_by_Segment_files/sales__product__product_name_1_files</folder>
+                    <name>sales__product__product_name_1</name>
+                    <version>0</version>
+                    <label>$R{supermart.product.product_name.label}</label>
+                    <creationDate>2014-12-18T02:01:26.443-08:00</creationDate>
+                    <updateDate>2014-10-21T14:49:09.375-07:00</updateDate>
+                    <language>domain</language>
+                    <queryString>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;query xmlns="http://www.jaspersoft.com/2007/SL/XMLSchema"&gt;
+  &lt;groupList&gt;
+    &lt;group columnName="sales_fact_ALL.sales__product.sales__product__product_name" /&gt;
+  &lt;/groupList&gt;
+  &lt;queryFields&gt;
+    &lt;queryField id="sales_fact_ALL.sales__product.sales__product__product_name" /&gt;
+    &lt;queryField id="product1.product_name" /&gt;
+  &lt;/queryFields&gt;
+&lt;/query&gt;
+
+</queryString>
+                    <dataSource>
+                        <uri>/public/Samples/Domains/supermartDomain</uri>
+                    </dataSource>
+                </localResource>
+            </query>
+            <queryVisibleColumn>sales_fact_ALL.sales__product.sales__product__product_name</queryVisibleColumn>
+            <queryValueColumn>sales_fact_ALL.sales__product.sales__product__product_name</queryValueColumn>
+        </localResource>
+    </inputControl>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/01__Geographic_Results_by_Segment_files</folder>
+            <name>supermart_domain.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:26.443-08:00</creationDate>
+            <updateDate>2014-10-21T14:49:09.375-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain_en_US.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/01__Geographic_Results_by_Segment_files</folder>
+            <name>supermart_domain_en_US.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:26.443-08:00</creationDate>
+            <updateDate>2014-10-21T14:49:09.375-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain_es.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/01__Geographic_Results_by_Segment_files</folder>
+            <name>supermart_domain_es.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:26.443-08:00</creationDate>
+            <updateDate>2014-10-21T14:49:09.375-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain_fr.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/01__Geographic_Results_by_Segment_files</folder>
+            <name>supermart_domain_fr.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:26.443-08:00</creationDate>
+            <updateDate>2014-10-21T14:49:09.375-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain_ja.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/01__Geographic_Results_by_Segment_files</folder>
+            <name>supermart_domain_ja.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:26.443-08:00</creationDate>
+            <updateDate>2014-10-21T14:49:09.375-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain_zh_CN.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/01__Geographic_Results_by_Segment_files</folder>
+            <name>supermart_domain_zh_CN.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:26.443-08:00</creationDate>
+            <updateDate>2014-10-21T14:49:09.375-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain_de.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/01__Geographic_Results_by_Segment_files</folder>
+            <name>supermart_domain_de.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:26.443-08:00</creationDate>
+            <updateDate>2014-10-21T14:49:09.375-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="topicJRXML.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/01__Geographic_Results_by_Segment_files</folder>
+            <name>topicJRXML</name>
+            <version>0</version>
+            <label>topicJRXML</label>
+            <creationDate>2014-12-18T02:01:26.443-08:00</creationDate>
+            <updateDate>2014-10-21T14:49:09.375-07:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="stateXML.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/01__Geographic_Results_by_Segment_files</folder>
+            <name>stateXML</name>
+            <version>0</version>
+            <label>stateXML</label>
+            <creationDate>2014-12-18T02:01:26.443-08:00</creationDate>
+            <updateDate>2014-10-21T14:49:09.375-07:00</updateDate>
+            <fileType>xml</fileType>
+        </localResource>
+    </resource>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>1</controlsLayout>
+</adhocDataView>

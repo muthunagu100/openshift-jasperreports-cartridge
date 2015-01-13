@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<secureMondrianConnection exportedWithPermissions="true">
+    <folder>/organizations/organization_1/performance/connections</folder>
+    <name>Profile</name>
+    <version>0</version>
+    <label>Profile Mondrian Connection</label>
+    <description>Profile Performance Connection</description>
+    <creationDate>2014-12-18T02:01:09.991-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:09.991-08:00</updateDate>
+    <schema>
+        <uri>/organizations/organization_1/performance/schemas/ProfileSchema</uri>
+    </schema>
+    <dataSource>
+        <uri>/organizations/organization_1/performance/datasources/ProfileDataSourceJNDI</uri>
+    </dataSource>
+</secureMondrianConnection>

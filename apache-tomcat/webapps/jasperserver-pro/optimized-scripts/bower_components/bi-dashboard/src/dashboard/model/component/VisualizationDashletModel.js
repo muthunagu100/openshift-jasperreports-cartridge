@@ -1,0 +1,1 @@
+define(["require","./ReportDashletModel"],function(e){var t=e("./ReportDashletModel");return t.extend({changeType:function(e){this.set("type",e)}})});

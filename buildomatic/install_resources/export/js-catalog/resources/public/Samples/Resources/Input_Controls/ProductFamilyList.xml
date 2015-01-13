@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listOfValues exportedWithPermissions="true">
+    <folder>/public/Samples/Resources/Input_Controls</folder>
+    <name>ProductFamilyList</name>
+    <version>0</version>
+    <label>Product Family List</label>
+    <description>Displays Food, Drink, Non-Consumable</description>
+    <creationDate>2014-12-18T02:01:37.465-08:00</creationDate>
+    <updateDate>2012-10-22T06:18:32.815-07:00</updateDate>
+    <item>
+        <itemLabel>Drink</itemLabel>
+        <itemValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:java.lang.String">Drink</itemValue>
+    </item>
+    <item>
+        <itemLabel>Food</itemLabel>
+        <itemValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:java.lang.String">Food</itemValue>
+    </item>
+    <item>
+        <itemLabel>Non-Consumable</itemLabel>
+        <itemValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:java.lang.String">Non-Consumable</itemValue>
+    </item>
+</listOfValues>

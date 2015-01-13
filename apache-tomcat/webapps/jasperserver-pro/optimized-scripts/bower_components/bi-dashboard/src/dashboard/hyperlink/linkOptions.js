@@ -1,0 +1,1 @@
+define(["require","underscore"],function(e){function n(e){return"function"==typeof e?e():e}var r=e("underscore");return function(e,t){var u=r.extend({},t),o={};return t&&(t.events&&r.each(t.events,function(r,t){o[t]=function(){return r.apply(n(e),arguments)}}),t.beforeRender&&(u.beforeRender=function(){t.beforeRender.apply(n(e),arguments)})),r.extend(u,{events:o})}});

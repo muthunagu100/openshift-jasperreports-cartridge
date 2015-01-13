@@ -1,0 +1,1 @@
+define(["require","settings!adhocFilterSettings"],function(n){var e=n("settings!adhocFilterSettings"),t=e?e.nullValue:null,l=e?e.nullLabel:null;return function(n){return n===t?l:n}});

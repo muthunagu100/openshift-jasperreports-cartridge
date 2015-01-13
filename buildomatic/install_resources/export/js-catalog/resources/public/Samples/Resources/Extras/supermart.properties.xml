@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fileResource exportedWithPermissions="true" dataFile="supermart.properties.data">
+    <folder>/public/Samples/Resources/Extras</folder>
+    <name>supermart.properties</name>
+    <version>0</version>
+    <label>supermart.properties</label>
+    <description>Base resource bundle</description>
+    <creationDate>2014-12-18T02:01:30.220-08:00</creationDate>
+    <updateDate>2014-09-30T10:27:43.736-07:00</updateDate>
+    <fileType>prop</fileType>
+</fileResource>

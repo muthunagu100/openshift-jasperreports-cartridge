@@ -1,0 +1,80 @@
+[name=textDataSourceFieldsContainer] {
+    margin-bottom: 40px;
+}
+[name=previewDataSourceHolder] {
+    max-height: 400px;
+    overflow: auto;
+    display: inline-block;
+    padding-right: 20px;
+}
+.textDataSourcePreviewTable,
+.dataSourceCreateNewDomainDialog .table {
+    empty-cells: show;
+    border-collapse: separate;
+    background-color: white;
+    outline: 1px solid #aaa;
+    font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    line-height: 1.1640625;
+    color: #666666;
+}
+.textDataSourcePreviewTable tr,
+.dataSourceCreateNewDomainDialog .table tr {
+    height: 25px;
+}
+.textDataSourcePreviewTable tr td,
+.dataSourceCreateNewDomainDialog .table tr td {
+    height: 13px;
+    padding: 6px 10px 4px 10px;
+    border: 1px solid;
+}
+.textDataSourcePreviewTable tr.header td,
+.dataSourceCreateNewDomainDialog .table tr.header td {
+    border-color: #fff #b1b6bb #b1b6bb #fff;
+    background-color: #d5dee8;
+    background: -webkit-gradient(linear, left top, left bottom, from(#e1e9f3), to(#d5dee8));
+    background: -moz-linear-gradient(top, #e1e9f3, #d5dee8);
+}
+.textDataSourcePreviewTable tr.bodyCell td,
+.dataSourceCreateNewDomainDialog .table tr.bodyCell td {
+    background-color: #fff;
+    border: 1px solid #e3e9ef;
+}
+
+.dataSourceCreateNewDomainDialog {
+    width: 550px;
+}
+.dataSourceCreateNewDomainDialog .usageTooltip {
+    font-weight: bold;
+    color: #0872A4;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.dataSourceCreateNewDomainDialog .usageDescription {
+    margin-bottom: 15px;
+}
+.dataSourceCreateNewDomainDialog .usageDescription2 {
+    margin-bottom: 10px;
+}
+.dataSourceCreateNewDomainDialog .tableHolder {
+    max-height: 300px;
+    overflow: auto;
+}
+.dataSourceCreateNewDomainDialog .table {
+    margin-bottom: 15px;
+}
+.dataSourceCreateNewDomainDialog .table .cell_2 {
+    width: 120px;
+}
+.dataSourceCreateNewDomainDialog .table .cell_3 {
+    width: 180px;
+}
+.dataSourceCreateNewDomainDialog .table .cell_3 input {
+    width: 170px;
+}
+.dataSourceCreateNewDomainDialog .table .cell_4 {
+    width: 180px;
+}
+.dataSourceCreateNewDomainDialog .table {
+    margin-bottom: 15px;
+}

@@ -1,0 +1,85 @@
+<Schema name="JasperIntelligence Profiling">
+
+  <Cube name="ProfilingCube">
+    <Table name="profilingrecord"/>
+
+    <!-- TODO: user dimension -->
+    <!-- TODO: role-user dimension -->
+    
+    <!-- TODO: hours, minutes, seconds -->
+    <Dimension name="Time" type="TimeDimension">
+      <Hierarchy hasAll="true" primaryKey="id">
+    <Level name="Year" column="begin_year" type="Numeric" uniqueMembers="false"
+               levelType="TimeYears"/>
+    <Level name="Month" column="begin_month" uniqueMembers="false" type="Numeric"
+               levelType="TimeMonths"/>
+    <Level name="Day" column="begin_day" uniqueMembers="false" type="Numeric"
+               levelType="TimeDays"/>
+      </Hierarchy>
+    </Dimension>
+
+    <!-- TODO: parent-child relation -->
+    <Dimension name="Operation Description">
+      <Hierarchy hasAll="true" allMemberName="All Operations" primaryKey="id">
+    <Level name="operation" column="description" uniqueMembers="false"/>
+      </Hierarchy>
+    </Dimension>
+
+    <Measure name="Duration in ms" column="duration_ms" 
+         aggregator="sum" formatString="#,##0"/>
+         
+    <Measure name="Number of ops" column="id" 
+         aggregator="count" formatString="#,##0"/>
+         
+    <Measure name="SQL queries" aggregator="sum" formatString="#,##0">
+        <MeasureExpression>
+            <SQL dialect="generic">
+                (case when sql_query = true then 1 else 0 end)
+            </SQL>
+        </MeasureExpression>         
+    </Measure>                  
+         
+    <Measure name="MDX queries" aggregator="sum" formatString="#,##0">
+        <MeasureExpression>
+            <SQL dialect="generic">
+                (case when mdx_query = true then 1 else 0 end)
+            </SQL>
+        </MeasureExpression>         
+    </Measure>         
+         
+    <Measure name="Cache hits" aggregator="sum" formatString="#,##0">
+        <MeasureExpression>
+            <SQL dialect="generic">
+                (case when cache_hit = true then 1 else 0 end)
+            </SQL>
+        </MeasureExpression>         
+    </Measure>
+
+    <Measure name="Aggregate hits" aggregator="sum" formatString="#,##0">
+        <MeasureExpression>
+            <SQL dialect="generic">
+                (case when agg_hit = true then 1 else 0 end)
+            </SQL>
+        </MeasureExpression>         
+    </Measure>
+         
+
+    <CalculatedMember name="Avg duration per operation" dimension="Measures"
+              formatString="#,###"
+              formula="[Measures].[Duration in ms]/[Measures].[Number of ops]"/>
+
+    <CalculatedMember name="Cache hit ratio" dimension="Measures"
+              formatString="#,##0%"
+              formula="[Measures].[Cache hits]/[Measures].[SQL queries]"/>
+    
+    <CalculatedMember name="Agg hit ratio" dimension="Measures"
+              formatString="#,##0%"
+              formula="[Measures].[Aggregate hits]/[Measures].[MDX queries]"/>
+    
+    <CalculatedMember name="Avg SQL queries per MDX query" dimension="Measures"
+              formatString="#,##0"
+              formula="[Measures].[SQL queries]/[Measures].[Mdx queries]"/>
+    
+  </Cube>
+
+</Schema>

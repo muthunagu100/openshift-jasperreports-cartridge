@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/public/Samples/Reports</folder>
+    <name>12g.PromotionDetailsReport</name>
+    <version>0</version>
+    <label>12g. Promotion Details Report</label>
+    <description>Drill-through from the Supermart dashboard with alternate color scheme.</description>
+    <creationDate>2014-12-18T02:01:38.771-08:00</creationDate>
+    <updateDate>2014-05-13T16:32:10.425-07:00</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="main_jrxml.data" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/12g.PromotionDetailsReport_files</folder>
+            <name>main_jrxml</name>
+            <version>0</version>
+            <label>Main jrxml</label>
+            <creationDate>2014-12-18T02:01:38.771-08:00</creationDate>
+            <updateDate>2013-09-02T02:37:35.867-07:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/public/Samples/Data_Sources/FoodmartDataSourceJNDI</uri>
+    </dataSource>
+    <inputControl>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="inputControl">
+            <folder>/public/Samples/Reports/12g.PromotionDetailsReport_files</folder>
+            <name>promotionId</name>
+            <version>0</version>
+            <label>promotionId</label>
+            <creationDate>2014-12-18T02:01:38.771-08:00</creationDate>
+            <updateDate>2013-09-02T04:00:49.578-07:00</updateDate>
+            <type>2</type>
+            <mandatory>false</mandatory>
+            <readOnly>false</readOnly>
+            <visible>true</visible>
+            <dataType>
+                <localResource exportedWithPermissions="false" xsi:type="dataType">
+                    <folder>/public/Samples/Reports/12g.PromotionDetailsReport_files/promotionId_files</folder>
+                    <name>myDatatype</name>
+                    <version>0</version>
+                    <label>myDatatype</label>
+                    <creationDate>2014-12-18T02:01:38.771-08:00</creationDate>
+                    <updateDate>2013-09-02T04:00:49.578-07:00</updateDate>
+                    <type>2</type>
+                    <strictMin>false</strictMin>
+                    <strictMax>false</strictMax>
+                </localResource>
+            </dataType>
+        </localResource>
+    </inputControl>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/12g.PromotionDetailsReport_files</folder>
+            <name>supermart_de.properties</name>
+            <version>0</version>
+            <label>supermart_de.properties</label>
+            <creationDate>2014-12-18T02:01:38.771-08:00</creationDate>
+            <updateDate>2013-09-02T02:34:34.796-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart_de.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/12g.PromotionDetailsReport_files</folder>
+            <name>supermart_en_US.properties</name>
+            <version>0</version>
+            <label>supermart_en_US.properties</label>
+            <creationDate>2014-12-18T02:01:38.771-08:00</creationDate>
+            <updateDate>2013-09-02T02:34:34.995-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart_en_US.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/12g.PromotionDetailsReport_files</folder>
+            <name>supermart_es.properties</name>
+            <version>0</version>
+            <label>supermart_es.properties</label>
+            <creationDate>2014-12-18T02:01:38.771-08:00</creationDate>
+            <updateDate>2013-09-02T02:34:35.189-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart_es.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/12g.PromotionDetailsReport_files</folder>
+            <name>supermart_fr.properties</name>
+            <version>0</version>
+            <label>supermart_fr.properties</label>
+            <creationDate>2014-12-18T02:01:38.771-08:00</creationDate>
+            <updateDate>2013-09-02T02:34:35.382-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart_fr.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/12g.PromotionDetailsReport_files</folder>
+            <name>supermart_ja.properties</name>
+            <version>0</version>
+            <label>supermart_ja.properties</label>
+            <creationDate>2014-12-18T02:01:38.771-08:00</creationDate>
+            <updateDate>2013-09-02T02:34:35.579-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart_ja.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/12g.PromotionDetailsReport_files</folder>
+            <name>supermart_zh_CN.properties</name>
+            <version>0</version>
+            <label>supermart_zh_CN.properties</label>
+            <creationDate>2014-12-18T02:01:38.771-08:00</creationDate>
+            <updateDate>2013-09-02T02:34:35.774-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart_zh_CN.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/12g.PromotionDetailsReport_files</folder>
+            <name>supermart.properties</name>
+            <version>0</version>
+            <label>supermart.properties</label>
+            <creationDate>2014-12-18T02:01:38.771-08:00</creationDate>
+            <updateDate>2013-09-02T02:34:35.971-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/12g.PromotionDetailsReport_files</folder>
+            <name>SampleReportStylesG</name>
+            <version>0</version>
+            <label>SampleReportStylesG</label>
+            <creationDate>2014-12-18T02:01:38.771-08:00</creationDate>
+            <updateDate>2013-09-05T09:06:50.876-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/SampleReportStylesG</referenceUri>
+        </localResource>
+    </resource>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>1</controlsLayout>
+</reportUnit>

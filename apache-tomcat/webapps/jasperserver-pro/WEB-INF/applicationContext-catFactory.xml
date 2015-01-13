@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+    <bean id="baseCategorizer" abstract="true" class="com.jaspersoft.commons.dimengine.Categorizer">
+     <property name="maxMembers" value="100000"/>
+    </bean>
+
+    <bean id="categorizerFactory" class="com.jaspersoft.commons.dimengine.CategorizerFactory">
+        <property name="typeMap">
+            <map>
+                <entry key="null">
+                    <list>
+                        <bean class="com.jaspersoft.commons.dimengine.NullCategorizer" parent="baseCategorizer"/>
+                    </list>
+                </entry>
+                <entry key="NaN">
+                    <list>
+                        <bean class="com.jaspersoft.commons.dimengine.DefaultCategorizer" parent="baseCategorizer">
+                            <property name="name" value="all"/>
+                            <property name="label" value="ADH_230_CAT_all"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.DefaultCategorizerWithDiscriminator" parent="baseCategorizer">
+                            <property name="name" value="all_with_discriminator"/>
+                            <property name="label" value="ADH_230_CAT_all_with_discriminator"/>
+                        </bean>
+                    </list>
+                </entry>
+                <entry key="int">
+                    <list>
+                        <bean class="com.jaspersoft.commons.dimengine.DefaultCategorizer" parent="baseCategorizer">
+                            <property name="name" value="all"/>
+                            <property name="mask" value="0"/>
+                            <property name="label" value="ADH_230_CAT_all"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.DefaultCategorizerWithDiscriminator" parent="baseCategorizer">
+                            <property name="name" value="all_with_discriminator"/>
+                            <property name="mask" value="0"/>
+                            <property name="label" value="ADH_230_CAT_all_with_discriminator"/>
+                        </bean>
+                    </list>
+                </entry>
+                <entry key="dec">
+                    <list>
+                        <bean class="com.jaspersoft.commons.dimengine.DefaultCategorizer" parent="baseCategorizer">
+                            <property name="name" value="all"/>
+                            <property name="label" value="ADH_230_CAT_all"/>
+                            <property name="mask" value="0"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.DefaultCategorizerWithDiscriminator" parent="baseCategorizer">
+                            <property name="name" value="all_with_discriminator"/>
+                            <property name="mask" value="0"/>
+                            <property name="label" value="ADH_230_CAT_all_with_discriminator"/>
+                        </bean>
+                    </list>
+                </entry>
+                 <entry key="time">
+                    <list>
+                        <bean class="com.jaspersoft.commons.dimengine.HourCategorizer" parent="baseCategorizer">
+                            <property name="name" value="hour"/>
+                            <property name="label" value="ADH_230_CAT_hour"/>
+                            <property name="mask" value="hide,short"/>
+                            <property name="default" value="true"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.MinuteCategorizer" parent="baseCategorizer">
+                            <property name="name" value="minute"/>
+                            <property name="label" value="ADH_230_CAT_minute"/>
+                            <property name="mask" value="hide,short"/>
+                            <property name="default" value="true"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.SecondCategorizer" parent="baseCategorizer">
+                            <property name="name" value="second"/>
+                            <property name="label" value="ADH_230_CAT_second"/>
+                            <property name="mask" value="hide,medium"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.TimeCategorizer" parent="baseCategorizer">
+                            <property name="name" value="millisecond"/>
+                            <property name="label" value="ADH_230_CAT_millisecond"/>
+                            <property name="mask" value="HH:mm:ss.SSS"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.TimeCategorizerWithDiscriminator" parent="baseCategorizer">
+                            <property name="name" value="millisecond_with_discriminator"/>
+                            <property name="mask" value="HH:mm:ss.SSS"/>
+                            <property name="label" value="ADH_230_CAT_millisecond_with_discriminator"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.HourCategorizerWithDiscriminator" parent="baseCategorizer">
+                            <property name="name" value="hour_with_discriminator"/>
+                            <property name="label" value="ADH_230_CAT_hour_with_discriminator"/>
+                            <property name="mask" value="hide,short"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.MinuteCategorizerWithDiscriminator" parent="baseCategorizer">
+                            <property name="name" value="minute_with_discriminator"/>
+                            <property name="label" value="ADH_230_CAT_minute_with_discriminator"/>
+                            <property name="mask" value="hide,short"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.SecondCategorizerWithDiscriminator" parent="baseCategorizer">
+                            <property name="name" value="second_with_discriminator"/>
+                            <property name="label" value="ADH_230_CAT_second_with_discriminator"/>
+                            <property name="mask" value="hide,medium"/>
+                        </bean>
+                    </list>
+                </entry>
+                <entry key="date">
+                    <list>
+                        <bean class="com.jaspersoft.commons.dimengine.YearCategorizer" parent="baseCategorizer">
+                            <property name="name" value="year"/>
+                            <property name="label" value="ADH_230_CAT_year"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.YearQuarterCategorizer" parent="baseCategorizer">
+                            <property name="name" value="quarter"/>
+                            <property name="label" value="ADH_230_CAT_quarter"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.YearMonthCategorizer" parent="baseCategorizer">
+                            <property name="name" value="month"/>
+                            <property name="label" value="ADH_230_CAT_month"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.DayCategorizer" parent="baseCategorizer">
+                            <property name="name" value="day"/>
+                            <property name="label" value="ADH_230_CAT_day"/>
+                            <property name="mask" value="short,hide"/>
+                            <property name="default" value="true"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.YearCategorizerWithDiscriminator" parent="baseCategorizer">
+                            <property name="name" value="year_with_discriminator"/>
+                            <property name="label" value="ADH_230_CAT_year_with_discriminator"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.YearQuarterCategorizerWithDiscriminator" parent="baseCategorizer">
+                            <property name="name" value="quarter_with_discriminator"/>
+                            <property name="label" value="ADH_230_CAT_quarter_with_discriminator"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.YearMonthCategorizerWithDiscriminator" parent="baseCategorizer">
+                            <property name="name" value="month_with_discriminator"/>
+                            <property name="label" value="ADH_230_CAT_month_with_discriminator"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.DayCategorizerWithDiscriminator" parent="baseCategorizer">
+                            <property name="name" value="day_with_discriminator"/>
+                            <property name="label" value="ADH_230_CAT_day_with_discriminator"/>
+                            <property name="mask" value="short,hide"/>
+                        </bean>
+                    </list>
+                </entry>
+                <entry key="timestamp">
+                    <list>
+                        <bean class="com.jaspersoft.commons.dimengine.YearCategorizer" parent="baseCategorizer">
+                            <property name="name" value="year"/>
+                            <property name="label" value="ADH_230_CAT_year"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.YearQuarterCategorizer" parent="baseCategorizer">
+                            <property name="name" value="quarter"/>
+                            <property name="label" value="ADH_230_CAT_quarter"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.YearMonthCategorizer" parent="baseCategorizer">
+                            <property name="name" value="month"/>
+                            <property name="label" value="ADH_230_CAT_month"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.DayCategorizer" parent="baseCategorizer">
+                            <property name="name" value="day"/>
+                            <property name="label" value="ADH_230_CAT_day"/>
+                            <property name="mask" value="short,hide"/>
+                            <property name="default" value="true"/>
+                        </bean>
+                         <bean class="com.jaspersoft.commons.dimengine.HourCategorizer" parent="baseCategorizer">
+                            <property name="name" value="hour"/>
+                            <property name="label" value="ADH_230_CAT_hour"/>
+                            <property name="mask" value="hide,short"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.MinuteCategorizer" parent="baseCategorizer">
+                            <property name="name" value="minute"/>
+                            <property name="label" value="ADH_230_CAT_minute"/>
+                            <property name="mask" value="hide,short"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.SecondCategorizer" parent="baseCategorizer">
+                            <property name="name" value="second"/>
+                            <property name="label" value="ADH_230_CAT_second"/>
+                            <property name="mask" value="hide,medium"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.HourByDayCategorizer" parent="baseCategorizer">
+                            <property name="name" value="hour_by_day"/>
+                            <property name="label" value="ADH_230_CAT_hour_by_day"/>
+                            <property name="mask" value="short,short"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.MinuteByDayCategorizer" parent="baseCategorizer">
+                            <property name="name" value="minute_by_day"/>
+                            <property name="label" value="ADH_230_CAT_minute_by_day"/>
+                            <property name="mask" value="short,short"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.SecondByDayCategorizer" parent="baseCategorizer">
+                            <property name="name" value="second_by_day"/>
+                            <property name="label" value="ADH_230_CAT_second_by_day"/>
+                            <property name="mask" value="short,medium"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.TimeCategorizer" parent="baseCategorizer">
+                            <property name="name" value="millisecond_by_day"/>
+                            <property name="label" value="ADH_230_CAT_millisecond_by_day"/>
+                            <property name="mask" value="MMM dd, yyyy hh:mm:ss.SSS aa"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.YearCategorizerWithDiscriminator" parent="baseCategorizer">
+                            <property name="name" value="year_with_discriminator"/>
+                            <property name="label" value="ADH_230_CAT_year_with_discriminator"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.YearQuarterCategorizerWithDiscriminator" parent="baseCategorizer">
+                            <property name="name" value="quarter_with_discriminator"/>
+                            <property name="label" value="ADH_230_CAT_quarter_with_discriminator"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.YearMonthCategorizerWithDiscriminator" parent="baseCategorizer">
+                            <property name="name" value="month_with_discriminator"/>
+                            <property name="label" value="ADH_230_CAT_month_with_discriminator"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.DayCategorizerWithDiscriminator" parent="baseCategorizer">
+                            <property name="name" value="day_with_discriminator"/>
+                            <property name="label" value="ADH_230_CAT_day_with_discriminator"/>
+                            <property name="mask" value="short,hide"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.HourByDayCategorizerWithDiscriminator" parent="baseCategorizer">
+                            <property name="name" value="hour_by_day_with_discriminator"/>
+                            <property name="label" value="ADH_230_CAT_hour_by_day_with_discriminator"/>
+                            <property name="mask" value="short,short"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.MinuteByDayCategorizerWithDiscriminator" parent="baseCategorizer">
+                            <property name="name" value="minute_by_day_with_discriminator"/>
+                            <property name="label" value="ADH_230_CAT_minute_by_day_with_discriminator"/>
+                            <property name="mask" value="short,short"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.SecondByDayCategorizerWithDiscriminator" parent="baseCategorizer">
+                            <property name="name" value="second_by_day_with_discriminator"/>
+                            <property name="label" value="ADH_230_CAT_second_by_day_with_discriminator"/>
+                            <property name="mask" value="short,medium"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.HourCategorizerWithDiscriminator" parent="baseCategorizer">
+                           <property name="name" value="hour_with_discriminator"/>
+                           <property name="label" value="ADH_230_CAT_hour_with_discriminator"/>
+                           <property name="mask" value="hide,short"/>
+                       </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.MinuteCategorizerWithDiscriminator" parent="baseCategorizer">
+                           <property name="name" value="minute_with_discriminator"/>
+                           <property name="label" value="ADH_230_CAT_minute_with_discriminator"/>
+                           <property name="mask" value="hide,short"/>
+                       </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.SecondCategorizerWithDiscriminator" parent="baseCategorizer">
+                            <property name="name" value="second_with_discriminator"/>
+                            <property name="label" value="ADH_230_CAT_second_with_discriminator"/>
+                            <property name="mask" value="hide,medium"/>
+                        </bean>
+                        <bean class="com.jaspersoft.commons.dimengine.TimeCategorizerWithDiscriminator" parent="baseCategorizer">
+                            <property name="name" value="millisecond_by_day_with_discriminator"/>
+                            <property name="mask" value="hh:mm:ss.SSS aa"/>
+                            <property name="label" value="ADH_230_CAT_millisecond_by_day_with_discriminator"/>
+                        </bean>
+                    </list>
+                </entry>
+            </map>
+        </property>
+    </bean>
+</beans>

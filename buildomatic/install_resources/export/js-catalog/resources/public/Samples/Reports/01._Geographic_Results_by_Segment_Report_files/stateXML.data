@@ -1,0 +1,188 @@
+<unifiedState dataSize="sample" filterPanelShowing="true" hasMargins="false" ignoreMaxRows="false" initedSubFilterList="true" launchType="ADH_045a_DOMAIN" maxDisplayColumns="0" maxDisplayRows="0" maxRowChoices="0" maxRows="0" mode="ichart" pageOrientation="Portrait" paperSize="content" showTableDetails="true" showTableTotals="false" summaryRowTitle="Totals" theme="default" titleBarShowing="true" titleHeight="0" topicName="Supermart Domain">
+  <chartState availableChartHeight="0" availableChartWidth="0" backgroundFilled="false" chartHeight="0" chartIsVertical="true" chartWidth="0" displayXAxisLabel="true" displayYAxisLabel="false" offsetX="0" offsetY="0">
+    <chartTitle />
+    <chartType>1_bar</chartType>
+    <displayLegendMap>
+      <entry key="5_scatter">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="2_pie">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="6_timeSeries">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="3_line">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="1_bar">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="4_area">
+        <boolean>true</boolean>
+      </entry>
+    </displayLegendMap>
+    <gradient>topDown</gradient>
+    <hasLinesMap>
+      <entry key="5_scatter">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="2_pie">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="6_timeSeries">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="3_line">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="1_bar">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="4_area">
+        <boolean>false</boolean>
+      </entry>
+    </hasLinesMap>
+    <hasPointsMap>
+      <entry key="5_scatter">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="2_pie">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="6_timeSeries">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="3_line">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="1_bar">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="4_area">
+        <boolean>false</boolean>
+      </entry>
+    </hasPointsMap>
+    <stackedMap>
+      <entry key="5_scatter">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="2_pie">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="6_timeSeries">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="3_line">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="1_bar">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="4_area">
+        <boolean>false</boolean>
+      </entry>
+    </stackedMap>
+    <threeDMap>
+      <entry key="5_scatter">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="2_pie">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="6_timeSeries">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="3_line">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="1_bar">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="4_area">
+        <boolean>true</boolean>
+      </entry>
+    </threeDMap>
+  </chartState>
+  <crosstabState numberOfColumns="0" safeColumnMode="true" safeRowMode="true" showLabels="true">
+    <columnGroups>
+      <queryDimension fieldName="Measures" includeAll="true" name="Measures" sortStatus="0" type="java.lang.String">
+        <visibleLevels>
+          <string>Measures</string>
+        </visibleLevels>
+      </queryDimension>
+    </columnGroups>
+    <rowGroups>
+      <queryDimension categorizerName="all" fieldName="sales_fact_ALL.sales__store.sales__store__store_type" includeAll="true" name="sales_fact_ALL.sales__store.sales__store__store_type" sortStatus="0" type="java.lang.String">
+        <expandedLevels>
+          <string>sales_fact_ALL.sales__store.sales__store__store_type</string>
+        </expandedLevels>
+        <visibleLevels>
+          <string>sales_fact_ALL.sales__store.sales__store__store_type</string>
+        </visibleLevels>
+      </queryDimension>
+      <queryDimension categorizerName="all" fieldName="sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_country" includeAll="true" name="sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_country" sortStatus="0" type="java.lang.String">
+        <expandedLevels>
+          <string>sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_country</string>
+        </expandedLevels>
+        <visibleLevels>
+          <string>sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_country</string>
+        </visibleLevels>
+      </queryDimension>
+    </rowGroups>
+    <sortingState />
+  </crosstabState>
+  <groups>
+    <queryDimension categorizerName="all" fieldName="sales_fact_ALL.sales__store.sales__store__store_type" includeAll="true" name="sales_fact_ALL.sales__store.sales__store__store_type" sortStatus="0" type="java.lang.String">
+      <expandedLevels>
+        <string>sales_fact_ALL.sales__store.sales__store__store_type</string>
+      </expandedLevels>
+      <visibleLevels>
+        <string>sales_fact_ALL.sales__store.sales__store__store_type</string>
+      </visibleLevels>
+    </queryDimension>
+    <queryDimension categorizerName="all" fieldName="sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_country" includeAll="true" name="sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_country" sortStatus="0" type="java.lang.String">
+      <expandedLevels>
+        <string>sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_country</string>
+      </expandedLevels>
+      <visibleLevels>
+        <string>sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_country</string>
+      </visibleLevels>
+    </queryDimension>
+  </groups>
+  <intelligentChartState XAxisRotation="-45" XAxisStep="1" YAxisRotation="0" YAxisStep="1" alignment="bottom" autoScaleFonts="true" color1Stop="0.1" color2Stop="0.5" color3Stop="0.9" decimalPoint="." donnutInnerSize="40" gaugesMaxValue="200.0" gaugesMinValue="0.0" hideSingleMeasuresLabels="false" invertedAxis="false" labelOffset="0.0" legend="none" legendBorder="true" rotateAllLevels="false" rotation="0.0" showDataPoints="true" showLabels="false" showMeasureOnValueAxis="true" showXAxisLabels="true" showYAxisLabels="true" singleAxisComboChart="false" thousandSeparator="None" typeString="multi_axis_column" />
+  <measures>
+    <measure aggregateType="java.math.BigDecimal" fieldName="sales_fact_ALL.sales_fact_ALL__store_sales_2013" function="Sum" mask="#,##0.00" measure="true" name="sales_fact_ALL.sales_fact_ALL__store_sales_2013" showSummary="false" width="125" />
+    <measure aggregateType="java.math.BigDecimal" fieldName="sales_fact_ALL.sales_fact_ALL__store_cost_2013" function="Sum" mask="#,##0.00" measure="true" name="sales_fact_ALL.sales_fact_ALL__store_cost_2013" showSummary="false" width="125" />
+    <measure aggregateType="java.math.BigDecimal" fieldName="$PerSqFoot" function="Sum" measure="true" name="$PerSqFoot" showSummary="false" width="125" />
+  </measures>
+  <propertyMap>
+    <entry key="hideEmptyRows">
+      <string>false</string>
+    </entry>
+    <entry key="modFlags">
+      <string />
+    </entry>
+    <entry key="typeOfViewChange">
+      <string />
+    </entry>
+  </propertyMap>
+  <subFilterList>
+    <subFilter id="filter_1" letter="A" sourceString="DYNAMIC">
+      <expressionString>sales_fact_ALL.sales_fact_ALL__store_sales_2013 &gt; 19</expressionString>
+      <parameterizedExpressionString>sales_fact_ALL.sales_fact_ALL__store_sales_2013 &gt; sales_fact_ALL__store_sales_2013_1</parameterizedExpressionString>
+    </subFilter>
+    <subFilter id="filter_2" letter="B" sourceString="DYNAMIC">
+      <expressionString>isAnyValue(sales_fact_ALL.sales__product.sales__product__low_fat)</expressionString>
+      <parameterizedExpressionString>sales_fact_ALL.sales__product.sales__product__low_fat in sales__product__low_fat_1</parameterizedExpressionString>
+    </subFilter>
+    <subFilter id="filter_3" letter="C" sourceString="DYNAMIC">
+      <expressionString>isAnyValue(sales_fact_ALL.sales__product.sales__product__recyclable_package)</expressionString>
+      <parameterizedExpressionString>sales_fact_ALL.sales__product.sales__product__recyclable_package in sales__product__recyclable_package_1</parameterizedExpressionString>
+    </subFilter>
+    <subFilter id="filter_4" letter="D" sourceString="DYNAMIC">
+      <expressionString>isAnyValue(sales_fact_ALL.sales__product.sales__product__product_name)</expressionString>
+      <parameterizedExpressionString>sales_fact_ALL.sales__product.sales__product__product_name in sales__product__product_name_1</parameterizedExpressionString>
+    </subFilter>
+  </subFilterList>
+</unifiedState>

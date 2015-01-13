@@ -1,0 +1,68 @@
+<settings>
+    <offline>false</offline>
+    <localRepository><%= ENV['OPENSHIFT_JASPER_DIR'] %>/.m2/repository</localRepository>
+    <profiles>
+        <profile>
+            <id>JasperServerProfile</id>
+            <properties>
+                <repository.database.driver.groupId>postgresql</repository.database.driver.groupId>
+                <repository.database.driver.artifactId>postgresql</repository.database.driver.artifactId>
+                <repository.database.driver.version>9.2-1002.jdbc4</repository.database.driver.version>
+                <js.quartz.properties><%= ENV['OPENSHIFT_JASPER_DIR'] %>/buildomatic/build_conf/default/js.quartz.properties</js.quartz.properties>
+                <js.quartz.base.properties><%= ENV['OPENSHIFT_JASPER_DIR'] %>/buildomatic/build_conf/default/js.quartz.base.properties</js.quartz.base.properties>
+                <js.quartz.script>${js-base-path}/scripts/quartz/tables_postgres.sql</js.quartz.script>
+                <metadata.database.generate>false</metadata.database.generate>
+                <suppress.quartz.init>true</suppress.quartz.init>
+                <js-path>${js-path}</js-path>
+                <js-pro-path>${js-pro-path}</js-pro-path>
+                <platform-path><%= ENV['OPENSHIFT_JASPER_DIR'] %>/buildomatic/build_conf/default</platform-path>
+                <test.hibernate.cfg><%= ENV['OPENSHIFT_JASPER_DIR'] %>/buildomatic/build_conf/default/hibernate.cfg.xml</test.hibernate.cfg>
+                <test.hibernate.jdbc.properties><%= ENV['OPENSHIFT_JASPER_DIR'] %>/buildomatic/build_conf/default/js.jdbc.properties</test.hibernate.jdbc.properties>
+                <master.properties><%= ENV['OPENSHIFT_JASPER_DIR'] %>/buildomatic/default_master.properties</master.properties>
+                <!-- workaround src w/o tibco drivers -->
+                <tibco.driver.available>true</tibco.driver.available>
+                <SKIP_TEST_ARG>ignored</SKIP_TEST_ARG>
+                <disable.fafj>false</disable.fafj>
+            </properties>
+        </profile>
+        <profile>
+            <repositories>
+                <repository>
+                    <id>jaspersoft-central</id>
+                    <name>repo</name>
+                    <url>http://mvnrepo.jaspersoft.com/artifactory/repo</url>
+                    <snapshots>
+                        <updatePolicy>always</updatePolicy>
+                    </snapshots>
+                </repository>
+            </repositories>
+            <pluginRepositories>
+                <pluginRepository>
+                    <id>jaspersoft-central</id>
+                    <name>repo</name>
+                    <url>http://mvnrepo.jaspersoft.com:8081/artifactory/repo</url>
+                </pluginRepository>
+            </pluginRepositories>
+            <id>jaspersoft-central</id>
+        </profile>
+    </profiles>
+    <mirrors>
+        <mirror>
+            <mirrorOf>*</mirrorOf>
+            <name>repo</name>
+            <url>${mvn-mirror}</url>
+            <id>repo</id>
+        </mirror>
+    </mirrors>
+    <activeProfiles>
+        <activeProfile>JasperServerProfile</activeProfile>
+        <activeProfile>jaspersoft-central</activeProfile>
+    </activeProfiles>
+    <servers>
+        <server>
+            <id>myserver</id>
+            <username>tomcat</username>
+            <password>tomcat</password>
+        </server>
+    </servers>
+</settings>

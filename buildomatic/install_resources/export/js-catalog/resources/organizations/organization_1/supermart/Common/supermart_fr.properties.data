@@ -1,0 +1,229 @@
+# Strings for SuperMart reports
+Dashboard.Explore=Explorer de fa\u00e7on autonome
+Dashboard.Create=Cr\u00e9er un nouveau rapport
+Dashboard.Browse=Parcourir davantage de fichiers SuperMart
+Dashboard.MyReports=Mes rapports enregistr\u00e9s
+FooterPageNum=Page {0} sur 
+ReportTitle=Titre du rapport
+LastRunBy=Derni\u00e8re ex\u00e9cution par\u00a0: {0}
+NumRecordsFooter=Nombre total d''enregistrements: {0}
+Num=#
+CurrencySymbol=$
+Key=Cl\u00e9 : 
+Total=Total
+ProfitGrowth=Croissance des b\u00e9n\u00e9fices
+Profit=B\u00e9n\u00e9fices
+Revenue=Chiffre d'affaires
+Sales=Ventes
+ShoppingDays=Jours d'achat
+BrandPreferences=Marques pr\u00e9f\u00e9r\u00e9es
+AverageSale=Vente moyenne
+CountsAndTotals=Comptes et totaux
+UniqueProducts=Produits uniques
+Promotional=Promotionnel(le)
+PurchaseDetail=D\u00e9tails d''achat du client {0} :
+CustomerCardNumber=Num\u00e9ro de carte du client\u00a0: {0}
+RevenueByCity=Chiffre d'affaires par ville
+Revenue.ByLocation.ByProductFamily=Chiffre d'affaires par emplacement et famille de produits
+Profit.ByLocation.ByProductFamily=B\u00e9n\u00e9fices par emplacement et famille de produits
+RowTotals=Totaux de la ligne
+ColumnTotals=Totaux de la colonne
+SubtotalState=\u00c9tat du sous-total
+Subtotal=Sous-total
+RevenueByStoreType=Chiffre d'affaires par type de magasin
+
+SalesGauges.ReportTitle=Chiffre d'affaires et b\u00e9n\u00e9fices
+SalesGauge.Tooltip.Revenue=Analyser le chiffre d'affaires dans le temps par type de produit
+SalesGauge.Tooltip.Profit=Analyser les b\u00e9n\u00e9fices par emplacement et type de produit
+
+MonthlySales.Title=Ventes mensuelles par trimestre
+MonthlySales.LowValue=Valeur faible
+MonthlySales.HighValue=Valeur \u00e9lev\u00e9e
+ChangeView=S\u00e9lectionner un \u00e9tat pour modifier l'affichage du rapport
+AllStates=Tous les \u00e9tats
+California=Californie
+Oregon=Oregon
+Washington=Washington
+MonthlySales.Subtitle=Pour l''\u00e9tat = {0}
+MonthlySales.Tooltip.AllStates=Afficher les donn\u00e9es pour tous les \u00e9tats
+MonthlySales.Tooltip.ShowState=Afficher les donn\u00e9es pour {0}
+MonthlySales.Tooltip.Chart=Analyser le chiffre d''affaires pour {0} et l''\u00e9tat = {1}
+MonthlySales.Tooltip.Table=Analyser le chiffre daffaires pour l''\u00e9tat = {0}
+
+Drilldown.Tooltip=Zoom avant sur {0}
+
+Time.TimeId=ID Heure
+Customer.CustomerId=ID client
+Promotion.PromotionId=ID Promotion
+Store.StoreId=ID Magasin
+Product.ProductId=ID Produit
+
+StoreSales=Ventes du magasin
+store_sales=Ventes
+StoreCost=Co\u00fbt du magasin
+UnitSales=Ventes unitaires
+unit_sales=Ventes unitaires
+StoreCount=Compte magasin
+store_count=Compte magasin
+store_cost=Co\u00fbt du magasin
+
+Sales.Region=R\u00e9gion
+sales_region=R\u00e9gion
+sales_district=District
+
+StoreType.ReportTitle=Chiffre d'affaires par type de magasin
+Store.StoreType=Type de magasin
+Store.RegionId=ID r\u00e9gion
+Store.StoreName=Nom du magasin
+Store.StoreNumber=Num\u00e9ro du magasin
+Store.StreetAddress=Adresse
+Store.City=Ville
+Store.State=\u00c9tat
+Store.PostalCode=Code postal
+Store.Country=Pays
+Store.Phone=T\u00e9l\u00e9phone
+Store.Fax=Fax
+Store.FirstOpenedDate=Premi\u00e8re ouverture
+Store.LastRemodelDate=Derni\u00e8re r\u00e9novation
+Store.SQFT=Pieds carr\u00e9s
+Store.GrocerySQFT=Surface \u00e9picerie (en pieds carr\u00e9s)
+Store.FrozenSQFT=Surface surgel\u00e9s (en pieds carr\u00e9s)
+Store.MeatSQFT=Surface boucherie (en pieds carr\u00e9s)
+Store.CoffeeBar=Caf\u00e9
+Store.VideoStore=Magasin de vid\u00e9os
+Store.SaladBar=Bar \u00e0 salades
+Store.PreparedFood=Plats pr\u00e9par\u00e9s
+Store.Florist=Fleuriste
+
+
+store_store_manager=Responsable du magasin
+store_store_type=Type de magasin
+store_region_id=ID r\u00e9gion
+store_store_name=Nom du magasin
+store_store_number=Num\u00e9ro du magasin
+store_store_street_address=Adresse
+store_store_city=Ville
+store_store_state=\u00c9tat
+store_store_postal_code=Code postal
+store_store_country=Pays
+store_store_phone=T\u00e9l\u00e9phone
+store_store_fax=Fax
+store_first_opened_date=Premi\u00e8re ouverture
+store_last_remodel_date=Derni\u00e8re r\u00e9novation
+store_store_sqft=Pieds carr\u00e9s
+store_grocery_sqft=Surface \u00e9picerie (en pieds carr\u00e9s)
+store_frozen_sqft=Surface surgel\u00e9s (en pieds carr\u00e9s)
+store_meat_sqft=Surface boucherie (en pieds carr\u00e9s)
+store_coffee_bar=Caf\u00e9
+store_video_store=Magasin de vid\u00e9os
+store_salad_bar=Bar \u00e0 salades
+store_prepared_food=Plats pr\u00e9par\u00e9s
+store_florist=Fleuriste
+store_store_id=ID Magasin
+
+Time.TheDate=Date
+Time.TheDay=Jour
+Time.TheMonth=Mois
+Time.TheYear=Ann\u00e9e
+Time.DayOfMonth=Jour du mois
+Time.WeekOfYear=Semaine de l'ann\u00e9e
+Time.MonthOfYear=Mois de l'ann\u00e9e
+Time.Quarter=Trimestre
+Time.FiscalPeriod=Exercice fiscal
+time_by_day_the_date=Date
+time_by_day_the_day=Jour
+time_by_day_the_month=Mois
+time_by_day_the_year=Ann\u00e9e
+time_by_day_week_of_year=Semaine de l'ann\u00e9e
+time_by_day_month_of_year=Mois de l'ann\u00e9e
+time_by_day_quarter=Trimestre
+
+
+Top5.Title=Cinq premiers
+Top5.CustomersTitle=Clients
+Top5.ProductsTitle=Produits
+Top5.PromotionsTitle=Promotions
+Top5.Tooltip.DetailAllCustomers=R\u00e9cup\u00e9rer les d\u00e9tails de tous les clients - rapport long
+Top5.Tooltip.DetailAllProducts=R\u00e9cup\u00e9rer les d\u00e9tails de tous les produits - rapport long
+Top5.Tooltip.DetailAllPromotions=R\u00e9cup\u00e9rer les d\u00e9tails de toutes les promotions - rapport long
+Top5.Tooltip.Detail=R\u00e9cup\u00e9rer les d\u00e9tails de {0}
+
+CityState={0}, {1}
+CustomerDetail.ReportTitle=D\u00e9tails des clients SuperMart
+
+Customer.FullName=Nom
+customer_account_num=N\u00ba compte
+customer_fullname=Nom
+customer_lname=Nom de famille
+customer_fname=Pr\u00e9nom
+customer_mi=Initiale 2\u00e8me pr\u00e9nom
+customer_address1=Adresse 1
+customer_address2=Adresse 2
+customer_address3=Adresse 3
+customer_address4=Adresse 4
+customer_city=Ville
+customer_state_province=\u00c9tat
+customer_postal_code=Code postal
+customer_country=Pays
+customer_customer_region_id=ID r\u00e9gion
+customer_phone1=T\u00e9l\u00e9phone 1
+customer_phone2=T\u00e9l\u00e9phone 2
+customer_birthdate=Date de naissance
+customer_marital_status=Situation familiale
+customer_yearly_income=Revenu annuel
+customer_gender=Sexe
+customer_total_children=Nombre total d'enfants
+customer_num_children_at_home=Enfants \u00e0 charge
+customer_education=\u00c9tudes
+customer_date_accnt_opened=Date d'ouverture du compte
+customer_member_card=Carte membre
+customer_occupation=Emploi
+customer_houseowner=Propri\u00e9taire
+customer_num_cars_owned=Nombre de voitures
+
+
+Product.ReportTitle=D\u00e9tails des produits SuperMart
+product_product_name=Nom du produit
+product_brand_name=Nom de la marque
+product_SKU=SKU
+product_SRP=SRP
+product_gross_weight=Poids brut
+product_net_weight=Poids net
+product_recyclable_package=Emballage recyclable
+product_low_fat=All\u00e9g\u00e9
+product_units_per_case=Unit\u00e9s par carton
+product_cases_per_pallet=Cartons par palette
+product_shelf_Width=Largeur de l'\u00e9tag\u00e8re
+product_shelf_Height=Hauteur de l'\u00e9tag\u00e8re
+product_class_product_subcategory=Sous-cat\u00e9gorie
+product_class_product_category=Cat\u00e9gorie
+product_class_product_department=Secteur
+product_class_product_family=Famille de produits
+product_gross_weight=Poids brut
+product_net_weight=Poids net
+product_recyclable_package=Emballage recyclable
+product_low_fat=All\u00e9g\u00e9
+product_units_per_case=Unit\u00e9s par carton
+product_cases_per_pallet=Cartons par palette
+product_shelf_width=Largeur de l'\u00e9tag\u00e8re
+product_shelf_height=Hauteur de l'\u00e9tag\u00e8re
+product_shelf_depth=Profondeur de l'\u00e9tag\u00e8re
+product_product_id=ID Produit
+
+Promotion.ReportTitle=D\u00e9tails de la promotion
+promotion_promotion_name=Nom de la promotion
+promotion_media_type=Type de support
+promotion_cost=Co\u00fbt
+promotion_start_date=Date de d\u00e9but
+promotion_end_date=Date de fin
+promotion_promotion_district_id=ID quartier
+promotion_promotion_id=ID Promotion
+Promotion.Name=Promotion
+Promotion.MediaType=Support
+
+# Strings for input controls
+net.sf.jasperreports.prompt.label.productFamily=Famille de produits
+net.sf.jasperreports.prompt.label.districtID=District
+net.sf.jasperreports.prompt.label.promotionSalesMinThreshold=Uniquement les produits dont le prix est sup\u00e9rieur \u00e0
+net.sf.jasperreports.prompt.label.promotionName=Nom de la promotion
+net.sf.jasperreports.prompt.label.customerState=\u00c9tat

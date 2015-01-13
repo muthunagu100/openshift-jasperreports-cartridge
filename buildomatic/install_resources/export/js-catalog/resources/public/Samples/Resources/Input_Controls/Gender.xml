@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inputControl exportedWithPermissions="true">
+    <folder>/public/Samples/Resources/Input_Controls</folder>
+    <name>Gender</name>
+    <version>0</version>
+    <label>Gender</label>
+    <creationDate>2014-12-18T02:01:40.348-08:00</creationDate>
+    <updateDate>2013-09-16T00:09:52.031-07:00</updateDate>
+    <type>6</type>
+    <mandatory>true</mandatory>
+    <readOnly>false</readOnly>
+    <visible>true</visible>
+    <listOfValues>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="listOfValues">
+            <folder>/public/Samples/Resources/Input_Controls/Gender_files</folder>
+            <name>ListOfValues</name>
+            <version>0</version>
+            <label>ListOfValues</label>
+            <creationDate>2014-12-18T02:01:40.348-08:00</creationDate>
+            <updateDate>2013-09-16T00:09:52.031-07:00</updateDate>
+            <item>
+                <itemLabel>Female</itemLabel>
+                <itemValue xsi:type="java:java.lang.String">F</itemValue>
+            </item>
+            <item>
+                <itemLabel>Male</itemLabel>
+                <itemValue xsi:type="java:java.lang.String">M</itemValue>
+            </item>
+        </localResource>
+    </listOfValues>
+</inputControl>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/public/Samples/Reports</folder>
+    <name>07g.RevenueDetailReport</name>
+    <version>0</version>
+    <label>07g. Revenue Detail Report</label>
+    <description>Sample report containing containing interactive  HTML5 Chart and Table data with input controls. This report is also defined as a drill-down from the SuperMart Dashboard gauge.</description>
+    <creationDate>2014-12-18T02:01:37.621-08:00</creationDate>
+    <updateDate>2014-05-13T16:29:39.481-07:00</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="main_jrxml.data" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/07g.RevenueDetailReport_files</folder>
+            <name>main_jrxml</name>
+            <version>0</version>
+            <label>Main jrxml</label>
+            <creationDate>2014-12-18T02:01:37.621-08:00</creationDate>
+            <updateDate>2013-09-02T08:27:12.410-07:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/public/Samples/Data_Sources/FoodmartDataSourceJNDI</uri>
+    </dataSource>
+    <inputControl>
+        <uri>/public/Samples/Resources/Input_Controls/ProductFamily</uri>
+    </inputControl>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/07g.RevenueDetailReport_files</folder>
+            <name>supermart.properties</name>
+            <version>0</version>
+            <label>supermart.properties</label>
+            <description></description>
+            <creationDate>2014-12-18T02:01:37.621-08:00</creationDate>
+            <updateDate>2013-09-01T23:12:18.953-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/07g.RevenueDetailReport_files</folder>
+            <name>supermart_de.properties</name>
+            <version>0</version>
+            <label>supermart_de.properties</label>
+            <description></description>
+            <creationDate>2014-12-18T02:01:37.621-08:00</creationDate>
+            <updateDate>2013-09-01T23:12:18.953-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart_de.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/07g.RevenueDetailReport_files</folder>
+            <name>supermart_en_US.properties</name>
+            <version>0</version>
+            <label>supermart_en_US.properties</label>
+            <description></description>
+            <creationDate>2014-12-18T02:01:37.621-08:00</creationDate>
+            <updateDate>2013-09-01T23:12:18.953-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart_en_US.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/07g.RevenueDetailReport_files</folder>
+            <name>supermart_es.properties</name>
+            <version>0</version>
+            <label>supermart_es.properties</label>
+            <description></description>
+            <creationDate>2014-12-18T02:01:37.621-08:00</creationDate>
+            <updateDate>2013-09-01T23:12:18.953-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart_es.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/07g.RevenueDetailReport_files</folder>
+            <name>supermart_fr.properties</name>
+            <version>0</version>
+            <label>supermart_fr.properties</label>
+            <description></description>
+            <creationDate>2014-12-18T02:01:37.621-08:00</creationDate>
+            <updateDate>2013-09-01T23:12:18.953-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart_fr.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/07g.RevenueDetailReport_files</folder>
+            <name>supermart_ja.properties</name>
+            <version>0</version>
+            <label>supermart_ja.properties</label>
+            <description></description>
+            <creationDate>2014-12-18T02:01:37.621-08:00</creationDate>
+            <updateDate>2013-09-01T23:12:18.953-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart_ja.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/07g.RevenueDetailReport_files</folder>
+            <name>supermart_zh_CN.properties</name>
+            <version>0</version>
+            <label>supermart_zh_CN.properties</label>
+            <description></description>
+            <creationDate>2014-12-18T02:01:37.621-08:00</creationDate>
+            <updateDate>2013-09-01T23:12:18.953-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart_zh_CN.properties</referenceUri>
+        </localResource>
+    </resource>
+    <inputControlRenderingView></inputControlRenderingView>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>4</controlsLayout>
+</reportUnit>

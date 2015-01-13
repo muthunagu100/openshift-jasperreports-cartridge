@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inputControl exportedWithPermissions="true">
+    <folder>/public/Samples/Resources/Input_Controls</folder>
+    <name>states</name>
+    <version>0</version>
+    <label>States Input Control</label>
+    <description>Uses USWesternRegionStatesList. Maps to states parameter.</description>
+    <creationDate>2014-12-18T02:01:38.251-08:00</creationDate>
+    <updateDate>2014-05-13T16:43:17.587-07:00</updateDate>
+    <type>3</type>
+    <mandatory>false</mandatory>
+    <readOnly>false</readOnly>
+    <visible>false</visible>
+    <listOfValues>
+        <uri>/public/Samples/Resources/Data_Types/USWesternStatesList</uri>
+    </listOfValues>
+</inputControl>

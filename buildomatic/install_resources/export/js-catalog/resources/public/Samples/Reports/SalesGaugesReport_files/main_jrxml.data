@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SalesGaugesReport" pageWidth="155" pageHeight="455" columnWidth="155" columnSpacing="1" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" resourceBundle="supermart" whenResourceMissingType="Key" uuid="46f3bcf9-f002-494e-b36e-dd32742e64bc">
+	<property name="net.sf.jasperreports.export.pdf.tagged" value="true"/>
+	<property name="net.sf.jasperreports.export.pdf.tag.language" value="EN-US"/>
+	<property name="net.sf.jasperreports.chart.theme" value="eye.candy.sixties"/>
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="488"/>
+	<property name="ireport.jasperserver.reportUnit" value="/public/Samples/Reports/SalesGaugesReport"/>
+	<property name="ireport.jasperserver.url" value="http://localhost:8080/jasperserver-pro/"/>
+	<property name="ireport.jasperserver.report.resource" value="/public/Samples/Reports/SalesGaugesReport_files/main_jrxml"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<import value="demo.bethreports.*"/>
+	<style name="Green" backcolor="#FFFFFF"/>
+	<style name="head3style" mode="Opaque" forecolor="#FFFFFF" backcolor="#993200" fill="Solid" hAlign="Center" vAlign="Middle" fontName="SansSerif" isBold="true">
+		<pen lineWidth="1.0" lineStyle="Solid"/>
+		<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+			<pen lineWidth="1.0" lineStyle="Solid" lineColor="#000033"/>
+			<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000033"/>
+			<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000033"/>
+			<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000033"/>
+			<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000033"/>
+		</box>
+	</style>
+	<style name="head1style" mode="Opaque" forecolor="#FFFFFF" backcolor="#003066" hAlign="Center" vAlign="Middle" fontName="SansSerif" fontSize="12" isBold="true" isItalic="false" pdfFontName="Helvetica-BoldOblique">
+		<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2"/>
+	</style>
+	<parameter name="startMonth" class="java.lang.Integer" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new Integer(1)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="endMonth" class="java.lang.Integer" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new Integer(12)]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     sum(store_sales)as store_sales,
+     (sum(store_sales)-sum(store_cost))as profit,
+     sum(unit_sales) as Quantity_Sold
+FROM
+     sales_fact_1997 sales_fact_1997,
+     time_by_day time_by_day
+WHERE
+     time_by_day.time_id = sales_fact_1997.time_id AND
+     time_by_day.month_of_year between $P{startMonth} and $P{endMonth}]]>
+	</queryString>
+	<field name="store_sales" class="java.math.BigDecimal"/>
+	<field name="profit" class="java.math.BigDecimal"/>
+	<field name="Quantity_Sold" class="java.math.BigDecimal"/>
+	<title>
+		<band height="452">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<meterChart>
+				<chart isShowLegend="false" hyperlinkType="ReportExecution" hyperlinkTarget="Blank" customizerClass="com.jaspersoft.demo.MeterLabels">
+					<reportElement key="revenue_js" mode="Transparent" x="4" y="2" width="150" height="150" forecolor="#58595B" uuid="a1415fd9-2452-467a-81c3-7ce9efbf5038">
+						<property name="net.sf.jasperreports.chart.dial.value.display.visible" value="false"/>
+						<propertyExpression name="net.sf.jasperreports.chart.dial.label"><![CDATA[$R{Revenue} + " x " + $R{CurrencySymbol} + "{0}"]]></propertyExpression>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<chartTitle position="Bottom" color="#FFFFFF">
+						<font fontName="Calibri" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					</chartTitle>
+					<chartSubtitle>
+						<font fontName="Calibri"/>
+					</chartSubtitle>
+					<chartLegend>
+						<font fontName="Calibri"/>
+					</chartLegend>
+					<hyperlinkTooltipExpression><![CDATA[$R{Revenue}]]></hyperlinkTooltipExpression>
+					<hyperlinkParameter name="_report">
+						<hyperlinkParameterExpression><![CDATA["/public/Samples/Reports/RevenueDetailReport"]]></hyperlinkParameterExpression>
+					</hyperlinkParameter>
+				</chart>
+				<valueDataset>
+					<valueExpression><![CDATA[$F{store_sales}]]></valueExpression>
+				</valueDataset>
+				<meterPlot angle="180" units="US$" tickInterval="50000.0" meterColor="#E9E9E8" needleColor="#E9E9E8" tickColor="#FFFFFF">
+					<plot backcolor="#FFFFFF"/>
+					<tickLabelFont>
+						<font fontName="Calibri" size="10"/>
+					</tickLabelFont>
+					<valueDisplay color="#FFFFFF" mask="#,###">
+						<font fontName="Calibri" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					</valueDisplay>
+					<dataRange>
+						<lowExpression><![CDATA[new Integer(0)]]></lowExpression>
+						<highExpression><![CDATA[new Integer(600000)]]></highExpression>
+					</dataRange>
+					<meterInterval label="0 - 300K" color="#28617B" alpha="0.9">
+						<dataRange>
+							<lowExpression><![CDATA[new Integer(0)]]></lowExpression>
+							<highExpression><![CDATA[new Integer(300000)]]></highExpression>
+						</dataRange>
+					</meterInterval>
+					<meterInterval label="300K - 500K" color="#407189" alpha="0.95">
+						<dataRange>
+							<lowExpression><![CDATA[new Integer(300000)]]></lowExpression>
+							<highExpression><![CDATA[new Integer(500000)]]></highExpression>
+						</dataRange>
+					</meterInterval>
+					<meterInterval label="500K - 600K" color="#5B869A" alpha="0.9">
+						<dataRange>
+							<lowExpression><![CDATA[new Integer(500000)]]></lowExpression>
+							<highExpression><![CDATA[new Integer(600000)]]></highExpression>
+						</dataRange>
+					</meterInterval>
+				</meterPlot>
+			</meterChart>
+			<meterChart>
+				<chart isShowLegend="false" hyperlinkType="ReportExecution" hyperlinkTarget="Blank" customizerClass="com.jaspersoft.demo.MeterLabels">
+					<reportElement key="profit_js" mode="Transparent" x="4" y="152" width="150" height="150" forecolor="#58595B" uuid="f0e1e663-0e48-4cd2-a464-57eca5ba5f56">
+						<property name="net.sf.jasperreports.chart.dial.value.display.visible" value="false"/>
+						<propertyExpression name="net.sf.jasperreports.chart.dial.label"><![CDATA[$R{Profit} + " x " + $R{CurrencySymbol} + "{0}"]]></propertyExpression>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<chartTitle position="Bottom" color="#FFFFFF">
+						<font fontName="Calibri" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					</chartTitle>
+					<chartSubtitle>
+						<font fontName="Calibri"/>
+					</chartSubtitle>
+					<chartLegend>
+						<font fontName="Calibri"/>
+					</chartLegend>
+					<hyperlinkTooltipExpression><![CDATA[$R{Profit}]]></hyperlinkTooltipExpression>
+					<hyperlinkParameter name="_report">
+						<hyperlinkParameterExpression><![CDATA["/public/Samples/Reports/ProfitDetailReport"]]></hyperlinkParameterExpression>
+					</hyperlinkParameter>
+				</chart>
+				<valueDataset>
+					<valueExpression><![CDATA[$F{profit}]]></valueExpression>
+				</valueDataset>
+				<meterPlot angle="180" units="US $" tickInterval="50000.0" meterColor="#E9E9E8" needleColor="#E9E9E8" tickColor="#FFFFFF">
+					<plot/>
+					<tickLabelFont>
+						<font fontName="Calibri" size="10"/>
+					</tickLabelFont>
+					<valueDisplay color="#FFFFFF" mask="#,###">
+						<font fontName="Calibri" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					</valueDisplay>
+					<dataRange>
+						<lowExpression><![CDATA[new Integer(0)]]></lowExpression>
+						<highExpression><![CDATA[new Integer(600000)]]></highExpression>
+					</dataRange>
+					<meterInterval color="#28617B" alpha="0.9">
+						<dataRange>
+							<lowExpression><![CDATA[new Integer(0)]]></lowExpression>
+							<highExpression><![CDATA[new Integer(300000)]]></highExpression>
+						</dataRange>
+					</meterInterval>
+					<meterInterval color="#407189" alpha="0.95">
+						<dataRange>
+							<lowExpression><![CDATA[new Integer(300000)]]></lowExpression>
+							<highExpression><![CDATA[new Integer(500000)]]></highExpression>
+						</dataRange>
+					</meterInterval>
+					<meterInterval color="#5B869A" alpha="0.9">
+						<dataRange>
+							<lowExpression><![CDATA[new Integer(500000)]]></lowExpression>
+							<highExpression><![CDATA[new Integer(600000)]]></highExpression>
+						</dataRange>
+					</meterInterval>
+				</meterPlot>
+			</meterChart>
+			<meterChart>
+				<chart isShowLegend="false" hyperlinkType="ReportExecution" hyperlinkTarget="Blank" customizerClass="com.jaspersoft.demo.MeterLabels">
+					<reportElement key="QuantitySold_js" mode="Transparent" x="4" y="302" width="150" height="150" forecolor="#FF0000" uuid="f0e1e663-0e48-4cd2-a464-57eca5ba5f56">
+						<property name="net.sf.jasperreports.chart.dial.value.display.visible" value="false"/>
+						<propertyExpression name="net.sf.jasperreports.chart.dial.label"><![CDATA[$R{Quantity_Sold} + " x " + $R{CurrencySymbol} + "{0}"]]></propertyExpression>
+					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<chartTitle position="Bottom" color="#FFFFFF">
+						<font fontName="Calibri" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					</chartTitle>
+					<chartSubtitle color="#58595B">
+						<font fontName="Calibri"/>
+					</chartSubtitle>
+					<chartLegend textColor="#58595B">
+						<font fontName="Calibri"/>
+					</chartLegend>
+					<hyperlinkTooltipExpression><![CDATA[$R{Quantity_Sold}]]></hyperlinkTooltipExpression>
+					<hyperlinkParameter name="_report">
+						<hyperlinkParameterExpression><![CDATA["/public/Samples/Reports/08.UnitSalesDetailReport"]]></hyperlinkParameterExpression>
+					</hyperlinkParameter>
+				</chart>
+				<valueDataset>
+					<valueExpression><![CDATA[$F{Quantity_Sold}]]></valueExpression>
+				</valueDataset>
+				<meterPlot angle="180" units="US $" tickInterval="50000.0" meterColor="#E9E9E8" needleColor="#E9E9E8" tickColor="#FFFFFF">
+					<plot backgroundAlpha="1.0"/>
+					<tickLabelFont>
+						<font fontName="Calibri" size="10"/>
+					</tickLabelFont>
+					<valueDisplay color="#FFFFFF" mask="#,###">
+						<font fontName="Calibri" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					</valueDisplay>
+					<dataRange>
+						<lowExpression><![CDATA[new Integer(0)]]></lowExpression>
+						<highExpression><![CDATA[new Integer(600000)]]></highExpression>
+					</dataRange>
+					<meterInterval color="#28617B" alpha="0.9">
+						<dataRange>
+							<lowExpression><![CDATA[new Integer(0)]]></lowExpression>
+							<highExpression><![CDATA[new Integer(300000)]]></highExpression>
+						</dataRange>
+					</meterInterval>
+					<meterInterval color="#407189" alpha="0.95">
+						<dataRange>
+							<lowExpression><![CDATA[new Integer(300000)]]></lowExpression>
+							<highExpression><![CDATA[new Integer(500000)]]></highExpression>
+						</dataRange>
+					</meterInterval>
+					<meterInterval color="#5B869A" alpha="0.9">
+						<dataRange>
+							<lowExpression><![CDATA[new Integer(500000)]]></lowExpression>
+							<highExpression><![CDATA[new Integer(600000)]]></highExpression>
+						</dataRange>
+					</meterInterval>
+				</meterPlot>
+			</meterChart>
+		</band>
+	</title>
+	<pageHeader>
+		<band/>
+	</pageHeader>
+	<columnHeader>
+		<band/>
+	</columnHeader>
+	<detail>
+		<band/>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band/>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

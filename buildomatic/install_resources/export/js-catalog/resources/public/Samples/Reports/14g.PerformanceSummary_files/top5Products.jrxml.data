@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="top5Products" pageWidth="236" pageHeight="166" orientation="Landscape" columnWidth="236" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" resourceBundle="supermart" whenResourceMissingType="Key" uuid="ebb51791-0159-41f9-b4ac-83ce2737a960">
+	<property name="ireport.jasperserver.reportUnit" value="/public/Samples/Reports/14g.PerformanceSummary"/>
+	<property name="ireport.jasperserver.url" value="http://192.168.2.141:8102/jasperserver-pro/"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.jasperserver.report.resource" value="/public/Samples/Reports/14g.PerformanceSummary_files/top5Products.jrxml"/>
+	<template><![CDATA["repo:/public/Samples/Resources/Extras/SampleReportStyles.jrtx"]]></template>
+	<style name="detail">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[($V{REPORT_COUNT} % 2) == 0]]></conditionExpression>
+			<style backcolor="#E9F0DF"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="spark_dataset" uuid="57bcbc96-4e3b-414a-a3e3-6b11ab814b54">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="foodmart"/>
+		<parameter name="Product_Family" class="java.lang.String">
+			<defaultValueExpression><![CDATA["All"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="prod_id" class="java.lang.Integer">
+			<parameterDescription><![CDATA[]]></parameterDescription>
+		</parameter>
+		<queryString>
+			<![CDATA[SELECT
+	product.product_name AS product_product_name,
+	sum(sf.store_sales) AS store_sales,
+	tim.the_month as time,
+	product.product_id AS product_product_id
+FROM
+	sales_fact_1997 sf
+	inner join product product on product.product_id=sf.product_id
+	inner join time_by_day tim on tim.time_id = sf.time_id
+	inner join product_class pc on product.product_class_id=pc.product_class_id
+where ($P{Product_Family}='All' or pc.product_family=$P{Product_Family}) and product.product_id = $P{prod_id}
+GROUP BY
+	product.product_name,
+	product.product_id,
+	the_month
+ORDER BY
+	store_sales desc limit 5]]>
+		</queryString>
+		<field name="product_product_name" class="java.lang.String"/>
+		<field name="store_sales" class="java.math.BigDecimal"/>
+		<field name="time" class="java.lang.String"/>
+		<field name="product_product_id" class="java.lang.Integer"/>
+	</subDataset>
+	<parameter name="Product_Family" class="java.lang.String">
+		<defaultValueExpression><![CDATA["All"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+	product.product_name AS product_product_name,
+	sum(sf.store_sales) AS store_sales,
+	product.product_id AS product_product_id
+FROM
+	sales_fact_1997 sf
+	inner join product product on product.product_id=sf.product_id
+	inner join product_class pc on product.product_class_id=pc.product_class_id
+where ($P{Product_Family}='All' or pc.product_family=$P{Product_Family})
+GROUP BY
+	product.product_name,
+	product.product_id
+ORDER BY
+	store_sales desc limit 5]]>
+	</queryString>
+	<field name="product_product_name" class="java.lang.String"/>
+	<field name="store_sales" class="java.math.BigDecimal"/>
+	<field name="product_product_id" class="java.lang.Integer"/>
+	<title>
+		<band height="21" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement key="textField-7" mode="Opaque" x="0" y="0" width="236" height="21" forecolor="#FFFFFF" backcolor="#343433" uuid="d18cf3d6-27c8-4fa0-8a03-3e00e1843f32">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top" markup="none">
+					<font fontName="Calibri" size="11" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{Top5.ProductsTitle}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="13" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement style="detail" mode="Opaque" x="10" y="0" width="160" height="13" forecolor="#FFFFFF" backcolor="#343433" uuid="c9fe8bf7-50ee-4c67-82c6-aacfd8029205">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="1"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{product_product_name}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement key="" style="detail" mode="Opaque" x="170" y="0" width="66" height="13" forecolor="#FFFFFF" backcolor="#343433" uuid="1ae3ca06-bba8-4c30-a745-9217bc30075d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box rightPadding="1"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($R{CurrencySymbol}.equals("CurrencySymbol") ? "$" : $R{CurrencySymbol}) /* Uses dollar as default if key is not found */
++ " "
++ java.text.NumberFormat.getIntegerInstance($P{REPORT_LOCALE}).format( $F{store_sales}.longValue() )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="SerialNumber" mode="Opaque" x="0" y="0" width="10" height="13" forecolor="#FFFFFF" backcolor="#343433" uuid="ec93b61b-aabe-4200-917d-a75760c851ac">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box leftPadding="0" rightPadding="0"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Calibri"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT} + " "]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement mode="Transparent" x="130" y="0" width="50" height="13" uuid="d3d2739e-4694-4f4b-bad5-5004f22a73d5">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<fw:sparkLine xmlns:fw="http://jaspersoft.com/fusion" xsi:schemaLocation="http://jaspersoft.com/fusion http://jaspersoft.com/schema/fusion.xsd">
+					<fw:widgetProperty name="showCloseValue">
+						<fw:propertyExpression><![CDATA[Boolean.FALSE]]></fw:propertyExpression>
+					</fw:widgetProperty>
+					<fw:widgetProperty name="showOpenValue">
+						<fw:propertyExpression><![CDATA[Boolean.FALSE]]></fw:propertyExpression>
+					</fw:widgetProperty>
+					<fw:widgetProperty name="showHighLowValue">
+						<fw:propertyExpression><![CDATA[Boolean.FALSE]]></fw:propertyExpression>
+					</fw:widgetProperty>
+					<fw:widgetProperty name="drawAnchors">
+						<fw:propertyExpression><![CDATA[Boolean.TRUE]]></fw:propertyExpression>
+					</fw:widgetProperty>
+					<fw:widgetProperty name="anchorColor">
+						<fw:propertyExpression><![CDATA[new java.awt.Color(-5382348)]]></fw:propertyExpression>
+					</fw:widgetProperty>
+					<fw:widgetProperty name="bgColor">
+						<fw:propertyExpression><![CDATA[new java.awt.Color(-13355981)]]></fw:propertyExpression>
+					</fw:widgetProperty>
+					<fw:valuesDataset>
+						<dataset>
+							<datasetRun subDataset="spark_dataset" uuid="effba13b-8109-42be-a4e9-8ad1ed1048b6">
+								<datasetParameter name="Product_Family">
+									<datasetParameterExpression><![CDATA[$P{Product_Family}]]></datasetParameterExpression>
+								</datasetParameter>
+								<datasetParameter name="prod_id">
+									<datasetParameterExpression><![CDATA[$F{product_product_id}]]></datasetParameterExpression>
+								</datasetParameter>
+								<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+							</datasetRun>
+						</dataset>
+						<fw:valueExpression><![CDATA[$F{store_sales}]]></fw:valueExpression>
+					</fw:valuesDataset>
+				</fw:sparkLine>
+			</componentElement>
+		</band>
+	</detail>
+</jasperReport>

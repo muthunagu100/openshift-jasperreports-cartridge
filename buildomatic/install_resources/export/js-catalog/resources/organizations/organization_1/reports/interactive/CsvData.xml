@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fileResource exportedWithPermissions="true" dataFile="CsvData.data">
+    <folder>/organizations/organization_1/reports/interactive</folder>
+    <name>CsvData</name>
+    <version>0</version>
+    <label>CSV Data</label>
+    <description>CSV Data</description>
+    <creationDate>2014-12-18T02:01:09.666-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:09.666-08:00</updateDate>
+    <fileType>xml</fileType>
+</fileResource>

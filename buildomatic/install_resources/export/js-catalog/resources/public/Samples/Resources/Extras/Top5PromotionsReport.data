@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Top5PromotionsReport" pageWidth="246" pageHeight="125" orientation="Landscape" columnWidth="246" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" resourceBundle="supermart" whenResourceMissingType="Key" uuid="3e7c33b0-f24e-430c-a1cb-da0062683ad1">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.jasperserver.url" value="http://192.168.2.141:8102/jasperserver-pro/"/>
+	<property name="ireport.jasperserver.report.resource" value="/public/Samples/Resources/Extras/Top5PromotionsReport"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<template><![CDATA["repo:/public/Samples/Resources/Extras/SampleReportStyles.jrtx"]]></template>
+	<style name="columnstyle" mode="Opaque" forecolor="#FFFFFF" backcolor="#CCCCCC" vAlign="Middle" fontSize="10" isBold="true" isItalic="false"/>
+	<style name="group4style" forecolor="#4A8797" vAlign="Middle" fontSize="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="group3style" forecolor="#595441" vAlign="Middle" fontSize="14" isBold="true" isItalic="false" pdfFontName="Helvetica-BoldOblique"/>
+	<style name="group1style" mode="Opaque" forecolor="#FFFFFF" backcolor="#993200" vAlign="Middle" fontName="SansSerif" fontSize="14" isBold="false" isItalic="false" pdfFontName="Helvetica-BoldOblique"/>
+	<style name="head2style" forecolor="#4A8797" hAlign="Center" vAlign="Middle" fontName="SansSerif" fontSize="12" isBold="true">
+		<pen lineWidth="2.0" lineStyle="Solid"/>
+		<box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4">
+			<pen lineWidth="0.0" lineColor="#4A8797"/>
+			<topPen lineWidth="0.0" lineColor="#4A8797"/>
+			<leftPen lineWidth="0.0" lineColor="#4A8797"/>
+			<bottomPen lineWidth="0.0" lineColor="#4A8797"/>
+			<rightPen lineWidth="0.0" lineColor="#4A8797"/>
+		</box>
+	</style>
+	<style name="head3style" forecolor="#FF790B" backcolor="#FFFFFF" fill="Solid" hAlign="Center" vAlign="Middle" fontName="SansSerif" isBold="true">
+		<pen lineWidth="1.0" lineStyle="Solid"/>
+		<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+			<pen lineWidth="1.0" lineStyle="Solid" lineColor="#000033"/>
+			<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#993200"/>
+			<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#993200"/>
+			<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#993200"/>
+			<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#993200"/>
+		</box>
+	</style>
+	<style name="row banding">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() % 2 != 0)]]></conditionExpression>
+			<style backcolor="#E9E9EB"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() % 2 == 0)]]></conditionExpression>
+			<style backcolor="#DFE0E2"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="Chart Dataset" uuid="6e1daa71-b66f-459d-a2f2-008b180571c0">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Localhost Foodmart"/>
+		<parameter name="promotion_id" class="java.lang.Integer">
+			<defaultValueExpression><![CDATA[$F{promotion_promotion_id}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="endMonth" class="java.lang.Integer" isForPrompting="false">
+			<defaultValueExpression><![CDATA[new Integer(12)]]></defaultValueExpression>
+		</parameter>
+		<parameter name="startMonth" class="java.lang.Integer" isForPrompting="false">
+			<defaultValueExpression><![CDATA[new Integer(1)]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[SELECT
+	promotion.promotion_name AS promotion_promotion_name,
+	sum(sf.store_sales) AS store_sales,
+	promotion.promotion_id AS promotion_promotion_id,
+	time_by_day.month_of_year,
+	max($P!{endMonth} - $P!{startMonth})  as month_cnt
+FROM
+	sales_fact_1997 sf
+	inner join promotion promotion on ( sf.promotion_id = promotion.promotion_id )
+	inner join time_by_day time_by_day on ( sf.time_id = time_by_day.time_id )
+WHERE 1=1
+	and time_by_day.month_of_year between $P{startMonth} and $P{endMonth}
+	and promotion.promotion_id = $P{promotion_id}
+GROUP BY
+	promotion.promotion_name,
+	promotion.promotion_id,
+	time_by_day.month_of_year
+HAVING
+	promotion.promotion_name <> 'No Promotion'
+ORDER BY
+	store_sales desc,
+	time_by_day.month_of_year desc
+limit 1]]>
+		</queryString>
+		<field name="promotion_promotion_name" class="java.lang.String"/>
+		<field name="store_sales" class="java.math.BigDecimal"/>
+		<field name="promotion_promotion_id" class="java.lang.Integer"/>
+		<field name="month_cnt" class="java.lang.Integer"/>
+		<group name="promotion_promotion_name">
+			<groupExpression><![CDATA[$F{promotion_promotion_name}]]></groupExpression>
+		</group>
+		<group name="store_sales">
+			<groupExpression><![CDATA[$F{store_sales}]]></groupExpression>
+		</group>
+		<group name="promotion_promotion_id">
+			<groupExpression><![CDATA[$F{promotion_promotion_id}]]></groupExpression>
+		</group>
+	</subDataset>
+	<parameter name="startMonth" class="java.lang.Integer" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new Integer(1)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="endMonth" class="java.lang.Integer" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new Integer(12)]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+	promotion.promotion_name AS promotion_promotion_name,
+	sum(sf.store_sales) AS store_sales,
+	promotion.promotion_id AS promotion_promotion_id
+FROM
+	sales_fact_1997 sf
+	inner join promotion promotion on ( sf.promotion_id = promotion.promotion_id )
+	inner join time_by_day time_by_day on ( sf.time_id = time_by_day.time_id )
+WHERE 1=1
+	and time_by_day.month_of_year between $P{startMonth} and $P{endMonth}
+GROUP BY
+	promotion.promotion_name,
+	promotion.promotion_id
+HAVING
+	promotion.promotion_name <> 'No Promotion'
+ORDER BY
+	store_sales desc]]>
+	</queryString>
+	<field name="promotion_promotion_name" class="java.lang.String"/>
+	<field name="store_sales" class="java.math.BigDecimal"/>
+	<field name="promotion_promotion_id" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="30" splitType="Stretch">
+			<textField isBlankWhenNull="false" hyperlinkTarget="Blank">
+				<reportElement key="textField-7" x="0" y="0" width="246" height="30" forecolor="#58595B" uuid="e7519e36-d0cf-47f8-a727-2307950bf916"/>
+				<box topPadding="2" leftPadding="5" bottomPadding="2" rightPadding="2">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Calibri" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{Top5.PromotionsTitle}]]></textFieldExpression>
+				<hyperlinkTooltipExpression><![CDATA[$R{Top5.Tooltip.DetailAllPromotions}]]></hyperlinkTooltipExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<frame>
+				<reportElement style="row banding" mode="Opaque" x="1" y="0" width="246" height="23" uuid="22f1d5e9-1e4c-4f27-ab99-639bf2605c4f">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5" lineColor="#D7DAD9"/>
+					<leftPen lineWidth="0.5" lineColor="#D7DAD9"/>
+					<bottomPen lineWidth="0.5" lineColor="#D7DAD9"/>
+					<rightPen lineWidth="0.5" lineColor="#D7DAD9"/>
+				</box>
+				<textField isBlankWhenNull="false">
+					<reportElement key="Rank" mode="Transparent" x="0" y="0" width="24" height="23" forecolor="#58595B" uuid="57f978c4-ac24-4b58-975a-9d493d5bebad">
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box leftPadding="5" rightPadding="5">
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#B9D09A"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#B9D09A"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#B9D09A"/>
+						<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#D7DAD9"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="false" hyperlinkType="ReportExecution" hyperlinkTarget="Blank">
+					<reportElement key="Name" mode="Transparent" x="24" y="0" width="116" height="23" forecolor="#0980BA" uuid="c3bf51d3-c845-48b7-beb1-67ca94182cb6">
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box leftPadding="5" rightPadding="5">
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#B9D09A"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#B9D09A"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#B9D09A"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#A5C26A"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Calibri" size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{promotion_promotion_name}]]></textFieldExpression>
+					<hyperlinkTooltipExpression><![CDATA[msg($R{Top5.Tooltip.Detail}, $F{promotion_promotion_name})]]></hyperlinkTooltipExpression>
+					<hyperlinkParameter name="_report">
+						<hyperlinkParameterExpression><![CDATA["/public/Samples/Reports/PromotionDetailsReport"]]></hyperlinkParameterExpression>
+					</hyperlinkParameter>
+					<hyperlinkParameter name="promotionId">
+						<hyperlinkParameterExpression><![CDATA[$F{promotion_promotion_id}]]></hyperlinkParameterExpression>
+					</hyperlinkParameter>
+				</textField>
+				<textField pattern="" isBlankWhenNull="false">
+					<reportElement key="Sales" mode="Transparent" x="196" y="0" width="50" height="23" forecolor="#58595B" uuid="41bc4bf8-6bec-4d9d-9063-1162e4797c4c">
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+					</reportElement>
+					<box leftPadding="5" rightPadding="5">
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#B9D09A"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#A5C26A"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#B9D09A"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#B9D09A"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($R{CurrencySymbol}.equals("CurrencySymbol") ? "$" : $R{CurrencySymbol}) /* Uses dollar as default if key is not found */
++ " "
++ java.text.NumberFormat.getIntegerInstance($P{REPORT_LOCALE}).format( $F{store_sales}.longValue() )]]></textFieldExpression>
+				</textField>
+				<componentElement>
+					<reportElement mode="Transparent" x="140" y="5" width="56" height="12" uuid="3024cc22-f936-4ede-9c56-e7ab08ddb51c">
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					</reportElement>
+					<fw:sparkLine xmlns:fw="http://jaspersoft.com/fusion" xsi:schemaLocation="http://jaspersoft.com/fusion http://jaspersoft.com/schema/fusion.xsd">
+						<fw:widgetProperty name="openColor">
+							<fw:propertyExpression><![CDATA[new java.awt.Color(-16759193)]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="closeColor">
+							<fw:propertyExpression><![CDATA[new java.awt.Color(-16759193)]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="highColor">
+							<fw:propertyExpression><![CDATA[new java.awt.Color(-16759193)]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="lowColor">
+							<fw:propertyExpression><![CDATA[new java.awt.Color(-16759193)]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="anchorColor">
+							<fw:propertyExpression><![CDATA[new java.awt.Color(-16154438)]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="anchorRadius">
+							<fw:propertyExpression><![CDATA[new Integer(2)]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="lineColor">
+							<fw:propertyExpression><![CDATA[new java.awt.Color(-10987173)]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="lineThickness">
+							<fw:propertyExpression><![CDATA[new Integer(1)]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="showCloseValue">
+							<fw:propertyExpression><![CDATA[Boolean.FALSE]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="showHighLowValue">
+							<fw:propertyExpression><![CDATA[Boolean.FALSE]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="showOpenValue">
+							<fw:propertyExpression><![CDATA[Boolean.FALSE]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="drawAnchors">
+							<fw:propertyExpression><![CDATA[Boolean.TRUE]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="connectNullData">
+							<fw:propertyExpression><![CDATA[Boolean.TRUE]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="setAdaptiveYMin">
+							<fw:propertyExpression><![CDATA[Boolean.TRUE]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="yAxisMinValue">
+							<fw:propertyExpression><![CDATA[new Integer(0)]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:widgetProperty name="bgColor">
+							<fw:propertyExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue() % 2 != 0) == true ? new java.awt.Color(-1447445): new java.awt.Color(-2105118)]]></fw:propertyExpression>
+						</fw:widgetProperty>
+						<fw:valuesDataset>
+							<dataset>
+								<datasetRun subDataset="Chart Dataset" uuid="db260bfe-19bb-4ce7-8c3a-e09dbd7ee930">
+									<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+									<datasetParameter name="startMonth">
+										<datasetParameterExpression><![CDATA[$P{startMonth}]]></datasetParameterExpression>
+									</datasetParameter>
+									<datasetParameter name="endMonth">
+										<datasetParameterExpression><![CDATA[$P{endMonth}]]></datasetParameterExpression>
+									</datasetParameter>
+									<datasetParameter name="promotion_id">
+										<datasetParameterExpression><![CDATA[$F{promotion_promotion_id}]]></datasetParameterExpression>
+									</datasetParameter>
+									<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+								</datasetRun>
+							</dataset>
+							<fw:valueExpression><![CDATA[$F{store_sales}.intValue() + $F{store_sales}.intValue()*60/100]]></fw:valueExpression>
+							<fw:valueExpression><![CDATA[($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 0 ?($F{store_sales}.intValue() - $F{store_sales}.intValue()*45/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 1?($F{store_sales}.intValue() + $F{store_sales}.intValue()*25/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 2?($F{store_sales}.intValue() + $F{store_sales}.intValue()*15/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 3?($F{store_sales}.intValue() - $F{store_sales}.intValue()*40/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 4?($F{store_sales}.intValue() + $F{store_sales}.intValue()*20/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 5?($F{store_sales}.intValue() - $F{store_sales}.intValue()*25/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 6?($F{store_sales}.intValue() - $F{store_sales}.intValue()*30/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 7?($F{store_sales}.intValue() - $F{store_sales}.intValue()*5/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 8?($F{store_sales}.intValue() + $F{store_sales}.intValue()*25/100):($F{store_sales}.intValue() - $F{store_sales}.intValue()*30/100)))))))))]]></fw:valueExpression>
+							<fw:valueExpression><![CDATA[($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 0 ?($F{store_sales}.intValue() + $F{store_sales}.intValue()*20/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 1?($F{store_sales}.intValue() + $F{store_sales}.intValue()*15/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 2?($F{store_sales}.intValue() + $F{store_sales}.intValue()*45/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 3?($F{store_sales}.intValue() - $F{store_sales}.intValue()*20/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 4?($F{store_sales}.intValue() + $F{store_sales}.intValue()*10/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 5?($F{store_sales}.intValue() + $F{store_sales}.intValue()*10/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 6?($F{store_sales}.intValue() + $F{store_sales}.intValue()*20/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 7?($F{store_sales}.intValue() + $F{store_sales}.intValue()*15/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 8?($F{store_sales}.intValue() + $F{store_sales}.intValue()*20/100):($F{store_sales}.intValue() - $F{store_sales}.intValue()*10/100)))))))))]]></fw:valueExpression>
+							<fw:valueExpression><![CDATA[($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 0 ?($F{store_sales}.intValue() + $F{store_sales}.intValue()*30/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 1?($F{store_sales}.intValue() - $F{store_sales}.intValue()*30/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 2?($F{store_sales}.intValue() + $F{store_sales}.intValue()*30/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 3?($F{store_sales}.intValue() - $F{store_sales}.intValue()*30/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 4?($F{store_sales}.intValue() + $F{store_sales}.intValue()*10/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 5?($F{store_sales}.intValue() - $F{store_sales}.intValue()*25/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 6?($F{store_sales}.intValue() + $F{store_sales}.intValue()*30/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 7?($F{store_sales}.intValue() + $F{store_sales}.intValue()*5/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 8?($F{store_sales}.intValue() + $F{store_sales}.intValue()*40/100):($F{store_sales}.intValue() - $F{store_sales}.intValue()*10/100)))))))))]]></fw:valueExpression>
+							<fw:valueExpression><![CDATA[($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 0 ?($F{store_sales}.intValue() - $F{store_sales}.intValue()*55/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 1?($F{store_sales}.intValue() - $F{store_sales}.intValue()*45/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 2?($F{store_sales}.intValue() - $F{store_sales}.intValue()*20/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 3?($F{store_sales}.intValue() - $F{store_sales}.intValue()*50/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 4?($F{store_sales}.intValue() - $F{store_sales}.intValue()*10/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 5?($F{store_sales}.intValue() - $F{store_sales}.intValue()*40/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 6?($F{store_sales}.intValue() - $F{store_sales}.intValue()*40/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 7?($F{store_sales}.intValue() - $F{store_sales}.intValue()*15/100):(($F{month_cnt} % 10 + $F{promotion_promotion_id} % 10) % 10 == 8?($F{store_sales}.intValue() - $F{store_sales}.intValue()*25/100):($F{store_sales}.intValue() - $F{store_sales}.intValue()*40/100)))))))))]]></fw:valueExpression>
+						</fw:valuesDataset>
+					</fw:sparkLine>
+				</componentElement>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

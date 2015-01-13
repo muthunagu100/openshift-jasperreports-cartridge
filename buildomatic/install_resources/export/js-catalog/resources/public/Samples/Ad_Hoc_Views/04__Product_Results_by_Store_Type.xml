@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<adhocDataView exportedWithPermissions="true">
+    <folder>/public/Samples/Ad_Hoc_Views</folder>
+    <name>04__Product_Results_by_Store_Type</name>
+    <version>0</version>
+    <label>04. Product Results by Store Type</label>
+    <description>Sample Filtered Table Report Showing Multiple Measures</description>
+    <creationDate>2014-12-18T02:01:27.199-08:00</creationDate>
+    <updateDate>2014-05-15T17:05:23.045-07:00</updateDate>
+    <dataSource>
+        <uri>/public/Samples/Domains/supermartDomain</uri>
+    </dataSource>
+    <inputControl>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="inputControl">
+            <folder>/public/Samples/Ad_Hoc_Views/04__Product_Results_by_Store_Type_files</folder>
+            <name>sales__store__store_contact__store_country_1</name>
+            <version>0</version>
+            <label>$R{supermart.store.store_country.label}</label>
+            <creationDate>2014-12-18T02:01:27.199-08:00</creationDate>
+            <updateDate>2014-05-15T17:05:23.045-07:00</updateDate>
+            <type>4</type>
+            <mandatory>false</mandatory>
+            <readOnly>false</readOnly>
+            <visible>true</visible>
+            <query>
+                <localResource exportedWithPermissions="false" xsi:type="query">
+                    <folder>/public/Samples/Ad_Hoc_Views/04__Product_Results_by_Store_Type_files/sales__store__store_contact__store_country_1_files</folder>
+                    <name>sales__store__store_contact__store_country_1</name>
+                    <version>0</version>
+                    <label>$R{supermart.store.store_country.label}</label>
+                    <creationDate>2014-12-18T02:01:27.199-08:00</creationDate>
+                    <updateDate>2014-05-15T17:05:23.045-07:00</updateDate>
+                    <language>domain</language>
+                    <queryString>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;query xmlns="http://www.jaspersoft.com/2007/SL/XMLSchema"&gt;
+  &lt;groupList&gt;
+    &lt;group columnName="sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_country" /&gt;
+  &lt;/groupList&gt;
+  &lt;queryFields&gt;
+    &lt;queryField id="sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_country" /&gt;
+    &lt;queryField id="store1.store_country" /&gt;
+  &lt;/queryFields&gt;
+&lt;/query&gt;
+
+</queryString>
+                    <dataSource>
+                        <uri>/public/Samples/Domains/supermartDomain</uri>
+                    </dataSource>
+                </localResource>
+            </query>
+            <queryVisibleColumn>sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_country</queryVisibleColumn>
+            <queryValueColumn>sales_fact_ALL.sales__store.sales__store__store_contact.sales__store__store_contact__store_country</queryValueColumn>
+        </localResource>
+    </inputControl>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/04__Product_Results_by_Store_Type_files</folder>
+            <name>supermart_domain.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:27.199-08:00</creationDate>
+            <updateDate>2014-05-15T17:05:23.045-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain_en_US.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/04__Product_Results_by_Store_Type_files</folder>
+            <name>supermart_domain_en_US.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:27.199-08:00</creationDate>
+            <updateDate>2014-05-15T17:05:23.045-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain_es.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/04__Product_Results_by_Store_Type_files</folder>
+            <name>supermart_domain_es.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:27.199-08:00</creationDate>
+            <updateDate>2014-05-15T17:05:23.045-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain_fr.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/04__Product_Results_by_Store_Type_files</folder>
+            <name>supermart_domain_fr.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:27.199-08:00</creationDate>
+            <updateDate>2014-05-15T17:05:23.045-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain_ja.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/04__Product_Results_by_Store_Type_files</folder>
+            <name>supermart_domain_ja.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:27.199-08:00</creationDate>
+            <updateDate>2014-05-15T17:05:23.045-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain_zh_CN.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/04__Product_Results_by_Store_Type_files</folder>
+            <name>supermart_domain_zh_CN.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:27.199-08:00</creationDate>
+            <updateDate>2014-05-15T17:05:23.045-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain_de.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/04__Product_Results_by_Store_Type_files</folder>
+            <name>supermart_domain_de.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:27.199-08:00</creationDate>
+            <updateDate>2014-05-15T17:05:23.045-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="topicJRXML.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/04__Product_Results_by_Store_Type_files</folder>
+            <name>topicJRXML</name>
+            <version>0</version>
+            <label>topicJRXML</label>
+            <creationDate>2014-12-18T02:01:27.199-08:00</creationDate>
+            <updateDate>2014-05-15T17:05:23.045-07:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="stateXML.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/04__Product_Results_by_Store_Type_files</folder>
+            <name>stateXML</name>
+            <version>0</version>
+            <label>stateXML</label>
+            <creationDate>2014-12-18T02:01:27.199-08:00</creationDate>
+            <updateDate>2014-05-15T17:05:23.045-07:00</updateDate>
+            <fileType>xml</fileType>
+        </localResource>
+    </resource>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>1</controlsLayout>
+</adhocDataView>

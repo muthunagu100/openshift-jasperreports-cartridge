@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder exportedWithPermissions="true">
+    <parent>/organizations/organization_1</parent>
+    <name>dashboards</name>
+    <label>Dashboards</label>
+    <description>Dashboards</description>
+    <creationDate>2014-12-18T02:01:22.203-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:22.203-08:00</updateDate>
+</folder>

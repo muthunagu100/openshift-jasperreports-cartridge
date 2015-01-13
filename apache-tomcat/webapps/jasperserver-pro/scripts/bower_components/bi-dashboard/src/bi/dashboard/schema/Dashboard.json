@@ -1,0 +1,53 @@
+{
+    "title": "Dashboard Properties",
+    "type": "object",
+    "description": "JSON Schema describing Dashboard Properties",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "server": {
+            "type": "string",
+            "description": "URL of JRS instance"
+        },
+        "resource": {
+            "type": "string",
+            "description": "Dashboard resource URI",
+            "pattern": "^/[^/~!#\\$%^|\\s`@&*()\\-+={}\\[\\]:;\"'<>,?/\\|\\\\]+(/[^/~!#\\$%^|\\s`@&*()\\-+={}\\[\\]:;\"'<>,?/\\|\\\\]+)*$"
+        },
+        "container": {
+            "oneOf": [
+                {
+                    "type": "object",
+                    "additionalProperties" : true,
+                    "description": "DOM element to render report to"
+                },
+                {
+                    "type": "string",
+                    "description": "CSS selector for container to render report to"
+                }
+            ]
+        },
+        "linkOptions": {
+            "type": "object",
+            "description": "Dashboard's parameters values",
+            "properties": {
+                "beforeRender": {
+                    "type": "function",
+                    "description": "A function to process link - link element pairs."
+                },
+                "events": {
+                    "type": "object",
+                    "description": "Backbone-like events object to be applied to JR links",
+                    "additionalProperties" : true
+                }
+            }
+        },
+        "params": {
+            "type": "object",
+            "description": "Dashboard parameter values",
+            "additionalProperties": {
+                "type": "array"
+            }
+        }
+    },
+    "required": ["server", "resource"]
+}

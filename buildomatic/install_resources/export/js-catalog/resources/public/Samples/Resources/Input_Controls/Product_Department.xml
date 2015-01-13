@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inputControl exportedWithPermissions="true">
+    <folder>/public/Samples/Resources/Input_Controls</folder>
+    <name>Product_Department</name>
+    <version>0</version>
+    <label>Product Department</label>
+    <description>Displays all the "Product Departments" depending upon the "Product Family" selected.</description>
+    <creationDate>2014-12-18T02:01:39.953-08:00</creationDate>
+    <updateDate>2013-09-19T23:30:11.241-07:00</updateDate>
+    <type>4</type>
+    <mandatory>true</mandatory>
+    <readOnly>false</readOnly>
+    <visible>true</visible>
+    <query>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="query">
+            <folder>/public/Samples/Resources/Input_Controls/Product_Department_files</folder>
+            <name>ProductDepartment_Query</name>
+            <version>0</version>
+            <label>ProductDepartment Query</label>
+            <creationDate>2014-12-18T02:01:39.953-08:00</creationDate>
+            <updateDate>2013-09-19T23:30:11.241-07:00</updateDate>
+            <language>sql</language>
+            <queryString>select 
+	2 as "seq",
+	'All' as product_department
+union
+select distinct
+	1 as "seq",
+	(pc.product_department) 
+from 
+	product_class pc, product p 
+where 
+	pc.product_class_id = p.product_class_id  
+	and (pc.product_family = ($P{Product_Family}) or $P{Product_Family} = 'All')
+	and product_department is not null
+order by 
+	1,2</queryString>
+            <dataSource>
+                <uri>/public/Samples/Data_Sources/FoodmartDataSourceJNDI</uri>
+            </dataSource>
+        </localResource>
+    </query>
+    <queryVisibleColumn>product_department</queryVisibleColumn>
+    <queryValueColumn>product_department</queryValueColumn>
+</inputControl>

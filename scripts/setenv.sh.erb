@@ -1,0 +1,21 @@
+#!/bin/sh
+echo $LD_LIBRARY_PATH | egrep "<%= ENV['OPENSHIFT_JASPER_DIR'] %>/common" > /dev/null
+if [ $? -ne 0 ] ; then
+PATH="<%= ENV['OPENSHIFT_JASPER_DIR'] %>/java/bin:<%= ENV['OPENSHIFT_JASPER_DIR'] %>/postgresql/bin:<%= ENV['OPENSHIFT_JASPER_DIR'] %>/common/bin:$PATH"
+export PATH
+LD_LIBRARY_PATH="<%= ENV['OPENSHIFT_JASPER_DIR'] %>/postgresql/lib:<%= ENV['OPENSHIFT_JASPER_DIR'] %>/common/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH
+fi
+
+##### JAVA ENV #####
+JAVA_HOME=<%= ENV['OPENSHIFT_JASPER_DIR'] %>/java
+export JAVA_HOME
+
+##### POSTGRES ENV #####
+
+        ##### SSL ENV #####
+SSL_CERT_FILE=<%= ENV['OPENSHIFT_JASPER_DIR'] %>/common/openssl/certs/curl-ca-bundle.crt
+export SSL_CERT_FILE
+
+
+. <%= ENV['OPENSHIFT_JASPER_DIR'] %>/scripts/build-setenv.sh

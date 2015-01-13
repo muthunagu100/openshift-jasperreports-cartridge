@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/public/Samples/Reports</folder>
+    <name>Cascading_Report_2_Updated</name>
+    <version>0</version>
+    <label>16. Interactive Sales Report</label>
+    <description>Interactive table and chart.</description>
+    <creationDate>2014-12-18T02:01:41.967-08:00</creationDate>
+    <updateDate>2014-05-13T16:34:40.689-07:00</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="main_jrxml.data" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/Cascading_Report_2_Updated_files</folder>
+            <name>main_jrxml</name>
+            <version>0</version>
+            <label>main_jrxml</label>
+            <creationDate>2014-12-18T02:01:41.967-08:00</creationDate>
+            <updateDate>2013-09-03T00:21:52.421-07:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/public/Samples/Data_Sources/FoodmartDataSourceJNDI</uri>
+    </dataSource>
+    <inputControl>
+        <uri>/public/Samples/Resources/Input_Controls/Product_Family</uri>
+    </inputControl>
+    <inputControl>
+        <uri>/public/Samples/Resources/Input_Controls/Product_Department</uri>
+    </inputControl>
+    <inputControl>
+        <uri>/public/Samples/Resources/Input_Controls/Product_Category</uri>
+    </inputControl>
+    <inputControl>
+        <uri>/public/Samples/Resources/Input_Controls/Product_Name</uri>
+    </inputControl>
+    <inputControl>
+        <uri>/public/Samples/Resources/Input_Controls/Country</uri>
+    </inputControl>
+    <inputControl>
+        <uri>/public/Samples/Resources/Input_Controls/Gender</uri>
+    </inputControl>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/Cascading_Report_2_Updated_files</folder>
+            <name>js_logo.png</name>
+            <version>0</version>
+            <label>js_logo.png</label>
+            <creationDate>2014-12-18T02:01:41.967-08:00</creationDate>
+            <updateDate>2012-11-08T15:36:27.684-08:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Images/Jaspersoft_logo.png</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/Cascading_Report_2_Updated_files</folder>
+            <name>SampleReportStyles.jrtx</name>
+            <version>0</version>
+            <label>SampleReportStyles.jrtx</label>
+            <creationDate>2014-12-18T02:01:41.967-08:00</creationDate>
+            <updateDate>2013-09-25T04:43:31.152-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/SampleReportStyles.jrtx</referenceUri>
+        </localResource>
+    </resource>
+    <inputControlRenderingView></inputControlRenderingView>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>4</controlsLayout>
+</reportUnit>

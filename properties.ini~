@@ -1,0 +1,17 @@
+[Postgres]
+postgres_hostname = 127.0.0.1
+postgres_port = 5433
+postgres_root_directory = /home/vasanth/jasperreports-server-6.0.1/postgresql
+postgres_binary_directory = /home/vasanth/jasperreports-server-6.0.1/postgresql/bin
+[Java]
+java_home_directory = /home/vasanth/jasperreports-server-6.0.1/java
+[Tomcat]
+tomcat_server_port = 8080
+tomcat_server_ssl_port = 8443
+tomcat_server_shutdown_port = 8005
+tomcat_server_ajp_port = 8009
+tomcat_root_directory = /home/vasanth/jasperreports-server-6.0.1/apache-tomcat
+tomcat_domainname = 127.0.0.1
+tomcat_configuration_directory = /home/vasanth/jasperreports-server-6.0.1/apache-tomcat/conf
+tomcat_group = ***unknown variable tomcat_group***
+tomcat_user = ***unknown variable tomcat_user***

@@ -1,0 +1,1 @@
+define(["require","adhoc/filter/valueEditor/rangeTrait","adhoc/filter/valueEditor/NumericValueEditor"],function(e){var r=e("adhoc/filter/valueEditor/rangeTrait"),i=e("adhoc/filter/valueEditor/NumericValueEditor");return i.extend(r)});

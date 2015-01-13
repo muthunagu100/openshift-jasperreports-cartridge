@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listOfValues exportedWithPermissions="true">
+    <folder>/public/Samples/Resources/Data_Types</folder>
+    <name>MonthNamesList</name>
+    <version>0</version>
+    <label>Month Names List</label>
+    <description>January = 1, December = 12</description>
+    <creationDate>2014-12-18T02:01:29.331-08:00</creationDate>
+    <updateDate>2012-11-02T06:03:30.919-07:00</updateDate>
+    <item>
+        <itemLabel>January</itemLabel>
+        <itemValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:java.lang.String">1</itemValue>
+    </item>
+    <item>
+        <itemLabel>February</itemLabel>
+        <itemValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:java.lang.String">2</itemValue>
+    </item>
+    <item>
+        <itemLabel>March</itemLabel>
+        <itemValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:java.lang.String">3</itemValue>
+    </item>
+    <item>
+        <itemLabel>April</itemLabel>
+        <itemValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:java.lang.String">4</itemValue>
+    </item>
+    <item>
+        <itemLabel>May</itemLabel>
+        <itemValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:java.lang.String">5</itemValue>
+    </item>
+    <item>
+        <itemLabel>June</itemLabel>
+        <itemValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:java.lang.String">6</itemValue>
+    </item>
+    <item>
+        <itemLabel>July</itemLabel>
+        <itemValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:java.lang.String">7</itemValue>
+    </item>
+    <item>
+        <itemLabel>August</itemLabel>
+        <itemValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:java.lang.String">8</itemValue>
+    </item>
+    <item>
+        <itemLabel>September</itemLabel>
+        <itemValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:java.lang.String">9</itemValue>
+    </item>
+    <item>
+        <itemLabel>October</itemLabel>
+        <itemValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:java.lang.String">10</itemValue>
+    </item>
+    <item>
+        <itemLabel>November</itemLabel>
+        <itemValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:java.lang.String">11</itemValue>
+    </item>
+    <item>
+        <itemLabel>December</itemLabel>
+        <itemValue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="java:java.lang.String">12</itemValue>
+    </item>
+</listOfValues>

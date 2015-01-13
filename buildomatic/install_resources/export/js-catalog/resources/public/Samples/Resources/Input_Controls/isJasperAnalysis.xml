@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inputControl exportedWithPermissions="true">
+    <folder>/public/Samples/Resources/Input_Controls</folder>
+    <name>isJasperAnalysis</name>
+    <version>0</version>
+    <label>isJasperAnalysis</label>
+    <description>JasperAnalysis = true JasperServer only = false</description>
+    <creationDate>2014-12-18T02:01:32.623-08:00</creationDate>
+    <updateDate>2012-10-17T07:14:35.537-07:00</updateDate>
+    <type>3</type>
+    <mandatory>false</mandatory>
+    <readOnly>false</readOnly>
+    <visible>true</visible>
+    <listOfValues>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="listOfValues">
+            <folder>/public/Samples/Resources/Input_Controls/isJasperAnalysis_files</folder>
+            <name>booleanValues</name>
+            <version>0</version>
+            <label>booleanValues</label>
+            <creationDate>2014-12-18T02:01:32.623-08:00</creationDate>
+            <updateDate>2012-10-17T07:14:35.537-07:00</updateDate>
+            <item>
+                <itemLabel>true</itemLabel>
+                <itemValue xsi:type="java:java.lang.String">true</itemValue>
+            </item>
+            <item>
+                <itemLabel>false</itemLabel>
+                <itemValue xsi:type="java:java.lang.String">false</itemValue>
+            </item>
+        </localResource>
+    </listOfValues>
+</inputControl>

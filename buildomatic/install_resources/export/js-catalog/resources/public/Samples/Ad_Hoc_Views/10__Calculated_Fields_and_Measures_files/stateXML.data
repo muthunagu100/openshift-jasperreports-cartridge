@@ -1,0 +1,179 @@
+<unifiedState dataSize="full" filterPanelShowing="true" hasMargins="true" ignoreMaxRows="true" initedSubFilterList="true" launchType="ADH_045a_DOMAIN" maxDisplayColumns="0" maxDisplayRows="0" maxRowChoices="0" maxRows="100" mode="crosstab" pageOrientation="Landscape" paperSize="content" showTableDetails="true" showTableTotals="false" summaryRowTitle="Totals" theme="default" titleBarShowing="true" titleHeight="0" topicName="Supermart Domain">
+  <chartState availableChartHeight="0" availableChartWidth="0" backgroundFilled="false" chartHeight="0" chartIsVertical="true" chartWidth="0" displayXAxisLabel="true" displayYAxisLabel="false" offsetX="0" offsetY="0">
+    <chartTitle />
+    <chartType>1_bar</chartType>
+    <displayLegendMap>
+      <entry key="5_scatter">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="2_pie">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="6_timeSeries">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="3_line">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="1_bar">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="4_area">
+        <boolean>true</boolean>
+      </entry>
+    </displayLegendMap>
+    <gradient>topDown</gradient>
+    <hasLinesMap>
+      <entry key="5_scatter">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="2_pie">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="6_timeSeries">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="3_line">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="1_bar">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="4_area">
+        <boolean>false</boolean>
+      </entry>
+    </hasLinesMap>
+    <hasPointsMap>
+      <entry key="5_scatter">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="2_pie">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="6_timeSeries">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="3_line">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="1_bar">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="4_area">
+        <boolean>false</boolean>
+      </entry>
+    </hasPointsMap>
+    <stackedMap>
+      <entry key="5_scatter">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="2_pie">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="6_timeSeries">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="3_line">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="1_bar">
+        <boolean>false</boolean>
+      </entry>
+      <entry key="4_area">
+        <boolean>false</boolean>
+      </entry>
+    </stackedMap>
+    <threeDMap>
+      <entry key="5_scatter">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="2_pie">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="6_timeSeries">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="3_line">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="1_bar">
+        <boolean>true</boolean>
+      </entry>
+      <entry key="4_area">
+        <boolean>true</boolean>
+      </entry>
+    </threeDMap>
+  </chartState>
+  <crosstabState numberOfColumns="11" safeColumnMode="true" safeRowMode="true" showLabels="true">
+    <columnGroups>
+      <queryDimension fieldName="Recyclable" includeAll="true" name="Recyclable" sortStatus="0" type="java.lang.String">
+        <expandedLevels>
+          <string>Recyclable</string>
+        </expandedLevels>
+        <visibleLevels>
+          <string>Recyclable</string>
+        </visibleLevels>
+      </queryDimension>
+      <queryDimension fieldName="StoresEra" includeAll="true" name="StoresEra" sortStatus="0" type="java.lang.String">
+        <visibleLevels>
+          <string>StoresEra</string>
+        </visibleLevels>
+      </queryDimension>
+    </columnGroups>
+    <rowGroups>
+      <queryDimension categorizerName="all" fieldName="sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_country" includeAll="true" name="sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_country" sortStatus="0" type="java.lang.String">
+        <visibleLevels>
+          <string>sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_country</string>
+        </visibleLevels>
+      </queryDimension>
+      <queryDimension fieldName="Measures" includeAll="true" name="Measures" sortStatus="0" type="java.lang.String">
+        <visibleLevels>
+          <string>Measures</string>
+        </visibleLevels>
+      </queryDimension>
+    </rowGroups>
+    <sortingState />
+  </crosstabState>
+  <groups>
+    <queryDimension categorizerName="all" fieldName="sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_country" includeAll="true" name="sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_country" sortStatus="0" type="java.lang.String">
+      <visibleLevels>
+        <string>sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_country</string>
+      </visibleLevels>
+    </queryDimension>
+    <queryDimension fieldName="Measures" includeAll="true" name="Measures" sortStatus="0" type="java.lang.String">
+      <visibleLevels>
+        <string>Measures</string>
+      </visibleLevels>
+    </queryDimension>
+  </groups>
+  <intelligentChartState XAxisRotation="-45" XAxisStep="1" YAxisRotation="0" YAxisStep="1" showDataPoints="true" showMeasureOnValueAxis="true" typeString="column" />
+  <measures>
+    <measure aggregateType="java.lang.Double" fieldName="YearsSinceRemodel" function="Median" measure="true" name="YearsSinceRemodel" showSummary="false" width="125" />
+    <measure aggregateType="java.math.BigDecimal" fieldName="sales_fact_ALL.sales_fact_ALL__store_sales_2013" function="Sum" mask="#,##0.00" measure="true" name="sales_fact_ALL.sales_fact_ALL__store_sales_2013" showSummary="false" width="125" />
+    <measure aggregateType="java.math.BigDecimal" fieldName="$SQFT" function="Average" mask="#,##0.00" measure="true" name="$SQFT" showSummary="false" width="125" />
+    <measure aggregateType="java.lang.Double" fieldName="TaxRate" function="WeightedAverage" mask="#,##0.00" measure="true" name="TaxRate" showSummary="false" width="125" />
+    <measure aggregateType="java.lang.Double" fieldName="SalesGroup" function="AggregateFormula" mask="#,##0.00" measure="true" name="SalesGroup" showSummary="false" width="125" />
+    <measure aggregateType="java.lang.Double" fieldName="SalesOfTotal" function="AggregateFormula" mask="#,##0.00" measure="true" name="SalesOfTotal" showSummary="false" width="125" />
+  </measures>
+  <propertyMap>
+    <entry key="hideEmptyRows">
+      <string>false</string>
+    </entry>
+    <entry key="modFlags">
+      <string />
+    </entry>
+    <entry key="typeOfViewChange">
+      <string>unexpectedBehavior</string>
+    </entry>
+  </propertyMap>
+  <subFilterList>
+    <subFilter id="filter_1" letter="A" sourceString="DYNAMIC">
+      <expressionString>sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_country in ('Mexico', 'USA')</expressionString>
+      <parameterizedExpressionString>sales_fact_ALL.sales__store.sales__store__region.sales__store__region__sales_country in sales__store__region__sales_country_1</parameterizedExpressionString>
+    </subFilter>
+    <subFilter id="filter_2" letter="B" sourceString="DYNAMIC">
+      <expressionString>sales_fact_ALL.sales_fact_ALL__store_sales_2013 &gt; 18</expressionString>
+      <parameterizedExpressionString>sales_fact_ALL.sales_fact_ALL__store_sales_2013 &gt; sales_fact_ALL__store_sales_2013_1</parameterizedExpressionString>
+    </subFilter>
+  </subFilterList>
+</unifiedState>

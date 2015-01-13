@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/public/Samples/Reports</folder>
+    <name>SalesGaugesReport</name>
+    <version>0</version>
+    <label>15. Sales Gauges Report</label>
+    <description>Meter Gauges used in the Supermart Dashboard.</description>
+    <creationDate>2014-12-18T02:01:32.792-08:00</creationDate>
+    <updateDate>2014-09-19T08:51:09.410-07:00</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="main_jrxml.data" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/SalesGaugesReport_files</folder>
+            <name>main_jrxml</name>
+            <version>0</version>
+            <label>Main jrxml</label>
+            <creationDate>2014-12-18T02:01:32.792-08:00</creationDate>
+            <updateDate>2014-09-19T08:51:09.168-07:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/public/Samples/Data_Sources/FoodmartDataSourceJNDI</uri>
+    </dataSource>
+    <inputControl>
+        <uri>/public/Samples/Resources/Input_Controls/startMonth</uri>
+    </inputControl>
+    <inputControl>
+        <uri>/public/Samples/Resources/Input_Controls/endMonth</uri>
+    </inputControl>
+    <inputControl>
+        <uri>/public/Samples/Resources/Input_Controls/isJasperAnalysis</uri>
+    </inputControl>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/SalesGaugesReport_files</folder>
+            <name>supermart_es.properties</name>
+            <version>0</version>
+            <label>supermart_es.properties</label>
+            <description>supermart_es.properties</description>
+            <creationDate>2014-12-18T02:01:32.792-08:00</creationDate>
+            <updateDate>2013-08-29T06:05:05.019-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart_es.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/SalesGaugesReport_files</folder>
+            <name>DemoChartLabels.jar</name>
+            <version>0</version>
+            <label>DemoChartLabels.jar</label>
+            <description></description>
+            <creationDate>2014-12-18T02:01:32.792-08:00</creationDate>
+            <updateDate>2013-09-06T04:39:21.034-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/DemoChartLabels.jar</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/SalesGaugesReport_files</folder>
+            <name>supermart_zh_CN.properties</name>
+            <version>0</version>
+            <label>supermart_zh_CN.properties</label>
+            <description>supermart_zh_CN.properties</description>
+            <creationDate>2014-12-18T02:01:32.792-08:00</creationDate>
+            <updateDate>2013-08-29T06:05:05.019-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart_zh_CN.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/SalesGaugesReport_files</folder>
+            <name>supermart_ja.properties</name>
+            <version>0</version>
+            <label>supermart_ja.properties</label>
+            <description>supermart_ja.properties</description>
+            <creationDate>2014-12-18T02:01:32.792-08:00</creationDate>
+            <updateDate>2013-08-29T06:05:05.019-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart_ja.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/SalesGaugesReport_files</folder>
+            <name>supermart_fr.properties</name>
+            <version>0</version>
+            <label>supermart_fr.properties</label>
+            <description>supermart_fr.properties</description>
+            <creationDate>2014-12-18T02:01:32.792-08:00</creationDate>
+            <updateDate>2013-08-29T06:05:05.019-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart_fr.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/SalesGaugesReport_files</folder>
+            <name>supermart.properties</name>
+            <version>0</version>
+            <label>supermart.properties</label>
+            <creationDate>2014-12-18T02:01:32.792-08:00</creationDate>
+            <updateDate>2013-08-29T06:05:05.019-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/SalesGaugesReport_files</folder>
+            <name>supermart_de.properties</name>
+            <version>0</version>
+            <label>supermart_de.properties</label>
+            <description>supermart_de.properties</description>
+            <creationDate>2014-12-18T02:01:32.792-08:00</creationDate>
+            <updateDate>2013-08-29T06:05:05.019-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart_de.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/SalesGaugesReport_files</folder>
+            <name>supermart_en_US.properties</name>
+            <version>0</version>
+            <label>supermart_en_US.properties</label>
+            <description>supermart_en_US.properties</description>
+            <creationDate>2014-12-18T02:01:32.792-08:00</creationDate>
+            <updateDate>2013-08-29T06:05:05.019-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart_en_US.properties</referenceUri>
+        </localResource>
+    </resource>
+    <inputControlRenderingView></inputControlRenderingView>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>1</controlsLayout>
+</reportUnit>

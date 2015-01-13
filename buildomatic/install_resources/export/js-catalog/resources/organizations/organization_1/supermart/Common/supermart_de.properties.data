@@ -1,0 +1,229 @@
+# Strings for SuperMart reports
+Dashboard.Explore=Selbst untersuchen
+Dashboard.Create=Neuen Bericht erstellen
+Dashboard.Browse=Weitere SuperMart-Dateien durchsuchen
+Dashboard.MyReports=Eigene gespeicherte Berichte
+FooterPageNum=Seite {0} von 
+ReportTitle=Berichtstitel
+LastRunBy=Zuletzt ausgef\u00fchrt von: {0}
+NumRecordsFooter=Gesamtzahl von Datens\u00e4tzen: {0}
+Num=#
+CurrencySymbol=$
+Key=Schl\u00fcssel: 
+Total=Gesamt
+ProfitGrowth=Gewinnzuwachs
+Profit=Gewinn
+Revenue=Einnahmen
+Sales=Umsatz
+ShoppingDays=Einkaufstage
+BrandPreferences=Markenpr\u00e4ferenzen
+AverageSale=Durchschnittlicher Einkauf
+CountsAndTotals=Anzahlen und Gesamtsummen
+UniqueProducts=Unterschiedliche Produkte
+Promotional=Aktionen
+PurchaseDetail=Einkaufsdetails f\u00fcr Kunde {0}:
+CustomerCardNumber=Kundenkartennummer: {0}
+RevenueByCity=Einnahmen nach Stadt
+Revenue.ByLocation.ByProductFamily=Einnahmen nach Standort und Produktfamilie
+Profit.ByLocation.ByProductFamily=Gewinn nach Standort und Produktfamilie
+RowTotals=Zeilensummen
+ColumnTotals=Spaltensummen
+SubtotalState=Zwischensumme f\u00fcr Bundesland
+Subtotal=Zwischensumme
+RevenueByStoreType=Einnahmen nach Filialtyp
+
+SalesGauges.ReportTitle=Einnahmen und Gewinn
+SalesGauge.Tooltip.Revenue=Einnahmen \u00fcber Zeit nach Produkttyp analysieren
+SalesGauge.Tooltip.Profit=Gewinn nach Standort und Produkttyp analysieren
+
+MonthlySales.Title=Monatlicher Umsatz nach Quartal
+MonthlySales.LowValue=Niedrigster Wert
+MonthlySales.HighValue=H\u00f6chster Wert
+ChangeView=Bundesland ausw\u00e4hlen, um die Berichtsansicht zu \u00e4ndern.
+AllStates=Alle Bundesl\u00e4nder
+California=Kalifornien
+Oregon=Oregon
+Washington=Washington
+MonthlySales.Subtitle=F\u00fcr Bundesland = {0}
+MonthlySales.Tooltip.AllStates=Daten anzeigen f\u00fcr alle Bundesl\u00e4nder
+MonthlySales.Tooltip.ShowState=Daten anzeigen f\u00fcr {0}
+MonthlySales.Tooltip.Chart=Einnahmen f\u00fcr {0} und Bundesland = {1} analysieren
+MonthlySales.Tooltip.Table=Einnahmen f\u00fcr Bundesland = {0} analysieren
+
+Drilldown.Tooltip=Detaillieren in {0}
+
+Time.TimeId=Zeit-ID
+Customer.CustomerId=Kunden-ID
+Promotion.PromotionId=Aktions-ID
+Store.StoreId=Filial-ID
+Product.ProductId=Produkt-ID
+
+StoreSales=Umsatz f\u00fcr Filiale
+store_sales=Umsatz
+StoreCost=Kosten f\u00fcr Filiale
+UnitSales=Umsatzst\u00fcckzahlen
+unit_sales=Umsatzst\u00fcckzahlen
+StoreCount=Anzahl f\u00fcr Filiale
+store_count=Anzahl f\u00fcr Filiale
+store_cost=Kosten f\u00fcr Filiale
+
+Sales.Region=Region
+sales_region=Region
+sales_district=Gebiet
+
+StoreType.ReportTitle=Einnahmen nach Filialtyp
+Store.StoreType=Filialtyp
+Store.RegionId=Regions-ID
+Store.StoreName=Filialname
+Store.StoreNumber=Filialnummer
+Store.StreetAddress=Adresse
+Store.City=Ort
+Store.State=Bundesland
+Store.PostalCode=PLZ
+Store.Country=Land
+Store.Phone=Telefon
+Store.Fax=Fax
+Store.FirstOpenedDate=Erster\u00f6ffnung
+Store.LastRemodelDate=Letzter Umbau
+Store.SQFT=Quadratfu\u00df
+Store.GrocerySQFT=Quadratfu\u00df Lebensmittel
+Store.FrozenSQFT=Quadratfu\u00df TK-Kost
+Store.MeatSQFT=Quadratfu\u00df Fleisch
+Store.CoffeeBar=Caf\u00e9
+Store.VideoStore=Videothek
+Store.SaladBar=Salattheke
+Store.PreparedFood=Fertiggerichte
+Store.Florist=Florist
+
+
+store_store_manager=Gesch\u00e4ftsf\u00fchrer der Filiale
+store_store_type=Filialtyp
+store_region_id=Regions-ID
+store_store_name=Filialname
+store_store_number=Filialnummer
+store_store_street_address=Adresse
+store_store_city=Ort
+store_store_state=Bundesland
+store_store_postal_code=PLZ
+store_store_country=Land
+store_store_phone=Telefon
+store_store_fax=Fax
+store_first_opened_date=Erster\u00f6ffnung
+store_last_remodel_date=Letzter Umbau
+store_store_sqft=Quadratfu\u00df
+store_grocery_sqft=Quadratfu\u00df Lebensmittel
+store_frozen_sqft=Quadratfu\u00df TK-Kost
+store_meat_sqft=Quadratfu\u00df Fleisch
+store_coffee_bar=Caf\u00e9
+store_video_store=Videothek
+store_salad_bar=Salattheke
+store_prepared_food=Fertiggerichte
+store_florist=Florist
+store_store_id=Filial-ID
+
+Time.TheDate=Datum
+Time.TheDay=Tag
+Time.TheMonth=Monat
+Time.TheYear=Jahr
+Time.DayOfMonth=Tag des Monats
+Time.WeekOfYear=Woche des Jahres
+Time.MonthOfYear=Monat des Jahres
+Time.Quarter=Quartal
+Time.FiscalPeriod=Rechnungsperiode
+time_by_day_the_date=Datum
+time_by_day_the_day=Tag
+time_by_day_the_month=Monat
+time_by_day_the_year=Jahr
+time_by_day_week_of_year=Woche des Jahres
+time_by_day_month_of_year=Monat des Jahres
+time_by_day_quarter=Quartal
+
+
+Top5.Title=Top F\u00fcnf
+Top5.CustomersTitle=Kunden
+Top5.ProductsTitle=Produkte
+Top5.PromotionsTitle=Aktionen
+Top5.Tooltip.DetailAllCustomers=Details abrufen f\u00fcr alle Kunden - ausf\u00fchrlicher Bericht
+Top5.Tooltip.DetailAllProducts=Details abrufen f\u00fcr alle Produkte - ausf\u00fchrlicher Bericht
+Top5.Tooltip.DetailAllPromotions=Details abrufen f\u00fcr alle Aktionen - ausf\u00fchrlicher Bericht
+Top5.Tooltip.Detail=Details abrufen f\u00fcr {0}
+
+CityState={0}, {1}
+CustomerDetail.ReportTitle=SuperMart-Kundendetails
+
+Customer.FullName=Name
+customer_account_num=Kontonummer
+customer_fullname=Name
+customer_lname=Nachname
+customer_fname=Vorname
+customer_mi=Initiale
+customer_address1=Adresse 1
+customer_address2=Adresse 2
+customer_address3=Adresse 3
+customer_address4=Adresse 4
+customer_city=Ort
+customer_state_province=Bundesland
+customer_postal_code=PLZ
+customer_country=Land
+customer_customer_region_id=Regions-ID
+customer_phone1=Telefon 1
+customer_phone2=Telefon 2
+customer_birthdate=Geburtsdatum
+customer_marital_status=Ehestand
+customer_yearly_income=Jahreseinkommen
+customer_gender=Geschlecht
+customer_total_children=Anzahl der Kinder
+customer_num_children_at_home=Kinder im Haushalt
+customer_education=Ausbildung
+customer_date_accnt_opened=Datum der Kontoer\u00f6ffnung
+customer_member_card=Mitgliedskarte
+customer_occupation=Beruf
+customer_houseowner=Immobilienbesitz
+customer_num_cars_owned=Anzahl KFZ
+
+
+Product.ReportTitle=SuperMart-Produktdetails
+product_product_name=Produktname
+product_brand_name=Markenname
+product_SKU=SKU
+product_SRP=UVP
+product_gross_weight=Bruttogewicht
+product_net_weight=Nettogewicht
+product_recyclable_package=Wiederverwertbare Verpackung
+product_low_fat=Fettarm
+product_units_per_case=St\u00fcck pro Karton
+product_cases_per_pallet=Kartons pro Palette
+product_shelf_Width=Regalbreite
+product_shelf_Height=Regalh\u00f6he
+product_class_product_subcategory=Unterkategorie
+product_class_product_category=Kategorie
+product_class_product_department=Abteilung
+product_class_product_family=Produktfamilie
+product_gross_weight=Bruttogewicht
+product_net_weight=Nettogewicht
+product_recyclable_package=Wiederverwertbare Verpackung
+product_low_fat=Fettarm
+product_units_per_case=St\u00fcck pro Karton
+product_cases_per_pallet=Kartons pro Palette
+product_shelf_width=Regalbreite
+product_shelf_height=Regalh\u00f6he
+product_shelf_depth=Regaltiefe
+product_product_id=Produkt-ID
+
+Promotion.ReportTitle=Aktionsdetails
+promotion_promotion_name=Aktionsname
+promotion_media_type=Medientyp
+promotion_cost=Kosten
+promotion_start_date=Startdatum
+promotion_end_date=Enddatum
+promotion_promotion_district_id=Bezirks-ID
+promotion_promotion_id=Aktions-ID
+Promotion.Name=Aktion
+Promotion.MediaType=Medium
+
+# Strings for input controls
+net.sf.jasperreports.prompt.label.productFamily=Produktfamilie
+net.sf.jasperreports.prompt.label.districtID=Gebiet
+net.sf.jasperreports.prompt.label.promotionSalesMinThreshold=Nur Produkte mit h\u00f6herem Preis als
+net.sf.jasperreports.prompt.label.promotionName=Aktionsname
+net.sf.jasperreports.prompt.label.customerState=Bundesland

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd"
+       default-lazy-init="true">
+
+
+    <util:list id="importCommandMetadataArgNamesPro">
+        <value>help</value>
+        <value>input-dir</value>
+        <value>input-zip</value>
+        <value>update</value>
+        <value>update-core-users</value>
+        <value>skip-user-update</value>
+        <value>include-access-events</value>
+        <value>include-audit-events</value>
+        <value>include-monitoring-events</value>
+        <value>include-server-settings</value>
+    </util:list>
+
+    <util:list id="exportCommandMetadataArgNamesPro">
+        <value>help</value>
+        <value>output-dir</value>
+        <value>output-zip</value>
+        <value>everything</value>
+        <value>roles</value>
+        <value>role-users</value>
+        <value>users</value>
+        <value>uris</value>
+        <value>repository-permissions</value>
+        <value>report-jobs</value>
+        <value>calendars</value>
+        <value>include-access-events</value>
+        <value>include-audit-events</value>
+        <value>include-monitoring-events</value>
+        <value>include-server-settings</value>
+    </util:list>
+
+</beans>

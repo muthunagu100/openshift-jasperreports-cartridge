@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/public/Samples/Reports</folder>
+    <name>13g.TopFivesReport</name>
+    <version>0</version>
+    <label>13g. Top Fives Report</label>
+    <description>Top five customers, products, and promotions. Used in the Supermart Dashboard with alternate color scheme.</description>
+    <creationDate>2014-12-18T02:01:39.051-08:00</creationDate>
+    <updateDate>2013-10-03T16:25:05.793-07:00</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="main_jrxml.data" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/13g.TopFivesReport_files</folder>
+            <name>main_jrxml</name>
+            <version>0</version>
+            <label>Main jrxml</label>
+            <creationDate>2014-12-18T02:01:39.051-08:00</creationDate>
+            <updateDate>2013-09-03T01:20:35.699-07:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/public/Samples/Data_Sources/FoodmartDataSourceJNDI</uri>
+    </dataSource>
+    <inputControl>
+        <uri>/public/Samples/Resources/Input_Controls/startMonth</uri>
+    </inputControl>
+    <inputControl>
+        <uri>/public/Samples/Resources/Input_Controls/endMonth</uri>
+    </inputControl>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/13g.TopFivesReport_files</folder>
+            <name>Top5CustomersReport</name>
+            <version>0</version>
+            <label>Top5CustomersReport</label>
+            <description>Top5CustomersReport</description>
+            <creationDate>2014-12-18T02:01:39.051-08:00</creationDate>
+            <updateDate>2013-09-03T01:02:33.745-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/Top5CustomersReport_g</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/13g.TopFivesReport_files</folder>
+            <name>Top5PromotionsReport</name>
+            <version>0</version>
+            <label>Top5PromotionsReport</label>
+            <description>Top5PromotionsReport</description>
+            <creationDate>2014-12-18T02:01:39.051-08:00</creationDate>
+            <updateDate>2013-09-03T01:02:33.973-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/Top5PromotionsReport_g</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/13g.TopFivesReport_files</folder>
+            <name>Top5ProductsReport</name>
+            <version>0</version>
+            <label>Top5ProductsReport</label>
+            <description>Top5ProductsReport</description>
+            <creationDate>2014-12-18T02:01:39.051-08:00</creationDate>
+            <updateDate>2013-09-03T01:02:34.199-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/Top5ProductReport_g</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/13g.TopFivesReport_files</folder>
+            <name>supermart.properties</name>
+            <version>0</version>
+            <label>supermart.properties</label>
+            <description>Base resource bundle</description>
+            <creationDate>2014-12-18T02:01:39.051-08:00</creationDate>
+            <updateDate>2013-09-03T01:02:34.440-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/13g.TopFivesReport_files</folder>
+            <name>supermart_en_US.properties</name>
+            <version>0</version>
+            <label>supermart_en_US.properties</label>
+            <creationDate>2014-12-18T02:01:39.051-08:00</creationDate>
+            <updateDate>2013-09-03T01:02:34.685-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart_en_US.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/13g.TopFivesReport_files</folder>
+            <name>supermart_de.properties</name>
+            <version>0</version>
+            <label>supermart_de.properties</label>
+            <description>supermart_de.properties</description>
+            <creationDate>2014-12-18T02:01:39.051-08:00</creationDate>
+            <updateDate>2013-09-03T01:02:34.909-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart_de.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/13g.TopFivesReport_files</folder>
+            <name>supermart_fr.properties</name>
+            <version>0</version>
+            <label>supermart_fr.properties</label>
+            <description>supermart_fr.properties</description>
+            <creationDate>2014-12-18T02:01:39.051-08:00</creationDate>
+            <updateDate>2013-09-03T01:02:35.149-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart_fr.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/13g.TopFivesReport_files</folder>
+            <name>supermart_es.properties</name>
+            <version>0</version>
+            <label>supermart_es.properties</label>
+            <description>supermart_es.properties</description>
+            <creationDate>2014-12-18T02:01:39.051-08:00</creationDate>
+            <updateDate>2013-09-03T01:02:35.391-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart_es.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/13g.TopFivesReport_files</folder>
+            <name>supermart_ja.properties</name>
+            <version>0</version>
+            <label>supermart_ja.properties</label>
+            <description>supermart_ja.properties</description>
+            <creationDate>2014-12-18T02:01:39.051-08:00</creationDate>
+            <updateDate>2013-09-03T01:02:35.655-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart_ja.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/13g.TopFivesReport_files</folder>
+            <name>supermart_zh_CN.properties</name>
+            <version>0</version>
+            <label>supermart_zh_CN.properties</label>
+            <description>supermart_zh_CN.properties</description>
+            <creationDate>2014-12-18T02:01:39.051-08:00</creationDate>
+            <updateDate>2013-09-03T01:02:35.932-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/supermart_zh_CN.properties</referenceUri>
+        </localResource>
+    </resource>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>1</controlsLayout>
+</reportUnit>

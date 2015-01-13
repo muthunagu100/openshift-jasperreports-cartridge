@@ -1,0 +1,1 @@
+define(["require","jquery.ui"],function(e){var i=e("jquery.ui");return{createSizer:function(e,s,a){s.removeClass("hidden").addClass("ui-resizable-"+a.axis).css("cursor","row-resize");var r={handles:{}};switch(r.handles[a.axis]=s,a.axis){case"s":r["min-height"]=e.height();break;case"e":r["min-width"]=e.height()}r["max-height"]=a["max-height"],i(e[0]).resizable(r)}}});

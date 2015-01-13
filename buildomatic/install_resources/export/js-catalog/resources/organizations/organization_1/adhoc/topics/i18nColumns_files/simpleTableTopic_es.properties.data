@@ -1,0 +1,14 @@
+ShippedDate=Fecha de env\u00edo
+ShipCountry=Pa\u00eds de env\u00edo 
+RequiredDate=Fecha requerida 
+CustomerID=ID de cliente
+OrderId=ID de pedido 
+ShipName=Nombre de env\u00edo
+ShipVia=Env\u00edo por
+OrderDate=Fecha de pedido
+ShipCity=Ciudad de env\u00edo
+ShipAddress=Direcci\u00f3n de env\u00edo
+EmployeeID=ID de empleado
+ShipRegion=Regi\u00f3n de env\u00edo
+Freight=Flete
+

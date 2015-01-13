@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder exportedWithPermissions="true">
+    <parent>/public/Samples/Resources</parent>
+    <name>Extras</name>
+    <label>Extras</label>
+    <description>Extras</description>
+    <creationDate>2014-12-18T02:01:25.991-08:00</creationDate>
+    <updateDate>2012-10-15T09:26:12.589-07:00</updateDate>
+    <resource>BlankBackground</resource>
+    <resource>CommonReportStyles.jrtx</resource>
+    <resource>DemoChartLabels.jar</resource>
+    <resource>SampleReportStyles.jrtx</resource>
+    <resource>SampleReportStylesG</resource>
+    <resource>supermart_de.properties</resource>
+    <resource>supermart_en_US.properties</resource>
+    <resource>supermart_es.properties</resource>
+    <resource>supermart_fr.properties</resource>
+    <resource>supermart_ja.properties</resource>
+    <resource>supermart_zh_CN.properties</resource>
+    <resource>supermart.properties</resource>
+    <resource>Top5CustomersReport</resource>
+    <resource>Top5CustomersReport_g</resource>
+    <resource>Top5ProductReport_g</resource>
+    <resource>Top5ProductsReport</resource>
+    <resource>Top5PromotionsReport</resource>
+    <resource>Top5PromotionsReport_g</resource>
+</folder>

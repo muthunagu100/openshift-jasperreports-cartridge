@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/public/Samples/Reports</folder>
+    <name>01._Geographic_Results_by_Segment_Report</name>
+    <version>0</version>
+    <label>01. Geographic Results by Segment Report</label>
+    <description>Sample HTML5 multi-axis column chart from Domain showing Sales, Units, and $ Per Square Foot by Country and Store Type with various filters. Created from an Ad Hoc View.</description>
+    <creationDate>2014-12-18T02:01:36.840-08:00</creationDate>
+    <updateDate>2014-09-24T09:41:56.907-07:00</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="mainReportJrxml.data" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/01._Geographic_Results_by_Segment_Report_files</folder>
+            <name>mainReportJrxml</name>
+            <version>0</version>
+            <label>mainReportJrxml</label>
+            <creationDate>2014-12-18T02:01:36.840-08:00</creationDate>
+            <updateDate>2014-09-24T09:41:56.907-07:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/public/Samples/Ad_Hoc_Views/01__Geographic_Results_by_Segment</uri>
+    </dataSource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/01._Geographic_Results_by_Segment_Report_files</folder>
+            <name>supermart_domain.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:36.840-08:00</creationDate>
+            <updateDate>2014-09-24T09:41:56.907-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain_en_US.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/01._Geographic_Results_by_Segment_Report_files</folder>
+            <name>supermart_domain_en_US.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:36.840-08:00</creationDate>
+            <updateDate>2014-09-24T09:41:56.907-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain_es.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/01._Geographic_Results_by_Segment_Report_files</folder>
+            <name>supermart_domain_es.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:36.840-08:00</creationDate>
+            <updateDate>2014-09-24T09:41:56.907-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain_fr.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/01._Geographic_Results_by_Segment_Report_files</folder>
+            <name>supermart_domain_fr.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:36.840-08:00</creationDate>
+            <updateDate>2014-09-24T09:41:56.907-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain_ja.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/01._Geographic_Results_by_Segment_Report_files</folder>
+            <name>supermart_domain_ja.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:36.840-08:00</creationDate>
+            <updateDate>2014-09-24T09:41:56.907-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain_zh_CN.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/01._Geographic_Results_by_Segment_Report_files</folder>
+            <name>supermart_domain_zh_CN.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:36.840-08:00</creationDate>
+            <updateDate>2014-09-24T09:41:56.907-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain_de.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/01._Geographic_Results_by_Segment_Report_files</folder>
+            <name>supermart_domain_de.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:36.840-08:00</creationDate>
+            <updateDate>2014-09-24T09:41:56.907-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="stateXML.data" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/01._Geographic_Results_by_Segment_Report_files</folder>
+            <name>stateXML</name>
+            <version>0</version>
+            <label>stateXML</label>
+            <creationDate>2014-12-18T02:01:36.840-08:00</creationDate>
+            <updateDate>2014-09-24T09:41:56.907-07:00</updateDate>
+            <fileType>xml</fileType>
+        </localResource>
+    </resource>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>1</controlsLayout>
+</reportUnit>

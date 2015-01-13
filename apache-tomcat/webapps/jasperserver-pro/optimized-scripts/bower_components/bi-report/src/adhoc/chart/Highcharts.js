@@ -1,0 +1,1 @@
+!function(e){"function"==typeof define&&define.amd?define(["highcharts","grouped-categories","adhoc/chart/ext/multiplePieTitlesExt","highcharts-more","heatmap"],e):e(Highcharts)}(function(e){return e});

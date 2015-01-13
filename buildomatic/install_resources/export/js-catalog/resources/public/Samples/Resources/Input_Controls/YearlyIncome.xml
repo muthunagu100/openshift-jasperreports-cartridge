@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inputControl exportedWithPermissions="true">
+    <folder>/public/Samples/Resources/Input_Controls</folder>
+    <name>YearlyIncome</name>
+    <version>0</version>
+    <label>Yearly Income</label>
+    <description></description>
+    <creationDate>2014-12-18T02:01:38.315-08:00</creationDate>
+    <updateDate>2014-05-13T16:45:16.709-07:00</updateDate>
+    <type>7</type>
+    <mandatory>true</mandatory>
+    <readOnly>false</readOnly>
+    <visible>true</visible>
+    <query>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="query">
+            <folder>/public/Samples/Resources/Input_Controls/YearlyIncome_files</folder>
+            <name>YearlyIncome</name>
+            <version>0</version>
+            <label>Yearly Income</label>
+            <description></description>
+            <creationDate>2014-12-18T02:01:38.315-08:00</creationDate>
+            <updateDate>2012-11-05T04:15:06.194-08:00</updateDate>
+            <language>sql</language>
+            <queryString>select distinct yearly_income,(case  when yearly_income='$10K - $30K' then 1
+when yearly_income='$30K - $50K' then 2
+when yearly_income='$50K - $70K' then 3
+when yearly_income='$70K - $90K' then 4
+when yearly_income='$90K - $110K' then 5
+when yearly_income='$110K - $130K' then 6
+when yearly_income='$130K - $150K' then 7
+when yearly_income='$150K +' then 8 end) as Value from customer
+order by 2</queryString>
+            <dataSource>
+                <uri>/public/Samples/Data_Sources/FoodmartDataSourceJNDI</uri>
+            </dataSource>
+        </localResource>
+    </query>
+    <queryVisibleColumn>yearly_income</queryVisibleColumn>
+    <queryValueColumn>yearly_income</queryValueColumn>
+</inputControl>

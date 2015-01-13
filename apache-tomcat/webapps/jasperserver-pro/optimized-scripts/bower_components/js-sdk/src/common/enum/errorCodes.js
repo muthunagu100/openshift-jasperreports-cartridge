@@ -1,0 +1,1 @@
+define(["require"],function(){return{UNEXPECTED_ERROR:"unexpected.error",INVALID_RESOURCE_TYPE:"invalid.resource.type"}});

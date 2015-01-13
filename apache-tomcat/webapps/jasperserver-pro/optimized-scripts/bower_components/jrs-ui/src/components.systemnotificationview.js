@@ -1,0 +1,1 @@
+jaspersoft.components.SystemNotificationView=function(o,t){return o.NotificationViewTrait.extend({PSEUDO_INFINITY_DELAY:9999999999,showNotification:function(o){t.systemConfirm.show(o,this.PSEUDO_INFINITY_DELAY)}})}(jaspersoft.components,dialogs);

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<secureMondrianConnection exportedWithPermissions="true">
+    <folder>/public/Samples/Data_Sources/connections</folder>
+    <name>Foodmart2013</name>
+    <version>0</version>
+    <label>Foodmart</label>
+    <description></description>
+    <creationDate>2014-12-18T02:01:43.128-08:00</creationDate>
+    <updateDate>2013-04-10T14:26:11.954-07:00</updateDate>
+    <schema>
+        <uri>/public/Samples/OLAP/Schemas/FoodmartSchema2013.xml</uri>
+    </schema>
+    <dataSource>
+        <uri>/public/Samples/Data_Sources/FoodmartDataSourceJNDI</uri>
+    </dataSource>
+</secureMondrianConnection>

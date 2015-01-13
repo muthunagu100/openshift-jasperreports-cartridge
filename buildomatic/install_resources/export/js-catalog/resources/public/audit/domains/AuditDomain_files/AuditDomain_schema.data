@@ -1,0 +1,392 @@
+<schema xmlns="http://www.jaspersoft.com/2007/SL/XMLSchema" version="1.0">
+  <itemGroups>
+    <itemGroup description="audit_join1" descriptionId="AUDIT_JOIN1.DESCR" id="audit_join1" label="audit_join1" labelId="AUDIT_JOIN1.LABEL" resourceId="JoinTree_1">
+      <itemGroups>
+        <itemGroup description="audit_event_group" descriptionId="AUDIT_JOIN1.AUDIT_EVENT_GROUP.DESCR" id="audit_event_group" label="audit_event_group" labelId="AUDIT_JOIN1.AUDIT_EVENT_GROUP.LABEL" resourceId="JoinTree_1">
+          <items>
+            <item defaultMask="short,hide" description="audit_event_date" descriptionId="AUDIT_JOIN1.AUDIT_EVENT_GROUP.EVENT_DATE.DESCR" id="audit_event_date" label="audit_event_date" labelId="AUDIT_JOIN1.AUDIT_EVENT_GROUP.EVENT_DATE.LABEL" resourceId="JoinTree_1.jiauditevent.au_date" />
+            <item description="audit_event_property_clob_value" descriptionId="AUDIT_JOIN1.AUDIT_EVENT_GROUP.PROPERTY_CLOB_VALUE.DESCR" id="audit_event_property_clob_value" label="audit_event_property_clob_value" labelId="AUDIT_JOIN1.AUDIT_EVENT_GROUP.PROPERTY_CLOB_VALUE.LABEL" resourceId="JoinTree_1.jiauditeventproperty.clob_value" />
+            <item description="audit_event_property_type" descriptionId="AUDIT_JOIN1.AUDIT_EVENT_GROUP.PROPERTY_TYPE.DESCR" id="audit_event_property_type" label="audit_event_property_type" labelId="AUDIT_JOIN1.AUDIT_EVENT_GROUP.PROPERTY_TYPE.LABEL" resourceId="JoinTree_1.jiauditeventproperty.property_type" />
+            <item description="audit_event_property_value" descriptionId="AUDIT_JOIN1.AUDIT_EVENT_GROUP.PROPERTY_VALUE.DESCR" id="audit_event_property_value" label="audit_event_property_value" labelId="AUDIT_JOIN1.AUDIT_EVENT_GROUP.PROPERTY_VALUE.LABEL" resourceId="JoinTree_1.jiauditeventproperty.value" />
+            <item defaultMask="HH:mm:ss" description="audit_event_time" descriptionId="AUDIT_JOIN1.AUDIT_EVENT_GROUP.EVENT_TIME.DESCR" id="audit_event_time" label="audit_event_time" labelId="AUDIT_JOIN1.AUDIT_EVENT_GROUP.EVENT_TIME.LABEL" resourceId="JoinTree_1.jiauditevent.au_time" />
+            <item description="event_type" descriptionId="AUDIT_JOIN1.AUDIT_EVENT_GROUP.EVENT_TYPE.DESCR" id="event_type" label="event_type" labelId="AUDIT_JOIN1.AUDIT_EVENT_GROUP.EVENT_TYPE.LABEL" resourceId="JoinTree_1.jiauditevent.event_type" />
+            <item description="request_type" descriptionId="AUDIT_JOIN1.AUDIT_EVENT_GROUP.REQUEST_TYPE.DESCR" id="request_type" label="request_type" labelId="AUDIT_JOIN1.AUDIT_EVENT_GROUP.REQUEST_TYPE.LABEL" resourceId="JoinTree_1.jiauditevent.request_type" />
+            <item description="resource_org_type" descriptionId="AUDIT_JOIN1.AUDIT_EVENT_GROUP.RESOURCE_TYPE.DESCR" id="resource_org_type" label="resource_org_type" labelId="AUDIT_JOIN1.AUDIT_EVENT_GROUP.RESOURCE_TYPE.LABEL" resourceId="JoinTree_1.jiauditevent.resource_type" />
+            <item description="resource_org_uri" descriptionId="AUDIT_JOIN1.AUDIT_EVENT_GROUP.RESOURCE_URI.DESCR" id="resource_org_uri" label="resource_org_uri" labelId="AUDIT_JOIN1.AUDIT_EVENT_GROUP.RESOURCE_URI.LABEL" resourceId="JoinTree_1.jiauditevent.orguri" />
+          </items>
+        </itemGroup>
+        <itemGroup description="user_group" descriptionId="AUDIT_JOIN1.USER_GROUP.DESCR" id="user_group" label="user_group" labelId="AUDIT_JOIN1.USER_GROUP.LABEL" resourceId="JoinTree_1">
+          <itemGroups>
+            <itemGroup description="roles_group" descriptionId="AUDIT_JOIN1.ROLES_GROUP.DESCR" id="roles_group" label="roles_group" labelId="AUDIT_JOIN1.ROLES_GROUP.LABEL" resourceId="JoinTree_1">
+              <items>
+                <item description="externallyDefined" descriptionId="AUDIT_JOIN1.ROLES_GROUP.EXTERNALLY_DEFINED.DESCR" id="externallyDefined1" label="externallyDefined" labelId="AUDIT_JOIN1.ROLES_GROUP.EXTERNALLY_DEFINED.LABEL" resourceId="JoinTree_1.jirole.externallydefined" />
+                <item description="rolename" descriptionId="AUDIT_JOIN1.ROLES_GROUP.ROLENAME.DESCR" id="rolename" label="rolename" labelId="AUDIT_JOIN1.ROLES_GROUP.ROLENAME.LABEL" resourceId="JoinTree_1.jirole.rolename" />
+                <item description="tenantId" descriptionId="AUDIT_JOIN1.ROLES_GROUP.TENANT_ID.DESCR" id="tenantId1" label="tenantId" labelId="AUDIT_JOIN1.ROLES_GROUP.TENANT_ID.LABEL" resourceId="JoinTree_1.jirole.tenantid" />
+              </items>
+            </itemGroup>
+          </itemGroups>
+          <items>
+            <item description="emailAddress" descriptionId="AUDIT_JOIN1.USER_GROUP.EMAIL.DESCR" id="emailAddress" label="emailAddress" labelId="AUDIT_JOIN1.USER_GROUP.EMAIL.LABEL" resourceId="JoinTree_1.jiuser.emailaddress" />
+            <item description="enabled" descriptionId="AUDIT_JOIN1.USER_GROUP.ENABLED.DESCR" id="enabled" label="enabled" labelId="AUDIT_JOIN1.USER_GROUP.ENABLED.LABEL" resourceId="JoinTree_1.jiuser.enabled" />
+            <item description="externallyDefined" descriptionId="AUDIT_JOIN1.USER_GROUP.EXTERNALLY_DEFINED.DESCR" id="externallyDefined" label="externallyDefined" labelId="AUDIT_JOIN1.USER_GROUP.EXTERNALLY_DEFINED.LABEL" resourceId="JoinTree_1.jiuser.externallydefined" />
+            <item description="fullname" descriptionId="AUDIT_JOIN1.USER_GROUP.FULLNAME.DESCR" id="fullname" label="fullname" labelId="AUDIT_JOIN1.USER_GROUP.FULLNAME.LABEL" resourceId="JoinTree_1.jiuser.fullname" />
+            <item description="previousPasswordChangeTime" descriptionId="AUDIT_JOIN1.USER_GROUP.PASSWORD_CHANGE_TIME.DESCR" id="previousPasswordChangeTime" label="previousPasswordChangeTime" labelId="AUDIT_JOIN1.USER_GROUP.PASSWORD_CHANGE_TIME.LABEL" resourceId="JoinTree_1.jiuser.previouspasswordchangetime" />
+            <item description="tenant_id" descriptionId="AUDIT_JOIN1.USER_GROUP.TENANT_ID.DESCR" id="tenant_id" label="tenant_id" labelId="AUDIT_JOIN1.USER_GROUP.TENANT_ID.LABEL" resourceId="JoinTree_1.jiauditevent.tenant_id" />
+            <item description="username" descriptionId="AUDIT_JOIN1.USER_GROUP.USERNAME.DESCR" id="username" label="username" labelId="AUDIT_JOIN1.USER_GROUP.USERNAME.LABEL" resourceId="JoinTree_1.jiauditevent.username" />
+          </items>
+        </itemGroup>
+      </itemGroups>
+    </itemGroup>
+    <itemGroup description="audit_join2" descriptionId="AUDIT_JOIN2.DESCR" id="audit_join2" label="audit_join2" labelId="AUDIT_JOIN2.LABEL" resourceId="JoinTree_2">
+      <items>
+        <item defaultMask="short,hide" description="audit_event_date" descriptionId="AUDIT_JOIN2.DATE.DESCR" id="audit_event_date2" label="audit_event_date" labelId="AUDIT_JOIN2.DATE.LABEL" resourceId="JoinTree_2.jiauditevent2.au_date" />
+        <item defaultMask="HH:mm:ss" description="audit_event_time" descriptionId="AUDIT_JOIN2.TIME.DESCR" id="audit_event_time2" label="audit_event_time" labelId="AUDIT_JOIN2.TIME.LABEL" resourceId="JoinTree_2.jiauditevent2.au_time" />
+        <item description="resource_org_uri" descriptionId="AUDIT_JOIN2.RESOURCE_URI.DESCR" id="resource_org_uri2" label="resource_org_uri" labelId="AUDIT_JOIN2.RESOURCE_URI.LABEL" resourceId="JoinTree_2.jiauditevent2.orguri" />
+        <item description="resource_org_type" descriptionId="AUDIT_JOIN2.RESOURCE_TYPE.DESCR" id="resource_org_type2" label="resource_org_type" labelId="AUDIT_JOIN2.RESOURCE_TYPE.LABEL" resourceId="JoinTree_2.jiauditevent2.resource_type" />
+        <item description="dataSourceURI" descriptionId="AUDIT_JOIN2.DATASOURCE_URI.DESCR" id="dataSourceURI" label="dataSourceURI" labelId="AUDIT_JOIN2.DATASOURCE_URI.LABEL" resourceId="JoinTree_2.dataSourceURI.value" />
+        <item description="queryExecutionTime" descriptionId="AUDIT_JOIN2.QUERY_EXEC_TIME.DESCR" id="queryExecutionTime" label="queryExecutionTime" labelId="AUDIT_JOIN2.QUERY_EXEC_TIME.LABEL" resourceId="JoinTree_2.queryExecutionTime.queryExecutionTimeMS" />
+        <item description="reportRenderingTime" descriptionId="AUDIT_JOIN2.REPORT_RENDER_TIME.DESCR" id="reportRenderingTime" label="reportRenderingTime" labelId="AUDIT_JOIN2.REPORT_RENDER_TIME.LABEL" resourceId="JoinTree_2.reportRenderingTime.reportRenderingTimeMS" />
+        <item description="reportExecutionTime" descriptionId="AUDIT_JOIN2.REPORT_EXEC_TIME.DESCR" id="reportExecutionTime" label="reportExecutionTime" labelId="AUDIT_JOIN2.REPORT_EXEC_TIME.LABEL" resourceId="JoinTree_2.reportExecutionTime.reportExecutionTimeMS" />
+        <item description="query" descriptionId="AUDIT_JOIN2.QUERY.DESCR" id="query" label="query" labelId="AUDIT_JOIN2.QUERY.LABEL" resourceId="JoinTree_2.query.clob_value" />
+        <item description="username" descriptionId="AUDIT_JOIN2.USERNAME.DESCR" id="username2" label="username2" labelId="AUDIT_JOIN2.USERNAME.LABEL" resourceId="JoinTree_2.jiuser2.username" />
+        <item description="tenant_id" descriptionId="AUDIT_JOIN2.TENANT_ID.DESCR" id="tenant_id2" label="tenant_id2" labelId="AUDIT_JOIN2.TENANT_ID.LABEL" resourceId="JoinTree_2.jitenant2.tenantid" />
+        <item description="crosstabGroupField" descriptionId="AUDIT_JOIN2.CROSSTABGROUP.LABEL" id="crosstabGroupField" label="crosstabGroupField" labelId="AUDIT_JOIN2.CROSSTABGROUP.LABEL" resourceId="JoinTree_2.jiauditevent2.crosstabGroupField" />
+      </items>
+    </itemGroup>
+  </itemGroups>
+  <resources>
+    <null id="constant_fields_level" datasourceId="AuditDataSource">
+      <fieldList>
+        <field id="orgpath" dataSetExpression="groovy('(tenant.getTenantFolderUri() == &quot;/&quot;) ? &quot;/&quot; : tenant.getTenantFolderUri() + &quot;/&quot;')" type="java.lang.String" />
+        <field id="tenantUri" dataSetExpression="groovy('tenant.getTenantUri()')" type="java.lang.String" />
+      </fieldList>
+    </null>
+    <jdbcTable id="dataSourceURI" datasourceId="AuditDataSource" tableName="public.jiauditeventproperty">
+      <fieldList>
+        <field id="audit_event_id" type="java.lang.Long" />
+        <field id="clob_value" type="java.lang.String" />
+        <field id="id" type="java.lang.Long" />
+        <field id="property_type" type="java.lang.String" />
+        <field id="value" type="java.lang.String" />
+      </fieldList>
+      <filterString>property_type == 'dataSource'</filterString>
+    </jdbcTable>
+    <jdbcTable id="jiauditevent" datasourceId="AuditDataSource" tableName="public.jiauditevent">
+      <fieldList>
+        <field id="au_date" dataSetExpression="date(event_date)" type="java.util.Date" />
+        <field id="au_time" dataSetExpression="time(event_date)" type="java.sql.Timestamp" />          
+        <field id="event_date" type="java.sql.Timestamp" />
+        <field id="event_type" type="java.lang.String" />
+        <field id="filter1" dataSetExpression="(isNull(resource_uri) or contains(resource_uri, constant_fields_level.orgpath) or startsWith(resource_uri, '/public/'))" type="java.lang.Boolean" />
+        <field id="filter3" dataSetExpression="(isNull(resource_uri) or not (startsWith(orguri1, '/temp/')))" type="java.lang.Boolean" />
+        <field id="id" type="java.lang.Long" />
+        <field id="orguri" dataSetExpression="if(startsWith(resource_uri, '/public/'), resource_uri, orguri1)" type="java.lang.String" />
+        <field id="orguri1" dataSetExpression="concat('/', substr(resource_uri, length(constant_fields_level.orgpath) + 1))" type="java.lang.String" />
+        <field id="request_type" type="java.lang.String" />
+        <field id="resource_type" type="java.lang.String" />
+        <field id="resource_uri" type="java.lang.String" />
+        <field id="tenant_id" type="java.lang.String" />
+        <field id="username" type="java.lang.String" />
+      </fieldList>
+      <filterString>filter1 == true and filter3 == true</filterString>
+    </jdbcTable>
+    <jdbcTable id="jiauditevent2" datasourceId="AuditDataSource" tableName="public.jiauditevent">
+      <fieldList>
+        <field id="au_date" dataSetExpression="date(event_date)" type="java.util.Date" />
+        <field id="au_time" dataSetExpression="time(event_date)" type="java.sql.Timestamp" />
+        <field id="crosstabGroupField" dataSetExpression="'Average Values'" type="java.lang.String" />
+        <field id="event_date" type="java.sql.Timestamp" />
+        <field id="event_type" type="java.lang.String" />
+        <field id="filter21" dataSetExpression="(isNull(resource_uri) or startsWith(resource_uri, '/public/') or contains(resource_uri, constant_fields_level.orgpath))" type="java.lang.Boolean" />
+        <field id="filter23" dataSetExpression="(isNull(resource_uri) or not (startsWith(orguri1, '/temp/')))" type="java.lang.Boolean" />
+        <field id="id" type="java.lang.Long" />
+        <field id="orguri" dataSetExpression="if(startsWith(resource_uri, '/public/'), resource_uri, orguri1)" type="java.lang.String" />
+        <field id="orguri1" dataSetExpression="concat('/', substr(resource_uri, length(constant_fields_level.orgpath) + 1))" type="java.lang.String" />
+        <field id="request_type" type="java.lang.String" />
+        <field id="resource_type" type="java.lang.String" />
+        <field id="resource_uri" type="java.lang.String" />
+        <field id="tenant_id" type="java.lang.String" />
+        <field id="username" type="java.lang.String" />
+      </fieldList>
+      <filterString>event_type == 'runReport' and filter21 == true and filter23 == true</filterString>
+    </jdbcTable>
+    <jdbcTable id="jiauditeventproperty" datasourceId="AuditDataSource" tableName="public.jiauditeventproperty">
+      <fieldList>
+        <field id="audit_event_id" type="java.lang.Long" />
+        <field id="clob_value" type="java.lang.String" />
+        <field id="id" type="java.lang.Long" />
+        <field id="property_type" type="java.lang.String" />
+        <field id="value" type="java.lang.String" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="jirole" datasourceId="AuditDataSource" tableName="public.jirole">
+      <fieldList>
+        <field id="externallydefined" type="java.lang.Boolean" />
+        <field id="id" type="java.lang.Long" />
+        <field id="rolename" type="java.lang.String" />
+        <field id="tenantid" type="java.lang.Long" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="jitenant" datasourceId="AuditDataSource" tableName="public.jitenant">
+      <fieldList>
+        <field id="id" type="java.lang.Long" />
+        <field id="parentid" type="java.lang.Long" />
+        <field id="tenantalias" type="java.lang.String" />
+        <field id="tenantdesc" type="java.lang.String" />
+        <field id="tenantfolderuri" type="java.lang.String" />
+        <field id="tenantid" type="java.lang.String" />
+        <field id="tenantname" type="java.lang.String" />
+        <field id="tenantnote" type="java.lang.String" />
+        <field id="tenanturi" type="java.lang.String" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="jitenant2" datasourceId="AuditDataSource" tableName="public.jitenant">
+      <fieldList>
+        <field id="id" type="java.lang.Long" />
+        <field id="parentid" type="java.lang.Long" />
+        <field id="tenantalias" type="java.lang.String" />
+        <field id="tenantdesc" type="java.lang.String" />
+        <field id="tenantfolderuri" type="java.lang.String" />
+        <field id="tenantid" type="java.lang.String" />
+        <field id="tenantname" type="java.lang.String" />
+        <field id="tenantnote" type="java.lang.String" />
+        <field id="tenanturi" type="java.lang.String" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="jiuser" datasourceId="AuditDataSource" tableName="public.jiuser">
+      <fieldList>
+        <field id="emailaddress" type="java.lang.String" />
+        <field id="enabled" type="java.lang.Boolean" />
+        <field id="externallydefined" type="java.lang.Boolean" />
+        <field id="fullname" type="java.lang.String" />
+        <field id="id" type="java.lang.Long" />
+        <field id="password" type="java.lang.String" />
+        <field id="previouspasswordchangetime" type="java.sql.Timestamp" />
+        <field id="tenantid" type="java.lang.Long" />
+        <field id="username" type="java.lang.String" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="jiuser2" datasourceId="AuditDataSource" tableName="public.jiuser">
+      <fieldList>
+        <field id="emailaddress" type="java.lang.String" />
+        <field id="enabled" type="java.lang.Boolean" />
+        <field id="externallydefined" type="java.lang.Boolean" />
+        <field id="fullname" type="java.lang.String" />
+        <field id="id" type="java.lang.Long" />
+        <field id="password" type="java.lang.String" />
+        <field id="previouspasswordchangetime" type="java.sql.Timestamp" />
+        <field id="tenantid" type="java.lang.Long" />
+        <field id="username" type="java.lang.String" />
+      </fieldList>
+    </jdbcTable>      
+    <jdbcTable id="jiuserrole" datasourceId="AuditDataSource" tableName="public.jiuserrole">
+      <fieldList>
+        <field id="roleid" type="java.lang.Long" />
+        <field id="userid" type="java.lang.Long" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="query" datasourceId="AuditDataSource" tableName="public.jiauditeventproperty">
+      <fieldList>
+        <field id="audit_event_id" type="java.lang.Long" />
+        <field id="clob_value" type="java.lang.String" />
+        <field id="id" type="java.lang.Long" />
+        <field id="property_type" type="java.lang.String" />
+        <field id="queryTypeFilter" dataSetExpression="(property_type == 'sqlQuery' or property_type == 'domainQuery')" type="java.lang.Boolean" />
+        <field id="value" type="java.lang.String" />
+      </fieldList>
+      <filterString>queryTypeFilter == true</filterString>
+    </jdbcTable>
+    <jdbcTable id="queryExecutionTime" datasourceId="AuditDataSource" tableName="public.jiauditeventproperty">
+      <fieldList>
+        <field id="audit_event_id" type="java.lang.Long" />
+        <field id="clob_value" type="java.lang.String" />
+        <field id="id" type="java.lang.Long" />
+        <field id="property_type" type="java.lang.String" />
+        <field id="queryExecutionTimeMS" dataSetExpression="str2int(value)" type="java.lang.Integer" />
+        <field id="value" type="java.lang.String" />
+      </fieldList>
+      <filterString>property_type == 'queryExecutionTime'</filterString>
+    </jdbcTable>
+    <jdbcTable id="reportExecutionTime" datasourceId="AuditDataSource" tableName="public.jiauditeventproperty">
+      <fieldList>
+        <field id="audit_event_id" type="java.lang.Long" />
+        <field id="clob_value" type="java.lang.String" />
+        <field id="id" type="java.lang.Long" />
+        <field id="property_type" type="java.lang.String" />
+        <field id="reportExecutionTimeMS" dataSetExpression="str2int(value)" type="java.lang.Integer" />
+        <field id="value" type="java.lang.String" />
+      </fieldList>
+      <filterString>property_type == 'reportExecutionTime'</filterString>
+    </jdbcTable>
+    <jdbcTable id="reportRenderingTime" datasourceId="AuditDataSource" tableName="public.jiauditeventproperty">
+      <fieldList>
+        <field id="audit_event_id" type="java.lang.Long" />
+        <field id="clob_value" type="java.lang.String" />
+        <field id="id" type="java.lang.Long" />
+        <field id="property_type" type="java.lang.String" />
+        <field id="reportRenderingTimeMS" dataSetExpression="str2int(value)" type="java.lang.Integer" />
+        <field id="value" type="java.lang.String" />
+      </fieldList>
+      <filterString>property_type == 'reportRenderingTime'</filterString>
+    </jdbcTable>
+    <jdbcTable id="JoinTree_1" datasourceId="AuditDataSource" tableName="public.jiauditevent">
+      <fieldList>
+        <field id="jiuserrole.roleid" type="java.lang.Long" />
+        <field id="jiuserrole.userid" type="java.lang.Long" />
+        <field id="jitenant.id" type="java.lang.Long" />
+        <field id="jitenant.parentid" type="java.lang.Long" />
+        <field id="jitenant.tenantalias" type="java.lang.String" />
+        <field id="jitenant.tenantdesc" type="java.lang.String" />
+        <field id="jitenant.tenantfolderuri" type="java.lang.String" />
+        <field id="jitenant.tenantid" type="java.lang.String" />
+        <field id="jitenant.tenantname" type="java.lang.String" />
+        <field id="jitenant.tenantnote" type="java.lang.String" />
+        <field id="jitenant.tenanturi" type="java.lang.String" />
+        <field id="jiauditevent.au_date" dataSetExpression="date(jiauditevent.event_date)" type="java.util.Date" />
+        <field id="jiauditevent.au_time" dataSetExpression="time(jiauditevent.event_date)" type="java.sql.Timestamp" />          
+        <field id="jiauditevent.event_date" type="java.sql.Timestamp" />
+        <field id="jiauditevent.event_type" type="java.lang.String" />
+        <field id="jiauditevent.filter1" dataSetExpression="(isNull(jiauditevent.resource_uri) or startsWith(jiauditevent.resource_uri, constant_fields_level.orgpath) or startsWith(jiauditevent.resource_uri, '/public/'))" type="java.lang.Boolean" />
+        <field id="jiauditevent.filter3" dataSetExpression="(isNull(jiauditevent.resource_uri) or not (startsWith(jiauditevent.orguri1, '/temp/')))" type="java.lang.Boolean" />
+        <field id="jiauditevent.id" type="java.lang.Long" />
+        <field id="jiauditevent.orguri" dataSetExpression="if(startsWith(jiauditevent.resource_uri, '/public/'), jiauditevent.resource_uri, jiauditevent.orguri1)" type="java.lang.String" />
+        <field id="jiauditevent.orguri1" dataSetExpression="concat('/', substr(jiauditevent.resource_uri, length(constant_fields_level.orgpath) + 1))" type="java.lang.String" />
+        <field id="jiauditevent.request_type" type="java.lang.String" />
+        <field id="jiauditevent.resource_type" type="java.lang.String" />
+        <field id="jiauditevent.resource_uri" type="java.lang.String" />
+        <field id="jiauditevent.tenant_id" type="java.lang.String" />
+        <field id="jiauditevent.username" type="java.lang.String" />
+        <field id="jiauditeventproperty.audit_event_id" type="java.lang.Long" />
+        <field id="jiauditeventproperty.clob_value" type="java.lang.String" />
+        <field id="jiauditeventproperty.id" type="java.lang.Long" />
+        <field id="jiauditeventproperty.property_type" type="java.lang.String" />
+        <field id="jiauditeventproperty.value" type="java.lang.String" />
+        <field id="jiuser.emailaddress" type="java.lang.String" />
+        <field id="jiuser.enabled" type="java.lang.Boolean" />
+        <field id="jiuser.externallydefined" type="java.lang.Boolean" />
+        <field id="jiuser.fullname" type="java.lang.String" />
+        <field id="jiuser.id" type="java.lang.Long" />
+        <field id="jiuser.password" type="java.lang.String" />
+        <field id="jiuser.previouspasswordchangetime" type="java.sql.Timestamp" />
+        <field id="jiuser.tenantid" type="java.lang.Long" />
+        <field id="jiuser.username" type="java.lang.String" />
+        <field id="jirole.externallydefined" type="java.lang.Boolean" />
+        <field id="jirole.id" type="java.lang.Long" />
+        <field id="jirole.rolename" type="java.lang.String" />
+        <field id="jirole.tenantid" type="java.lang.Long" />
+        <field id="filter2" dataSetExpression="(isNull(jiauditevent.tenant_id) or startsWith(jitenant.tenanturi, constant_fields_level.tenantUri))" type="java.lang.Boolean" />
+      </fieldList>
+      <filterString>jiauditevent.filter1 == true and jiauditevent.filter3 == true and filter2 == true</filterString>
+      <joinInfo alias="jiauditevent" referenceId="jiauditevent" />
+      <joinedDataSetList>
+        <joinedDataSetRef>
+          <joinString>left outer join jiauditeventproperty jiauditeventproperty on (jiauditevent.id == jiauditeventproperty.audit_event_id)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join jitenant jitenant on (jiauditevent.tenant_id == jitenant.tenantid)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join jiuser jiuser on (jiauditevent.username == jiuser.username and jiuser.tenantid == jitenant.id)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join jiuserrole jiuserrole on (jiuser.id == jiuserrole.userid)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join jirole jirole on (jirole.id == jiuserrole.roleid)</joinString>
+        </joinedDataSetRef>
+      </joinedDataSetList>
+    </jdbcTable>
+    <jdbcTable id="JoinTree_2" datasourceId="AuditDataSource" tableName="public.jiauditevent">
+      <fieldList>
+        <field id="jitenant2.id" type="java.lang.Long" />
+        <field id="jitenant2.parentid" type="java.lang.Long" />
+        <field id="jitenant2.tenantalias" type="java.lang.String" />
+        <field id="jitenant2.tenantdesc" type="java.lang.String" />
+        <field id="jitenant2.tenantfolderuri" type="java.lang.String" />
+        <field id="jitenant2.tenantid" type="java.lang.String" />
+        <field id="jitenant2.tenantname" type="java.lang.String" />
+        <field id="jitenant2.tenantnote" type="java.lang.String" />
+        <field id="jitenant2.tenanturi" type="java.lang.String" />
+        <field id="jiuser2.emailaddress" type="java.lang.String" />
+        <field id="jiuser2.enabled" type="java.lang.Boolean" />
+        <field id="jiuser2.externallydefined" type="java.lang.Boolean" />
+        <field id="jiuser2.fullname" type="java.lang.String" />
+        <field id="jiuser2.id" type="java.lang.Long" />
+        <field id="jiuser2.password" type="java.lang.String" />
+        <field id="jiuser2.previouspasswordchangetime" type="java.sql.Timestamp" />
+        <field id="jiuser2.tenantid" type="java.lang.Long" />
+        <field id="jiuser2.username" type="java.lang.String" />
+        <field id="queryExecutionTime.audit_event_id" type="java.lang.Long" />
+        <field id="queryExecutionTime.clob_value" type="java.lang.String" />
+        <field id="queryExecutionTime.id" type="java.lang.Long" />
+        <field id="queryExecutionTime.property_type" type="java.lang.String" />
+        <field id="queryExecutionTime.queryExecutionTimeMS" dataSetExpression="str2int(queryExecutionTime.value)" type="java.lang.Integer" />
+        <field id="queryExecutionTime.value" type="java.lang.String" />
+        <field id="reportExecutionTime.audit_event_id" type="java.lang.Long" />
+        <field id="reportExecutionTime.clob_value" type="java.lang.String" />
+        <field id="reportExecutionTime.id" type="java.lang.Long" />
+        <field id="reportExecutionTime.property_type" type="java.lang.String" />
+        <field id="reportExecutionTime.reportExecutionTimeMS" dataSetExpression="str2int(reportExecutionTime.value)" type="java.lang.Integer" />
+        <field id="reportExecutionTime.value" type="java.lang.String" />
+        <field id="dataSourceURI.audit_event_id" type="java.lang.Long" />
+        <field id="dataSourceURI.clob_value" type="java.lang.String" />
+        <field id="dataSourceURI.id" type="java.lang.Long" />
+        <field id="dataSourceURI.property_type" type="java.lang.String" />
+        <field id="dataSourceURI.value" type="java.lang.String" />
+        <field id="jiauditevent2.au_date" dataSetExpression="date(jiauditevent2.event_date)" type="java.util.Date" />
+        <field id="jiauditevent2.au_time" dataSetExpression="time(jiauditevent2.event_date)" type="java.sql.Timestamp" />
+        <field id="jiauditevent2.crosstabGroupField" dataSetExpression="'Average Values'" type="java.lang.String" />
+        <field id="jiauditevent2.event_date" type="java.sql.Timestamp" />
+        <field id="jiauditevent2.event_type" type="java.lang.String" />
+        <field id="jiauditevent2.filter21" dataSetExpression="(isNull(jiauditevent2.resource_uri) or startsWith(jiauditevent2.resource_uri, '/public/') or startsWith(jiauditevent2.resource_uri, constant_fields_level.orgpath))" type="java.lang.Boolean" />
+        <field id="jiauditevent2.filter23" dataSetExpression="(isNull(jiauditevent2.resource_uri) or not (startsWith(jiauditevent2.orguri1, '/temp/')))" type="java.lang.Boolean" />
+        <field id="jiauditevent2.id" type="java.lang.Long" />
+        <field id="jiauditevent2.orguri" dataSetExpression="if(startsWith(jiauditevent2.resource_uri, '/public/'), jiauditevent2.resource_uri, jiauditevent2.orguri1)" type="java.lang.String" />
+        <field id="jiauditevent2.orguri1" dataSetExpression="concat('/', substr(jiauditevent2.resource_uri, length(constant_fields_level.orgpath) + 1))" type="java.lang.String" />
+        <field id="jiauditevent2.request_type" type="java.lang.String" />
+        <field id="jiauditevent2.resource_type" type="java.lang.String" />
+        <field id="jiauditevent2.resource_uri" type="java.lang.String" />
+        <field id="jiauditevent2.tenant_id" type="java.lang.String" />
+        <field id="jiauditevent2.username" type="java.lang.String" />
+        <field id="query.audit_event_id" type="java.lang.Long" />
+        <field id="query.clob_value" type="java.lang.String" />
+        <field id="query.id" type="java.lang.Long" />
+        <field id="query.property_type" type="java.lang.String" />
+        <field id="query.queryTypeFilter" dataSetExpression="(query.property_type == 'sqlQuery' or query.property_type == 'domainQuery')" type="java.lang.Boolean" />
+        <field id="query.value" type="java.lang.String" />
+        <field id="reportRenderingTime.audit_event_id" type="java.lang.Long" />
+        <field id="reportRenderingTime.clob_value" type="java.lang.String" />
+        <field id="reportRenderingTime.id" type="java.lang.Long" />
+        <field id="reportRenderingTime.property_type" type="java.lang.String" />
+        <field id="reportRenderingTime.reportRenderingTimeMS" dataSetExpression="str2int(reportRenderingTime.value)" type="java.lang.Integer" />
+        <field id="reportRenderingTime.value" type="java.lang.String" />
+        <field id="filter22" dataSetExpression="(isNull(jiauditevent2.tenant_id) or startsWith(jitenant2.tenanturi, constant_fields_level.tenantUri))" type="java.lang.Boolean" />
+      </fieldList>
+      <filterString>jiauditevent2.event_type == 'runReport' and dataSourceURI.property_type == 'dataSource' and queryExecutionTime.property_type == 'queryExecutionTime' and reportRenderingTime.property_type == 'reportRenderingTime' and reportExecutionTime.property_type == 'reportExecutionTime' and query.queryTypeFilter == true and jiauditevent2.filter21 == true and jiauditevent2.filter23 == true and filter22 == true</filterString>
+      <joinInfo alias="jiauditevent2" referenceId="jiauditevent2" />
+      <joinedDataSetList>
+        <joinedDataSetRef>
+          <joinString>left outer join jitenant2 jitenant2 on (jiauditevent2.tenant_id == jitenant2.tenantid)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join jiuser2 jiuser2 on (jiauditevent2.username == jiuser2.username and jiuser2.tenantid == jitenant2.id)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join dataSourceURI dataSourceURI on (jiauditevent2.id == dataSourceURI.audit_event_id)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join queryExecutionTime queryExecutionTime on (jiauditevent2.id == queryExecutionTime.audit_event_id)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join reportRenderingTime reportRenderingTime on (jiauditevent2.id == reportRenderingTime.audit_event_id)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join reportExecutionTime reportExecutionTime on (jiauditevent2.id == reportExecutionTime.audit_event_id)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>left outer join query query on (jiauditevent2.id == query.audit_event_id)</joinString>
+        </joinedDataSetRef>
+      </joinedDataSetList>
+    </jdbcTable>
+  </resources>
+</schema>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<user>
+    <username>CaliforniaUser</username>
+    <fullName>California User</fullName>
+    <password>ENC&lt;623D9CFED00E3A0B58FFEBD66970C60F&gt;</password>
+    <externallyDefined>false</externallyDefined>
+    <enabled>true</enabled>
+    <role>ROLE_USER</role>
+    <role>ROLE_SUPERMART_MANAGER</role>
+    <attribute name="State">
+        <value>CA</value>
+    </attribute>
+    <attribute name="Cities">
+        <value>San Francisco, Oakland, San Jose</value>
+    </attribute>
+    <previousPasswordChangeTime>2014-12-18T02:01:23.757-08:00</previousPasswordChangeTime>
+    <tenantId>organization_1</tenantId>
+</user>

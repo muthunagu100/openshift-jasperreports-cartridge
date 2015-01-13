@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndiJdbcDataSource exportedWithPermissions="true">
+    <folder>/public/audit/datasources</folder>
+    <name>AuditDataSource</name>
+    <version>0</version>
+    <label>Audit Data Source</label>
+    <description>Audit Data Source</description>
+    <creationDate>2014-12-18T02:01:15.457-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:15.457-08:00</updateDate>
+    <jndiName>jdbc/jasperserver</jndiName>
+</jndiJdbcDataSource>

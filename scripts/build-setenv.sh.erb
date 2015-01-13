@@ -1,0 +1,8 @@
+#!/bin/sh
+LDFLAGS="-L<%= ENV['OPENSHIFT_JASPER_DIR'] %>/common/lib $LDFLAGS"
+export LDFLAGS
+CFLAGS="-I<%= ENV['OPENSHIFT_JASPER_DIR'] %>/common/include $CFLAGS"
+export CFLAGS
+		    
+PKG_CONFIG_PATH="<%= ENV['OPENSHIFT_JASPER_DIR'] %>/common/lib/pkgconfig"
+export PKG_CONFIG_PATH

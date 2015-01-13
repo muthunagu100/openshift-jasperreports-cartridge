@@ -1,0 +1,1 @@
+define(["require","../enum/dashboardComponentTypes"],function(e){var n=e("../enum/dashboardComponentTypes"),r={olap_ichart:n.CHART,olap_crosstab:n.CROSSTAB,ichart:n.CHART,crosstab:n.CROSSTAB,table:n.TABLE};return function(e){return r[e]}});

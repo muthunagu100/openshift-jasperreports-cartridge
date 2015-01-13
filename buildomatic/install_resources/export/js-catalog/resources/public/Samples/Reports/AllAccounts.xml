@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/public/Samples/Reports</folder>
+    <name>AllAccounts</name>
+    <version>0</version>
+    <label>05. Accounts Report</label>
+    <description>Basic interactive Table Component report with Bookmarks Panel</description>
+    <creationDate>2014-12-18T02:01:41.869-08:00</creationDate>
+    <updateDate>2014-04-17T10:07:12.015-07:00</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="main_jrxml.data" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/AllAccounts_files</folder>
+            <name>main_jrxml</name>
+            <version>0</version>
+            <label>Main jrxml</label>
+            <creationDate>2014-12-18T02:01:41.869-08:00</creationDate>
+            <updateDate>2013-09-04T22:50:23.393-07:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/public/Samples/Data_Sources/JServerJNDIDS</uri>
+    </dataSource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/AllAccounts_files</folder>
+            <name>Jaspersoft_logo.png</name>
+            <version>0</version>
+            <label>Jaspersoft_logo.png</label>
+            <creationDate>2014-12-18T02:01:41.869-08:00</creationDate>
+            <updateDate>2013-08-30T06:03:29.218-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Images/Jaspersoft_logo.png</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/AllAccounts_files</folder>
+            <name>SampleReportsStyles.jrtx</name>
+            <version>0</version>
+            <label>SampleReportsStyles.jrtx</label>
+            <creationDate>2014-12-18T02:01:41.869-08:00</creationDate>
+            <updateDate>2013-08-30T06:03:29.218-07:00</updateDate>
+            <referenceUri>/public/Samples/Resources/Extras/SampleReportStyles.jrtx</referenceUri>
+        </localResource>
+    </resource>
+    <inputControlRenderingView></inputControlRenderingView>
+    <reportRenderingView></reportRenderingView>
+    <alwaysPromptControls>true</alwaysPromptControls>
+    <controlsLayout>1</controlsLayout>
+</reportUnit>

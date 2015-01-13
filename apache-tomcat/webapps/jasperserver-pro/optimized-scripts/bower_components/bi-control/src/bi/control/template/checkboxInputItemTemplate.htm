@@ -1,0 +1,10 @@
+{{#data}}
+    <li>
+        <div class="control checkBox">
+            <label class="wrap" for="{{uuid}}" title="{{description}}">
+                {{label}}&nbsp;
+            </label>
+            <input {{#selected}}checked="checked"{{/selected}} class="" id="{{uuid}}" type="checkbox" {{#readOnly}}disabled="disabled"{{/readOnly}} value="{{value}}"/>
+        </div>
+    </li>
+{{/data}}

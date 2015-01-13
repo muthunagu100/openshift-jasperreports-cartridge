@@ -1,0 +1,3 @@
+#!/bin/sh
+. <%= ENV['OPENSHIFT_JASPER_DIR'] %>/postgresql/bin/setenv.sh
+exec <%= ENV['OPENSHIFT_JASPER_DIR'] %>/postgresql/bin/dropdb.bin "$@"

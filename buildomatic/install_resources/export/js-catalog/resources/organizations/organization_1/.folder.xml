@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder exportedWithPermissions="true">
+    <parent>/organizations</parent>
+    <name>organization_1</name>
+    <label>Organization</label>
+    <description>Organization</description>
+    <creationDate>2014-12-18T02:01:10.229-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:10.229-08:00</updateDate>
+    <folder>adhoc</folder>
+    <folder>analysis</folder>
+    <folder>ContentFiles</folder>
+    <folder>dashboards</folder>
+    <folder>datasources</folder>
+    <folder>Domains</folder>
+    <folder>images</folder>
+    <folder>organizations</folder>
+    <folder>performance</folder>
+    <folder>reports</folder>
+    <folder>supermart</folder>
+    <folder>temp</folder>
+    <folder>templates</folder>
+    <folder>themes</folder>
+</folder>

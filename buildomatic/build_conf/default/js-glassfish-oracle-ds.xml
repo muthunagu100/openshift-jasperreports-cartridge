@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ Copyright (C) 2005 - 2014 TIBCO Software Inc. All rights reserved.
+  ~ http://www.jaspersoft.com.
+  ~
+  ~ Unless you have purchased  a commercial license agreement from Jaspersoft,
+  ~ the following license terms  apply:
+  ~
+  ~ This program is free software: you can redistribute it and/or  modify
+  ~ it under the terms of the GNU Affero General Public License  as
+  ~ published by the Free Software Foundation, either version 3 of  the
+  ~ License, or (at your option) any later version.
+  ~
+  ~ This program is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+  ~ GNU Affero  General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Affero General Public  License
+  ~ along with this program. If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!DOCTYPE resources PUBLIC "-//Sun Microsystems Inc.//DTD Application Server 9.0 Domain//EN" "*<install directory>/lib/dtds/sun-resources_1_3.dtd*">
+
+
+<resources>
+    <jdbc-connection-pool 
+        name="jasperserver_pool" 
+        datasource-classname="org.postgresql.ds.PGConnectionPoolDataSource"
+        res-type="javax.sql.ConnectionPoolDataSource" is-connection-validation-required="true">
+        <property name="serverName" value="127.0.0.1"/>
+        <property name="user" value="postgres"/>
+        <property name="password" value="postgres"/>
+        <property name="url" value="jdbc:postgresql://127.0.0.1:5433/jasperserver"/>
+        <property name="sid" value="${sid}"/>
+        <property name="defaultAutoCommit" value="false"/>
+        <property name="portNumber" value="5433"/>
+		<property name="JDBC30DataSource" value="true"/>
+    </jdbc-connection-pool>
+
+    <jdbc-resource enabled="true" jndi-name="jdbc/jasperserver" object-type="user" pool-name="jasperserver_pool"/>
+
+
+    <jdbc-connection-pool 
+        name="sugarcrm_pool" 
+        datasource-classname="org.postgresql.ds.PGConnectionPoolDataSource"
+        res-type="javax.sql.ConnectionPoolDataSource" is-connection-validation-required="true">
+        <property name="serverName" value="127.0.0.1"/>
+        <property name="user" value="postgres"/>
+        <property name="password" value="postgres"/>
+        <property name="url" value="jdbc:postgresql://127.0.0.1:5433/sugarcrm"/>
+        <property name="sid" value="${sid}"/>
+        <property name="defaultAutoCommit" value="false"/>
+        <property name="portNumber" value="5433"/>
+		 <property name="JDBC30DataSource" value="true"/>
+    </jdbc-connection-pool>
+
+    <jdbc-resource enabled="true" jndi-name="jdbc/sugarcrm" object-type="user" pool-name="sugarcrm_pool"/>
+
+
+    <jdbc-connection-pool 
+        name="foodmart_pool" 
+        datasource-classname="org.postgresql.ds.PGConnectionPoolDataSource"
+        res-type="javax.sql.ConnectionPoolDataSource" is-connection-validation-required="true">
+        <property name="serverName" value="127.0.0.1"/>
+        <property name="user" value="postgres"/>
+        <property name="password" value="postgres"/>
+        <property name="url" value="jdbc:postgresql://127.0.0.1:5433/foodmart"/>
+        <property name="sid" value="${sid}"/>
+        <property name="defaultAutoCommit" value="false"/>
+        <property name="portNumber" value="5433"/>
+		<property name="JDBC30DataSource" value="true"/>
+    </jdbc-connection-pool>
+
+    <jdbc-resource enabled="true" jndi-name="jdbc/foodmart" object-type="user" pool-name="foodmart_pool"/>
+
+
+</resources> 

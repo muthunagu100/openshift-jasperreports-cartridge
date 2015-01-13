@@ -1,0 +1,1 @@
+define([],function(){function t(){}return t.prototype.server=function(){},t.prototype.properties=function(){},t.prototype.data=function(){},t.prototype.run=function(){},t.prototype.validate=function(){},t});

@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.jaspersoft.com/2007/SL/XMLSchema" version="1.0">
+  <items>
+    <item description="store_sales" descriptionId="" dimensionOrMeasure="Measure" id="store_sales" label="Foodmart Store Sales" labelId="" resourceId="JoinTree_1.FoodmartDataSource_public_sales_fact_1998.store_sales" />
+    <item description="coffee_bar" descriptionId="" dimensionOrMeasure="Dimension" id="coffee_bar" label="Foodmart - has coffee Bar" labelId="" resourceId="JoinTree_1.FoodmartDataSource_public_store.coffee_bar" />
+    <item description="prepared_food" descriptionId="" dimensionOrMeasure="Dimension" id="prepared_food" label="Foodmart - has prepared food" labelId="" resourceId="JoinTree_1.FoodmartDataSource_public_store.prepared_food" />
+    <item description="salad_bar" descriptionId="" dimensionOrMeasure="Dimension" id="salad_bar" label="Foodmart - has salad bar" labelId="" resourceId="JoinTree_1.FoodmartDataSource_public_store.salad_bar" />
+    <item description="store_city" descriptionId="" dimensionOrMeasure="Dimension" id="store_city" label="City" labelId="" resourceId="JoinTree_1.FoodmartDataSource_public_store.store_city" />
+    <item description="store_country" descriptionId="" dimensionOrMeasure="Dimension" id="store_country" label="Country" labelId="" resourceId="JoinTree_1.FoodmartDataSource_public_store.store_country" />
+    <item description="store_state" descriptionId="" dimensionOrMeasure="Dimension" id="store_state" label="State" labelId="" resourceId="JoinTree_1.FoodmartDataSource_public_store.store_state" />
+    <item description="store_type" descriptionId="" dimensionOrMeasure="Dimension" id="store_type" label="Foodmart - store type" labelId="" resourceId="JoinTree_1.FoodmartDataSource_public_store.store_type" />
+    <item description="amount" descriptionId="" dimensionOrMeasure="Measure" id="amount" label="SugarCRM Store Sales" labelId="" resourceId="JoinTree_1.SugarCRMDataSource_public_sales_fact.amount" />
+  </items>
+  <resources>
+    <jdbcTable id="FoodmartDataSource_public_sales_fact_1998" datasourceId="SugarFoodmartVDS" tableName="FoodmartDataSource_public.sales_fact_1998">
+      <fieldList>
+        <field id="customer_id" type="java.lang.Integer" />
+        <field id="product_id" type="java.lang.Integer" />
+        <field id="promotion_id" type="java.lang.Integer" />
+        <field id="store_cost" type="java.math.BigDecimal" />
+        <field id="store_id" type="java.lang.Integer" />
+        <field id="store_sales" type="java.math.BigDecimal" />
+        <field id="time_id" type="java.lang.Integer" />
+        <field id="unit_sales" type="java.math.BigDecimal" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="FoodmartDataSource_public_store" datasourceId="SugarFoodmartVDS" tableName="FoodmartDataSource_public.store">
+      <fieldList>
+        <field id="coffee_bar" type="java.lang.Boolean" />
+        <field id="first_opened_date" type="java.sql.Timestamp" />
+        <field id="florist" type="java.lang.Boolean" />
+        <field id="frozen_sqft" type="java.lang.Integer" />
+        <field id="grocery_sqft" type="java.lang.Integer" />
+        <field id="last_remodel_date" type="java.sql.Timestamp" />
+        <field id="meat_sqft" type="java.lang.Integer" />
+        <field id="prepared_food" type="java.lang.Boolean" />
+        <field id="region_id" type="java.lang.Integer" />
+        <field id="salad_bar" type="java.lang.Boolean" />
+        <field id="store_city" type="java.lang.String" />
+        <field id="store_country" type="java.lang.String" />
+        <field id="store_fax" type="java.lang.String" />
+        <field id="store_id" type="java.lang.Integer" />
+        <field id="store_manager" type="java.lang.String" />
+        <field id="store_name" type="java.lang.String" />
+        <field id="store_number" type="java.lang.Integer" />
+        <field id="store_phone" type="java.lang.String" />
+        <field id="store_postal_code" type="java.lang.String" />
+        <field id="store_sqft" type="java.lang.Integer" />
+        <field id="store_state" type="java.lang.String" />
+        <field id="store_street_address" type="java.lang.String" />
+        <field id="store_type" type="java.lang.String" />
+        <field id="video_store" type="java.lang.Boolean" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="SugarCRMDataSource_public_sales_fact" datasourceId="SugarFoodmartVDS" tableName="SugarCRMDataSource_public.sales_fact">
+      <fieldList>
+        <field id="amount" type="java.lang.Long" />
+        <field id="id" type="java.lang.Long" />
+        <field id="probability" type="java.lang.Long" />
+        <field id="sales_account_id" type="java.lang.Long" />
+        <field id="sales_date_of_close_id" type="java.lang.Long" />
+        <field id="sales_date_of_start_id" type="java.lang.Long" />
+        <field id="sales_location_id" type="java.lang.Long" />
+        <field id="sales_person_id" type="java.lang.Long" />
+        <field id="sales_state_id" type="java.lang.Long" />
+        <field id="time_to_close" type="java.lang.Long" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="SugarCRMDataSource_public_sales_location" datasourceId="SugarFoodmartVDS" tableName="SugarCRMDataSource_public.sales_location">
+      <fieldList>
+        <field id="city" type="java.lang.String" />
+        <field id="country" type="java.lang.String" />
+        <field id="id" type="java.lang.Long" />
+        <field id="state" type="java.lang.String" />
+        <field id="zipcode" type="java.lang.String" />
+      </fieldList>
+    </jdbcTable>
+    <jdbcTable id="JoinTree_1" datasourceId="SugarFoodmartVDS" tableName="FoodmartDataSource_public.sales_fact_1998">
+      <fieldList>
+        <field id="SugarCRMDataSource_public_sales_fact.amount" type="java.lang.Long" />
+        <field id="SugarCRMDataSource_public_sales_fact.id" type="java.lang.Long" />
+        <field id="SugarCRMDataSource_public_sales_fact.probability" type="java.lang.Long" />
+        <field id="SugarCRMDataSource_public_sales_fact.sales_account_id" type="java.lang.Long" />
+        <field id="SugarCRMDataSource_public_sales_fact.sales_date_of_close_id" type="java.lang.Long" />
+        <field id="SugarCRMDataSource_public_sales_fact.sales_date_of_start_id" type="java.lang.Long" />
+        <field id="SugarCRMDataSource_public_sales_fact.sales_location_id" type="java.lang.Long" />
+        <field id="SugarCRMDataSource_public_sales_fact.sales_person_id" type="java.lang.Long" />
+        <field id="SugarCRMDataSource_public_sales_fact.sales_state_id" type="java.lang.Long" />
+        <field id="SugarCRMDataSource_public_sales_fact.time_to_close" type="java.lang.Long" />
+        <field id="SugarCRMDataSource_public_sales_location.city" type="java.lang.String" />
+        <field id="SugarCRMDataSource_public_sales_location.country" type="java.lang.String" />
+        <field id="SugarCRMDataSource_public_sales_location.id" type="java.lang.Long" />
+        <field id="SugarCRMDataSource_public_sales_location.state" type="java.lang.String" />
+        <field id="SugarCRMDataSource_public_sales_location.zipcode" type="java.lang.String" />
+        <field id="FoodmartDataSource_public_sales_fact_1998.customer_id" type="java.lang.Integer" />
+        <field id="FoodmartDataSource_public_sales_fact_1998.product_id" type="java.lang.Integer" />
+        <field id="FoodmartDataSource_public_sales_fact_1998.promotion_id" type="java.lang.Integer" />
+        <field id="FoodmartDataSource_public_sales_fact_1998.store_cost" type="java.math.BigDecimal" />
+        <field id="FoodmartDataSource_public_sales_fact_1998.store_id" type="java.lang.Integer" />
+        <field id="FoodmartDataSource_public_sales_fact_1998.store_sales" type="java.math.BigDecimal" />
+        <field id="FoodmartDataSource_public_sales_fact_1998.time_id" type="java.lang.Integer" />
+        <field id="FoodmartDataSource_public_sales_fact_1998.unit_sales" type="java.math.BigDecimal" />
+        <field id="FoodmartDataSource_public_store.coffee_bar" type="java.lang.Boolean" />
+        <field id="FoodmartDataSource_public_store.first_opened_date" type="java.sql.Timestamp" />
+        <field id="FoodmartDataSource_public_store.florist" type="java.lang.Boolean" />
+        <field id="FoodmartDataSource_public_store.frozen_sqft" type="java.lang.Integer" />
+        <field id="FoodmartDataSource_public_store.grocery_sqft" type="java.lang.Integer" />
+        <field id="FoodmartDataSource_public_store.last_remodel_date" type="java.sql.Timestamp" />
+        <field id="FoodmartDataSource_public_store.meat_sqft" type="java.lang.Integer" />
+        <field id="FoodmartDataSource_public_store.prepared_food" type="java.lang.Boolean" />
+        <field id="FoodmartDataSource_public_store.region_id" type="java.lang.Integer" />
+        <field id="FoodmartDataSource_public_store.salad_bar" type="java.lang.Boolean" />
+        <field id="FoodmartDataSource_public_store.store_city" type="java.lang.String" />
+        <field id="FoodmartDataSource_public_store.store_country" type="java.lang.String" />
+        <field id="FoodmartDataSource_public_store.store_fax" type="java.lang.String" />
+        <field id="FoodmartDataSource_public_store.store_id" type="java.lang.Integer" />
+        <field id="FoodmartDataSource_public_store.store_manager" type="java.lang.String" />
+        <field id="FoodmartDataSource_public_store.store_name" type="java.lang.String" />
+        <field id="FoodmartDataSource_public_store.store_number" type="java.lang.Integer" />
+        <field id="FoodmartDataSource_public_store.store_phone" type="java.lang.String" />
+        <field id="FoodmartDataSource_public_store.store_postal_code" type="java.lang.String" />
+        <field id="FoodmartDataSource_public_store.store_sqft" type="java.lang.Integer" />
+        <field id="FoodmartDataSource_public_store.store_state" type="java.lang.String" />
+        <field id="FoodmartDataSource_public_store.store_street_address" type="java.lang.String" />
+        <field id="FoodmartDataSource_public_store.store_type" type="java.lang.String" />
+        <field id="FoodmartDataSource_public_store.video_store" type="java.lang.Boolean" />
+      </fieldList>
+      <joinInfo alias="FoodmartDataSource_public_sales_fact_1998" referenceId="FoodmartDataSource_public_sales_fact_1998" />
+      <joinedDataSetList>
+        <joinedDataSetRef>
+          <joinString>join FoodmartDataSource_public_store FoodmartDataSource_public_store on (FoodmartDataSource_public_sales_fact_1998.store_id == FoodmartDataSource_public_store.store_id)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>join SugarCRMDataSource_public_sales_location SugarCRMDataSource_public_sales_location on (FoodmartDataSource_public_store.store_state == SugarCRMDataSource_public_sales_location.state and SugarCRMDataSource_public_sales_location.city == FoodmartDataSource_public_store.store_city and SugarCRMDataSource_public_sales_location.country == FoodmartDataSource_public_store.store_country)</joinString>
+        </joinedDataSetRef>
+        <joinedDataSetRef>
+          <joinString>join SugarCRMDataSource_public_sales_fact SugarCRMDataSource_public_sales_fact on (SugarCRMDataSource_public_sales_fact.sales_location_id == SugarCRMDataSource_public_sales_location.id)</joinString>
+        </joinedDataSetRef>
+      </joinedDataSetList>
+    </jdbcTable>
+  </resources>
+</schema>
+

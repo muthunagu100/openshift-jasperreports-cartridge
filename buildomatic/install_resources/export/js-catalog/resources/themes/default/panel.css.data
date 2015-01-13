@@ -1,0 +1,97 @@
+.panel {
+    border: 0;
+    position: static;
+    background-color: transparent;
+}
+.panel.dialog {
+    position: absolute;
+}
+.panel > .header {
+    width:100%;
+    background-color:#e0e0e0;
+    height:28px;
+    line-height:28px;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid #B7B7B7;
+}
+
+.panel > .header > .title {
+    line-height:inherit;
+    display:inline;
+    font-weight:bold;
+    float: left;
+    margin: 0;
+    max-width: 100%;
+    overflow: hidden;
+    position: static;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: normal;
+    padding: 0;
+}
+
+.panel > .header > .button.mutton {
+    position: relative;
+    float: right;
+}
+
+.panel > .header > .button.mutton.over {
+    position: relative;
+    float: right;
+    background-position: 0 -179px;
+}
+
+
+.collapsiblePanel.open > .header > .buttonIconToggle {
+    background-position: -2px -697px;
+    margin-right: 4px;
+    float: left;
+}
+
+.collapsiblePanel.closed > .header > .buttonIconToggle {
+    background-position: -2px -673px;
+    margin-right: 4px;
+    float: left;
+}
+
+.tabbedPanel > .subcontainer > .tabContainer {
+    display: none;
+}
+
+.tabbedPanel > .header > .tabHeaderContainer {
+    clear: none;
+    float: right;
+}
+
+.tabbedPanel > .header > .tabHeaderContainer > button {
+    border: thin solid rgb(16, 13, 58);
+    width: 22px;
+    height: 16px;
+    margin: 3px;
+    background-color: #f5f5f5;
+}
+
+.tabbedPanel > .header > .tabHeaderContainer > button.active {
+    border: thin solid red;
+}
+
+.dialog > .content > .subcontainer {
+    padding: 10px;
+}
+
+.dialog.overlay.sizeable>.content {
+    position: static;
+}
+
+.dialog.overlay>.content>.footer {
+    border-width: 1px;
+}
+
+.alertDialog {
+    width: 350px;
+}
+
+.confirmationDialog {
+    width: 350px;
+}

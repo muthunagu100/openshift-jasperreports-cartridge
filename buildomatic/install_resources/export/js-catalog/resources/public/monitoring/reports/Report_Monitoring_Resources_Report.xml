@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/public/monitoring/reports</folder>
+    <name>Report_Monitoring_Resources_Report</name>
+    <version>0</version>
+    <label>Report Monitoring Resources Report</label>
+    <description>The Report Monitoring Resources report</description>
+    <creationDate>2014-12-18T02:01:21.691-08:00</creationDate>
+    <updateDate>2012-11-02T22:45:17.000-07:00</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="mainReportJrxml.data" xsi:type="fileResource">
+            <folder>/public/monitoring/reports/Report_Monitoring_Resources_Report_files</folder>
+            <name>mainReportJrxml</name>
+            <version>0</version>
+            <label>mainReportJrxml</label>
+            <creationDate>2014-12-18T02:01:21.691-08:00</creationDate>
+            <updateDate>2012-11-02T22:45:17.000-07:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/public/monitoring/reports/Report_Monitoring_Resources_Report_Adhoc_Data_View</uri>
+    </dataSource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="stateXML.data" xsi:type="fileResource">
+            <folder>/public/monitoring/reports/Report_Monitoring_Resources_Report_files</folder>
+            <name>stateXML</name>
+            <version>0</version>
+            <label>stateXML</label>
+            <creationDate>2014-12-18T02:01:21.691-08:00</creationDate>
+            <updateDate>2012-11-02T22:45:17.000-07:00</updateDate>
+            <fileType>xml</fileType>
+        </localResource>
+    </resource>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>1</controlsLayout>
+</reportUnit>

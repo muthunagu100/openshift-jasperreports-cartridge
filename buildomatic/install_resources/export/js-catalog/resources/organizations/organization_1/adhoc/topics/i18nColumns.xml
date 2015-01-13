@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/organizations/organization_1/adhoc/topics</folder>
+    <name>i18nColumns</name>
+    <version>0</version>
+    <label>i18n columns</label>
+    <description>Columns are Internationalizable.&lt;br&gt;Default support for English, French, German, Japanese, and Spanish.&lt;br&gt;To add support for more languages add Resource Bundles to this topic</description>
+    <creationDate>2014-12-18T02:01:22.381-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:22.381-08:00</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="i18nColumns.data" xsi:type="fileResource">
+            <folder>/organizations/organization_1/adhoc/topics/i18nColumns_files</folder>
+            <name>i18nColumns</name>
+            <version>0</version>
+            <label>i18n columns</label>
+            <description>Columns are internationalized</description>
+            <creationDate>2014-12-18T02:01:22.381-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.381-08:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/organizations/organization_1/datasources/JServerJNDIDS</uri>
+    </dataSource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="simpleTableTopic.properties.data" xsi:type="fileResource">
+            <folder>/organizations/organization_1/adhoc/topics/i18nColumns_files</folder>
+            <name>simpleTableTopic.properties</name>
+            <version>0</version>
+            <label>simpleTableTopic.properties</label>
+            <description>simpleTableTopic.properties description</description>
+            <creationDate>2014-12-18T02:01:22.381-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.381-08:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="simpleTableTopic_de.properties.data" xsi:type="fileResource">
+            <folder>/organizations/organization_1/adhoc/topics/i18nColumns_files</folder>
+            <name>simpleTableTopic_de.properties</name>
+            <version>0</version>
+            <label>simpleTableTopic_de.properties</label>
+            <description>simpleTableTopic_de.properties description</description>
+            <creationDate>2014-12-18T02:01:22.381-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.381-08:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="simpleTableTopic_es.properties.data" xsi:type="fileResource">
+            <folder>/organizations/organization_1/adhoc/topics/i18nColumns_files</folder>
+            <name>simpleTableTopic_es.properties</name>
+            <version>0</version>
+            <label>simpleTableTopic_es.properties</label>
+            <description>simpleTableTopic_es.properties description</description>
+            <creationDate>2014-12-18T02:01:22.381-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.381-08:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="simpleTableTopic_fr.properties.data" xsi:type="fileResource">
+            <folder>/organizations/organization_1/adhoc/topics/i18nColumns_files</folder>
+            <name>simpleTableTopic_fr.properties</name>
+            <version>0</version>
+            <label>simpleTableTopic_fr.properties</label>
+            <description>simpleTableTopic_fr.properties description</description>
+            <creationDate>2014-12-18T02:01:22.381-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.381-08:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="simpleTableTopic_ja.properties.data" xsi:type="fileResource">
+            <folder>/organizations/organization_1/adhoc/topics/i18nColumns_files</folder>
+            <name>simpleTableTopic_ja.properties</name>
+            <version>0</version>
+            <label>simpleTableTopic_ja.properties</label>
+            <description>simpleTableTopic_ja.properties description</description>
+            <creationDate>2014-12-18T02:01:22.381-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.381-08:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="simpleTableTopic_zh_CN.properties.data" xsi:type="fileResource">
+            <folder>/organizations/organization_1/adhoc/topics/i18nColumns_files</folder>
+            <name>simpleTableTopic_zh_CN.properties</name>
+            <version>0</version>
+            <label>simpleTableTopic_zh_CN.properties</label>
+            <description>simpleTableTopic_zh_CN.properties description</description>
+            <creationDate>2014-12-18T02:01:22.381-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.381-08:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>1</controlsLayout>
+</reportUnit>

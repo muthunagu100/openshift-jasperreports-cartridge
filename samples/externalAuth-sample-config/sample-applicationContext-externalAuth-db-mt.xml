@@ -1,0 +1,190 @@
+<!--
+  ~ Copyright (C) 2005 - 2014 TIBCO Software Inc. All rights reserved.
+  ~ http://www.jaspersoft.com.
+  ~ Licensed under commercial Jaspersoft Subscription License Agreement
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+    <!-- ########## External JDBC Auth ###########
+      - Sample configuration of JasperServer authentication via an external database
+    -->
+    <bean id="proxyAuthenticationProcessingFilter" class="com.jaspersoft.jasperserver.api.security.EncryptionAuthenticationProcessingFilter"
+            parent="mtAuthenticationProcessingFilter">
+        <property name="authenticationManager">
+            <ref local="dbAuthenticationManager"/>
+        </property>
+
+        <property name="authenticationSuccessHandler" ref="externalAuthSuccessHandler" />
+    </bean>
+
+    <bean id="proxyAuthenticationSoapProcessingFilter"
+          class="com.jaspersoft.jasperserver.api.security.externalAuth.DefaultAuthenticationSoapProcessingFilter">
+        <property name="authenticationManager" ref="dbAuthenticationManager"/>
+        <property name="authenticationSuccessHandler" ref="externalAuthSuccessHandler" />
+
+        <property name="filterProcessesUrl" value="/services"/>
+    </bean>
+
+    <bean id="proxyAuthenticationRestProcessingFilter" class="com.jaspersoft.jasperserver.api.security.externalAuth.DefaultAuthenticationRestProcessingFilter">
+        <property name="authenticationManager">
+            <ref local="dbAuthenticationManager"/>
+        </property>
+        <property name="authenticationSuccessHandler" ref="externalAuthSuccessHandler" />
+        <property name="filterProcessesUrl" value="/rest/login"/>
+    </bean>
+
+    <bean id="proxyRequestParameterAuthenticationFilter"
+          class="com.jaspersoft.jasperserver.war.util.ExternalRequestParameterAuthenticationFilter" parent="requestParameterAuthenticationFilter">
+        <property name="authenticationManager">
+            <ref local="dbAuthenticationManager"/>
+        </property>
+        <property name="externalDataSynchronizer" ref="externalDataSynchronizer"/>
+    </bean>
+
+    <bean id="externalAuthSuccessHandler"
+          class="com.jaspersoft.jasperserver.api.security.externalAuth.JrsExternalAuthenticationSuccessHandler" parent="successHandler">
+        <property name="externalDataSynchronizer">
+            <ref local="externalDataSynchronizer"/>
+        </property>
+    </bean>
+
+    <bean id="proxyBasicProcessingFilter"
+          class="com.jaspersoft.jasperserver.multipleTenancy.security.externalAuth.MTExternalAuthBasicProcessingFilter" parent="mtBasicProcessingFilter">
+        <property name="authenticationManager" ref="dbAuthenticationManager"/>
+        <property name="externalDataSynchronizer" ref="externalDataSynchronizer"/>
+    </bean>
+
+    <bean id="dbAuthenticationManager" class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.spring.JSProviderManager">
+        <property name="providers">
+            <list>
+                <ref bean="externalDaoAuthenticationProvider"/>
+                <ref bean="${bean.daoAuthenticationProvider}"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="externalDaoAuthenticationProvider" class="com.jaspersoft.jasperserver.multipleTenancy.security.externalAuth.db.MTExternalDaoAuthenticationProvider">
+        <property name="userDetailsService"><ref local="externalUserTenantDetailsService"/></property>
+        <property name="passwordValidator"><ref local="passwordValidator"/></property>
+    </bean>
+
+    <bean id="externalUserTenantDetailsService"
+          class="com.jaspersoft.jasperserver.multipleTenancy.security.externalAuth.db.MTExternalJDBCUserDetailsService">
+        <property name="dataSource" ref="externalDataSource"/>
+        <property name="usersByUsernameAndTenantNameQuery" value="SELECT u.username,u.password,t.tenantId FROM jiuser u LEFT JOIN jitenant t ON u.tenantId = t.id WHERE username = ?"/>
+        <property name="authoritiesByUsernameQuery" value="SELECT u.username, r.rolename FROM jiuser u, jiuserrole ur, jirole r WHERE u.id = ur.userId and ur.roleId=r.id and u.username = ?"/>
+        <property name="multiTenancyConfiguration"><ref bean="multiTenancyConfiguration"/></property>
+    </bean>
+
+    <!--IMPORTANT: set your external database symmetric encryption key here  -->
+    <bean id="passwordValidator" class="com.jaspersoft.jasperserver.api.metadata.common.service.impl.PasswordValidator" lazy-init="false">
+        <property name="keyInPlainText"><value>false</value></property>
+        <property name="secretKey"><value>0xC8 0x43 0x29 0x49 0xAE 0x25 0x2F 0xA1 0xC1 0xF2 0xC8 0xD9 0x31 0x01 0x2C 0x52 0x54 0x0B 0x5E 0xEA 0x9E 0x37 0xA8 0x61</value></property>
+        <property name="secretKeyAlgorithm"><value>DESede</value></property>
+        <property name="cipherTransformation"><value>DESede/CBC/PKCS5Padding</value></property>
+    </bean>
+
+    <!-- ########## External JDBC Auth ########### -->
+
+    <!-- ############ Synchronizer ############ -->
+    <bean id="externalDataSynchronizer"
+          class="com.jaspersoft.jasperserver.multipleTenancy.security.externalAuth.MTExternalDataSynchronizerImpl">
+        <property name="externalUserDetailsService">
+            <ref local="externalUserTenantDetailsService"/>
+        </property>
+        <property name="externalUserProcessors">
+            <list>
+                <ref local="externalTenantSetupProcessor"/>
+                <ref local="mtExternalUserSetupProcessor"/>
+                <!-- Example processor for creating user folder.
+                Other custom processors can be created and
+                added to the list.-->
+                <!--<ref local="externalUserFolderProcessor"/>-->
+            </list>
+        </property>
+    </bean>
+
+    <bean id="abstractExternalProcessor" class="com.jaspersoft.jasperserver.api.security.externalAuth.processors.AbstractExternalUserProcessor" abstract="true">
+        <property name="repositoryService" ref="${bean.repositoryService}"/>
+        <property name="userAuthorityService" ref="${bean.userAuthorityService}"/>
+        <property name="tenantService" ref="${bean.tenantService}"/>
+        <property name="profileAttributeService" ref="profileAttributeService"/>
+        <property name="objectPermissionService" ref="objectPermissionService"/>
+    </bean>
+
+    <bean id="mtExternalUserSetupProcessor" class="com.jaspersoft.jasperserver.multipleTenancy.security.externalAuth.processors.MTExternalUserSetupProcessor" parent="abstractExternalProcessor">
+        <!--Default permitted role characters; others are removed. Change regular expression to allow other chars.
+                    <property name="permittedExternalRoleNameRegex" value="[A-Za-z0-9_]+"/>-->
+
+        <property name="userAuthorityService">
+            <ref bean="${bean.internalUserAuthorityService}"/>
+        </property>
+
+        <property name="organizationRoleMap">
+            <map>
+                <!-- Mapping external roles to JRS internal roles. Example: map external role ADMIN to JRS role ROLE_ADMINISTRATOR -->
+                <!--<entry key="ADMIN" value="ROLE_ADMINISTRATOR" />-->
+            </map>
+        </property>
+
+        <property name="defaultInternalRoles">
+            <list>
+                <value>ROLE_USER</value>
+            </list>
+        </property>
+
+        <property name="externalAuthProperties" ><ref local="externalAuthProperties"/></property>
+    </bean>
+
+    <bean id="externalTenantSetupProcessor" class="com.jaspersoft.jasperserver.multipleTenancy.security.externalAuth.processors.MTExternalTenantSetupProcessor" parent="abstractExternalProcessor">
+        <property name="multiTenancyService"><ref bean="internalMultiTenancyService"/></property>
+        <property name="tenantIdNotSupportedSymbols" value="#{configurationBean.tenantIdNotSupportedSymbols}"/>
+
+        <!-- User credentials are setup in js.externalAuth.properties-->
+        <property name="externalTenantSetupUsers">
+            <list>
+                <bean class="com.jaspersoft.jasperserver.multipleTenancy.security.externalAuth.processors.MTAbstractExternalProcessor.ExternalTenantSetupUser">
+                    <property name="username" value="${new.tenant.user.name.1}"/>
+                    <property name="fullName" value="${new.tenant.user.fullname.1}"/>
+                    <property name="password" value="${new.tenant.user.password.1}"/>
+                    <property name="emailAddress" value="${new.tenant.user.email.1}"/>
+                    <property name="roleSet">
+                        <set>
+                            <value>ROLE_ADMINISTRATOR</value>
+                            <value>ROLE_USER</value>
+                        </set>
+                    </property>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+<!--    <bean id="externalUserFolderProcessor" class="com.jaspersoft.jasperserver.api.security.externalAuth.processors.ExternalUserFolderProcessor" parent="abstractExternalProcessor">
+        <property name="repositoryService" ref="multiTenancyUnsecureRepositoryService"/>
+        &lt;!&ndash;<property name="userFoldersParentDirectory" value=""/>&ndash;&gt;
+    </bean>-->
+
+    <!-- ############ Synchronizer ############ -->
+
+
+    <!-- ############## external dataSource: config in master.properties ############### -->
+
+    <bean id="externalDataSource" class="com.jaspersoft.jasperserver.api.security.externalAuth.wrappers.spring.jdbc.JSDriverManagerDataSource">
+        <property name="driverClassName" value="${external.jdbc.driverClassName}"/>
+        <property name="url" value="${external.jdbc.url}"/>
+        <property name="username" value="${external.jdbc.username}"/>
+        <property name="password" value="${external.jdbc.password}"/>
+    </bean>
+
+    <!-- ############## external dataSource ############### -->
+
+    <bean id="externalAuthProperties" class="com.jaspersoft.jasperserver.api.security.externalAuth.ExternalAuthProperties">
+        <!-- Controls whether login form requests organization id (orgId):
+                                true - orgId is always requested on the login form
+                                false - orgId is requested only if there are multiple organization in the database -->
+        <property name="alwaysRequestOrgIdOnLoginForm" value="true"/>
+    </bean>
+</beans>

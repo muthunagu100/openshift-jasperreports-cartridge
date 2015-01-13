@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/organizations/organization_1/performance/reports</folder>
+    <name>sqlFrequency</name>
+    <version>0</version>
+    <label>SQL Frequency</label>
+    <description>SQL Frequency Report</description>
+    <creationDate>2014-12-18T02:01:10.060-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:10.060-08:00</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="sqlFrequency_JRXML.data" xsi:type="fileResource">
+            <folder>/organizations/organization_1/performance/reports/sqlFrequency_files</folder>
+            <name>sqlFrequency_JRXML</name>
+            <version>0</version>
+            <label>sqlFrequency_JRXML_label</label>
+            <description>sqlFrequency_JRXML description</description>
+            <creationDate>2014-12-18T02:01:10.060-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:10.060-08:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/organizations/organization_1/performance/datasources/ProfileDataSourceJNDI</uri>
+    </dataSource>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>1</controlsLayout>
+</reportUnit>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fileResource exportedWithPermissions="true" dataFile="FoodmartGrant.data">
+    <folder>/organizations/organization_1/analysis/schemas</folder>
+    <name>FoodmartGrant</name>
+    <version>0</version>
+    <label>Foodmart Grant</label>
+    <description>ANALYSIS Foodmart Grant</description>
+    <creationDate>2014-12-18T02:01:23.120-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:23.120-08:00</updateDate>
+    <fileType>accessGrantSchema</fileType>
+</fileResource>

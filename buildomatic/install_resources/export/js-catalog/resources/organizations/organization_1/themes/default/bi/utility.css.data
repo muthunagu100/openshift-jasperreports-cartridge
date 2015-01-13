@@ -1,0 +1,81 @@
+
+/* ====================================================================
+ * UTILITY STYLES 
+ *
+ * Utility styles are simple rules for common use cases. All utility
+ * styles must be prefixed with "u-"
+ * ==================================================================== */
+
+.u-strong {font-weight:bold;}
+
+
+/* ----------------------- */
+/*  RELATIVE WIDTH VALUES  */
+/* ----------------------- */
+.u-width-r1 {width:1%}
+.u-width-r2 {width:2%}
+.u-width-r3 {width:3%}
+.u-width-r4 {width:4%}
+.u-width-r5 {width:5%}
+.u-width-r6 {width:6%}
+.u-width-r7 {width:7%}
+.u-width-r8 {width:8%}
+.u-width-r9 {width:9%}
+.u-width-r10 {width:10%}
+.u-width-r14 {width:14%}
+.u-width-r15 {width:15%}
+.u-width-r20 {width:20%}
+.u-width-r25 {width:25%}
+.u-width-r30 {width:30%}
+.u-width-r35 {width:35%}
+.u-width-r40 {width:40%}
+.u-width-r45 {width:45%}
+.u-width-r50 {width:50%}
+.u-width-r55 {width:55%}
+.u-width-r60 {width:60%}
+.u-width-r65 {width:65%}
+.u-width-r70 {width:70%}
+.u-width-r75 {width:75%}
+.u-width-r80 {width:80%}
+.u-width-r85 {width:85%}
+.u-width-r90 {width:90%}
+.u-width-r95 {width:95%}
+.u-width-r100 {width:100%}
+
+
+/* ---------------------- */
+/*  STATIC WIDTH VALUES   */
+/* ---------------------- */
+.u-width-s100 {width:9.091em;}		/* 100px / 11px */
+.u-width-s125 {width:11.364em;}		/* 125px / 11px */
+.u-width-s150 {width:13.636em;}		/* 150px / 11px */
+.u-width-s175 {width:15.909em;}		/* 175px / 11px */
+.u-width-s200 {width:18.182em;}		/* 200px / 11px */
+.u-width-s225 {width:20.455em;}		/* 225px / 11px */
+.u-width-s250 {width:22.727em;}		/* 250px / 11px */
+.u-width-s275 {width:25em;}			/* 275px / 11px */
+.u-width-s300 {width:27.273em;}		/* 300px / 11px */
+.u-width-s325 {width:29.545em;}		/* 325px / 11px */
+.u-width-s350 {width:31.818em;}		/* 350px / 11px */
+.u-width-s375 {width:34.091em;}		/* 375px / 11px */
+.u-width-s400 {width:36.364em;}		/* 400px / 11px */
+.u-width-s425 {width:38.636em;}		/* 425px / 11px */
+.u-width-s450 {width:40.909em;}		/* 450px / 11px */
+.u-width-s475 {width:43.182em;}		/* 475px / 11px */
+.u-width-s500 {width:45.455em;}		/* 500px / 11px */
+
+/* --------------- */
+/*  MISCELLANEOUS  */
+/* --------------- */
+.caret.jrs {
+    border-left: .363em solid rgba(0, 0, 0, 0);		/* 4px / 11px */
+    border-right: .363em solid rgba(0, 0, 0, 0);	/* 4px / 11px */
+    border-top: .363em solid;						/* 4px / 11px */
+    display: inline-block;
+    /* font-size: .818em;								9px / 11px */
+    height: 0;
+    vertical-align: bottom;
+    margin-bottom:1px;
+    margin-left:-2px;
+    width: 0;
+} /* icon font will be better; this is a temp placeholder */

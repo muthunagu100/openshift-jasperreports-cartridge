@@ -1,0 +1,74 @@
+Jan 13, 2015 12:02:14 PM org.apache.catalina.core.ApplicationContext log
+INFO: No Spring WebApplicationInitializer types detected on classpath
+Jan 13, 2015 12:02:14 PM org.apache.catalina.core.ApplicationContext log
+INFO: Set web app root system property: 'jasperserver-pro.root' = [/home/vasanth/jasperreports-server-6.0.1/apache-tomcat/webapps/jasperserver-pro/]
+Jan 13, 2015 12:02:14 PM org.apache.catalina.core.ApplicationContext log
+INFO: Initializing log4j from [/home/vasanth/jasperreports-server-6.0.1/apache-tomcat/webapps/jasperserver-pro/WEB-INF/log4j.properties]
+Jan 13, 2015 12:02:14 PM org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring root WebApplicationContext
+Jan 13, 2015 12:02:45 PM org.apache.catalina.core.ApplicationContext log
+INFO: 
+*****************************************************
+* Owasp.CsrfGuard Properties
+*
+* Logger: com.jaspersoft.jasperserver.api.security.JSCsrfLogger
+* NewTokenLandingPage: /jasperserver-pro/login.html
+* PRNG: SHA1PRNG
+* SessionKey: JASPER_CSRF_SESSION_KEY
+* TokenLength: 96
+* TokenName: JASPER_CSRF_TOKEN
+* Ajax: true
+* Rotate: true
+* TokenPerPage: true
+* Action: org.owasp.csrfguard.action.Rotate
+* Action: org.owasp.csrfguard.action.Redirect
+*	Parameter: Page = /jasperserver-pro/login.html
+* Action: org.owasp.csrfguard.action.Log
+*	Parameter: Message = potential cross-site request forgery (CSRF) attack thwarted (user:%user%, ip:%remote_ip%, uri:%request_uri%, error:%exception_message%)
+*****************************************************
+
+Jan 13, 2015 12:02:46 PM org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'jasperserver'
+Jan 13, 2015 1:46:31 PM org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'jasperserver'
+Jan 13, 2015 1:46:31 PM org.apache.catalina.core.ApplicationContext log
+INFO: Closing Spring root WebApplicationContext
+Jan 13, 2015 1:46:32 PM org.apache.catalina.core.ApplicationContext log
+INFO: Shutting down log4j
+Jan 13, 2015 1:47:32 PM org.apache.catalina.core.ApplicationContext log
+INFO: No Spring WebApplicationInitializer types detected on classpath
+Jan 13, 2015 1:47:32 PM org.apache.catalina.core.ApplicationContext log
+INFO: Set web app root system property: 'jasperserver-pro.root' = [/home/vasanth/jasperreports-server-6.0.1/apache-tomcat/webapps/jasperserver-pro/]
+Jan 13, 2015 1:47:32 PM org.apache.catalina.core.ApplicationContext log
+INFO: Initializing log4j from [/home/vasanth/jasperreports-server-6.0.1/apache-tomcat/webapps/jasperserver-pro/WEB-INF/log4j.properties]
+Jan 13, 2015 1:47:32 PM org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring root WebApplicationContext
+Jan 13, 2015 1:48:03 PM org.apache.catalina.core.ApplicationContext log
+INFO: 
+*****************************************************
+* Owasp.CsrfGuard Properties
+*
+* Logger: com.jaspersoft.jasperserver.api.security.JSCsrfLogger
+* NewTokenLandingPage: /jasperserver-pro/login.html
+* PRNG: SHA1PRNG
+* SessionKey: JASPER_CSRF_SESSION_KEY
+* TokenLength: 96
+* TokenName: JASPER_CSRF_TOKEN
+* Ajax: true
+* Rotate: true
+* TokenPerPage: true
+* Action: org.owasp.csrfguard.action.Rotate
+* Action: org.owasp.csrfguard.action.Redirect
+*	Parameter: Page = /jasperserver-pro/login.html
+* Action: org.owasp.csrfguard.action.Log
+*	Parameter: Message = potential cross-site request forgery (CSRF) attack thwarted (user:%user%, ip:%remote_ip%, uri:%request_uri%, error:%exception_message%)
+*****************************************************
+
+Jan 13, 2015 1:48:04 PM org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring FrameworkServlet 'jasperserver'
+Jan 13, 2015 1:50:22 PM org.apache.catalina.core.ApplicationContext log
+INFO: Destroying Spring FrameworkServlet 'jasperserver'
+Jan 13, 2015 1:50:22 PM org.apache.catalina.core.ApplicationContext log
+INFO: Closing Spring root WebApplicationContext
+Jan 13, 2015 1:50:22 PM org.apache.catalina.core.ApplicationContext log
+INFO: Shutting down log4j

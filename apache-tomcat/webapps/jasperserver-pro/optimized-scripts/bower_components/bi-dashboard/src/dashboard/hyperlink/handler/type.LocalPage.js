@@ -1,0 +1,1 @@
+define(["require","./type.LocalAnchor","underscore"],function(e){{var c=e("./type.LocalAnchor");e("underscore")}return{beforeRender:function(e){c.beforeRender.call(this,e)},click:function(e,r){c.click.call(this,e,r)}}});

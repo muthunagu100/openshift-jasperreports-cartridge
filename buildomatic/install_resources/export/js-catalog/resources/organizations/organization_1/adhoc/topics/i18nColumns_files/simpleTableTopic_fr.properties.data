@@ -1,0 +1,14 @@
+ShippedDate=Date exp\u00e9dition
+ShipCountry=Pays exp\u00e9dition 
+RequiredDate=Date requise 
+CustomerID=ID client
+OrderId=ID commande 
+ShipName=Nom exp\u00e9dition
+ShipVia=Exp\u00e9dier via
+OrderDate=Date commande
+ShipCity=Ville exp\u00e9dition
+ShipAddress=Adresse exp\u00e9dition
+EmployeeID=ID employ\u00e9
+ShipRegion=R\u00e9gion exp\u00e9dition
+Freight=Fret
+

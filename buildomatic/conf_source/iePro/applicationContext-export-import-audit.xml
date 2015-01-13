@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+    <bean id="auditModuleConfiguration" class="com.jaspersoft.ji.logging.audit.export.AuditModuleConfiguration">
+        <property name="auditService" ref="auditService"/>
+        <property name="auditDirectory" value="audit"/>
+        <property name="auditEventsDirectory" value="auditEvents"/>
+        <property name="auditEventIndex" value="auditEventsCount"/>
+        <property name="auditEventsArchiveDirectory" value="auditEventsArchive"/>
+        <property name="auditEventArchiveIndex" value="auditEventsArchiveCount"/>
+        <property name="monitoringDirectory" value="monitoring"/>
+        <property name="reportMonitoringFactsDirectory" value="reportMonitoringFacts"/>
+        <property name="reportMonitoringFactIndex" value="reportMonitoringFactsCount"/>
+        <property name="clientClassFactory" ref="mappingResourceFactory"/>
+        <property name="serializer">
+            <bean class="com.jaspersoft.jasperserver.export.io.CastorSerializer">
+                <property name="castorMappings">
+                    <list>
+                        <value>classpath:com/jaspersoft/ji/logging/audit/export/AuditEvent.xml</value>
+                        <value>classpath:com/jaspersoft/ji/logging/audit/export/AuditEventProperty.xml</value>
+                        <value>classpath:com/jaspersoft/ji/logging/audit/export/ReportMonitoringFact.xml</value>
+                    </list>
+                </property>
+            </bean>
+        </property>
+    </bean>
+
+    <bean id="auditEventsExporter" class="com.jaspersoft.ji.logging.audit.export.AuditEventsExporter" parent="baseExporterModule" scope="prototype">
+        <property name="id" value="audit"/>
+        <property name="auditModuleConfiguration" ref="auditModuleConfiguration"/>
+        <property name="maxAuditEventsPerIteration" value="50"/>        
+        <property name="includeAuditEvents" value="include-audit-events"/>
+    </bean>
+
+    <bean id="auditEventsImporter" class="com.jaspersoft.ji.logging.audit.export.AuditEventsImporter" scope="prototype">
+        <property name="id" value="audit"/>
+        <property name="auditModuleConfiguration" ref="auditModuleConfiguration"/>
+        <property name="maxAuditEventsPerIteration" value="50"/>
+        <property name="includeAuditEvents" value="include-audit-events"/>
+    </bean>
+
+    <bean id="reportMonitoringFactsExporter" class="com.jaspersoft.ji.logging.audit.export.ReportMonitoringFactsExporter" parent="baseExporterModule" scope="prototype">
+        <property name="id" value="reportMonitoring"/>
+        <property name="auditModuleConfiguration" ref="auditModuleConfiguration"/>
+        <property name="maxReportMonitoringFactsPerIteration" value="50"/>
+        <property name="includeMonitoringEvents" value="include-monitoring-events"/>
+    </bean>
+
+    <bean id="reportMonitoringFactsImporter" class="com.jaspersoft.ji.logging.audit.export.ReportMonitoringFactsImporter" scope="prototype">
+        <property name="id" value="reportMonitoring"/>
+        <property name="auditModuleConfiguration" ref="auditModuleConfiguration"/>
+        <property name="maxReportMonitoringFactsPerIteration" value="50"/>
+        <property name="includeMonitoringEvents" value="include-monitoring-events"/>
+    </bean>
+
+</beans>

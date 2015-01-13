@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder exportedWithPermissions="true">
+    <parent>/organizations/organization_1</parent>
+    <name>datasources</name>
+    <label>Data Sources</label>
+    <description>Data Sources used by reports</description>
+    <creationDate>2014-12-18T02:01:08.667-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:08.667-08:00</updateDate>
+    <resource>JServerJdbcDS</resource>
+    <resource>JServerJNDIDS</resource>
+    <resource>repositoryDS</resource>
+    <resource>SugarFoodmartVDS</resource>
+    <permission>
+        <permissionMask>32</permissionMask>
+        <recipient recipientType="role">ROLE_USER</recipient>
+    </permission>
+</folder>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/public/Samples/Reports</folder>
+    <name>17._Report_Workbook</name>
+    <version>0</version>
+    <label>17. Report Workbook</label>
+    <description>Sample report book with table of contents.</description>
+    <creationDate>2014-12-18T02:01:40.508-08:00</creationDate>
+    <updateDate>2014-11-11T13:29:24.967-08:00</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="BookReport.data" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/17._Report_Workbook_files</folder>
+            <name>BookReport</name>
+            <version>0</version>
+            <label>Book Report</label>
+            <description>Book Report</description>
+            <creationDate>2014-12-18T02:01:40.508-08:00</creationDate>
+            <updateDate>2014-11-11T13:26:56.124-08:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/public/Samples/Data_Sources/FoodmartDataSourceJNDI</uri>
+    </dataSource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="TOCPart.data" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/17._Report_Workbook_files</folder>
+            <name>TOCPart</name>
+            <version>0</version>
+            <label>TOCPart</label>
+            <description>TOCPart</description>
+            <creationDate>2014-12-18T02:01:40.508-08:00</creationDate>
+            <updateDate>2014-11-11T13:26:56.124-08:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="ChartPart.data" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/17._Report_Workbook_files</folder>
+            <name>ChartPart</name>
+            <version>0</version>
+            <label>ChartPart</label>
+            <description>ChartPart</description>
+            <creationDate>2014-12-18T02:01:40.508-08:00</creationDate>
+            <updateDate>2014-11-11T13:26:56.124-08:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="CrosstabPart.data" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/17._Report_Workbook_files</folder>
+            <name>CrosstabPart</name>
+            <version>0</version>
+            <label>CrosstabPart</label>
+            <description>CrosstabPart</description>
+            <creationDate>2014-12-18T02:01:40.508-08:00</creationDate>
+            <updateDate>2014-11-11T13:26:56.124-08:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="TablePart.data" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/17._Report_Workbook_files</folder>
+            <name>TablePart</name>
+            <version>0</version>
+            <label>TablePart</label>
+            <description>TablePart</description>
+            <creationDate>2014-12-18T02:01:40.508-08:00</creationDate>
+            <updateDate>2014-11-11T13:26:56.124-08:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </resource>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>1</controlsLayout>
+</reportUnit>

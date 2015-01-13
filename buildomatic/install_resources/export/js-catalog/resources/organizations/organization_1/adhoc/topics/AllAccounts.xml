@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/organizations/organization_1/adhoc/topics</folder>
+    <name>AllAccounts</name>
+    <version>0</version>
+    <label>All Accounts Report</label>
+    <description>All Accounts Report</description>
+    <creationDate>2014-12-18T02:01:22.267-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:22.267-08:00</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="AllAccountsReport.data" xsi:type="fileResource">
+            <folder>/organizations/organization_1/adhoc/topics/AllAccounts_files</folder>
+            <name>AllAccountsReport</name>
+            <version>0</version>
+            <label>All Accounts Jasper Report</label>
+            <description>All Accounts Jasper Report</description>
+            <creationDate>2014-12-18T02:01:22.267-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.267-08:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/organizations/organization_1/datasources/JServerJNDIDS</uri>
+    </dataSource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="AllAccounts_Res1.data" xsi:type="fileResource">
+            <folder>/organizations/organization_1/adhoc/topics/AllAccounts_files</folder>
+            <name>AllAccounts_Res1</name>
+            <version>0</version>
+            <label>AllAccounts_Res1</label>
+            <description>AllAccounts_Res1</description>
+            <creationDate>2014-12-18T02:01:22.267-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.267-08:00</updateDate>
+            <fileType>img</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="AllAccounts_Res2.data" xsi:type="fileResource">
+            <folder>/organizations/organization_1/adhoc/topics/AllAccounts_files</folder>
+            <name>AllAccounts_Res2</name>
+            <version>0</version>
+            <label>AllAccounts_Res2</label>
+            <description>AllAccounts_Res2</description>
+            <creationDate>2014-12-18T02:01:22.267-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.267-08:00</updateDate>
+            <fileType>img</fileType>
+        </localResource>
+    </resource>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>1</controlsLayout>
+</reportUnit>

@@ -1,0 +1,1 @@
+define(["jquery","adhoc/highcharts.api"],function(t,e){var a={perform:function(a,r){var h=r.chartState,n=r.extraOptions;if(r.chartType&&(h.chartType=r.chartType),n){var i=t("table.jrPage");i.length&&(n.width=i.parent().width(),n.height=i.parent().height()||400)}t.extend(a,e.generateOptions(r.queryData,h,n))}};return a});

@@ -1,0 +1,588 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SalesByMonthReport" columnCount="4" pageWidth="450" pageHeight="511" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="111" columnSpacing="1" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" resourceBundle="supermart" whenResourceMissingType="Key" uuid="62ffc3bd-ca0b-4b9d-8eb9-63789e47afdc">
+	<property name="net.sf.jasperreports.chart.theme" value="eye.candy.sixties"/>
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="144"/>
+	<property name="ireport.jasperserver.reportUnit" value="/public/Samples/Reports/11g.SalesByMonthReport"/>
+	<property name="ireport.jasperserver.url" value="http://192.168.2.141:8102/jasperserver-pro/"/>
+	<property name="ireport.jasperserver.report.resource" value="/public/Samples/Reports/11g.SalesByMonthReport_files/main_jrxml"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<style name="Title" hAlign="Center" vAlign="Middle" fontName="Calibri" fontSize="14" isBold="true"/>
+	<style name="default" isDefault="true" fontName="Calibri" isBold="false"/>
+	<style name="group1style" mode="Opaque" forecolor="#FFFFFF" backcolor="#993200" vAlign="Middle" fontName="Calibri" fontSize="18" isBold="false" isItalic="false" pdfFontName="Helvetica-BoldOblique"/>
+	<style name="head1style" mode="Opaque" forecolor="#000000" backcolor="#F7F7F7" hAlign="Center" vAlign="Middle" fontName="Calibri" fontSize="12" isBold="true" isItalic="false" pdfFontName="Helvetica-BoldOblique">
+		<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2"/>
+	</style>
+	<style name="head2style" forecolor="#4A8797" hAlign="Center" vAlign="Middle" fontName="Calibri" fontSize="12" isBold="true">
+		<pen lineWidth="2.0" lineStyle="Solid"/>
+		<box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4">
+			<pen lineWidth="2.0" lineStyle="Solid" lineColor="#4A8797"/>
+			<topPen lineWidth="2.0" lineStyle="Solid" lineColor="#4A8797"/>
+			<leftPen lineWidth="2.0" lineStyle="Solid" lineColor="#4A8797"/>
+			<bottomPen lineWidth="2.0" lineStyle="Solid" lineColor="#4A8797"/>
+			<rightPen lineWidth="2.0" lineStyle="Solid" lineColor="#4A8797"/>
+		</box>
+	</style>
+	<style name="green" forecolor="#33CC00" fontName="Calibri" isBold="true"/>
+	<style name="red" forecolor="#FF0000" fontName="Calibri" isBold="true"/>
+	<style name="detail" mode="Opaque" fontName="PT Sans" fontSize="10" isBold="false">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{quarter_COUNT}.intValue() % 2 == 0)]]></conditionExpression>
+			<style mode="Opaque" backcolor="#343433" fontName="Calibri" fontSize="10"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{quarter_COUNT}.intValue() % 2 != 0)]]></conditionExpression>
+			<style backcolor="#676767" fontName="Calibri" fontSize="10"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="states" class="java.lang.String"/>
+	<parameter name="pickStateIsNull" class="java.lang.Integer" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{states}==null ? new java.lang.Integer( 1 ) : new java.lang.Integer( 0 )]]></defaultValueExpression>
+	</parameter>
+	<parameter name="goal" class="java.lang.Integer" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new Integer (50000)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="startMonth" class="java.lang.Integer" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new Integer(1)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="endMonth" class="java.lang.Integer" isForPrompting="false">
+		<defaultValueExpression><![CDATA[new Integer(12)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="decorate" class="java.lang.String">
+		<defaultValueExpression><![CDATA["no"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+    all_months.the_date,
+    all_months.the_year,
+    all_months.the_month,
+    all_months.the_quarter,
+    all_months.time_by_day_month_of_year,
+    selected_months.store_sales,
+    selected_months.profit,
+ selected_months.quantity_sold
+FROM
+    (
+        SELECT
+            min(the_date) as the_date,
+            the_year,
+            the_month,
+            the_quarter,
+            time_by_day_month_of_year
+        FROM
+            monthly_profit
+        GROUP BY
+            the_year, the_month, the_quarter, time_by_day_month_of_year
+    ) all_months
+    LEFT OUTER JOIN (
+  SELECT
+      time_by_day."the_year",
+      time_by_day."the_month",
+      sum(store_sales) AS store_sales,
+      (sum(store_sales)-sum(store_cost)) AS profit,
+      sum(unit_sales) AS quantity_sold
+  FROM
+   "time_by_day" time_by_day INNER JOIN "sales_fact_1997" sales_fact_1997 ON time_by_day."time_id" = sales_fact_1997."time_id"
+   INNER JOIN "store" store ON sales_fact_1997."store_id" = store."store_id"
+  WHERE   /* If PickState is specified, then we use it. If it is null, then we return all rows. */
+   (store.store_state = $P{states} OR 1 = $P{pickStateIsNull})
+   and month_of_year BETWEEN $P{startMonth} and $P{endMonth}
+  GROUP BY
+   the_year,the_month,quarter,month_of_year
+ ) as selected_months on ( selected_months.the_year = all_months.the_year and selected_months.the_month = all_months.the_month )
+ORDER BY
+    all_months.time_by_day_month_of_year ASC]]>
+	</queryString>
+	<field name="the_date" class="java.sql.Timestamp"/>
+	<field name="the_year" class="java.lang.Integer"/>
+	<field name="the_month" class="java.lang.String"/>
+	<field name="the_quarter" class="java.lang.String"/>
+	<field name="time_by_day_month_of_year" class="java.lang.String"/>
+	<field name="store_sales" class="java.math.BigDecimal"/>
+	<field name="profit" class="java.math.BigDecimal"/>
+	<field name="quantity_sold" class="java.math.BigDecimal"/>
+	<variable name="maxValue" class="java.math.BigDecimal" calculation="Highest">
+		<variableExpression><![CDATA[$F{store_sales}]]></variableExpression>
+	</variable>
+	<variable name="minValue" class="java.math.BigDecimal" calculation="Lowest">
+		<variableExpression><![CDATA[$F{store_sales}]]></variableExpression>
+	</variable>
+	<variable name="SUM_store_sales_1" class="java.math.BigDecimal" resetType="Group" resetGroup="quarter" calculation="Sum">
+		<variableExpression><![CDATA[$F{store_sales}]]></variableExpression>
+	</variable>
+	<variable name="simpleMonth" class="java.text.SimpleDateFormat">
+		<variableExpression><![CDATA[new SimpleDateFormat( "MMM", $P{REPORT_LOCALE} )]]></variableExpression>
+	</variable>
+	<variable name="longMonth" class="java.text.SimpleDateFormat">
+		<variableExpression><![CDATA[new SimpleDateFormat( "MMMM", $P{REPORT_LOCALE} )]]></variableExpression>
+	</variable>
+	<group name="quarter" isStartNewColumn="true">
+		<groupExpression><![CDATA[$F{the_quarter}]]></groupExpression>
+		<groupHeader>
+			<band height="21">
+				<property name="local_mesure_unitheight" value="pixel"/>
+				<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				<textField isBlankWhenNull="false">
+					<reportElement uuid="35d98cc1-c56d-47e1-af56-4f481bc6c64c" key="QuarterName" isPrintRepeatedValues="false" mode="Opaque" x="6" y="1" width="103" height="20" forecolor="#343433" backcolor="#ADDF34">
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#CCCCCC"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#CCCCCC"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#CCCCCC"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Calibri" size="11" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{the_quarter}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="33">
+				<textField evaluationTime="Column" pattern="" isBlankWhenNull="true">
+					<reportElement uuid="ccae1a39-b9a8-4c9d-848c-cbd3de32fb9e" key="QuarterValue" mode="Opaque" x="6" y="-1" width="103" height="20" forecolor="#343433" backcolor="#B0BB97">
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#CCCCCC"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#CCCCCC"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#CCCCCC"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#CCCCCC"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+						<font fontName="Calibri" size="11" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($R{CurrencySymbol}.equals("CurrencySymbol") ? "$" : $R{CurrencySymbol}) /* Uses dollar as default if key is not found */
++ " "
++ java.text.NumberFormat.getIntegerInstance($P{REPORT_LOCALE}).format( $V{SUM_store_sales_1}.longValue() )]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band height="490">
+			<rectangle radius="10">
+				<reportElement uuid="b65403cb-c724-4bf2-a318-79002dd3314c" mode="Opaque" x="0" y="0" width="453" height="490" backcolor="#343433"/>
+				<graphicElement>
+					<pen lineWidth="0.0" lineColor="#343433"/>
+				</graphicElement>
+			</rectangle>
+			<frame>
+				<reportElement uuid="636b411b-b96d-48fc-a8cc-ccb550a21306" x="0" y="0" width="1" height="450">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+			</frame>
+		</band>
+	</background>
+	<title>
+		<band height="73">
+			<textField isBlankWhenNull="false">
+				<reportElement uuid="8a93fc78-2684-4582-9f34-17f67a3b3a03" key="textField-1" mode="Opaque" x="6" y="0" width="443" height="25" forecolor="#FFFFFF" backcolor="#343433"/>
+				<box topPadding="2" leftPadding="0" bottomPadding="0" rightPadding="2">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000033"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000033"/>
+					<bottomPen lineWidth="3.0" lineStyle="Solid" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000033"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font fontName="Calibri" size="16" isBold="true"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{MonthlySales.Title.Green}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false" hyperlinkType="ReportExecution">
+				<reportElement uuid="dd3642e0-20a8-48ac-801c-56e62096737e" key="AllStates" positionType="Float" mode="Opaque" x="6" y="57" width="107" height="16" forecolor="#FFFFFF" backcolor="#676767"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{AllStates.Green}]]></textFieldExpression>
+				<hyperlinkTooltipExpression><![CDATA[$R{MonthlySales.Tooltip.AllStates}]]></hyperlinkTooltipExpression>
+				<hyperlinkParameter name="_report">
+					<hyperlinkParameterExpression><![CDATA["/public/Samples/Reports/11g.SalesByMonthReport"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="startMonth">
+					<hyperlinkParameterExpression><![CDATA[$P{startMonth}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="endMonth">
+					<hyperlinkParameterExpression><![CDATA[$P{endMonth}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="pickStateIsNull">
+					<hyperlinkParameterExpression><![CDATA["1"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="viewAsDashboardFrame">
+					<hyperlinkParameterExpression><![CDATA["true"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+			<textField isBlankWhenNull="false" hyperlinkType="ReportExecution">
+				<reportElement uuid="a4b4a7ce-c7a4-49eb-8c74-297c5cbaa2ec" key="Washington" positionType="Float" mode="Opaque" x="339" y="57" width="106" height="16" forecolor="#FFFFFF" backcolor="#676767"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{Washington.Green}]]></textFieldExpression>
+				<hyperlinkTooltipExpression><![CDATA[msg($R{MonthlySales.Tooltip.ShowState}, "WA")]]></hyperlinkTooltipExpression>
+				<hyperlinkParameter name="_report">
+					<hyperlinkParameterExpression><![CDATA["/public/Samples/Reports/11g.SalesByMonthReport"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="states">
+					<hyperlinkParameterExpression><![CDATA["WA"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="startMonth">
+					<hyperlinkParameterExpression><![CDATA[$P{startMonth}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="endMonth">
+					<hyperlinkParameterExpression><![CDATA[$P{endMonth}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="viewAsDashboardFrame">
+					<hyperlinkParameterExpression><![CDATA["true"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+			<textField isBlankWhenNull="false" hyperlinkType="ReportExecution">
+				<reportElement uuid="eba5ba5d-23e5-4556-9760-911f1ad9d771" key="California" positionType="Float" mode="Opaque" x="113" y="57" width="113" height="16" forecolor="#FFFFFF" backcolor="#676767"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Calibri" size="11" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{California.Green}]]></textFieldExpression>
+				<hyperlinkTooltipExpression><![CDATA[msg($R{MonthlySales.Tooltip.ShowState}, "CA")]]></hyperlinkTooltipExpression>
+				<hyperlinkParameter name="_report">
+					<hyperlinkParameterExpression><![CDATA["/public/Samples/Reports/11g.SalesByMonthReport"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="states">
+					<hyperlinkParameterExpression><![CDATA["CA"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="startMonth">
+					<hyperlinkParameterExpression><![CDATA[$P{startMonth}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="endMonth">
+					<hyperlinkParameterExpression><![CDATA[$P{endMonth}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="viewAsDashboardFrame">
+					<hyperlinkParameterExpression><![CDATA["true"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+			<textField isBlankWhenNull="false" hyperlinkType="ReportExecution">
+				<reportElement uuid="75b6f2a9-5178-4485-aeb4-1d480fd246cb" key="Oregon" positionType="Float" mode="Opaque" x="226" y="57" width="113" height="16" forecolor="#FFFFFF" backcolor="#676767"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{Oregon.Green}]]></textFieldExpression>
+				<hyperlinkTooltipExpression><![CDATA[msg($R{MonthlySales.Tooltip.ShowState}, "OR")]]></hyperlinkTooltipExpression>
+				<hyperlinkParameter name="_report">
+					<hyperlinkParameterExpression><![CDATA["/public/Samples/Reports/11g.SalesByMonthReport"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="states">
+					<hyperlinkParameterExpression><![CDATA["OR"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="startMonth">
+					<hyperlinkParameterExpression><![CDATA[$P{startMonth}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="endMonth">
+					<hyperlinkParameterExpression><![CDATA[$P{endMonth}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="viewAsDashboardFrame">
+					<hyperlinkParameterExpression><![CDATA["true"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement uuid="36e55fc9-045a-4c4e-b3e5-d9e4f2f0cc13" key="textField-10" mode="Opaque" x="6" y="43" width="439" height="14" forecolor="#FFFFFF" backcolor="#676767"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Calibri" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{ChangeView.Green}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band/>
+	</pageHeader>
+	<columnHeader>
+		<band/>
+	</columnHeader>
+	<detail>
+		<band height="25">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField isBlankWhenNull="true" hyperlinkType="ReportExecution" hyperlinkTarget="Blank">
+				<reportElement uuid="e908310b-7273-4fcc-a8d7-e60ccb4353c3" key="MonthName -  Report Link" style="detail" stretchType="RelativeToBandHeight" mode="Opaque" x="6" y="-1" width="30" height="25" forecolor="#FFFFFF"/>
+				<box topPadding="2" leftPadding="6" bottomPadding="2" rightPadding="2">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#D7DAD9"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#D7DAD9"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#D7DAD9"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Calibri" size="11" isBold="false" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{simpleMonth}.format( new java.util.Date($F{the_date}.getTime()) ) /* display the month formatted correctly for the locale */]]></textFieldExpression>
+				<hyperlinkTooltipExpression><![CDATA[$P{pickStateIsNull}.intValue() == 1
+? msg( $R{MonthlySales.Tooltip.Chart}, $V{simpleMonth}.format( new java.util.Date($F{the_date}.getTime()) ), $R{AllStates} )
+: msg( $R{MonthlySales.Tooltip.Chart}, $V{simpleMonth}.format( new java.util.Date($F{the_date}.getTime()) ), $P{states} )
+/* If no state was chosen, display a localized string for All States. */
+/* If a state was selected, show the state in the msg */]]></hyperlinkTooltipExpression>
+				<hyperlinkParameter name="_report">
+					<hyperlinkParameterExpression><![CDATA["/public/Samples/Reports/10g.PerformanceByStoreType"]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="monthNumber">
+					<hyperlinkParameterExpression><![CDATA[$F{time_by_day_month_of_year}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+				<hyperlinkParameter name="states">
+					<hyperlinkParameterExpression><![CDATA[$P{states}]]></hyperlinkParameterExpression>
+				</hyperlinkParameter>
+			</textField>
+			<frame>
+				<reportElement uuid="009dadf6-44f0-41c1-8d48-b91f40c8209f" style="detail" mode="Opaque" x="36" y="-1" width="73" height="25"/>
+				<box>
+					<topPen lineWidth="0.0" lineColor="#343433"/>
+					<bottomPen lineWidth="0.0" lineColor="#343433"/>
+					<rightPen lineWidth="0.0" lineColor="#343433"/>
+				</box>
+				<textField evaluationTime="Auto" pattern="" isBlankWhenNull="true">
+					<reportElement uuid="be861161-44cd-4b5b-b73d-e082b49b0bff" key="MonthValue" stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="73" height="25" backcolor="#343433">
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+					</reportElement>
+					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="6">
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#343433"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#343433"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#343433"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled">
+						<font fontName="Calibri" size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["<font color = \"" + (
+$F{store_sales}.doubleValue() == $V{minValue}.doubleValue()
+    ? "red"
+    : ($F{store_sales}.doubleValue() == $V{maxValue}.doubleValue())?"#00CC00":"#FFFFFF")
++ "\">"
++ ($R{CurrencySymbol}.equals("CurrencySymbol") ? "$" : $R{CurrencySymbol}) /* Uses dollar as default if key is not found */
++ " "
++ java.text.NumberFormat.getIntegerInstance($P{REPORT_LOCALE}).format( $F{store_sales}.longValue() )
++ "</font>"]]></textFieldExpression>
+					<hyperlinkTooltipExpression><![CDATA[msg( $R{MonthlySales.Tooltip.Table}, $P{states} )]]></hyperlinkTooltipExpression>
+				</textField>
+				<textField evaluationTime="Auto" pattern="" isBlankWhenNull="true">
+					<reportElement uuid="5f327db6-8319-4ba8-8d99-6761ffb5e790" key="MonthValue-1" style="detail" stretchType="RelativeToBandHeight" mode="Transparent" x="0" y="0" width="73" height="25" backcolor="#343433">
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="6">
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#343433"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#343433"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#343433"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#343433"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled">
+						<font fontName="Calibri" size="10" isBold="false" isItalic="false" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA["<font color = \"" + (
+$F{store_sales}.doubleValue() == $V{minValue}.doubleValue()
+    ? "red"
+    : ($F{store_sales}.doubleValue() == $V{maxValue}.doubleValue())?"#00CC00":"#FFFFFF")
++ "\">"
++ ($R{CurrencySymbol}.equals("CurrencySymbol") ? "$" : $R{CurrencySymbol}) /* Uses dollar as default if key is not found */
++ " "
++ java.text.NumberFormat.getIntegerInstance($P{REPORT_LOCALE}).format( $F{store_sales}.longValue() )
++ "</font>"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Prevent"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="280">
+			<textField evaluationTime="Auto" isBlankWhenNull="true">
+				<reportElement uuid="8f75151a-f3e2-4fa4-8700-3556fe50ec8a" key="TableKey" x="5" y="-21" width="438" height="22" forecolor="#58595B"/>
+				<box topPadding="2" leftPadding="2" bottomPadding="2" rightPadding="2">
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="styled">
+					<font fontName="Calibri" size="11" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" <font color = \"#FFFFFF\">" + $R{Key.Green}+ "</font>   "
++ " <font color = \"red\">" + $R{MonthlySales.LowValue.Green} + "</font>   "
++ " <font color = \"#00CC00\">" + $R{MonthlySales.HighValue.Green} + "</font>"]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement uuid="9b2cb2c2-7033-4684-829e-d1d5413464f7" mode="Transparent" x="6" y="1" width="438" height="222"/>
+				<hc:chart xmlns:hc="http://jaspersoft.com/highcharts" xsi:schemaLocation="http://jaspersoft.com/highcharts http://jaspersoft.com/schema/highcharts.xsd" type="Spline">
+					<hc:chartSetting name="default">
+						<hc:chartProperty name="_showDataPoints">
+							<hc:propertyExpression><![CDATA[Boolean.FALSE]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="chart.alignTicks">
+							<hc:propertyExpression><![CDATA[Boolean.TRUE]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="chart.backgroundColor">
+							<hc:propertyExpression><![CDATA[new java.awt.Color(-13355981)]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="chart.borderRadius">
+							<hc:propertyExpression><![CDATA[new Integer(0)]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="chart.plotBackgroundColor">
+							<hc:propertyExpression><![CDATA[new java.awt.Color(-13355981)]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="chart.zoomType" value="xy"/>
+						<hc:chartProperty name="colors">
+							<hc:propertyExpression><![CDATA[java.util.Arrays.asList("#ADDF34","#7B9829","#DEF2AE","#CEEC85","#BDE55D","#9EBF36")]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="credits.enabled">
+							<hc:propertyExpression><![CDATA[Boolean.FALSE]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="legend.align">
+							<hc:propertyExpression><![CDATA["center"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="legend.backgroundColor">
+							<hc:propertyExpression><![CDATA[new java.awt.Color(-13355981)]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="legend.borderColor">
+							<hc:propertyExpression><![CDATA[new java.awt.Color(-13355981)]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="legend.borderWidth">
+							<hc:propertyExpression><![CDATA[new Integer(0)]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="legend.itemStyle.color">
+							<hc:propertyExpression><![CDATA["#FFFFFF"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="legend.itemStyle.fontFamily">
+							<hc:propertyExpression><![CDATA["Calibri"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="legend.itemStyle.fontSize">
+							<hc:propertyExpression><![CDATA["11px"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="legend.verticalAlign">
+							<hc:propertyExpression><![CDATA["bottom"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="plotOptions.series.connectNulls">
+							<hc:propertyExpression><![CDATA[Boolean.TRUE]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="title.text">
+							<hc:propertyExpression><![CDATA[""]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="xAxis.labels.style.color">
+							<hc:propertyExpression><![CDATA["#FFFFFF"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="xAxis.labels.style.fontFamily">
+							<hc:propertyExpression><![CDATA["Calibri"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="xAxis.labels.style.fontSize">
+							<hc:propertyExpression><![CDATA["10px"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="xAxis.tickLength">
+							<hc:propertyExpression><![CDATA[new Integer(0)]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="yAxis.gridLineColor">
+							<hc:propertyExpression><![CDATA["#808080"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="yAxis.labels.style.color">
+							<hc:propertyExpression><![CDATA["#FFFFFF"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="yAxis.labels.style.fontFamily">
+							<hc:propertyExpression><![CDATA["Calibri"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="yAxis.labels.style.fontSize">
+							<hc:propertyExpression><![CDATA["10px"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="yAxis.title.text">
+							<hc:propertyExpression><![CDATA[""]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="plotOptions.spline.marker.enabled">
+							<hc:propertyExpression><![CDATA[Boolean.FALSE]]></hc:propertyExpression>
+						</hc:chartProperty>
+					</hc:chartSetting>
+					<multiAxisData>
+						<multiAxisDataset/>
+						<dataAxis axis="Rows">
+							<axisLevel name="Month">
+								<labelExpression><![CDATA["Month"]]></labelExpression>
+								<axisLevelBucket class="java.lang.String">
+									<bucketExpression><![CDATA[$F{the_month}.substring( 0, 3 ).equals("Jan") ? "\u200B" + $R{ChartLabel.Jan} : $F{the_month}.substring( 0, 3 ).equals("Feb") ? "\u200B\u200B" + $R{ChartLabel.Feb} : $F{the_month}.substring( 0, 3 ).equals("Mar") ? "\u200B\u200B\u200B" + $R{ChartLabel.Mar} : $F{the_month}.substring( 0, 3 ).equals("Apr") ? "\u200B\u200B\u200B\u200B" + $R{ChartLabel.Apr} : $F{the_month}.substring( 0, 3 ).equals("May") ? "\u200B\u200B\u200B\u200B\u200B" + $R{ChartLabel.May} : $F{the_month}.substring( 0, 3 ).equals("Jun") ? "\u200B\u200B\u200B\u200B\u200B\u200B" + $R{ChartLabel.Jun} : $F{the_month}.substring( 0, 3 ).equals("Jul") ? "\u200B\u200B\u200B\u200B\u200B\u200B\u200B" + $R{ChartLabel.Jul} : $F{the_month}.substring( 0, 3 ).equals("Aug") ? "\u200B\u200B\u200B\u200B\u200B\u200B\u200B\u200B" + $R{ChartLabel.Aug} : $F{the_month}.substring( 0, 3 ).equals("Sep") ? "\u200B\u200B\u200B\u200B\u200B\u200B\u200B\u200B\u200B" + $R{ChartLabel.Sep} : $F{the_month}.substring( 0, 3 ).equals("Oct") ? "\u200B\u200B\u200B\u200B\u200B\u200B\u200B\u200B\u200B\u200B" + $R{ChartLabel.Oct} : $F{the_month}.substring( 0, 3 ).equals("Nov") ? "\u200B\u200B\u200B\u200B\u200B\u200B\u200B\u200B\u200B\u200B\u200B" + $R{ChartLabel.Nov} : "\u200B\u200B\u200B\u200B\u200B\u200B\u200B\u200B\u200B\u200B\u200B\u200B" + $R{ChartLabel.Dec}]]></bucketExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<dataAxis axis="Columns"/>
+						<multiAxisMeasure name="Sales" class="java.lang.Integer" calculation="Nothing">
+							<labelExpression><![CDATA["SALES"]]></labelExpression>
+							<valueExpression><![CDATA[$F{store_sales}]]></valueExpression>
+						</multiAxisMeasure>
+						<multiAxisMeasure name="Profit" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA["PROFIT"]]></labelExpression>
+							<valueExpression><![CDATA[$F{profit}]]></valueExpression>
+						</multiAxisMeasure>
+						<multiAxisMeasure name="Quantity" class="java.lang.Number" calculation="Nothing">
+							<labelExpression><![CDATA["QUANTITY"]]></labelExpression>
+							<valueExpression><![CDATA[$F{quantity_sold}]]></valueExpression>
+						</multiAxisMeasure>
+					</multiAxisData>
+					<hc:series name="Sales"/>
+					<hc:series name="Profit"/>
+					<hc:series name="Quantity"/>
+				</hc:chart>
+			</componentElement>
+		</band>
+	</pageFooter>
+</jasperReport>

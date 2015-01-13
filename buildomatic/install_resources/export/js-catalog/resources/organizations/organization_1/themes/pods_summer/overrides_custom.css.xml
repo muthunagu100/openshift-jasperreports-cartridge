@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fileResource exportedWithPermissions="true" dataFile="overrides_custom.css.data">
+    <folder>/organizations/organization_1/themes/pods_summer</folder>
+    <name>overrides_custom.css</name>
+    <version>0</version>
+    <label>overrides_custom.css</label>
+    <creationDate>2014-12-18T02:01:08.573-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:08.573-08:00</updateDate>
+    <fileType>css</fileType>
+</fileResource>

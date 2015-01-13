@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+<!--
+    Bean updaters to add report options handling to import-export
+-->
+
+    <bean class="com.jaspersoft.jasperserver.api.common.util.spring.BeanPropertyListAppender" lazy-init="false">
+    	<property name="order" value="10"/>
+    	<property name="beanName" value="repositorySerializer"/>
+    	<property name="propertyName" value="castorMappings"/>
+    	<property name="appended">
+    		<list>
+				<value>classpath:com/jaspersoft/ji/report/options/export/ReportOptions.xml</value>
+				<value>classpath:com/jaspersoft/jasperserver/export/mapping/common/ReportParameterValue.xml</value>
+    		</list>
+    	</property>
+    </bean>
+	
+    <bean class="com.jaspersoft.jasperserver.api.common.util.spring.BeanPropertyMapAppender" lazy-init="false">
+    	<property name="order" value="9"/>
+    	<property name="beanName" value="resourceBeanMappings"/>
+    	<property name="propertyName" value="implementationClassMappings"/>
+    	<property name="appended">
+    		<map>
+                <entry key="com.jaspersoft.ji.report.options.metadata.ReportOptions"
+                    value="com.jaspersoft.ji.report.options.export.ReportOptionsBean"/>
+    		</map>
+    	</property>
+    </bean>
+
+    <bean id="reportOptionsJobsConfiguration" class="com.jaspersoft.jasperserver.export.modules.scheduling.SchedulingModuleConfiguration"
+            parent="reportJobsConfiguration">
+        <property name="reportScheduler" ref="reportOptionsSchedulingService"/>
+        <property name="internalReportScheduler" ref="reportOptionsSchedulingService"/>
+        <property name="reportParametersTranslator" ref="reportOptionsParametersTranslator"/>
+    </bean>
+
+    <bean id="reportOptionsParametersTranslator" class="com.jaspersoft.ji.report.options.export.ReportOptionsParametersTranslator"
+            parent="defaultReportParametersTranslator">
+    </bean>
+
+    <bean id="reportOptionsJobsExporter" class="com.jaspersoft.ji.report.options.export.ReportOptionsJobsExporter" scope="prototype"
+			parent="reportJobsExporter">
+		<property name="configuration" ref="reportOptionsJobsConfiguration"/>
+	</bean>
+	
+	<bean id="reportOptionsJobsImporter" class="com.jaspersoft.ji.report.options.export.ReportOptionsJobsImporter" scope="prototype"
+			parent="reportJobsImporter">
+		<property name="configuration" ref="reportOptionsJobsConfiguration"/>
+		<property name="reportOptionsService" ref="reportOptionsService"/>
+	</bean>
+
+        <!-- comment out override of reportJobsExporter to reportOptionsJobsExporter -->	
+	<!-- replace reportJobsExporter references by reportOptionsJobsExporter -->
+	<!-- <bean class="com.jaspersoft.jasperserver.api.common.util.spring.BeanReferenceOverrider" lazy-init="false">
+		<property name="order" value="10"/>
+		<property name="originalBeanName" value="reportJobsExporter"/>
+		<property name="overridingBeanName" value="reportOptionsJobsExporter"/>
+	</bean> -->
+	
+	<!-- replace reportJobsImporter references by reportOptionsJobsImporter -->
+	<bean class="com.jaspersoft.jasperserver.api.common.util.spring.BeanReferenceOverrider" lazy-init="false">
+		<property name="order" value="10"/>
+		<property name="originalBeanName" value="reportJobsImporter"/>
+		<property name="overridingBeanName" value="reportOptionsJobsImporter"/>
+	</bean>
+
+	<bean id="proReportJobValidator" class="com.jaspersoft.ji.report.options.engine.ProReportJobValidator" parent="defaultReportJobValidator">
+		<property name="reportOptionsService" ref="reportOptionsService"/>
+	</bean>
+
+</beans>

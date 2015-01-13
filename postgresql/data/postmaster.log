@@ -1,0 +1,64 @@
+[2015-01-13 11:51:51 EST] LOG:  database system was shut down at 2015-01-13 11:51:50 EST
+[2015-01-13 11:51:51 EST] LOG:  database system is ready to accept connections
+[2015-01-13 11:51:51 EST] LOG:  autovacuum launcher started
+[2015-01-13 11:51:51 EST] LOG:  incomplete startup packet
+[2015-01-13 11:52:02 EST] LOG:  received smart shutdown request
+[2015-01-13 11:52:02 EST] LOG:  autovacuum launcher shutting down
+[2015-01-13 11:52:02 EST] LOG:  shutting down
+[2015-01-13 11:52:02 EST] LOG:  database system is shut down
+[2015-01-13 11:52:43 EST] LOG:  database system was shut down at 2015-01-13 11:52:02 EST
+[2015-01-13 11:52:43 EST] LOG:  database system is ready to accept connections
+[2015-01-13 11:52:43 EST] LOG:  autovacuum launcher started
+[2015-01-13 11:52:46 EST] ERROR:  database "jasperserver" does not exist
+[2015-01-13 11:52:46 EST] STATEMENT:  DROP DATABASE jasperserver;
+	
+[2015-01-13 11:52:46 EST] ERROR:  role "jasperdb" does not exist
+[2015-01-13 11:52:46 EST] STATEMENT:  DROP ROLE jasperdb;
+	
+[2015-01-13 11:52:51 EST] WARNING:  there is no transaction in progress
+[2015-01-13 11:52:52 EST] ERROR:  database "sugarcrm" does not exist
+[2015-01-13 11:52:52 EST] STATEMENT:  DROP DATABASE sugarcrm;
+	
+[2015-01-13 11:59:27 EST] ERROR:  database "foodmart" does not exist
+[2015-01-13 11:59:27 EST] STATEMENT:  DROP DATABASE foodmart;
+	
+[2015-01-13 11:59:29 EST] ERROR:  syntax error at or near "EXTENSION" at character 8
+[2015-01-13 11:59:29 EST] STATEMENT:  CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+[2015-01-13 11:59:29 EST] ERROR:  syntax error at or near "EXTENSION" at character 12
+[2015-01-13 11:59:29 EST] STATEMENT:  COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+[2015-01-13 11:59:32 EST] LOG:  checkpoints are occurring too frequently (4 seconds apart)
+[2015-01-13 11:59:32 EST] HINT:  Consider increasing the configuration parameter "checkpoint_segments".
+[2015-01-13 11:59:38 EST] LOG:  checkpoints are occurring too frequently (6 seconds apart)
+[2015-01-13 11:59:38 EST] HINT:  Consider increasing the configuration parameter "checkpoint_segments".
+[2015-01-13 12:00:56 EST] LOG:  received smart shutdown request
+[2015-01-13 12:00:56 EST] LOG:  autovacuum launcher shutting down
+[2015-01-13 12:00:56 EST] LOG:  shutting down
+[2015-01-13 12:00:57 EST] LOG:  database system is shut down
+[2015-01-13 12:01:51 EST] LOG:  database system was shut down at 2015-01-13 12:00:57 EST
+[2015-01-13 12:01:51 EST] LOG:  database system is ready to accept connections
+[2015-01-13 12:01:51 EST] LOG:  autovacuum launcher started
+[2015-01-13 12:02:52 EST] FATAL:  password authentication failed for user "jasperdb"
+[2015-01-13 12:02:52 EST] FATAL:  password authentication failed for user "jasperdb"
+[2015-01-13 12:02:52 EST] FATAL:  password authentication failed for user "jasperdb"
+[2015-01-13 13:46:32 EST] LOG:  unexpected EOF on client connection
+[2015-01-13 13:46:32 EST] LOG:  unexpected EOF on client connection
+[2015-01-13 13:46:32 EST] LOG:  unexpected EOF on client connection
+[2015-01-13 13:46:32 EST] LOG:  unexpected EOF on client connection
+[2015-01-13 13:46:43 EST] LOG:  received smart shutdown request
+[2015-01-13 13:46:43 EST] LOG:  autovacuum launcher shutting down
+[2015-01-13 13:46:43 EST] LOG:  shutting down
+[2015-01-13 13:46:43 EST] LOG:  database system is shut down
+[2015-01-13 13:47:10 EST] LOG:  database system was shut down at 2015-01-13 13:46:43 EST
+[2015-01-13 13:47:10 EST] LOG:  database system is ready to accept connections
+[2015-01-13 13:47:10 EST] LOG:  autovacuum launcher started
+[2015-01-13 13:48:09 EST] FATAL:  password authentication failed for user "jasperdb"
+[2015-01-13 13:48:09 EST] FATAL:  password authentication failed for user "jasperdb"
+[2015-01-13 13:48:09 EST] FATAL:  password authentication failed for user "jasperdb"
+[2015-01-13 13:50:23 EST] LOG:  unexpected EOF on client connection
+[2015-01-13 13:50:23 EST] LOG:  unexpected EOF on client connection
+[2015-01-13 13:50:23 EST] LOG:  unexpected EOF on client connection
+[2015-01-13 13:50:23 EST] LOG:  unexpected EOF on client connection
+[2015-01-13 13:50:34 EST] LOG:  received smart shutdown request
+[2015-01-13 13:50:34 EST] LOG:  autovacuum launcher shutting down
+[2015-01-13 13:50:34 EST] LOG:  shutting down
+[2015-01-13 13:50:34 EST] LOG:  database system is shut down

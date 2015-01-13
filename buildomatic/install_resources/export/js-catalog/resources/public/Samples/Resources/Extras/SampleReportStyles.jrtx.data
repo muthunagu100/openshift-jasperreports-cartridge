@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jasperTemplate PUBLIC "-//JasperReports//DTD Template//EN" "http://jasperreports.sourceforge.net/dtds/jaspertemplate.dtd">
+
+<jasperTemplate>
+	<style name="Details" forecolor="#333333" backcolor="#EAEFDE" fontName="Arial"/>
+	<style name="Label" forecolor="#333333" backcolor="#D4DFBD" fontName="Arial"/>
+	<style name="TableHeader" forecolor="#333333" backcolor="#BDCE9B" fontName="Arial"/>
+	<style name="ColumnHeader" forecolor="#FFFFFF" backcolor="#333333" fontName="Arial" isBold="true"/>
+	<style name="GroupHeader" forecolor="#333333" backcolor="#A8BD79" fontName="Arial"/>
+	<style name="SerialNumber" forecolor="#333333" backcolor="#C3D3A3" fontName="Arial"/>
+	<style name="ReportHeader" forecolor="#333333" fontName="Arial"/>
+	<style name="h9" forecolor="#58595B" backcolor="#E9E9E8" hAlign="Left" fontName="Calibri" fontSize="11" isBold="true"/>
+	<style name="h10" forecolor="#FFFFFF" backcolor="#B6B7B8" fontName="Calibri" fontSize="11" isBold="true"/>
+	<style name="h8" forecolor="#58595B" pattern="" fontName="Calibri" fontSize="10"/>
+	<style name="h7" forecolor="#0980BA" fontName="Calibri" fontSize="11"/>
+	<style name="h2" forecolor="#58595B" fontName="Calibri" fontSize="14" isBold="true"/>
+</jasperTemplate>

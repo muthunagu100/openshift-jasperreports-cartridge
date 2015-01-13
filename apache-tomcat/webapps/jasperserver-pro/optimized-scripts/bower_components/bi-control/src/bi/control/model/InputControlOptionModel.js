@@ -1,0 +1,1 @@
+define(["require","exports","module","logger","common/model/BaseModel"],function(e,o,l){var d=e("logger").register(l),i=e("common/model/BaseModel");return i.extend({defaults:{selected:!1,label:void 0,value:void 0},initialize:function(){this.on("all",d.debug,d)}})});

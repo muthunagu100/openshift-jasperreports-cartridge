@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder exportedWithPermissions="true">
+    <parent>/organizations/organization_1/adhoc</parent>
+    <name>aru</name>
+    <label>Ad Hoc Reports</label>
+    <description>A directory to save Ad Hoc reports in</description>
+    <creationDate>2014-12-18T02:01:09.817-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:09.817-08:00</updateDate>
+</folder>

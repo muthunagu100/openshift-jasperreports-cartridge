@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inputControl exportedWithPermissions="true">
+    <folder>/public/Samples/Resources/Input_Controls</folder>
+    <name>customerId</name>
+    <version>0</version>
+    <label>Customer Name ID Input Control</label>
+    <description>Uses CustomerNameIdQuery. Maps to customerId parameter.</description>
+    <creationDate>2014-12-18T02:01:41.031-08:00</creationDate>
+    <updateDate>2012-10-17T02:52:10.868-07:00</updateDate>
+    <type>4</type>
+    <mandatory>false</mandatory>
+    <readOnly>false</readOnly>
+    <visible>true</visible>
+    <query>
+        <uri>/public/Samples/Resources/Input_Controls/CustomerNameIdQuery</uri>
+    </query>
+    <queryVisibleColumn>lname</queryVisibleColumn>
+    <queryVisibleColumn>fname</queryVisibleColumn>
+    <queryVisibleColumn>customer_id</queryVisibleColumn>
+    <queryValueColumn>customer_id</queryValueColumn>
+</inputControl>

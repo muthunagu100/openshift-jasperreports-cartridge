@@ -1,0 +1,37 @@
+.primary.column.decorated.dashboardCanvas {
+    position: absolute;
+    height: auto;
+    width: auto;
+}
+
+.primary.column.decorated.dashboardCanvas > .content > .body {
+    height: auto;
+    width: auto;
+}
+
+.dashboardCanvas .nothingToDisplay {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-left: -200px;
+    width: 400px;
+    background: transparent;
+    z-index: 1;
+    border: medium none;
+}
+
+.dashboardCanvas .nothingToDisplay.hidden {
+    display: none;
+}
+
+.dashboardCanvas .nothingToDisplay .body > * {
+    background: #fff;
+}
+
+.dashboardCanvas .nothingToDisplay .message
+{
+    border: 1px solid #D3D2D2;
+    margin: 10px 0;
+    padding: 10px;
+    text-align: left;
+}

@@ -1,0 +1,20 @@
+<div id="{{id}}" class="leaf">
+    <fieldset class="control select multiple radio" title="{{description}}">
+        <legend>{{#mandatory}}* {{/mandatory}}{{label}}</legend>
+        <ul class="list inputSet">
+            {{#data}}
+            <li>
+                <div class="control radio">
+                    <input {{#selected}}checked="checked"{{/selected}} class="" id="{{uuid}}" type="radio" name="{{name}}" {{#readOnly}}disabled="disabled"{{/readOnly}} value="{{value}}"/>
+                    <label class="wrap" for="{{uuid}}" title="{{description}}">
+                        {{label}}&nbsp;
+                    </label>
+                </div>
+            </li>
+            {{/data}}
+        </ul>
+    </fieldset>
+    <span class="warning">{{message}}</span>
+    <div class="resizeOverlay hidden"></div>
+    <div class="sizer vertical hidden"><span class="ui-icon ui-icon-grip-solid-horizontal"></span></div>
+</div>

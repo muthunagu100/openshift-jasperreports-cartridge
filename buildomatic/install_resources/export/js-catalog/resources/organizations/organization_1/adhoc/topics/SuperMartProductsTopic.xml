@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/organizations/organization_1/adhoc/topics</folder>
+    <name>SuperMartProductsTopic</name>
+    <version>0</version>
+    <label>SuperMart Products</label>
+    <description>Information about all of the products sold by SuperMart</description>
+    <creationDate>2014-12-18T02:01:22.902-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:22.902-08:00</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="SuperMartProductsTopic.jrxml.data" xsi:type="fileResource">
+            <folder>/organizations/organization_1/adhoc/topics/SuperMartProductsTopic_files</folder>
+            <name>SuperMartProductsTopic.jrxml</name>
+            <version>0</version>
+            <label>SuperMartProductsTopic.jrxml file</label>
+            <description>SuperMartProductsTopic.jrxml file used by the SuperMartProductsTopic report unit</description>
+            <creationDate>2014-12-18T02:01:22.902-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.902-08:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/organizations/organization_1/analysis/datasources/FoodmartDataSourceJNDI</uri>
+    </dataSource>
+    <inputControl>
+        <uri>/organizations/organization_1/supermart/Common/productFamily</uri>
+    </inputControl>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/organizations/organization_1/adhoc/topics/SuperMartProductsTopic_files</folder>
+            <name>supermart.properties</name>
+            <version>0</version>
+            <label>supermart.properties</label>
+            <description>Base resource bundle</description>
+            <creationDate>2014-12-18T02:01:22.902-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.902-08:00</updateDate>
+            <referenceUri>/organizations/organization_1/supermart/Common/supermart.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/organizations/organization_1/adhoc/topics/SuperMartProductsTopic_files</folder>
+            <name>supermart_de.properties</name>
+            <version>0</version>
+            <label>supermart_de.properties</label>
+            <description>German resource bundle</description>
+            <creationDate>2014-12-18T02:01:22.902-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.902-08:00</updateDate>
+            <referenceUri>/organizations/organization_1/supermart/Common/supermart_de.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/organizations/organization_1/adhoc/topics/SuperMartProductsTopic_files</folder>
+            <name>supermart_en_US.properties</name>
+            <version>0</version>
+            <label>supermart_en_US.properties</label>
+            <description>US English resource bundle</description>
+            <creationDate>2014-12-18T02:01:22.902-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.902-08:00</updateDate>
+            <referenceUri>/organizations/organization_1/supermart/Common/supermart_en_US.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/organizations/organization_1/adhoc/topics/SuperMartProductsTopic_files</folder>
+            <name>supermart_es.properties</name>
+            <version>0</version>
+            <label>supermart_es.properties</label>
+            <description>Spanish resource bundle</description>
+            <creationDate>2014-12-18T02:01:22.902-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.902-08:00</updateDate>
+            <referenceUri>/organizations/organization_1/supermart/Common/supermart_es.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/organizations/organization_1/adhoc/topics/SuperMartProductsTopic_files</folder>
+            <name>supermart_fr.properties</name>
+            <version>0</version>
+            <label>supermart_fr.properties</label>
+            <description>French resource bundle</description>
+            <creationDate>2014-12-18T02:01:22.902-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.902-08:00</updateDate>
+            <referenceUri>/organizations/organization_1/supermart/Common/supermart_fr.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/organizations/organization_1/adhoc/topics/SuperMartProductsTopic_files</folder>
+            <name>supermart_ja.properties</name>
+            <version>0</version>
+            <label>supermart_ja.properties</label>
+            <description>Japanese resource bundle</description>
+            <creationDate>2014-12-18T02:01:22.902-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.902-08:00</updateDate>
+            <referenceUri>/organizations/organization_1/supermart/Common/supermart_ja.properties</referenceUri>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="fileResource">
+            <folder>/organizations/organization_1/adhoc/topics/SuperMartProductsTopic_files</folder>
+            <name>supermart_zh_CN.properties</name>
+            <version>0</version>
+            <label>supermart_zh_CN.properties</label>
+            <description>Chinese resource bundle</description>
+            <creationDate>2014-12-18T02:01:22.902-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.902-08:00</updateDate>
+            <referenceUri>/organizations/organization_1/supermart/Common/supermart_zh_CN.properties</referenceUri>
+        </localResource>
+    </resource>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>1</controlsLayout>
+</reportUnit>

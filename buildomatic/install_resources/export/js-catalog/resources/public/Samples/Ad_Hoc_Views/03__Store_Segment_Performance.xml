@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<adhocDataView exportedWithPermissions="true">
+    <folder>/public/Samples/Ad_Hoc_Views</folder>
+    <name>03__Store_Segment_Performance</name>
+    <version>0</version>
+    <label>03. Store Segment Performance</label>
+    <description>Sample OLAP chart with HTML5 Grouped Bar chart and Filter</description>
+    <creationDate>2014-12-18T02:01:27.078-08:00</creationDate>
+    <updateDate>2014-10-21T13:16:38.085-07:00</updateDate>
+    <dataSource>
+        <uri>/public/Samples/OLAP/XMLA/Foodmart</uri>
+    </dataSource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="topicJRXML.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/03__Store_Segment_Performance_files</folder>
+            <name>topicJRXML</name>
+            <version>0</version>
+            <label>topicJRXML</label>
+            <creationDate>2014-12-18T02:01:27.078-08:00</creationDate>
+            <updateDate>2014-09-24T09:19:53.978-07:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="stateXML.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/03__Store_Segment_Performance_files</folder>
+            <name>stateXML</name>
+            <version>0</version>
+            <label>stateXML</label>
+            <creationDate>2014-12-18T02:01:27.078-08:00</creationDate>
+            <updateDate>2014-09-24T09:19:53.978-07:00</updateDate>
+            <fileType>xml</fileType>
+        </localResource>
+    </resource>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>1</controlsLayout>
+</adhocDataView>

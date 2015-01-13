@@ -1,0 +1,229 @@
+# Strings for SuperMart reports
+Dashboard.Explore=Explore on Your Own
+Dashboard.Create=Create a New Report
+Dashboard.Browse=Browse More SuperMart Files
+Dashboard.MyReports=My Saved Reports
+FooterPageNum=Page {0} of 
+ReportTitle=Report Title
+LastRunBy=Last run by: {0}
+NumRecordsFooter=Total number of records: {0}
+Num=#
+CurrencySymbol=$
+Key=Key: 
+Total=Total
+ProfitGrowth=Profit Growth
+Profit=Profit
+Revenue=Revenue
+Sales=Sales
+ShoppingDays=Shopping Days
+BrandPreferences=Brand Preferences
+AverageSale=Average Sale
+CountsAndTotals=Counts and Totals
+UniqueProducts=Unique Products
+Promotional=Promotional
+PurchaseDetail=Purchase details for customer {0}:
+CustomerCardNumber=Customer Card Number: {0}
+RevenueByCity=Revenue by City
+Revenue.ByLocation.ByProductFamily=Revenue by Location and Product Family
+Profit.ByLocation.ByProductFamily=Profit by Location and Product Family
+RowTotals=Row Totals
+ColumnTotals=Column Totals
+SubtotalState=Subtotal State
+Subtotal=Subtotal
+RevenueByStoreType=Revenue by Store Type
+
+SalesGauges.ReportTitle=Revenue and Profit
+SalesGauge.Tooltip.Revenue=Analyze revenue over time by product type
+SalesGauge.Tooltip.Profit=Analyze profit by location and product type
+
+MonthlySales.Title=Monthly Sales by Quarter
+MonthlySales.LowValue=Low Value
+MonthlySales.HighValue=High Value
+ChangeView=Select a state to change the report view
+AllStates=All States
+California=California
+Oregon=Oregon
+Washington=Washington
+MonthlySales.Subtitle=For State = {0}
+MonthlySales.Tooltip.AllStates=Show data for all states
+MonthlySales.Tooltip.ShowState=Show data for {0}
+MonthlySales.Tooltip.Chart=Analyze Revenue for {0} and State = {1}
+MonthlySales.Tooltip.Table=Analyze Revenue for State = {0}
+
+Drilldown.Tooltip=Drill down into {0}
+
+Time.TimeId=Time ID
+Customer.CustomerId=Customer ID
+Promotion.PromotionId=Promotion ID
+Store.StoreId=Store ID
+Product.ProductId=Product ID
+
+StoreSales=Store Sales
+store_sales=Sales
+StoreCost=Store Cost
+UnitSales=Unit Sales
+unit_sales=Unit Sales
+StoreCount=Store Count
+store_count=Store Count
+store_cost=Store Cost
+
+Sales.Region=Region
+sales_region=Region
+sales_district=District
+
+StoreType.ReportTitle=Revenue by Store Type
+Store.StoreType=Store Type
+Store.RegionId=Region ID
+Store.StoreName=Store Name
+Store.StoreNumber=Store Number
+Store.StreetAddress=Address
+Store.City=City
+Store.State=State
+Store.PostalCode=ZIP
+Store.Country=Country
+Store.Phone=Phone
+Store.Fax=Fax
+Store.FirstOpenedDate=First Opened
+Store.LastRemodelDate=Last Remodel
+Store.SQFT=SQFT
+Store.GrocerySQFT=Grocery SQFT
+Store.FrozenSQFT=Frozen SQFT
+Store.MeatSQFT=Meat SQFT
+Store.CoffeeBar=Coffee Bar
+Store.VideoStore=Video Store
+Store.SaladBar=Salad Bar
+Store.PreparedFood=Prepared Food
+Store.Florist=Florist
+
+
+store_store_manager=Store Manager
+store_store_type=Store Type
+store_region_id=Region ID
+store_store_name=Store Name
+store_store_number=Store Number
+store_store_street_address=Address
+store_store_city=City
+store_store_state=State
+store_store_postal_code=ZIP
+store_store_country=Country
+store_store_phone=Phone
+store_store_fax=Fax
+store_first_opened_date=First Opened
+store_last_remodel_date=Last Remodel
+store_store_sqft=SQFT
+store_grocery_sqft=Grocery SQFT
+store_frozen_sqft=Frozen SQFT
+store_meat_sqft=Meat SQFT
+store_coffee_bar=Coffee Bar
+store_video_store=Video Store
+store_salad_bar=Salad Bar
+store_prepared_food=Prepared Food
+store_florist=Florist
+store_store_id=Store ID
+
+Time.TheDate=Date
+Time.TheDay=Day
+Time.TheMonth=Month
+Time.TheYear=Year
+Time.DayOfMonth=Day of Month
+Time.WeekOfYear=Week of Year
+Time.MonthOfYear=Month of Year
+Time.Quarter=Quarter
+Time.FiscalPeriod=Fiscal Period
+time_by_day_the_date=Date
+time_by_day_the_day=Day
+time_by_day_the_month=Month
+time_by_day_the_year=Year
+time_by_day_week_of_year=Week of Year
+time_by_day_month_of_year=Month of Year
+time_by_day_quarter=Quarter
+
+
+Top5.Title=Top Fives
+Top5.CustomersTitle=Customers
+Top5.ProductsTitle=Products
+Top5.PromotionsTitle=Promotions
+Top5.Tooltip.DetailAllCustomers=Retrieve detail for all customers - long report
+Top5.Tooltip.DetailAllProducts=Retrieve detail for all products - long report
+Top5.Tooltip.DetailAllPromotions=Retrieve detail for all promotions - long report
+Top5.Tooltip.Detail=Retrieve detail for {0}
+
+CityState={0}, {1}
+CustomerDetail.ReportTitle=SuperMart Customer Detail
+
+Customer.FullName=Name
+customer_account_num=Account Num
+customer_fullname=Name
+customer_lname=Last Name
+customer_fname=First Name
+customer_mi=Middle Initial
+customer_address1=Address 1
+customer_address2=Address 2
+customer_address3=Address 3
+customer_address4=Address 4
+customer_city=City
+customer_state_province=State
+customer_postal_code=ZIP
+customer_country=Country
+customer_customer_region_id=Region ID
+customer_phone1=Phone 1
+customer_phone2=Phone 2
+customer_birthdate=Birth Date
+customer_marital_status=Marital Status
+customer_yearly_income=Yearly Income
+customer_gender=Gender
+customer_total_children=Total Children
+customer_num_children_at_home=Children at Home
+customer_education=Education
+customer_date_accnt_opened=Date Accnt Opened
+customer_member_card=Member Card
+customer_occupation=Occupation
+customer_houseowner=Homeowner
+customer_num_cars_owned=Num Cars Owned
+
+
+Product.ReportTitle=SuperMart Product Detail
+product_product_name=Product Name
+product_brand_name=Brand Name
+product_SKU=SKU
+product_SRP=SRP
+product_gross_weight=Gross Weight
+product_net_weight=Net Weight
+product_recyclable_package=Recyclable Package
+product_low_fat=Low Fat
+product_units_per_case=Units Per Case
+product_cases_per_pallet=Cases Per Pallet
+product_shelf_Width=Shelf Width
+product_shelf_Height=Shelf Height
+product_class_product_subcategory=Sub Category
+product_class_product_category=Category
+product_class_product_department=Department
+product_class_product_family=Product Family
+product_gross_weight=Gross Weight
+product_net_weight=Net Weight
+product_recyclable_package=Recyclable Package
+product_low_fat=Low Fat
+product_units_per_case=Units per Case
+product_cases_per_pallet=Cases per Pallet
+product_shelf_width=Shelf Width
+product_shelf_height=Shelf Height
+product_shelf_depth=Shelf Depth
+product_product_id=Product ID
+
+Promotion.ReportTitle=Promotion Details
+promotion_promotion_name=Promotion Name
+promotion_media_type=Media Type
+promotion_cost=Cost
+promotion_start_date=Start Date
+promotion_end_date=End Date
+promotion_promotion_district_id=District ID
+promotion_promotion_id=Promotion ID
+Promotion.Name=Promotion
+Promotion.MediaType=Media
+
+# Strings for input controls
+net.sf.jasperreports.prompt.label.productFamily=Product Family
+net.sf.jasperreports.prompt.label.districtID=District
+net.sf.jasperreports.prompt.label.promotionSalesMinThreshold=Only products costing more than
+net.sf.jasperreports.prompt.label.promotionName=Promotion Name
+net.sf.jasperreports.prompt.label.customerState=State

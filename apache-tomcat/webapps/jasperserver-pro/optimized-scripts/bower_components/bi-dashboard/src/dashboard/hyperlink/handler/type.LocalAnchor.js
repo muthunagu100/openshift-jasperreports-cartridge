@@ -1,0 +1,1 @@
+define(["require","./type.ReportExecution","underscore"],function(e){var r=e("./type.ReportExecution"),n=e("underscore");return{beforeRender:function(e){r.beforeRender.call(this,e)},click:function(e,c){c.parameters=n.extend({},c.parameters,{_anchor:c.href.replace("#","")}),r.click.call(this,e,c)}}});

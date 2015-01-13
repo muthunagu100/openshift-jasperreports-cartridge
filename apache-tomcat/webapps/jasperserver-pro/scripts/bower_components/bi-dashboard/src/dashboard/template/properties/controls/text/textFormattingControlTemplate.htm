@@ -1,0 +1,78 @@
+<div class="section">
+    <div class="text-visualization">
+        <div class="fontProperty">
+            <span class="wrap title">{{-i18n["dashboard.dialog.properties.text.font"]}}</span>
+            <label class="control" rv-validation-error-class="model:font">
+                <input name="font" rv-input="model:font" type="text"/>
+            </label>
+            <label class="control">
+                <select name="font" rv-input="model:font" size="6">
+                    {{_.each(options.fonts, function(fontTypeValue, fontTypeKey){ }}
+                    <option value="{{- fontTypeValue }}">{{- fontTypeValue }}</option>
+                    {{ }) }}
+                </select>
+            </label>
+        </div>
+        <div class="sizeProperty">
+            <span class="wrap title">{{-i18n["dashboard.dialog.properties.text.font.size"]}}</span>
+            <label class="control" rv-validation-error-class="model:size">
+                <input name="size" rv-input="model:size | toInteger" type="text"/>
+            </label>
+            <label class="control">
+                <select name="size" rv-input="model:size | toInteger" size="6">
+                    {{ _.each(options.fontSizes, function(n){ }}
+                    <option value="{{- n }}">{{- n }}</option>
+                    {{ }) }}
+                </select>
+            </label>
+        </div>
+        <div class="styleProperties">
+            <span class="wrap title">{{-i18n["dashboard.dialog.properties.text.font.style"]}}</span>
+            <span class="control">
+                <div class="buttons">
+                    <div class="textInputButton" rv-checkbox-div="model:bold">
+                        <span class="textIcon textBold checkboxChild"></span>
+                    </div>
+                    <div class="textInputButton" rv-checkbox-div="model:italic">
+                        <span class="textIcon textItalic checkboxChild"></span>
+                    </div>
+                </div>
+            </span>
+            <span class="wrap title">{{-i18n["dashboard.component.dialog.properties.alignment"]}}</span>
+            <span class="control">
+                <div class="buttons">
+                    <div class="textInputButton checked" rv-radio-div="model:alignment" data-value="left">
+                        <span class="textIcon textALeft checked radioChild"></span>
+                    </div>
+                    <div class="textInputButton" rv-radio-div="model:alignment" data-value="center">
+                        <span class="textIcon textACenter radioChild"></span>
+                    </div>
+                    <div class="textInputButton" rv-radio-div="model:alignment" data-value="right">
+                        <span class="textIcon textARight radioChild"></span>
+                    </div>
+                </div>
+            </span>
+            <span class="wrap title">{{-i18n["dashboard.dialog.properties.text.color"]}}</span>
+            <span class="control">
+                <div class="buttons">
+                    <div class="textInputButton textColorButtons" rv-colorpicker="model:backgroundColor"
+                         data-label="{{- i18n['dashboard.component.text.color.picker.background.color'] }}"
+                         data-show-transparent-input="true">
+                        <div class="colorIndicator"></div>
+                        <span class="textIcon textBackgroundColor"></span>
+                    </div>
+                    <div class="textInputButton textColorButtons" rv-colorpicker="model:color" data-label="{{- i18n['dashboard.component.text.color.picker.font.color']}}">
+                        <div class="colorIndicator"></div>
+                        <span class="textIcon textColor"></span>
+                    </div>
+                </div>
+            </span>
+        </div>
+    </div>
+    <label rv-validation-error-class="model:font" class="bottomError">
+        <span class="message warning" rv-validation-error-text="model:font"></span>
+    </label>
+    <label rv-validation-error-class="model:size" class="bottomError">
+        <span class="message warning" rv-validation-error-text="model:size"></span>
+    </label>
+</div>

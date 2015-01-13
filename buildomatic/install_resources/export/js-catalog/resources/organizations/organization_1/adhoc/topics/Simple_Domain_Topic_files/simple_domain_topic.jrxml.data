@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="slReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30">
+	<queryString language="sl">
+		<![CDATA[<query xmlns="http://www.jaspersoft.com/2007/SL/XMLSchema">
+  <queryFields>
+    <queryField id="newSet1.name" />
+    <queryField id="newSet1.billing_address_city" />
+    <queryField id="newSet1.billing_address_state" />
+    <queryField id="newSet1.billing_address_postalcode" />
+    <queryField id="newSet1.industry" />
+    <queryField id="newSet2.name1" />
+    <queryField id="newSet2.amount" />
+    <queryField id="newSet2.probability" />
+    <queryField id="newSet2.sales_stage" />
+    <queryField id="newSet3.first_name" />
+    <queryField id="newSet3.last_name" />
+    <queryField id="newSet3.title" />
+  </queryFields>
+</query>]]>
+	</queryString>
+	<field name="newSet1.name" class="java.lang.String">
+		<property name="adhoc.tree.labels" value="[{&quot;label&quot;:&quot;Accounts&quot;,&quot;uri&quot;:&quot;/newSet1&quot;,&quot;labelId&quot;:&quot;&quot;,&quot;resourceId&quot;:&quot;JoinTree_1&quot;},{&quot;label&quot;:&quot;Opportunities&quot;,&quot;uri&quot;:&quot;/newSet2&quot;,&quot;labelId&quot;:&quot;&quot;,&quot;resourceId&quot;:&quot;JoinTree_1&quot;},{&quot;label&quot;:&quot;Users&quot;,&quot;uri&quot;:&quot;/newSet3&quot;,&quot;labelId&quot;:&quot;&quot;,&quot;resourceId&quot;:&quot;JoinTree_1&quot;}]"/>
+		<property name="adhoc.display" value="Account Name"/>
+		<property name="slIsTableAsList" value="false"/>
+		<property name="semantic.tree.uri" value="/newSet1/name"/>
+		<property name="adhoc.tree.uri" value="/newSet1/name"/>
+		<property name="resourceId" value="JoinTree_1.accounts.name"/>
+	</field>
+	<field name="newSet1.billing_address_city" class="java.lang.String">
+		<property name="adhoc.display" value="Account City"/>
+		<property name="semantic.tree.uri" value="/newSet1/billing_address_city"/>
+		<property name="adhoc.tree.uri" value="/newSet1/billing_address_city"/>
+		<property name="resourceId" value="JoinTree_1.accounts.billing_address_city"/>
+	</field>
+	<field name="newSet1.billing_address_state" class="java.lang.String">
+		<property name="adhoc.display" value="Account State"/>
+		<property name="semantic.tree.uri" value="/newSet1/billing_address_state"/>
+		<property name="adhoc.tree.uri" value="/newSet1/billing_address_state"/>
+		<property name="resourceId" value="JoinTree_1.accounts.billing_address_state"/>
+	</field>
+	<field name="newSet1.billing_address_postalcode" class="java.lang.String">
+		<property name="adhoc.display" value="Account ZIP"/>
+		<property name="semantic.tree.uri" value="/newSet1/billing_address_postalcode"/>
+		<property name="adhoc.tree.uri" value="/newSet1/billing_address_postalcode"/>
+		<property name="resourceId" value="JoinTree_1.accounts.billing_address_postalcode"/>
+	</field>
+	<field name="newSet1.industry" class="java.lang.String">
+		<property name="adhoc.display" value="Account Industry"/>
+		<property name="semantic.tree.uri" value="/newSet1/industry"/>
+		<property name="adhoc.tree.uri" value="/newSet1/industry"/>
+		<property name="resourceId" value="JoinTree_1.accounts.industry"/>
+	</field>
+	<field name="newSet2.name1" class="java.lang.String">
+		<property name="adhoc.display" value="Opportunity"/>
+		<property name="semantic.tree.uri" value="/newSet2/name1"/>
+		<property name="adhoc.tree.uri" value="/newSet2/name1"/>
+		<property name="resourceId" value="JoinTree_1.opportunities.name"/>
+	</field>
+	<field name="newSet2.amount" class="java.lang.Double">
+		<property name="adhoc.display" value="Amount"/>
+		<property name="semantic.tree.uri" value="/newSet2/amount"/>
+		<property name="adhoc.tree.uri" value="/newSet2/amount"/>
+		<property name="resourceId" value="JoinTree_1.opportunities.amount"/>
+	</field>
+	<field name="newSet2.probability" class="java.lang.Double">
+		<property name="adhoc.display" value="Probability"/>
+		<property name="semantic.tree.uri" value="/newSet2/probability"/>
+		<property name="adhoc.tree.uri" value="/newSet2/probability"/>
+		<property name="resourceId" value="JoinTree_1.opportunities.probability"/>
+	</field>
+	<field name="newSet2.sales_stage" class="java.lang.String">
+		<property name="adhoc.display" value="Sales Stage"/>
+		<property name="semantic.tree.uri" value="/newSet2/sales_stage"/>
+		<property name="adhoc.tree.uri" value="/newSet2/sales_stage"/>
+		<property name="resourceId" value="JoinTree_1.opportunities.sales_stage"/>
+	</field>
+	<field name="newSet3.first_name" class="java.lang.String">
+		<property name="adhoc.display" value="First Name"/>
+		<property name="semantic.tree.uri" value="/newSet3/first_name"/>
+		<property name="adhoc.tree.uri" value="/newSet3/first_name"/>
+		<property name="resourceId" value="JoinTree_1.users.first_name"/>
+	</field>
+	<field name="newSet3.last_name" class="java.lang.String">
+		<property name="adhoc.display" value="Last Name"/>
+		<property name="semantic.tree.uri" value="/newSet3/last_name"/>
+		<property name="adhoc.tree.uri" value="/newSet3/last_name"/>
+		<property name="resourceId" value="JoinTree_1.users.last_name"/>
+	</field>
+	<field name="newSet3.title" class="java.lang.String">
+		<property name="adhoc.display" value="Title"/>
+		<property name="semantic.tree.uri" value="/newSet3/title"/>
+		<property name="adhoc.tree.uri" value="/newSet3/title"/>
+		<property name="resourceId" value="JoinTree_1.users.title"/>
+	</field>
+</jasperReport>

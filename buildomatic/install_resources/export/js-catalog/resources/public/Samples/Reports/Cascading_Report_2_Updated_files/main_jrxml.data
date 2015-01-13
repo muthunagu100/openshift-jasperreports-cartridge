@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Interactive_Sales_Report" pageWidth="622" pageHeight="792" columnWidth="582" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="feb927b2-fc3c-4ca6-92f1-77b7d9a4a5bb">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="87"/>
+	<property name="ireport.jasperserver.reportUnit" value="/public/Samples/Reports/Cascading_Report_2_Updated"/>
+	<property name="ireport.jasperserver.url" value="http://192.168.2.141:8102/jasperserver-pro/services/repository"/>
+	<property name="net.sf.jasperreports.default.pdf.font.name" value="Verdana"/>
+	<property name="net.sf.jasperreports.export.xhtml.exclude.origin.band.no_background_in_html" value="background"/>
+	<property name="ireport.jasperserver.report.resource" value="/public/Samples/Reports/Cascading_Report_2_Updated_files/main_jrxml"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<template><![CDATA["repo:SampleReportStyles.jrtx"]]></template>
+	<style name="Row Banding">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT} % 2 == 1]]></conditionExpression>
+			<style backcolor="#E9E9EB"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT} % 2 == 0]]></conditionExpression>
+			<style backcolor="#DFE0E2"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="table" uuid="5d3c9a64-af15-4d28-b1dd-cb0f2d09f2cb">
+		<property name="net.sf.jasperreports.create.sort.fields.for.groups" value="true"/>
+		<parameter name="Product_Family" class="java.lang.String">
+			<defaultValueExpression><![CDATA["Food"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="Product_Department" class="java.lang.String">
+			<defaultValueExpression><![CDATA["Produce"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="Product_Category" class="java.lang.String">
+			<defaultValueExpression><![CDATA["Vegetables"]]></defaultValueExpression>
+		</parameter>
+		<parameter name="Product_Name" class="java.util.Collection">
+			<parameterDescription><![CDATA[]]></parameterDescription>
+			<defaultValueExpression><![CDATA[new ArrayList(Arrays.asList(new String[] {"High Top Summer Squash", "High Top Onions", "Tell Tale Summer Squash", "Tri-State Shitake Mushrooms"}))]]></defaultValueExpression>
+		</parameter>
+		<parameter name="Country" class="java.util.Collection">
+			<defaultValueExpression><![CDATA[new ArrayList(Arrays.asList(new String[] {"Canada", "Mexico", "USA"}))]]></defaultValueExpression>
+		</parameter>
+		<parameter name="Gender" class="java.util.Collection">
+			<defaultValueExpression><![CDATA[new ArrayList(Arrays.asList(new String[] {"F", "M"}))]]></defaultValueExpression>
+		</parameter>
+		<queryString>
+			<![CDATA[select
+  p.product_name,
+  st.store_name,
+  st.store_type,
+  r.sales_region,
+  s.store_sales,
+  s.store_cost,
+  s.unit_sales
+from
+  product p,
+  product_class pc,
+  sales_fact_1998 s,
+  store st,
+  region r,
+  customer c
+where
+  s.product_id = p.product_id and
+  pc.product_class_id = p.product_class_id and
+  st.store_id = s.store_id and
+  r.region_id = st.region_id and
+  r.sales_country = st.store_country and
+  c.customer_id = s.customer_id and
+  (pc.product_family = $P{Product_Family} or $P{Product_Family} = 'All') and
+  (pc.product_department = $P{Product_Department} or $P{Product_Department} = 'All')and
+  (pc.product_category = $P{Product_Category} or $P{Product_Category} = 'All') and
+  $X{IN,p.product_name,Product_Name} and
+  $X{IN,r.sales_country,Country} and
+  $X{IN,c.gender,Gender}
+order by
+ p.product_name]]>
+		</queryString>
+		<field name="product_name" class="java.lang.String"/>
+		<field name="store_name" class="java.lang.String"/>
+		<field name="store_type" class="java.lang.String"/>
+		<field name="sales_region" class="java.lang.String"/>
+		<field name="store_sales" class="java.math.BigDecimal"/>
+		<field name="store_cost" class="java.math.BigDecimal"/>
+		<field name="unit_sales" class="java.math.BigDecimal"/>
+		<variable name="sum_StoreSales" class="java.math.BigDecimal" resetType="Group" resetGroup="product_name" calculation="Sum">
+			<variableExpression><![CDATA[$F{store_sales}]]></variableExpression>
+		</variable>
+		<variable name="sum_StoreCost" class="java.math.BigDecimal" resetType="Group" resetGroup="product_name" calculation="Sum">
+			<variableExpression><![CDATA[$F{store_cost}]]></variableExpression>
+		</variable>
+		<variable name="sum_unitSales" class="java.lang.Integer" resetType="Group" resetGroup="product_name" calculation="Sum">
+			<variableExpression><![CDATA[$F{unit_sales}]]></variableExpression>
+		</variable>
+		<variable name="CountProducts" class="java.math.BigDecimal" incrementType="Group" incrementGroup="product_name" calculation="DistinctCount">
+			<variableExpression><![CDATA[$F{product_name}]]></variableExpression>
+		</variable>
+		<variable name="total_products" class="java.lang.Integer" calculation="Count">
+			<variableExpression><![CDATA[$F{product_name}]]></variableExpression>
+		</variable>
+		<variable name="Region_Sum" class="java.math.BigDecimal" incrementType="Group" incrementGroup="product_name" calculation="Sum"/>
+		<variable name="SalesTotal" class="java.math.BigDecimal" calculation="Sum">
+			<variableExpression><![CDATA[$F{store_sales}]]></variableExpression>
+		</variable>
+		<variable name="CostTotal" class="java.math.BigDecimal" calculation="Sum">
+			<variableExpression><![CDATA[$F{store_cost}]]></variableExpression>
+		</variable>
+		<variable name="UnitsTotal" class="java.math.BigDecimal" calculation="Sum">
+			<variableExpression><![CDATA[$F{unit_sales}]]></variableExpression>
+		</variable>
+		<group name="product_name" isStartNewPage="true">
+			<groupExpression><![CDATA[$F{product_name}]]></groupExpression>
+		</group>
+	</subDataset>
+	<parameter name="Product_Family" class="java.lang.String">
+		<defaultValueExpression><![CDATA["Food"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Product_Department" class="java.lang.String">
+		<defaultValueExpression><![CDATA["Produce"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Product_Category" class="java.lang.String">
+		<defaultValueExpression><![CDATA["Vegetables"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Product_Name" class="java.util.Collection">
+		<defaultValueExpression><![CDATA[new ArrayList(Arrays.asList(new String[] {"High Top Summer Squash", "High Top Onions", "Tell Tale Summer Squash", "Tri-State Shitake Mushrooms"}))]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Country" class="java.util.Collection">
+		<defaultValueExpression><![CDATA[new ArrayList(Arrays.asList(new String[] {"Canada", "Mexico", "USA"}))]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Gender" class="java.util.Collection">
+		<defaultValueExpression><![CDATA[new ArrayList(Arrays.asList(new String[] {"F", "M"}))]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select 1 as dummy]]>
+	</queryString>
+	<field name="product_name" class="java.lang.String"/>
+	<field name="store_name" class="java.lang.String"/>
+	<field name="store_type" class="java.lang.String"/>
+	<field name="sales_region" class="java.lang.String"/>
+	<field name="store_sales" class="java.math.BigDecimal"/>
+	<field name="store_cost" class="java.math.BigDecimal"/>
+	<field name="unit_sales" class="java.lang.Integer"/>
+	<title>
+		<band height="291">
+			<frame>
+				<reportElement uuid="9d2b14eb-86ee-4e2f-a7ff-2d316b214901" mode="Opaque" x="100" y="0" width="402" height="100" backcolor="#F7F7F8">
+					<property name="local_mesure_unitheight" value="pixel"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineColor="#000000"/>
+					<topPen lineWidth="0.0" lineColor="#D7DAD9"/>
+					<leftPen lineWidth="0.0" lineColor="#D7DAD9"/>
+					<bottomPen lineWidth="0.0" lineColor="#D7DAD9"/>
+					<rightPen lineWidth="0.0" lineColor="#D7DAD9"/>
+				</box>
+				<staticText>
+					<reportElement uuid="8628dd1e-e46e-4b5c-a2d1-a4fa76bfb686" style="h2" mode="Opaque" x="0" y="32" width="200" height="22" backcolor="#F7F7F8">
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="10">
+						<topPen lineWidth="1.0" lineColor="#D7DAD9"/>
+						<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+						<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+						<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+						<font fontName="Calibri" size="14"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[Product Family]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="232ad58c-36bb-4a21-ad11-301ee2ff2a17" style="h2" mode="Opaque" x="0" y="54" width="200" height="22" backcolor="#F7F7F8">
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="10">
+						<topPen lineWidth="1.0" lineColor="#D7DAD9"/>
+						<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+						<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+						<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+						<font fontName="Calibri" size="14"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[Product Department]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="20a5d4d7-2250-4c2a-8c5a-ccff0936bcd1" style="h2" mode="Opaque" x="0" y="76" width="200" height="22" backcolor="#F7F7F8">
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="10">
+						<topPen lineWidth="1.0" lineColor="#D7DAD9"/>
+						<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+						<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+						<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+						<font fontName="Calibri" size="14"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[Product Category]]></text>
+				</staticText>
+				<textField pattern="" isBlankWhenNull="false">
+					<reportElement uuid="a3d16dc5-3d25-4487-9c84-4f8af9c633d5" style="h2" mode="Opaque" x="200" y="32" width="200" height="22" backcolor="#F7F7F8">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box topPadding="0" leftPadding="10" bottomPadding="0" rightPadding="0">
+						<topPen lineWidth="1.0" lineColor="#D7DAD9"/>
+						<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+						<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+						<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+						<font fontName="Calibri" size="14"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{Product_Family}]]></textFieldExpression>
+				</textField>
+				<textField pattern="" isBlankWhenNull="false">
+					<reportElement uuid="c55b52ad-776c-43ce-a68f-e48cbe7c2acb" style="h2" mode="Opaque" x="200" y="54" width="200" height="22" backcolor="#F7F7F8">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box topPadding="0" leftPadding="10" bottomPadding="0" rightPadding="0">
+						<topPen lineWidth="1.0" lineColor="#D7DAD9"/>
+						<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+						<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+						<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+						<font fontName="Calibri" size="14"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{Product_Department}]]></textFieldExpression>
+				</textField>
+				<textField pattern="" isBlankWhenNull="false">
+					<reportElement uuid="80eb128d-5a95-484e-8c09-9fe81ec99535" style="h2" mode="Opaque" x="200" y="76" width="200" height="22" backcolor="#F7F7F8">
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					</reportElement>
+					<box topPadding="0" leftPadding="10" bottomPadding="0" rightPadding="0">
+						<topPen lineWidth="1.0" lineColor="#D7DAD9"/>
+						<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+						<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+						<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+						<font fontName="Calibri" size="14"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{Product_Category}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="3cb0dfff-a80a-486d-8860-801aadc512ff" mode="Opaque" x="0" y="0" width="400" height="31" forecolor="#004667" backcolor="#F7F7F8">
+						<property name="local_mesure_unitx" value="pixel"/>
+						<property name="local_mesure_unity" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.y" value="px"/>
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<property name="local_mesure_unitwidth" value="pixel"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="5">
+						<topPen lineWidth="1.0" lineColor="#D7DAD9"/>
+						<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+						<bottomPen lineWidth="0.0" lineColor="#D7DAD9"/>
+						<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" markup="none">
+						<font fontName="Calibri" size="16" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[Product Transaction Summary Report]]></text>
+				</staticText>
+			</frame>
+			<componentElement>
+				<reportElement uuid="d83a6d56-8791-4d81-a91a-962b32697d31" x="0" y="104" width="572" height="182">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<hc:chart xmlns:hc="http://jaspersoft.com/highcharts" xsi:schemaLocation="http://jaspersoft.com/highcharts http://jaspersoft.com/schema/highcharts.xsd" type="Bar">
+					<hc:chartSetting name="default">
+						<hc:chartProperty name="chart.borderRadius">
+							<hc:propertyExpression><![CDATA[new Integer(0)]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="chart.borderWidth">
+							<hc:propertyExpression><![CDATA[new Integer(0)]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="chart.plotBorderColor">
+							<hc:propertyExpression><![CDATA[new java.awt.Color(-16777216)]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="chart.plotBorderWidth">
+							<hc:propertyExpression><![CDATA[new Integer(1)]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="chart.shadow">
+							<hc:propertyExpression><![CDATA[Boolean.FALSE]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="chart.spacingLeft">
+							<hc:propertyExpression><![CDATA[5]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="chart.spacingRight">
+							<hc:propertyExpression><![CDATA[5]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="colors">
+							<hc:propertyExpression><![CDATA[java.util.Arrays.asList("#0980BA","#004667","#89A54E","#80699B","#3D96AE","#DB843D","#92A8CD","#A47D7C","#B5CA92")]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="credits.enabled">
+							<hc:propertyExpression><![CDATA[Boolean.FALSE]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="credits.href" value="http://www.jaspersoft.com"/>
+						<hc:chartProperty name="credits.text" value="Jaspersoft"/>
+						<hc:chartProperty name="legend.align" value="right"/>
+						<hc:chartProperty name="legend.borderWidth">
+							<hc:propertyExpression><![CDATA[0]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="legend.itemStyle.color">
+							<hc:propertyExpression><![CDATA["#58595B"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="legend.itemStyle.fontFamily">
+							<hc:propertyExpression><![CDATA["Calibri"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="legend.itemStyle.fontSize">
+							<hc:propertyExpression><![CDATA["11 px"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="legend.layout" value="vertical"/>
+						<hc:chartProperty name="legend.padding">
+							<hc:propertyExpression><![CDATA[3]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="legend.verticalAlign" value="middle"/>
+						<hc:chartProperty name="plotOptions.bar.borderWidth">
+							<hc:propertyExpression><![CDATA[0]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="plotOptions.bar.shadow">
+							<hc:propertyExpression><![CDATA[Boolean.FALSE]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="title.text" value=""/>
+						<hc:chartProperty name="tooltip.valueSuffix" value=""/>
+						<hc:chartProperty name="xAxis.labels.style.color">
+							<hc:propertyExpression><![CDATA["#58595B"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="xAxis.labels.style.fontFamily">
+							<hc:propertyExpression><![CDATA["Calibri"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="xAxis.labels.style.fontSize">
+							<hc:propertyExpression><![CDATA["10 px"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="xAxis.tickWidth">
+							<hc:propertyExpression><![CDATA["0"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="yAxis.gridLineColor">
+							<hc:propertyExpression><![CDATA["#000000"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="yAxis.labels.style.color">
+							<hc:propertyExpression><![CDATA["#0980BA"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="yAxis.labels.style.fontFamily">
+							<hc:propertyExpression><![CDATA["Calibri"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="yAxis.labels.style.fontSize">
+							<hc:propertyExpression><![CDATA["10 px"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="yAxis.title.text">
+							<hc:propertyExpression><![CDATA[""]]></hc:propertyExpression>
+						</hc:chartProperty>
+					</hc:chartSetting>
+					<multiAxisData>
+						<multiAxisDataset>
+							<dataset>
+								<datasetRun subDataset="table" uuid="b5a39de0-0746-4388-9178-067377d00c20">
+									<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+									<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+								</datasetRun>
+							</dataset>
+						</multiAxisDataset>
+						<dataAxis axis="Rows">
+							<axisLevel name="Product Name">
+								<labelExpression><![CDATA["Product32Name"]]></labelExpression>
+								<axisLevelBucket class="java.lang.Comparable">
+									<bucketExpression><![CDATA[$F{product_name}]]></bucketExpression>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<dataAxis axis="Columns"/>
+						<multiAxisMeasure name="Sales" class="java.lang.Number" calculation="Sum">
+							<labelExpression><![CDATA["Sales"]]></labelExpression>
+							<valueExpression><![CDATA[$F{store_sales}.intValue()]]></valueExpression>
+						</multiAxisMeasure>
+						<multiAxisMeasure name="Cost" class="java.lang.Number" calculation="Sum">
+							<labelExpression><![CDATA["Cost"]]></labelExpression>
+							<valueExpression><![CDATA[$F{store_cost}.intValue()]]></valueExpression>
+						</multiAxisMeasure>
+					</multiAxisData>
+				</hc:chart>
+			</componentElement>
+		</band>
+	</title>
+	<detail>
+		<band height="80">
+			<componentElement>
+				<reportElement uuid="e4f481cb-89f7-4eb5-8c4d-f872ba288028" key="table" mode="Opaque" x="0" y="0" width="572" height="80"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="table" uuid="e524ed74-c8f9-4976-ac46-52c8fa6e3091">
+						<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:columnGroup width="572" uuid="80975e19-0cc2-4326-8631-ef80e684c67c">
+						<property name="local_mesure_unitheight" value="pixel"/>
+						<jr:groupHeader groupName="product_name">
+							<jr:cell height="30" rowSpan="1">
+								<textField>
+									<reportElement uuid="cdaebc5d-7529-42c1-93da-44b214194ff4" key="" style="h9" mode="Opaque" x="0" y="0" width="570" height="30" backcolor="#D3D4D4">
+										<property name="local_mesure_unitheight" value="pixel"/>
+									</reportElement>
+									<box>
+										<topPen lineWidth="1.0" lineColor="#D7DAD9"/>
+										<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+										<bottomPen lineWidth="0.0" lineColor="#D7DAD9"/>
+										<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+									</box>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<textFieldExpression><![CDATA[$F{product_name}]]></textFieldExpression>
+								</textField>
+							</jr:cell>
+						</jr:groupHeader>
+						<jr:columnGroup width="390" uuid="8ee89165-2e3a-4932-a527-b6c50f00fb48">
+							<property name="local_mesure_unitheight" value="pixel"/>
+							<jr:tableFooter height="105" rowSpan="1">
+								<staticText>
+									<reportElement uuid="33fdcb71-c541-4a75-aad2-4f26191506ca" key="" style="h10" mode="Opaque" x="0" y="0" width="390" height="35"/>
+									<box>
+										<topPen lineWidth="1.0" lineColor="#A4A6A8"/>
+										<leftPen lineWidth="1.0" lineColor="#A4A6A8"/>
+										<bottomPen lineWidth="1.0" lineColor="#FFFFFF"/>
+										<rightPen lineWidth="1.0" lineColor="#FFFFFF"/>
+									</box>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<text><![CDATA[Grand Totals]]></text>
+								</staticText>
+								<staticText>
+									<reportElement uuid="2f28a12d-227a-4669-9008-092374e14716" style="h10" mode="Opaque" x="0" y="35" width="390" height="35"/>
+									<box>
+										<leftPen lineWidth="1.0" lineColor="#A4A6A8"/>
+										<bottomPen lineWidth="1.0" lineColor="#FFFFFF"/>
+										<rightPen lineWidth="1.0" lineColor="#FFFFFF"/>
+									</box>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<text><![CDATA[Number of Products in this Report]]></text>
+								</staticText>
+								<staticText>
+									<reportElement uuid="61e31c1c-ea4b-4a66-a1db-4a4f463e3d8d" style="h10" mode="Opaque" x="0" y="70" width="390" height="35"/>
+									<box>
+										<leftPen lineWidth="1.0" lineColor="#A4A6A8"/>
+										<bottomPen lineWidth="1.0" lineColor="#A4A6A8"/>
+										<rightPen lineWidth="1.0" lineColor="#FFFFFF"/>
+									</box>
+									<textElement textAlignment="Center" verticalAlignment="Middle"/>
+									<text><![CDATA[Number of Transactions in this Report]]></text>
+								</staticText>
+							</jr:tableFooter>
+							<jr:groupFooter groupName="product_name">
+								<jr:cell height="30" rowSpan="1">
+									<textField>
+										<reportElement uuid="e4fefc76-3f89-4395-b9f7-999eb4145b42" style="h10" mode="Opaque" x="0" y="0" width="390" height="20">
+											<property name="local_mesure_unitheight" value="pixel"/>
+										</reportElement>
+										<box>
+											<topPen lineWidth="1.0" lineColor="#A4A6A8"/>
+											<leftPen lineWidth="1.0" lineColor="#A4A6A8"/>
+											<bottomPen lineWidth="1.0" lineColor="#A4A6A8"/>
+											<rightPen lineWidth="1.0" lineColor="#FFFFFF"/>
+										</box>
+										<textElement textAlignment="Center" verticalAlignment="Middle"/>
+										<textFieldExpression><![CDATA["Total: " + $F{product_name}]]></textFieldExpression>
+									</textField>
+								</jr:cell>
+							</jr:groupFooter>
+							<jr:column width="130" uuid="0e3d029b-71cc-4f8b-a397-a6973ccbce6b">
+								<property name="local_mesure_unitheight" value="pixel"/>
+								<jr:columnHeader height="30" rowSpan="1">
+									<staticText>
+										<reportElement uuid="99f3d78d-2f55-45b9-8741-343631196766" key="" style="h9" mode="Opaque" x="0" y="0" width="130" height="30" backcolor="#E9E9E8">
+											<property name="local_mesure_unitheight" value="pixel"/>
+											<property name="local_mesure_unitwidth" value="pixel"/>
+											<property name="com.jaspersoft.studio.unit.width" value="px"/>
+										</reportElement>
+										<box leftPadding="10">
+											<topPen lineWidth="1.0" lineColor="#D7DAD9"/>
+											<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+											<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+											<rightPen lineWidth="0.0" lineColor="#D7DAD9"/>
+										</box>
+										<textElement verticalAlignment="Middle"/>
+										<text><![CDATA[Product Name]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell height="28" rowSpan="1">
+									<textField>
+										<reportElement uuid="3bd41bc4-8ad3-46d2-8361-be4376abdfa5" key="" style="Row Banding" mode="Opaque" x="0" y="0" width="130" height="28" forecolor="#58595B">
+											<property name="local_mesure_unitheight" value="pixel"/>
+											<property name="local_mesure_unitwidth" value="pixel"/>
+											<property name="com.jaspersoft.studio.unit.width" value="px"/>
+											<property name="com.jaspersoft.studio.unit.height" value="px"/>
+										</reportElement>
+										<box leftPadding="10">
+											<topPen lineWidth="0.0" lineColor="#D7DAD9"/>
+											<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+											<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+											<rightPen lineWidth="0.0" lineColor="#D7DAD9"/>
+										</box>
+										<textElement verticalAlignment="Middle">
+											<font fontName="Calibri" size="10"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{product_name}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="70" uuid="f22c3e2a-8836-4210-9cb6-299657602dd1">
+								<jr:columnHeader height="30" rowSpan="1">
+									<staticText>
+										<reportElement uuid="a6cf16d8-8cb7-4c56-a90b-5906f1eb3589" key="" style="h9" mode="Opaque" x="0" y="0" width="70" height="30" backcolor="#E9E9E8">
+											<property name="local_mesure_unitwidth" value="pixel"/>
+											<property name="com.jaspersoft.studio.unit.width" value="px"/>
+										</reportElement>
+										<box leftPadding="10">
+											<topPen lineWidth="1.0" lineColor="#D7DAD9"/>
+											<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+											<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+											<rightPen lineWidth="0.0" lineColor="#D7DAD9"/>
+										</box>
+										<textElement verticalAlignment="Middle"/>
+										<text><![CDATA[Store Name]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell height="28" rowSpan="1">
+									<textField>
+										<reportElement uuid="db0d1714-e59e-480c-8772-001caaf5a1d3" key="" style="Row Banding" mode="Opaque" x="0" y="0" width="70" height="28" forecolor="#58595B">
+											<property name="local_mesure_unitwidth" value="pixel"/>
+											<property name="com.jaspersoft.studio.unit.width" value="px"/>
+											<property name="com.jaspersoft.studio.unit.height" value="px"/>
+										</reportElement>
+										<box leftPadding="10">
+											<topPen lineWidth="0.0" lineColor="#D7DAD9"/>
+											<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+											<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+											<rightPen lineWidth="0.0" lineColor="#D7DAD9"/>
+										</box>
+										<textElement verticalAlignment="Middle">
+											<font fontName="Calibri" size="10"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{store_name}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="114" uuid="98b507b6-570b-43e2-9dea-0a5ced513869">
+								<jr:columnHeader height="30" rowSpan="1">
+									<staticText>
+										<reportElement uuid="794612ed-350a-4bda-99e1-ef2bc51c4b61" key="" style="h9" mode="Opaque" x="0" y="0" width="114" height="30" backcolor="#E9E9E8">
+											<property name="local_mesure_unitwidth" value="pixel"/>
+										</reportElement>
+										<box leftPadding="10">
+											<topPen lineWidth="1.0" lineColor="#D7DAD9"/>
+											<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+											<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+											<rightPen lineWidth="0.0" lineColor="#D7DAD9"/>
+										</box>
+										<textElement verticalAlignment="Middle"/>
+										<text><![CDATA[Store Type]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell height="28" rowSpan="1">
+									<textField>
+										<reportElement uuid="fd3f7cf0-8342-43a4-9238-7efa991ea467" key="" style="Row Banding" mode="Opaque" x="0" y="0" width="114" height="28" forecolor="#58595B">
+											<property name="local_mesure_unitwidth" value="pixel"/>
+											<property name="com.jaspersoft.studio.unit.width" value="px"/>
+											<property name="com.jaspersoft.studio.unit.height" value="px"/>
+										</reportElement>
+										<box leftPadding="10">
+											<topPen lineWidth="0.0" lineColor="#D7DAD9"/>
+											<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+											<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+											<rightPen lineWidth="0.0" lineColor="#D7DAD9"/>
+										</box>
+										<textElement verticalAlignment="Middle">
+											<font fontName="Calibri" size="10"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{store_type}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="76" uuid="8545e856-27e1-4b42-93ea-9c6ad10248d0">
+								<jr:columnHeader height="30" rowSpan="1">
+									<staticText>
+										<reportElement uuid="12441212-60af-46a6-aff3-fc8cd19353f9" key="" style="h9" mode="Opaque" x="0" y="0" width="76" height="30" backcolor="#E9E9E8">
+											<property name="local_mesure_unitwidth" value="pixel"/>
+										</reportElement>
+										<box leftPadding="10">
+											<topPen lineWidth="1.0" lineColor="#D7DAD9"/>
+											<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+											<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+											<rightPen lineWidth="0.0" lineColor="#D7DAD9"/>
+										</box>
+										<textElement verticalAlignment="Middle"/>
+										<text><![CDATA[Region]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell height="28" rowSpan="1">
+									<textField>
+										<reportElement uuid="63ad9e04-6ab7-4e8f-9dba-f98037985034" key="" style="Row Banding" mode="Opaque" x="0" y="0" width="76" height="28" forecolor="#58595B">
+											<property name="local_mesure_unitwidth" value="pixel"/>
+											<property name="com.jaspersoft.studio.unit.height" value="px"/>
+										</reportElement>
+										<box leftPadding="10">
+											<topPen lineWidth="0.0" lineColor="#D7DAD9"/>
+											<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+											<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+											<rightPen lineWidth="0.0" lineColor="#D7DAD9"/>
+										</box>
+										<textElement verticalAlignment="Middle">
+											<font fontName="Calibri" size="10"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{sales_region}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+						</jr:columnGroup>
+						<jr:columnGroup width="60" uuid="e151494f-23cb-4960-b305-8d45894d68e7">
+							<property name="local_mesure_unitheight" value="pixel"/>
+							<jr:tableFooter height="105" rowSpan="1">
+								<textField pattern="$ #,##0.00">
+									<reportElement uuid="3e4cc2c6-73a9-48c7-b3b5-aad887ff2765" style="h10" mode="Opaque" x="0" y="0" width="60" height="35"/>
+									<box rightPadding="3">
+										<topPen lineWidth="1.0" lineColor="#A4A6A8"/>
+										<bottomPen lineWidth="1.0" lineColor="#FFFFFF"/>
+										<rightPen lineWidth="1.0" lineColor="#FFFFFF"/>
+									</box>
+									<textElement textAlignment="Right" verticalAlignment="Middle"/>
+									<textFieldExpression><![CDATA[$V{SalesTotal}]]></textFieldExpression>
+								</textField>
+								<textField pattern="###0">
+									<reportElement uuid="98ae1e6b-e516-47e2-8a89-00bb29f2d602" style="h10" mode="Opaque" x="0" y="35" width="60" height="35"/>
+									<box rightPadding="3">
+										<bottomPen lineWidth="1.0" lineColor="#FFFFFF"/>
+										<rightPen lineWidth="1.0" lineColor="#A4A6A8"/>
+									</box>
+									<textElement textAlignment="Right" verticalAlignment="Middle"/>
+									<textFieldExpression><![CDATA[$V{CountProducts}]]></textFieldExpression>
+								</textField>
+								<textField pattern="###0">
+									<reportElement uuid="b3eb2215-c1f2-49c5-af77-5755fe9e5b23" style="h10" mode="Opaque" x="0" y="70" width="60" height="35"/>
+									<box rightPadding="3">
+										<topPen lineWidth="0.0" lineColor="#FFFFFF"/>
+										<leftPen lineColor="#FFFFFF"/>
+										<bottomPen lineWidth="1.0" lineColor="#A4A6A8"/>
+										<rightPen lineWidth="1.0" lineColor="#A4A6A8"/>
+									</box>
+									<textElement textAlignment="Right" verticalAlignment="Middle"/>
+									<textFieldExpression><![CDATA[$V{total_products}]]></textFieldExpression>
+								</textField>
+							</jr:tableFooter>
+							<jr:groupFooter groupName="product_name">
+								<jr:cell height="30" rowSpan="1">
+									<textField pattern="$ #,##0.00" isBlankWhenNull="false">
+										<reportElement uuid="32c7cfb7-58bc-419d-b25e-0d1dc34a3e2f" style="h10" mode="Opaque" x="0" y="0" width="60" height="20">
+											<property name="local_mesure_unitheight" value="pixel"/>
+										</reportElement>
+										<box rightPadding="3">
+											<topPen lineWidth="1.0" lineColor="#A4A6A8"/>
+											<bottomPen lineWidth="1.0" lineColor="#A4A6A8"/>
+											<rightPen lineWidth="1.0" lineColor="#FFFFFF"/>
+										</box>
+										<textElement textAlignment="Right" verticalAlignment="Middle"/>
+										<textFieldExpression><![CDATA[$V{sum_StoreSales}]]></textFieldExpression>
+									</textField>
+								</jr:cell>
+							</jr:groupFooter>
+							<jr:column width="60" uuid="5611ebc8-5eee-4fce-a538-d899711dcbd3">
+								<jr:columnHeader height="30" rowSpan="1">
+									<staticText>
+										<reportElement uuid="dd002228-071a-4c66-8dea-4374e8fc2584" key="" style="h9" mode="Opaque" x="0" y="0" width="60" height="30" backcolor="#E9E9E8"/>
+										<box rightPadding="3">
+											<topPen lineWidth="1.0" lineColor="#D7DAD9"/>
+											<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+											<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+											<rightPen lineWidth="0.0" lineColor="#D7DAD9"/>
+										</box>
+										<textElement textAlignment="Right" verticalAlignment="Middle"/>
+										<text><![CDATA[Sales]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell height="28" rowSpan="1">
+									<textField pattern="$ #,##0.00">
+										<reportElement uuid="0a59e22c-c22b-407e-b258-6dfcc464b9ff" key="" style="Row Banding" mode="Opaque" x="0" y="0" width="60" height="28" forecolor="#58595B">
+											<property name="com.jaspersoft.studio.unit.height" value="px"/>
+										</reportElement>
+										<box rightPadding="3">
+											<topPen lineWidth="0.0" lineColor="#D7DAD9"/>
+											<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+											<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+											<rightPen lineWidth="0.0" lineColor="#D7DAD9"/>
+										</box>
+										<textElement textAlignment="Right" verticalAlignment="Middle">
+											<font fontName="Calibri" size="10"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{store_sales}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+						</jr:columnGroup>
+						<jr:column width="60" uuid="cd99491d-1704-4245-ad03-6e48e44e7e57">
+							<jr:tableFooter height="105" rowSpan="1">
+								<textField pattern="$ #,##0.00">
+									<reportElement uuid="98ae1e6b-e516-47e2-8a89-00bb29f2d602" style="h10" mode="Opaque" x="0" y="0" width="60" height="35"/>
+									<box rightPadding="3">
+										<topPen lineWidth="1.0" lineColor="#A4A6A8"/>
+										<bottomPen lineWidth="1.0" lineColor="#A4A6A8"/>
+										<rightPen lineWidth="1.0" lineColor="#FFFFFF"/>
+									</box>
+									<textElement textAlignment="Right" verticalAlignment="Middle"/>
+									<textFieldExpression><![CDATA[$V{CostTotal}]]></textFieldExpression>
+								</textField>
+							</jr:tableFooter>
+							<jr:groupFooter groupName="product_name">
+								<jr:cell height="30" rowSpan="1">
+									<textField pattern="$ #,##0.00">
+										<reportElement uuid="b1093b68-e03b-4690-948f-c9592bb73c9c" style="h10" mode="Opaque" x="0" y="0" width="60" height="20"/>
+										<box rightPadding="3">
+											<topPen lineWidth="1.0" lineColor="#A4A6A8"/>
+											<bottomPen lineWidth="1.0" lineColor="#A4A6A8"/>
+											<rightPen lineWidth="1.0" lineColor="#FFFFFF"/>
+										</box>
+										<textElement textAlignment="Right" verticalAlignment="Middle"/>
+										<textFieldExpression><![CDATA[$V{sum_StoreCost}]]></textFieldExpression>
+									</textField>
+								</jr:cell>
+							</jr:groupFooter>
+							<jr:columnHeader height="30" rowSpan="1">
+								<staticText>
+									<reportElement uuid="19318a65-6cc8-47a3-8edd-99b688ca66c1" key="" style="h9" mode="Opaque" x="0" y="0" width="60" height="30" backcolor="#E9E9E8"/>
+									<box rightPadding="3">
+										<topPen lineWidth="1.0" lineColor="#D7DAD9"/>
+										<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+										<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+										<rightPen lineWidth="0.0" lineColor="#D7DAD9"/>
+									</box>
+									<textElement textAlignment="Right" verticalAlignment="Middle"/>
+									<text><![CDATA[Cost]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell height="28" rowSpan="1">
+								<textField pattern="$ #,##0.00">
+									<reportElement uuid="db6e63e1-cee8-40ec-b6b1-5fb73d72fe99" key="" style="Row Banding" mode="Opaque" x="0" y="0" width="60" height="28" forecolor="#58595B">
+										<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									</reportElement>
+									<box rightPadding="3">
+										<topPen lineWidth="0.0" lineColor="#D7DAD9"/>
+										<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+										<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+										<rightPen lineWidth="0.0" lineColor="#D7DAD9"/>
+									</box>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="Calibri" size="10"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{store_cost}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="62" uuid="bfdf8af2-194b-4f28-aa59-aca0bfc1d67e">
+							<jr:tableFooter height="105" rowSpan="1">
+								<textField pattern="###0">
+									<reportElement uuid="98ae1e6b-e516-47e2-8a89-00bb29f2d602" style="h10" mode="Opaque" x="0" y="0" width="60" height="35"/>
+									<box rightPadding="3">
+										<topPen lineWidth="1.0" lineColor="#A4A6A8"/>
+										<leftPen lineColor="#FFFFFF"/>
+										<bottomPen lineWidth="1.0" lineColor="#A4A6A8"/>
+										<rightPen lineWidth="1.0" lineColor="#A4A6A8"/>
+									</box>
+									<textElement textAlignment="Right" verticalAlignment="Middle"/>
+									<textFieldExpression><![CDATA[$V{UnitsTotal}]]></textFieldExpression>
+								</textField>
+							</jr:tableFooter>
+							<jr:groupFooter groupName="product_name">
+								<jr:cell height="30" rowSpan="1">
+									<textField pattern="###0.00;-###0.00">
+										<reportElement uuid="1fd0b6e8-a3c1-4d98-87bd-487aaf44a57c" style="h10" mode="Opaque" x="0" y="0" width="60" height="20"/>
+										<box rightPadding="3">
+											<topPen lineWidth="1.0" lineColor="#A4A6A8"/>
+											<bottomPen lineWidth="1.0" lineColor="#A4A6A8"/>
+											<rightPen lineWidth="1.0" lineColor="#A4A6A8"/>
+										</box>
+										<textElement textAlignment="Right" verticalAlignment="Middle"/>
+										<textFieldExpression><![CDATA[$V{sum_unitSales}]]></textFieldExpression>
+									</textField>
+								</jr:cell>
+							</jr:groupFooter>
+							<jr:columnHeader height="30" rowSpan="1">
+								<staticText>
+									<reportElement uuid="f0732f4e-f8ff-404e-945f-df0a8bce8ab8" key="" style="h9" mode="Opaque" x="0" y="0" width="60" height="30" backcolor="#E9E9E8"/>
+									<box rightPadding="3">
+										<topPen lineWidth="1.0" lineColor="#D7DAD9"/>
+										<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+										<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+										<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+									</box>
+									<textElement textAlignment="Right" verticalAlignment="Middle"/>
+									<text><![CDATA[Units]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell height="28" rowSpan="1">
+								<textField pattern="###0.00">
+									<reportElement uuid="574b9a81-49f9-44e1-ae1b-7fe8bd395a22" key="" style="Row Banding" mode="Opaque" x="0" y="0" width="60" height="28" forecolor="#58595B">
+										<property name="com.jaspersoft.studio.unit.height" value="px"/>
+									</reportElement>
+									<box rightPadding="3">
+										<topPen lineWidth="0.0" lineColor="#D7DAD9"/>
+										<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+										<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+										<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+									</box>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="Calibri" size="10"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{unit_sales}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="40">
+			<textField>
+				<reportElement uuid="c9207cff-d831-4445-a293-60326f2c6674" x="452" y="0" width="80" height="40" forecolor="#58595B"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Calibri" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="b7ac772f-986a-40aa-9e68-6fb1fe907a4a" x="532" y="0" width="40" height="40" forecolor="#58595B">
+					<property name="local_mesure_unitx" value="pixel"/>
+				</reportElement>
+				<box leftPadding="3"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Calibri" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["" + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<elementGroup>
+				<textField pattern="dd MMM yyyy &apos;at&apos; HH:mm:ss z">
+					<reportElement uuid="c36f0ccf-03a5-4424-94a9-44e707d32588" x="288" y="0" width="164" height="40" forecolor="#58595B">
+						<property name="local_mesure_unitx" value="pixel"/>
+					</reportElement>
+					<box leftPadding="2"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Calibri" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="6ee142c5-0601-472f-8811-ad43c6fedadd" x="168" y="0" width="120" height="40" forecolor="#58595B"/>
+					<box rightPadding="0"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Calibri" size="10"/>
+					</textElement>
+					<text><![CDATA[Report executed on:]]></text>
+				</staticText>
+			</elementGroup>
+			<image scaleImage="RetainShape" hAlign="Left" vAlign="Middle">
+				<reportElement uuid="4c8f97fc-becd-40ba-9955-e9ed04432220" x="0" y="0" width="168" height="40"/>
+				<imageExpression><![CDATA["repo:js_logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+</jasperReport>

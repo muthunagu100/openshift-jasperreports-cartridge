@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inputControl exportedWithPermissions="true">
+    <folder>/public/Samples/Resources/Input_Controls</folder>
+    <name>Product_Name</name>
+    <version>0</version>
+    <label>Product Name</label>
+    <description>Displays distinct "Product's Names" depending upon the "Product Category" is selected.</description>
+    <creationDate>2014-12-18T02:01:40.159-08:00</creationDate>
+    <updateDate>2013-09-19T22:53:59.828-07:00</updateDate>
+    <type>7</type>
+    <mandatory>true</mandatory>
+    <readOnly>false</readOnly>
+    <visible>true</visible>
+    <query>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="query">
+            <folder>/public/Samples/Resources/Input_Controls/Product_Name_files</folder>
+            <name>ProductName_Query</name>
+            <version>0</version>
+            <label>ProductName Query</label>
+            <creationDate>2014-12-18T02:01:40.159-08:00</creationDate>
+            <updateDate>2013-09-19T22:53:59.828-07:00</updateDate>
+            <language>sql</language>
+            <queryString>select 
+	p.product_name
+from 
+	product_class pc
+    inner join product p on pc.product_class_id = p.product_class_id
+where 1=1
+	and (pc.product_category = ($P{Product_Category}) or $P{Product_Category} = 'All')
+	and (pc.product_family = ($P{Product_Family}) or $P{Product_Family} = 'All')
+	and (pc.product_department = ($P{Product_Department}) or $P{Product_Department} = 'All')
+	and product_name is not null
+group by 
+	p.product_name
+order by 
+	p.product_name</queryString>
+            <dataSource>
+                <uri>/public/Samples/Data_Sources/FoodmartDataSourceJNDI</uri>
+            </dataSource>
+        </localResource>
+    </query>
+    <queryVisibleColumn>product_name</queryVisibleColumn>
+    <queryValueColumn>product_name</queryValueColumn>
+</inputControl>

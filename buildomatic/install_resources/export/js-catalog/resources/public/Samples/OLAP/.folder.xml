@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder exportedWithPermissions="true">
+    <parent>/public/Samples</parent>
+    <name>OLAP</name>
+    <label>OLAP</label>
+    <description>OLAP</description>
+    <creationDate>2014-12-18T02:01:25.571-08:00</creationDate>
+    <updateDate>2012-10-15T09:25:17.704-07:00</updateDate>
+    <folder>Schemas</folder>
+    <folder>Views</folder>
+    <folder>XMLA</folder>
+</folder>

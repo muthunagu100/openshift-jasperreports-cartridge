@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fileResource exportedWithPermissions="true" dataFile="ProfileSchema.data">
+    <folder>/organizations/organization_1/performance/schemas</folder>
+    <name>ProfileSchema</name>
+    <version>0</version>
+    <label>Profile Schema</label>
+    <description>Profile Performance Schema</description>
+    <creationDate>2014-12-18T02:01:09.941-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:09.941-08:00</updateDate>
+    <fileType>olapMondrianSchema</fileType>
+</fileResource>

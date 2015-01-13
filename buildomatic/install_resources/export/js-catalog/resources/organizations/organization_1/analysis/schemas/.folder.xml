@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder exportedWithPermissions="true">
+    <parent>/organizations/organization_1/analysis</parent>
+    <name>schemas</name>
+    <label>Analysis Schemas</label>
+    <description>Schemas used by Analysis</description>
+    <creationDate>2014-12-18T02:01:08.756-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:08.756-08:00</updateDate>
+    <resource>FoodmartGrant</resource>
+    <resource>FoodmartMultiVariableGrant</resource>
+    <resource>FoodmartMultiVariableNoTopGrant</resource>
+    <resource>FoodmartMultiVariableTopNoMemberGrant</resource>
+    <resource>FoodmartNoTopGrant</resource>
+    <resource>FoodmartSchema</resource>
+    <resource>FoodmartSchemaUpper</resource>
+    <resource>FoodmartVariableGrant</resource>
+    <resource>SugarCRMSchema</resource>
+    <resource>SugarCRMSchemaUpper</resource>
+</folder>

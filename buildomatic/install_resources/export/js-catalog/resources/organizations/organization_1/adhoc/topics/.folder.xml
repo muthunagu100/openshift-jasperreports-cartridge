@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder exportedWithPermissions="true">
+    <parent>/organizations/organization_1/adhoc</parent>
+    <name>topics</name>
+    <label>Topics</label>
+    <description>Reports that provide starting points for the Ad Hoc editor</description>
+    <creationDate>2014-12-18T02:01:22.255-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:22.255-08:00</updateDate>
+    <resource>AdhocDemo</resource>
+    <resource>AllAccounts</resource>
+    <resource>Cascading_multi_select_topic</resource>
+    <resource>CrosstabDemo</resource>
+    <resource>CustomersReport</resource>
+    <resource>Employees</resource>
+    <resource>i18nColumns</resource>
+    <resource>MDXExample</resource>
+    <resource>ShippingParam</resource>
+    <resource>Simple_Domain_Topic</resource>
+    <resource>SuperMartProductsTopic</resource>
+    <resource>SuperMartStoresTopic</resource>
+    <permission>
+        <permissionMask>30</permissionMask>
+        <recipient recipientType="role">ROLE_USER</recipient>
+    </permission>
+</folder>

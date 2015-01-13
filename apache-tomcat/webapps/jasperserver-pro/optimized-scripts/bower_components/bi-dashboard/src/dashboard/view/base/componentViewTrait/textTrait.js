@@ -1,0 +1,1 @@
+define(["require","../FreeTextView"],function(e){var n=e("../FreeTextView");return{_initComponent:function(){this.component=new n({model:this.model,el:this.$content})},_onComponentPropertiesChange:function(){this._renderComponent()},_renderComponent:function(){this.component.render(),this.trigger("componentRendered",this)},_removeComponent:function(){this.component.remove()}}});

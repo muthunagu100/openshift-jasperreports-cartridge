@@ -1,0 +1,1 @@
+define(["require","underscore","iota-observable"],function(e){var o=e("underscore"),t=e("iota-observable"),n=function(){var e={};t.makeObservable(e),this.model=e};return o.extend(n.prototype,{get:function(e){return this.model.get(e)},set:function(e,o){this.model.set(e,o)},on:function(e,o){this.model.on(e,o)},off:function(e,o){this.model.off(e,o)}}),n});

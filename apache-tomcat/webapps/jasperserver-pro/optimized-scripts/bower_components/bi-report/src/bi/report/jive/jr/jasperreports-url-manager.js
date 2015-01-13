@@ -1,0 +1,1 @@
+define([],function(){return{applicationContextPath:null,reportcontexturl:"/servlets/reportcontext",reportoutputurl:"/servlets/reportoutput",reportactionurl:"/servlets/reportaction",reportcomponentsurl:"/servlets/reportcomponents",reportpagestatusurl:"/servlets/reportpagestatus"}});

@@ -1,0 +1,1112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dashboardModelResource exportedWithPermissions="true">
+    <folder>/public/Samples/Dashboards</folder>
+    <name>3.3_Expense_Metrics</name>
+    <version>0</version>
+    <label>3.3 Expense Metrics</label>
+    <description>Sample containing Expense related data and a hidden filter for embedded Visualize.js demo.</description>
+    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+    <defaultFoundation>default</defaultFoundation>
+    <foundation>
+        <id>default</id>
+        <layout>layout</layout>
+        <wiring>wiring</wiring>
+        <components>components</components>
+    </foundation>
+    <resourceDescriptor>
+        <type>wiring</type>
+        <id>wiring</id>
+    </resourceDescriptor>
+    <resourceDescriptor>
+        <type>layout</type>
+        <id>layout</id>
+    </resourceDescriptor>
+    <resourceDescriptor>
+        <type>components</type>
+        <id>components</id>
+    </resourceDescriptor>
+    <resourceDescriptor>
+        <type>adhocDataView</type>
+        <id>/temp/tmpAdv_1414795235038_uali</id>
+    </resourceDescriptor>
+    <resourceDescriptor>
+        <type>adhocDataView</type>
+        <id>/temp/tmpAdv_1414795347885_dzho</id>
+    </resourceDescriptor>
+    <resourceDescriptor>
+        <type>adhocDataView</type>
+        <id>/temp/tmpAdv_1414795509391_uxpt</id>
+    </resourceDescriptor>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="wiring.data" xsi:type="fileResource">
+            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files</folder>
+            <name>wiring</name>
+            <version>0</version>
+            <label>wiring</label>
+            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+            <fileType>json</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="layout" xsi:type="contentResource">
+            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files</folder>
+            <name>layout</name>
+            <version>0</version>
+            <label>layout</label>
+            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+            <fileType>html</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="components.data" xsi:type="fileResource">
+            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files</folder>
+            <name>components</name>
+            <version>0</version>
+            <label>components</label>
+            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+            <fileType>dashboardComponent</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="adhocDataView">
+            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files</folder>
+            <name>tmpAdv_1414795235038_uali</name>
+            <version>0</version>
+            <label>tmpAdv_1414795235038_uali</label>
+            <description>Dashboard visualization.</description>
+            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+            <dataSource>
+                <uri>/public/Samples/Domains/supermartDomain</uri>
+            </dataSource>
+            <inputControl>
+                <localResource exportedWithPermissions="false" xsi:type="inputControl">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795235038_uali_files</folder>
+                    <name>exp_store__store_contact__store_country_1</name>
+                    <version>0</version>
+                    <label>$R{supermart.store.store_country.label}</label>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <type>7</type>
+                    <mandatory>false</mandatory>
+                    <readOnly>false</readOnly>
+                    <visible>true</visible>
+                    <query>
+                        <localResource exportedWithPermissions="false" xsi:type="query">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795235038_uali_files/exp_store__store_contact__store_country_1_files</folder>
+                            <name>exp_store__store_contact__store_country_1</name>
+                            <version>0</version>
+                            <label>$R{supermart.store.store_country.label}</label>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <language>domain</language>
+                            <queryString>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;query xmlns="http://www.jaspersoft.com/2007/SL/XMLSchema"&gt;
+  &lt;groupList&gt;
+    &lt;group columnName="expense_fact.exp_store.exp_store__store_contact.exp_store__store_contact__store_country" /&gt;
+  &lt;/groupList&gt;
+  &lt;queryFields&gt;
+    &lt;queryField id="store3.store_country" /&gt;
+    &lt;queryField id="expense_fact.exp_store.exp_store__store_contact.exp_store__store_contact__store_country" /&gt;
+  &lt;/queryFields&gt;
+&lt;/query&gt;
+
+</queryString>
+                            <dataSource>
+                                <uri>/public/Samples/Domains/supermartDomain</uri>
+                            </dataSource>
+                        </localResource>
+                    </query>
+                    <queryVisibleColumn>expense_fact.exp_store.exp_store__store_contact.exp_store__store_contact__store_country</queryVisibleColumn>
+                    <queryValueColumn>expense_fact.exp_store.exp_store__store_contact.exp_store__store_contact__store_country</queryValueColumn>
+                </localResource>
+            </inputControl>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795235038_uali_files</folder>
+                    <name>supermart_domain.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain_en_US.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795235038_uali_files</folder>
+                    <name>supermart_domain_en_US.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain_es.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795235038_uali_files</folder>
+                    <name>supermart_domain_es.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain_fr.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795235038_uali_files</folder>
+                    <name>supermart_domain_fr.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain_ja.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795235038_uali_files</folder>
+                    <name>supermart_domain_ja.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain_zh_CN.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795235038_uali_files</folder>
+                    <name>supermart_domain_zh_CN.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain_de.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795235038_uali_files</folder>
+                    <name>supermart_domain_de.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="topicJRXML.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795235038_uali_files</folder>
+                    <name>topicJRXML</name>
+                    <version>0</version>
+                    <label>topicJRXML</label>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>jrxml</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="stateXML.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795235038_uali_files</folder>
+                    <name>stateXML</name>
+                    <version>0</version>
+                    <label>stateXML</label>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>xml</fileType>
+                </localResource>
+            </resource>
+            <reports>
+                <localResource exportedWithPermissions="false" xsi:type="reportUnit">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795235038_uali_files</folder>
+                    <name>dashboardReport</name>
+                    <version>1</version>
+                    <label>dashboardReport</label>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <mainReport>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="mainReportJrxml.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795235038_uali_files/dashboardReport_files</folder>
+                            <name>mainReportJrxml</name>
+                            <version>0</version>
+                            <label>mainReportJrxml</label>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>jrxml</fileType>
+                        </localResource>
+                    </mainReport>
+                    <resource>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="supermart_domain.properties.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795235038_uali_files/dashboardReport_files</folder>
+                            <name>supermart_domain.properties</name>
+                            <version>0</version>
+                            <label>bundle</label>
+                            <description>bundle</description>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>prop</fileType>
+                        </localResource>
+                    </resource>
+                    <resource>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="supermart_domain_en_US.properties.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795235038_uali_files/dashboardReport_files</folder>
+                            <name>supermart_domain_en_US.properties</name>
+                            <version>0</version>
+                            <label>bundle</label>
+                            <description>bundle</description>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>prop</fileType>
+                        </localResource>
+                    </resource>
+                    <resource>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="supermart_domain_es.properties.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795235038_uali_files/dashboardReport_files</folder>
+                            <name>supermart_domain_es.properties</name>
+                            <version>0</version>
+                            <label>bundle</label>
+                            <description>bundle</description>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>prop</fileType>
+                        </localResource>
+                    </resource>
+                    <resource>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="supermart_domain_fr.properties.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795235038_uali_files/dashboardReport_files</folder>
+                            <name>supermart_domain_fr.properties</name>
+                            <version>0</version>
+                            <label>bundle</label>
+                            <description>bundle</description>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>prop</fileType>
+                        </localResource>
+                    </resource>
+                    <resource>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="supermart_domain_ja.properties.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795235038_uali_files/dashboardReport_files</folder>
+                            <name>supermart_domain_ja.properties</name>
+                            <version>0</version>
+                            <label>bundle</label>
+                            <description>bundle</description>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>prop</fileType>
+                        </localResource>
+                    </resource>
+                    <resource>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="supermart_domain_zh_CN.properties.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795235038_uali_files/dashboardReport_files</folder>
+                            <name>supermart_domain_zh_CN.properties</name>
+                            <version>0</version>
+                            <label>bundle</label>
+                            <description>bundle</description>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>prop</fileType>
+                        </localResource>
+                    </resource>
+                    <resource>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="supermart_domain_de.properties.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795235038_uali_files/dashboardReport_files</folder>
+                            <name>supermart_domain_de.properties</name>
+                            <version>0</version>
+                            <label>bundle</label>
+                            <description>bundle</description>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>prop</fileType>
+                        </localResource>
+                    </resource>
+                    <resource>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="stateXML.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795235038_uali_files/dashboardReport_files</folder>
+                            <name>stateXML</name>
+                            <version>0</version>
+                            <label>stateXML</label>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>xml</fileType>
+                        </localResource>
+                    </resource>
+                    <alwaysPromptControls>false</alwaysPromptControls>
+                    <controlsLayout>1</controlsLayout>
+                </localResource>
+            </reports>
+            <alwaysPromptControls>false</alwaysPromptControls>
+            <controlsLayout>1</controlsLayout>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="adhocDataView">
+            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files</folder>
+            <name>tmpAdv_1414795347885_dzho</name>
+            <version>0</version>
+            <label>tmpAdv_1414795347885_dzho</label>
+            <description>Dashboard visualization.</description>
+            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+            <dataSource>
+                <uri>/public/Samples/Domains/supermartDomain</uri>
+            </dataSource>
+            <inputControl>
+                <localResource exportedWithPermissions="false" xsi:type="inputControl">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795347885_dzho_files</folder>
+                    <name>exp_store__region__sales_country_1</name>
+                    <version>0</version>
+                    <label>$R{supermart.region.sales_country.label}</label>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <type>7</type>
+                    <mandatory>false</mandatory>
+                    <readOnly>false</readOnly>
+                    <visible>true</visible>
+                    <query>
+                        <localResource exportedWithPermissions="false" xsi:type="query">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795347885_dzho_files/exp_store__region__sales_country_1_files</folder>
+                            <name>exp_store__region__sales_country_1</name>
+                            <version>0</version>
+                            <label>$R{supermart.region.sales_country.label}</label>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <language>domain</language>
+                            <queryString>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;query xmlns="http://www.jaspersoft.com/2007/SL/XMLSchema"&gt;
+  &lt;groupList&gt;
+    &lt;group columnName="expense_fact.exp_store.exp_store__region.exp_store__region__sales_country" /&gt;
+  &lt;/groupList&gt;
+  &lt;queryFields&gt;
+    &lt;queryField id="region3.sales_country" /&gt;
+    &lt;queryField id="expense_fact.exp_store.exp_store__region.exp_store__region__sales_country" /&gt;
+  &lt;/queryFields&gt;
+&lt;/query&gt;
+
+</queryString>
+                            <dataSource>
+                                <uri>/public/Samples/Domains/supermartDomain</uri>
+                            </dataSource>
+                        </localResource>
+                    </query>
+                    <queryVisibleColumn>expense_fact.exp_store.exp_store__region.exp_store__region__sales_country</queryVisibleColumn>
+                    <queryValueColumn>expense_fact.exp_store.exp_store__region.exp_store__region__sales_country</queryValueColumn>
+                </localResource>
+            </inputControl>
+            <inputControl>
+                <localResource exportedWithPermissions="false" xsi:type="inputControl">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795347885_dzho_files</folder>
+                    <name>exp_store__region__sales_district_1</name>
+                    <version>0</version>
+                    <label>$R{supermart.region.sales_district.label} not </label>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <type>7</type>
+                    <mandatory>false</mandatory>
+                    <readOnly>false</readOnly>
+                    <visible>true</visible>
+                    <query>
+                        <localResource exportedWithPermissions="false" xsi:type="query">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795347885_dzho_files/exp_store__region__sales_district_1_files</folder>
+                            <name>exp_store__region__sales_district_1</name>
+                            <version>0</version>
+                            <label>$R{supermart.region.sales_district.label} not </label>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <language>domain</language>
+                            <queryString>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;query xmlns="http://www.jaspersoft.com/2007/SL/XMLSchema"&gt;
+  &lt;groupList&gt;
+    &lt;group columnName="expense_fact.exp_store.exp_store__region.exp_store__region__sales_district" /&gt;
+  &lt;/groupList&gt;
+  &lt;queryFields&gt;
+    &lt;queryField id="region3.sales_district" /&gt;
+    &lt;queryField id="expense_fact.exp_store.exp_store__region.exp_store__region__sales_district" /&gt;
+  &lt;/queryFields&gt;
+&lt;/query&gt;
+
+</queryString>
+                            <dataSource>
+                                <uri>/public/Samples/Domains/supermartDomain</uri>
+                            </dataSource>
+                        </localResource>
+                    </query>
+                    <queryVisibleColumn>expense_fact.exp_store.exp_store__region.exp_store__region__sales_district</queryVisibleColumn>
+                    <queryValueColumn>expense_fact.exp_store.exp_store__region.exp_store__region__sales_district</queryValueColumn>
+                </localResource>
+            </inputControl>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795347885_dzho_files</folder>
+                    <name>supermart_domain.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain_en_US.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795347885_dzho_files</folder>
+                    <name>supermart_domain_en_US.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain_es.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795347885_dzho_files</folder>
+                    <name>supermart_domain_es.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain_fr.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795347885_dzho_files</folder>
+                    <name>supermart_domain_fr.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain_ja.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795347885_dzho_files</folder>
+                    <name>supermart_domain_ja.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain_zh_CN.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795347885_dzho_files</folder>
+                    <name>supermart_domain_zh_CN.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain_de.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795347885_dzho_files</folder>
+                    <name>supermart_domain_de.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="topicJRXML.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795347885_dzho_files</folder>
+                    <name>topicJRXML</name>
+                    <version>0</version>
+                    <label>topicJRXML</label>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>jrxml</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="stateXML.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795347885_dzho_files</folder>
+                    <name>stateXML</name>
+                    <version>0</version>
+                    <label>stateXML</label>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>xml</fileType>
+                </localResource>
+            </resource>
+            <reports>
+                <localResource exportedWithPermissions="false" xsi:type="reportUnit">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795347885_dzho_files</folder>
+                    <name>dashboardReport</name>
+                    <version>1</version>
+                    <label>dashboardReport</label>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <mainReport>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="mainReportJrxml.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795347885_dzho_files/dashboardReport_files</folder>
+                            <name>mainReportJrxml</name>
+                            <version>0</version>
+                            <label>mainReportJrxml</label>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>jrxml</fileType>
+                        </localResource>
+                    </mainReport>
+                    <resource>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="supermart_domain.properties.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795347885_dzho_files/dashboardReport_files</folder>
+                            <name>supermart_domain.properties</name>
+                            <version>0</version>
+                            <label>bundle</label>
+                            <description>bundle</description>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>prop</fileType>
+                        </localResource>
+                    </resource>
+                    <resource>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="supermart_domain_en_US.properties.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795347885_dzho_files/dashboardReport_files</folder>
+                            <name>supermart_domain_en_US.properties</name>
+                            <version>0</version>
+                            <label>bundle</label>
+                            <description>bundle</description>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>prop</fileType>
+                        </localResource>
+                    </resource>
+                    <resource>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="supermart_domain_es.properties.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795347885_dzho_files/dashboardReport_files</folder>
+                            <name>supermart_domain_es.properties</name>
+                            <version>0</version>
+                            <label>bundle</label>
+                            <description>bundle</description>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>prop</fileType>
+                        </localResource>
+                    </resource>
+                    <resource>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="supermart_domain_fr.properties.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795347885_dzho_files/dashboardReport_files</folder>
+                            <name>supermart_domain_fr.properties</name>
+                            <version>0</version>
+                            <label>bundle</label>
+                            <description>bundle</description>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>prop</fileType>
+                        </localResource>
+                    </resource>
+                    <resource>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="supermart_domain_ja.properties.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795347885_dzho_files/dashboardReport_files</folder>
+                            <name>supermart_domain_ja.properties</name>
+                            <version>0</version>
+                            <label>bundle</label>
+                            <description>bundle</description>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>prop</fileType>
+                        </localResource>
+                    </resource>
+                    <resource>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="supermart_domain_zh_CN.properties.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795347885_dzho_files/dashboardReport_files</folder>
+                            <name>supermart_domain_zh_CN.properties</name>
+                            <version>0</version>
+                            <label>bundle</label>
+                            <description>bundle</description>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>prop</fileType>
+                        </localResource>
+                    </resource>
+                    <resource>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="supermart_domain_de.properties.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795347885_dzho_files/dashboardReport_files</folder>
+                            <name>supermart_domain_de.properties</name>
+                            <version>0</version>
+                            <label>bundle</label>
+                            <description>bundle</description>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>prop</fileType>
+                        </localResource>
+                    </resource>
+                    <resource>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="stateXML.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795347885_dzho_files/dashboardReport_files</folder>
+                            <name>stateXML</name>
+                            <version>0</version>
+                            <label>stateXML</label>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>xml</fileType>
+                        </localResource>
+                    </resource>
+                    <alwaysPromptControls>false</alwaysPromptControls>
+                    <controlsLayout>1</controlsLayout>
+                </localResource>
+            </reports>
+            <alwaysPromptControls>false</alwaysPromptControls>
+            <controlsLayout>1</controlsLayout>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="adhocDataView">
+            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files</folder>
+            <name>tmpAdv_1414795509391_uxpt</name>
+            <version>0</version>
+            <label>tmpAdv_1414795509391_uxpt</label>
+            <description>Dashboard visualization.</description>
+            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+            <dataSource>
+                <uri>/organizations/organization_1/Domains/supermartDomain</uri>
+            </dataSource>
+            <inputControl>
+                <localResource exportedWithPermissions="false" xsi:type="inputControl">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795509391_uxpt_files</folder>
+                    <name>exp_store__store_contact__store_country_1</name>
+                    <version>0</version>
+                    <label>$R{supermart.store.store_country.label}</label>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <type>7</type>
+                    <mandatory>false</mandatory>
+                    <readOnly>false</readOnly>
+                    <visible>true</visible>
+                    <query>
+                        <localResource exportedWithPermissions="false" xsi:type="query">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795509391_uxpt_files/exp_store__store_contact__store_country_1_files</folder>
+                            <name>exp_store__store_contact__store_country_1</name>
+                            <version>0</version>
+                            <label>$R{supermart.store.store_country.label}</label>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <language>domain</language>
+                            <queryString>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;query xmlns="http://www.jaspersoft.com/2007/SL/XMLSchema"&gt;
+  &lt;groupList&gt;
+    &lt;group columnName="expense_fact.exp_store.exp_store__store_contact.exp_store__store_contact__store_country" /&gt;
+  &lt;/groupList&gt;
+  &lt;queryFields&gt;
+    &lt;queryField id="store3.store_country" /&gt;
+    &lt;queryField id="expense_fact.exp_store.exp_store__store_contact.exp_store__store_contact__store_country" /&gt;
+  &lt;/queryFields&gt;
+&lt;/query&gt;
+
+</queryString>
+                            <dataSource>
+                                <uri>/organizations/organization_1/Domains/supermartDomain</uri>
+                            </dataSource>
+                        </localResource>
+                    </query>
+                    <queryVisibleColumn>expense_fact.exp_store.exp_store__store_contact.exp_store__store_contact__store_country</queryVisibleColumn>
+                    <queryValueColumn>expense_fact.exp_store.exp_store__store_contact.exp_store__store_contact__store_country</queryValueColumn>
+                </localResource>
+            </inputControl>
+            <inputControl>
+                <localResource exportedWithPermissions="false" xsi:type="inputControl">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795509391_uxpt_files</folder>
+                    <name>exp_store__region__sales_region_1</name>
+                    <version>0</version>
+                    <label>$R{supermart.region.sales_region.label} not </label>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <type>7</type>
+                    <mandatory>false</mandatory>
+                    <readOnly>false</readOnly>
+                    <visible>true</visible>
+                    <query>
+                        <localResource exportedWithPermissions="false" xsi:type="query">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795509391_uxpt_files/exp_store__region__sales_region_1_files</folder>
+                            <name>exp_store__region__sales_region_1</name>
+                            <version>0</version>
+                            <label>$R{supermart.region.sales_region.label} not </label>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <language>domain</language>
+                            <queryString>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;query xmlns="http://www.jaspersoft.com/2007/SL/XMLSchema"&gt;
+  &lt;groupList&gt;
+    &lt;group columnName="expense_fact.exp_store.exp_store__region.exp_store__region__sales_region" /&gt;
+  &lt;/groupList&gt;
+  &lt;queryFields&gt;
+    &lt;queryField id="region3.sales_region" /&gt;
+    &lt;queryField id="expense_fact.exp_store.exp_store__region.exp_store__region__sales_region" /&gt;
+  &lt;/queryFields&gt;
+&lt;/query&gt;
+
+</queryString>
+                            <dataSource>
+                                <uri>/organizations/organization_1/Domains/supermartDomain</uri>
+                            </dataSource>
+                        </localResource>
+                    </query>
+                    <queryVisibleColumn>expense_fact.exp_store.exp_store__region.exp_store__region__sales_region</queryVisibleColumn>
+                    <queryValueColumn>expense_fact.exp_store.exp_store__region.exp_store__region__sales_region</queryValueColumn>
+                </localResource>
+            </inputControl>
+            <inputControl>
+                <localResource exportedWithPermissions="false" xsi:type="inputControl">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795509391_uxpt_files</folder>
+                    <name>exp_store__store_contact__store_manager_1</name>
+                    <version>0</version>
+                    <label>$R{supermart.store.store_manager.label} not </label>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <type>7</type>
+                    <mandatory>false</mandatory>
+                    <readOnly>false</readOnly>
+                    <visible>true</visible>
+                    <query>
+                        <localResource exportedWithPermissions="false" xsi:type="query">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795509391_uxpt_files/exp_store__store_contact__store_manager_1_files</folder>
+                            <name>exp_store__store_contact__store_manager_1</name>
+                            <version>0</version>
+                            <label>$R{supermart.store.store_manager.label} not </label>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <language>domain</language>
+                            <queryString>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;query xmlns="http://www.jaspersoft.com/2007/SL/XMLSchema"&gt;
+  &lt;groupList&gt;
+    &lt;group columnName="expense_fact.exp_store.exp_store__store_contact.exp_store__store_contact__store_manager" /&gt;
+  &lt;/groupList&gt;
+  &lt;queryFields&gt;
+    &lt;queryField id="expense_fact.exp_store.exp_store__store_contact.exp_store__store_contact__store_manager" /&gt;
+    &lt;queryField id="store3.store_manager" /&gt;
+  &lt;/queryFields&gt;
+&lt;/query&gt;
+
+</queryString>
+                            <dataSource>
+                                <uri>/organizations/organization_1/Domains/supermartDomain</uri>
+                            </dataSource>
+                        </localResource>
+                    </query>
+                    <queryVisibleColumn>expense_fact.exp_store.exp_store__store_contact.exp_store__store_contact__store_manager</queryVisibleColumn>
+                    <queryValueColumn>expense_fact.exp_store.exp_store__store_contact.exp_store__store_contact__store_manager</queryValueColumn>
+                </localResource>
+            </inputControl>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795509391_uxpt_files</folder>
+                    <name>supermart_domain.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain_en_US.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795509391_uxpt_files</folder>
+                    <name>supermart_domain_en_US.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain_de.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795509391_uxpt_files</folder>
+                    <name>supermart_domain_de.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain_fr.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795509391_uxpt_files</folder>
+                    <name>supermart_domain_fr.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain_es.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795509391_uxpt_files</folder>
+                    <name>supermart_domain_es.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain_ja.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795509391_uxpt_files</folder>
+                    <name>supermart_domain_ja.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain_zh_CN.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795509391_uxpt_files</folder>
+                    <name>supermart_domain_zh_CN.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="topicJRXML.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795509391_uxpt_files</folder>
+                    <name>topicJRXML</name>
+                    <version>0</version>
+                    <label>topicJRXML</label>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>jrxml</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="stateXML.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795509391_uxpt_files</folder>
+                    <name>stateXML</name>
+                    <version>0</version>
+                    <label>stateXML</label>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <fileType>xml</fileType>
+                </localResource>
+            </resource>
+            <reports>
+                <localResource exportedWithPermissions="false" xsi:type="reportUnit">
+                    <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795509391_uxpt_files</folder>
+                    <name>dashboardReport</name>
+                    <version>1</version>
+                    <label>dashboardReport</label>
+                    <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                    <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                    <mainReport>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="mainReportJrxml.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795509391_uxpt_files/dashboardReport_files</folder>
+                            <name>mainReportJrxml</name>
+                            <version>0</version>
+                            <label>mainReportJrxml</label>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>jrxml</fileType>
+                        </localResource>
+                    </mainReport>
+                    <resource>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="supermart_domain.properties.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795509391_uxpt_files/dashboardReport_files</folder>
+                            <name>supermart_domain.properties</name>
+                            <version>0</version>
+                            <label>bundle</label>
+                            <description>bundle</description>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>prop</fileType>
+                        </localResource>
+                    </resource>
+                    <resource>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="supermart_domain_en_US.properties.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795509391_uxpt_files/dashboardReport_files</folder>
+                            <name>supermart_domain_en_US.properties</name>
+                            <version>0</version>
+                            <label>bundle</label>
+                            <description>bundle</description>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>prop</fileType>
+                        </localResource>
+                    </resource>
+                    <resource>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="supermart_domain_de.properties.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795509391_uxpt_files/dashboardReport_files</folder>
+                            <name>supermart_domain_de.properties</name>
+                            <version>0</version>
+                            <label>bundle</label>
+                            <description>bundle</description>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>prop</fileType>
+                        </localResource>
+                    </resource>
+                    <resource>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="supermart_domain_fr.properties.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795509391_uxpt_files/dashboardReport_files</folder>
+                            <name>supermart_domain_fr.properties</name>
+                            <version>0</version>
+                            <label>bundle</label>
+                            <description>bundle</description>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>prop</fileType>
+                        </localResource>
+                    </resource>
+                    <resource>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="supermart_domain_es.properties.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795509391_uxpt_files/dashboardReport_files</folder>
+                            <name>supermart_domain_es.properties</name>
+                            <version>0</version>
+                            <label>bundle</label>
+                            <description>bundle</description>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>prop</fileType>
+                        </localResource>
+                    </resource>
+                    <resource>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="supermart_domain_ja.properties.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795509391_uxpt_files/dashboardReport_files</folder>
+                            <name>supermart_domain_ja.properties</name>
+                            <version>0</version>
+                            <label>bundle</label>
+                            <description>bundle</description>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>prop</fileType>
+                        </localResource>
+                    </resource>
+                    <resource>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="supermart_domain_zh_CN.properties.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795509391_uxpt_files/dashboardReport_files</folder>
+                            <name>supermart_domain_zh_CN.properties</name>
+                            <version>0</version>
+                            <label>bundle</label>
+                            <description>bundle</description>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>prop</fileType>
+                        </localResource>
+                    </resource>
+                    <resource>
+                        <localResource exportedWithPermissions="false"
+                            dataFile="stateXML.data" xsi:type="fileResource">
+                            <folder>/public/Samples/Dashboards/3.3_Expense_Metrics_files/tmpAdv_1414795509391_uxpt_files/dashboardReport_files</folder>
+                            <name>stateXML</name>
+                            <version>0</version>
+                            <label>stateXML</label>
+                            <creationDate>2014-12-18T02:01:35.447-08:00</creationDate>
+                            <updateDate>2014-10-31T15:53:19.303-07:00</updateDate>
+                            <fileType>xml</fileType>
+                        </localResource>
+                    </resource>
+                    <alwaysPromptControls>false</alwaysPromptControls>
+                    <controlsLayout>1</controlsLayout>
+                </localResource>
+            </reports>
+            <alwaysPromptControls>false</alwaysPromptControls>
+            <controlsLayout>1</controlsLayout>
+        </localResource>
+    </resource>
+</dashboardModelResource>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inputControl exportedWithPermissions="true">
+    <folder>/public/Samples/Resources/Input_Controls</folder>
+    <name>startMonth</name>
+    <version>0</version>
+    <label>Start Month</label>
+    <description>Uses MonthNamesList (in rootinput data types). Maps to startMonth parameter.</description>
+    <creationDate>2014-12-18T02:01:29.435-08:00</creationDate>
+    <updateDate>2013-08-28T22:46:12.393-07:00</updateDate>
+    <type>3</type>
+    <mandatory>true</mandatory>
+    <readOnly>false</readOnly>
+    <visible>true</visible>
+    <listOfValues>
+        <uri>/public/Samples/Resources/Data_Types/MonthNamesList</uri>
+    </listOfValues>
+</inputControl>

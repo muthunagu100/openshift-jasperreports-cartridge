@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/organizations/organization_1/adhoc/topics</folder>
+    <name>CustomersReport</name>
+    <version>0</version>
+    <label>Customers Report</label>
+    <description>Parameterized Report with no default values for parameters</description>
+    <creationDate>2014-12-18T02:01:22.699-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:22.699-08:00</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="CustomersReport.data" xsi:type="fileResource">
+            <folder>/organizations/organization_1/adhoc/topics/CustomersReport_files</folder>
+            <name>CustomersReport</name>
+            <version>0</version>
+            <label>CustomersReport_label</label>
+            <description>CustomersReport description</description>
+            <creationDate>2014-12-18T02:01:22.699-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.699-08:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/organizations/organization_1/analysis/datasources/FoodmartDataSourceJNDI</uri>
+    </dataSource>
+    <inputControl>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="inputControl">
+            <folder>/organizations/organization_1/adhoc/topics/CustomersReport_files</folder>
+            <name>DateFrom</name>
+            <version>0</version>
+            <label>DateFrom</label>
+            <description>DateFrom</description>
+            <creationDate>2014-12-18T02:01:22.699-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.699-08:00</updateDate>
+            <type>2</type>
+            <mandatory>true</mandatory>
+            <readOnly>false</readOnly>
+            <visible>true</visible>
+            <dataType>
+                <localResource exportedWithPermissions="false" xsi:type="dataType">
+                    <folder>/organizations/organization_1/adhoc/topics/CustomersReport_files/DateFrom_files</folder>
+                    <name>Date</name>
+                    <version>0</version>
+                    <label>Date_label</label>
+                    <description>Date description</description>
+                    <creationDate>2014-12-18T02:01:22.699-08:00</creationDate>
+                    <updateDate>2014-12-18T02:01:22.699-08:00</updateDate>
+                    <type>3</type>
+                    <strictMin>false</strictMin>
+                    <strictMax>false</strictMax>
+                </localResource>
+            </dataType>
+        </localResource>
+    </inputControl>
+    <inputControl>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="inputControl">
+            <folder>/organizations/organization_1/adhoc/topics/CustomersReport_files</folder>
+            <name>DateTo</name>
+            <version>0</version>
+            <label>DateTo</label>
+            <description>DateTo</description>
+            <creationDate>2014-12-18T02:01:22.699-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.699-08:00</updateDate>
+            <type>2</type>
+            <mandatory>true</mandatory>
+            <readOnly>false</readOnly>
+            <visible>true</visible>
+            <dataType>
+                <localResource exportedWithPermissions="false" xsi:type="dataType">
+                    <folder>/organizations/organization_1/adhoc/topics/CustomersReport_files/DateTo_files</folder>
+                    <name>Date</name>
+                    <version>0</version>
+                    <label>Date_label</label>
+                    <description>Date description</description>
+                    <creationDate>2014-12-18T02:01:22.699-08:00</creationDate>
+                    <updateDate>2014-12-18T02:01:22.699-08:00</updateDate>
+                    <type>3</type>
+                    <strictMin>false</strictMin>
+                    <strictMax>false</strictMax>
+                </localResource>
+            </dataType>
+        </localResource>
+    </inputControl>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>1</controlsLayout>
+</reportUnit>

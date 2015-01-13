@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inputControl exportedWithPermissions="true">
+    <folder>/public/Samples/Resources/Input_Controls</folder>
+    <name>ProductFamily</name>
+    <version>0</version>
+    <label>ProductFamily</label>
+    <description>Product Family Multi-Select</description>
+    <creationDate>2014-12-18T02:01:37.479-08:00</creationDate>
+    <updateDate>2012-10-22T06:13:32.503-07:00</updateDate>
+    <type>6</type>
+    <mandatory>true</mandatory>
+    <readOnly>false</readOnly>
+    <visible>true</visible>
+    <listOfValues>
+        <uri>/public/Samples/Resources/Input_Controls/ProductFamilyList</uri>
+    </listOfValues>
+</inputControl>

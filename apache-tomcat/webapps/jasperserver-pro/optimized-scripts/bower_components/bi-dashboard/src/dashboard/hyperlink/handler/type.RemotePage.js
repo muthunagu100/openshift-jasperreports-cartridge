@@ -1,0 +1,1 @@
+define(["require","./type.Reference"],function(e){var n=e("./type.Reference");return{beforeRender:function(e){n.beforeRender.call(this,e)},click:function(e,c){n.click.call(this,e,c)}}});

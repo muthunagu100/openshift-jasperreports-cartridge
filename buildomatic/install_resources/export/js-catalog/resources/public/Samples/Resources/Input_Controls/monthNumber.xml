@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inputControl exportedWithPermissions="true">
+    <folder>/public/Samples/Resources/Input_Controls</folder>
+    <name>monthNumber</name>
+    <version>0</version>
+    <label>Month Number Input Control</label>
+    <description>Uses MonthNamesList (in root\input data types). Maps to monthNumber parameter.</description>
+    <creationDate>2014-12-18T02:01:38.111-08:00</creationDate>
+    <updateDate>2012-11-02T03:38:57.596-07:00</updateDate>
+    <type>3</type>
+    <mandatory>true</mandatory>
+    <readOnly>false</readOnly>
+    <visible>false</visible>
+    <listOfValues>
+        <uri>/public/Samples/Resources/Data_Types/MonthNamesList</uri>
+    </listOfValues>
+</inputControl>

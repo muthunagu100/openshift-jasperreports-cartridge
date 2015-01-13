@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder exportedWithPermissions="true">
+    <parent>/public/Samples/Resources</parent>
+    <name>Images</name>
+    <label>Images</label>
+    <description>Images</description>
+    <creationDate>2014-12-18T02:01:26.041-08:00</creationDate>
+    <updateDate>2012-10-15T09:26:23.117-07:00</updateDate>
+    <resource>Green</resource>
+    <resource>ico-library.jpg</resource>
+    <resource>Jaspersoft_logo.png</resource>
+    <resource>no_blue</resource>
+    <resource>no.png</resource>
+    <resource>noGreen.png</resource>
+    <resource>Red</resource>
+    <resource>Yellow</resource>
+    <resource>yes_blue</resource>
+    <resource>yes.png</resource>
+    <resource>yesGreen.png</resource>
+</folder>

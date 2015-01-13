@@ -1,0 +1,14 @@
+ShippedDate=Versanddatum
+ShipCountry=Versandland 
+RequiredDate=Gew\u00fcnschter Termin 
+CustomerID=Kunden-ID
+OrderId=Bestell-ID 
+ShipName=Versandname
+ShipVia=Versand \u00fcber
+OrderDate=Bestelldatum
+ShipCity=Versandort
+ShipAddress=Versandadresse
+EmployeeID=Mitarbeiter-ID
+ShipRegion=Versandregion
+Freight=Fracht
+

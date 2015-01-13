@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inputControl exportedWithPermissions="true">
+    <folder>/organizations/organization_1/supermart/Common</folder>
+    <name>productFamily</name>
+    <version>0</version>
+    <label>Product Family</label>
+    <description>Uses ProductFamilyList. Maps to productFamily parameter.</description>
+    <creationDate>2014-12-18T02:01:22.780-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:22.780-08:00</updateDate>
+    <type>3</type>
+    <mandatory>true</mandatory>
+    <readOnly>false</readOnly>
+    <visible>true</visible>
+    <listOfValues>
+        <uri>/organizations/organization_1/supermart/Common/ProductFamilyList</uri>
+    </listOfValues>
+</inputControl>

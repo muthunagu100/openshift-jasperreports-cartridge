@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fileResource exportedWithPermissions="true" dataFile="DemoChartLabels.jar.data">
+    <folder>/public/Samples/Resources/Extras</folder>
+    <name>DemoChartLabels.jar</name>
+    <version>0</version>
+    <label>DemoChartLabels.jar</label>
+    <description>BarLabels.class PieLabels.class MeterLabels.class LineLabels.class</description>
+    <creationDate>2014-12-18T02:01:32.772-08:00</creationDate>
+    <updateDate>2012-07-03T12:59:34.455-07:00</updateDate>
+    <fileType>jar</fileType>
+</fileResource>

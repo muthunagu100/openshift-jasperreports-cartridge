@@ -1,0 +1,104 @@
+.dashboardToolbar .toolbar .buttonSet .node {
+    padding: 0 2px;
+}
+
+.dashboardToolbar .toolbar .buttonSet .node.separator {
+    width: 12px;
+    height: 1px;
+}
+
+.dashboardToolbar .toolbar .button .icon {
+    background-image: url(../images/dashboard_toolbar_buttons_sprite.png);
+    background-repeat: no-repeat;
+}
+
+.dashboardToolbar > .content > .header > .title {
+    float: left;
+}
+
+.dashboardToolbar > .content > .header > .buttons {
+    float: right;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 2px;
+}
+
+.dashboardToolbar > .content > .header > .buttons > #back {
+    width: 56px;
+}
+
+.dashboardToolbar .toolbar #presentation .icon {
+    background-position: 3px 3px;
+}
+
+.dashboardToolbar .toolbar #grid .icon {
+    background-position: 3px -276px;
+}
+
+.dashboardToolbar .toolbar #save .icon {
+    background-position: 3px -37px;
+}
+
+.dashboardToolbar .toolbar #undo .icon {
+    background-position: 3px -76px;
+}
+
+.dashboardToolbar .toolbar #undoAll .icon {
+    background-position: 3px -156px;
+}
+
+.dashboardToolbar .toolbar #redo .icon {
+    background-position: 3px -116px;
+}
+
+.dashboardToolbar .toolbar #properties .icon {
+    background-position: 3px -236px;
+}
+
+.dashboardToolbar .toolbar #filterManager .icon {
+    background-position: 3px -196px;
+}
+
+.dashboardToolbar .toolbar .disabledButton .icon {
+    opacity: 1;
+}
+
+.dashboardToolbar .toolbar .disabledButton#presentation .icon {
+    background-position: -31px 3px;
+}
+
+.dashboardToolbar .toolbar .disabledButton#save .icon {
+    background-position: -31px -37px;
+}
+
+.dashboardToolbar .toolbar .disabledButton#save .indicator {
+    background-position: -2px -112px;
+}
+
+.dashboardToolbar .toolbar .disabledButton#undo .icon {
+    background-position: -31px -76px;
+}
+
+.dashboardToolbar .toolbar .disabledButton#redo .icon {
+    background-position: -31px -116px;
+}
+
+.dashboardToolbar .toolbar .disabledButton#undoAll .icon {
+    background-position: -31px -156px;
+}
+
+.dashboardToolbar .toolbar .disabledButton#filterManager .icon {
+    background-position: -31px -196px;
+}
+
+.dashboardToolbar .toolbar .disabledButton#properties .icon {
+    background-position: -31px -236px;
+}
+
+.dashboardToolbar .toolbar .disabledButton#grid .icon {
+    background-position: -31px -276px;
+}
+
+.dashboardToolbar .toolbar .button .wrap {
+    text-indent: -5000px;
+}

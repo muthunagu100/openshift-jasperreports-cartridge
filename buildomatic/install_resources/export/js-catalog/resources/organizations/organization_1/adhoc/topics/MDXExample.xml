@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/organizations/organization_1/adhoc/topics</folder>
+    <name>MDXExample</name>
+    <version>0</version>
+    <label>MDX example</label>
+    <description>Example of topic with MDX query</description>
+    <creationDate>2014-12-18T02:01:22.489-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:22.489-08:00</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="MDXExample.data" xsi:type="fileResource">
+            <folder>/organizations/organization_1/adhoc/topics/MDXExample_files</folder>
+            <name>MDXExample</name>
+            <version>0</version>
+            <label>MDX example</label>
+            <description>Example of topic with MDX query</description>
+            <creationDate>2014-12-18T02:01:22.489-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.489-08:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/organizations/organization_1/analysis/connections/FoodmartXmlaConnection</uri>
+    </dataSource>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>1</controlsLayout>
+</reportUnit>

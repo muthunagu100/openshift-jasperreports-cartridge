@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/public/Samples/Topics</folder>
+    <name>CrosstabDemo</name>
+    <version>0</version>
+    <label>foodmart data for crosstab</label>
+    <description>foodmart data for crosstab</description>
+    <creationDate>2014-12-18T02:01:43.046-08:00</creationDate>
+    <updateDate>2012-10-15T09:33:18.537-07:00</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="CrosstabDemo.data" xsi:type="fileResource">
+            <folder>/public/Samples/Topics/CrosstabDemo_files</folder>
+            <name>CrosstabDemo</name>
+            <version>0</version>
+            <label>foodmart data for crosstab</label>
+            <description>foodmart data for crosstab</description>
+            <creationDate>2014-12-18T02:01:43.046-08:00</creationDate>
+            <updateDate>2012-10-15T09:29:51.600-07:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/public/Samples/Data_Sources/FoodmartDataSourceJNDI</uri>
+    </dataSource>
+    <inputControlRenderingView></inputControlRenderingView>
+    <reportRenderingView></reportRenderingView>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>1</controlsLayout>
+</reportUnit>

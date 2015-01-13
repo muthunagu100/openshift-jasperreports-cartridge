@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder exportedWithPermissions="true">
+    <name>/</name>
+    <label>root</label>
+    <description>Root of the folder hierarchy</description>
+    <creationDate>2014-12-18T02:00:58.676-08:00</creationDate>
+    <updateDate>2014-12-18T02:00:58.676-08:00</updateDate>
+    <folder>organizations</folder>
+    <folder>public</folder>
+    <folder>temp</folder>
+    <folder>themes</folder>
+    <permission>
+        <permissionMask>1</permissionMask>
+        <recipient recipientType="role">ROLE_ADMINISTRATOR</recipient>
+    </permission>
+    <permission>
+        <permissionMask>2</permissionMask>
+        <recipient recipientType="role">ROLE_USER</recipient>
+    </permission>
+    <permission>
+        <permissionMask>1</permissionMask>
+        <recipient recipientType="role">ROLE_SUPERUSER</recipient>
+    </permission>
+</folder>

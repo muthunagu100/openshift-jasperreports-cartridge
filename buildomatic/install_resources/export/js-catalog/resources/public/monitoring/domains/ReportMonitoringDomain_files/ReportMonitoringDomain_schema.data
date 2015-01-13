@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.jaspersoft.com/2007/SL/XMLSchema" version="1.0">
+  <itemGroups>
+    <itemGroup description="jireportmonitoringfact" descriptionId="" id="jireportmonitoringfact" label="jireportmonitoringfact" labelId="" resourceId="jireportmonitoringfact">
+      <items>
+        <item defaultMask="0" description="date_day" descriptionId="" dimensionOrMeasure="Dimension" id="date_day" label="Day" labelId="" resourceId="jireportmonitoringfact.date_day" />
+        <item description="editing_action" descriptionId="" dimensionOrMeasure="Dimension" id="editing_action" label="Editing Action" labelId="" resourceId="jireportmonitoringfact.editing_action" />
+        <item description="event_context" descriptionId="" dimensionOrMeasure="Dimension" id="event_context" label="Event Context" labelId="" resourceId="jireportmonitoringfact.event_context" />
+        <item description="event_type" descriptionId="" dimensionOrMeasure="Dimension" id="event_type" label="Event Type" labelId="" resourceId="jireportmonitoringfact.event_type" />
+        <item defaultMask="0" description="time_hour" descriptionId="" dimensionOrMeasure="Dimension" id="time_hour" label="Hour" labelId="" resourceId="jireportmonitoringfact.time_hour" />
+        <item defaultMask="0" description="id" descriptionId="" dimensionOrMeasure="Dimension" id="id" label="id" labelId="" resourceId="jireportmonitoringfact.id" />
+        <item defaultMask="0" description="time_minute" descriptionId="" dimensionOrMeasure="Dimension" id="time_minute" label="Minute" labelId="" resourceId="jireportmonitoringfact.time_minute" />
+        <item defaultMask="0" description="date_month" descriptionId="" dimensionOrMeasure="Dimension" id="date_month" label="Month" labelId="" resourceId="jireportmonitoringfact.date_month" />
+        <item defaultAgg="Average" defaultMask="#,##0" description="query_execution_time" descriptionId="" dimensionOrMeasure="Measure" id="query_execution_time" label="Query Execution Time" labelId="" resourceId="jireportmonitoringfact.query_execution_time" />
+        <item defaultAgg="Average" defaultMask="#,##0" description="report_rendering_time" descriptionId="" dimensionOrMeasure="Measure" id="report_rendering_time" label="Report Rendering Time" labelId="" resourceId="jireportmonitoringfact.report_rendering_time" />
+        <item description="report_uri" descriptionId="" dimensionOrMeasure="Dimension" id="report_uri" label="Report URI" labelId="" resourceId="jireportmonitoringfact.report_uri" />
+        <item defaultMask="medium,medium" description="time_stamp" descriptionId="" dimensionOrMeasure="Measure" id="time_stamp" label="Time Stamp" labelId="" resourceId="jireportmonitoringfact.time_stamp" />
+        <item defaultAgg="Average" defaultMask="#,##0" description="total_report_execution_time" descriptionId="" dimensionOrMeasure="Measure" id="total_report_execution_time" label="Total Report Execution Time" labelId="" resourceId="jireportmonitoringfact.total_report_execution_time" />
+        <item description="user_name" descriptionId="" dimensionOrMeasure="Dimension" id="user_name" label="User Name" labelId="" resourceId="jireportmonitoringfact.user_name" />
+        <item description="user_organization" descriptionId="" dimensionOrMeasure="Dimension" id="user_organization" label="User Organization" labelId="" resourceId="jireportmonitoringfact.user_organization" />
+        <item defaultMask="0" description="date_year" descriptionId="" dimensionOrMeasure="Dimension" id="date_year" label="Year" labelId="" resourceId="jireportmonitoringfact.date_year" />
+      </items>
+    </itemGroup>
+  </itemGroups>
+  <resources>
+    <jdbcTable id="jireportmonitoringfact" datasourceId="ReportMonitoringDataSource" tableName="public.jireportmonitoringfact">
+      <fieldList>
+        <field id="date_day" type="java.lang.Short" />
+        <field id="date_month" type="java.lang.Short" />
+        <field id="date_year" type="java.lang.Short" />
+        <field id="editing_action" type="java.lang.String" />
+        <field id="event_context" type="java.lang.String" />
+        <field id="event_type" type="java.lang.String" />
+        <field id="id" type="java.lang.Long" />
+        <field id="query_execution_time" type="java.lang.Integer" />
+        <field id="report_rendering_time" type="java.lang.Integer" />
+        <field id="report_uri" type="java.lang.String" />
+        <field id="time_hour" type="java.lang.Short" />
+        <field id="time_minute" type="java.lang.Short" />
+        <field id="time_stamp" type="java.sql.Timestamp" />
+        <field id="total_report_execution_time" type="java.lang.Integer" />
+        <field id="user_name" type="java.lang.String" />
+        <field id="user_organization" type="java.lang.String" />
+      </fieldList>
+    </jdbcTable>
+  </resources>
+</schema>
+

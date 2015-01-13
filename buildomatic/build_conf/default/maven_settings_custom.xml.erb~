@@ -1,0 +1,40 @@
+<settings>
+  <offline>false</offline>
+  <localRepository>/home/vasanth/.m2/repository</localRepository>  
+  <profiles>
+    <profile>
+      <id>JasperServerProfile</id>
+      <properties>
+        <repository.database.driver.groupId>postgresql</repository.database.driver.groupId>
+        <repository.database.driver.artifactId>postgresql</repository.database.driver.artifactId>
+        <repository.database.driver.version>9.2-1002.jdbc4</repository.database.driver.version>
+        <js.quartz.properties><%= ENV['OPENSHIFT_JASPER_DIR'] %>/buildomatic/build_conf/default/js.quartz.properties</js.quartz.properties>
+        <js.quartz.base.properties><%= ENV['OPENSHIFT_JASPER_DIR'] %>/buildomatic/build_conf/default/js.quartz.base.properties</js.quartz.base.properties>
+        <js.quartz.script>${js-base-path}/scripts/quartz/tables_postgres.sql</js.quartz.script>
+        <metadata.database.generate>false</metadata.database.generate>
+        <suppress.quartz.init>true</suppress.quartz.init>
+        <js-path>${js-path}</js-path>
+        <js-pro-path>${js-pro-path}</js-pro-path>
+        <jasperserver-repo>file:/${repo-path}</jasperserver-repo>  <!-- used for jpivot bld only -->
+        <platform-path><%= ENV['OPENSHIFT_JASPER_DIR'] %>/buildomatic/build_conf/default</platform-path>
+        <test.hibernate.cfg><%= ENV['OPENSHIFT_JASPER_DIR'] %>/buildomatic/build_conf/default/hibernate.cfg.xml</test.hibernate.cfg>
+        <test.hibernate.jdbc.properties><%= ENV['OPENSHIFT_JASPER_DIR'] %>/buildomatic/build_conf/default/js.jdbc.properties</test.hibernate.jdbc.properties>
+        <master.properties><%= ENV['OPENSHIFT_JASPER_DIR'] %>/buildomatic/default_master.properties</master.properties>
+        <!-- workaround src w/o tibco drivers -->
+        <tibco.driver.available>false</tibco.driver.available>
+        <SKIP_TEST_ARG>skipTests</SKIP_TEST_ARG>
+        <disable.fafj>false</disable.fafj>
+      </properties>
+      <repositories>
+		<!-- custom repositories definition -->
+      </repositories>
+      <pluginRepositories>
+		<!-- custom pluginRepositories definition -->
+      </pluginRepositories>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>JasperServerProfile</activeProfile>
+  </activeProfiles>
+  <!-- custom configurations -->
+</settings>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder exportedWithPermissions="true">
+    <parent>/public</parent>
+    <name>templates</name>
+    <label>Templates</label>
+    <creationDate>2014-12-18T02:01:12.530-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:12.530-08:00</updateDate>
+    <resource>a4_landscape.510.jrxml</resource>
+    <resource>a4_portrait.510.jrxml</resource>
+    <resource>actual_size.510.jrxml</resource>
+    <resource>letter_landscape.510.jrxml</resource>
+    <resource>letter_portrait.510.jrxml</resource>
+    <permission>
+        <permissionMask>2</permissionMask>
+        <recipient recipientType="role">ROLE_ADMINISTRATOR</recipient>
+    </permission>
+    <permission>
+        <permissionMask>2</permissionMask>
+        <recipient recipientType="role">ROLE_USER</recipient>
+    </permission>
+</folder>

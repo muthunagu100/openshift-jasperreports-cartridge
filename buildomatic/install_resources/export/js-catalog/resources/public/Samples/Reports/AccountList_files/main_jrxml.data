@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="master" pageWidth="521" pageHeight="842" columnWidth="511" leftMargin="5" rightMargin="5" topMargin="0" bottomMargin="0" uuid="2027f946-cbc4-4eca-b126-53ac3ba49d2a">
+	<property name="ireport.jasperserver.url" value="http://172.17.10.4:8080/jasperserver-pro-branch/"/>
+	<property name="ireport.jasperserver.report.resource" value="/public/Samples/Reports/AccountList_files/main_jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/public/Samples/Reports/AccountList"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="FoodMart"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<style name="Style1">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[($V{REPORT_COUNT} % 2) == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#C3E7FA"/>
+		</conditionalStyle>
+	</style>
+	<style name="Table_TH" mode="Opaque" backcolor="#73B0E6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#828282"/>
+			<topPen lineWidth="0.5" lineColor="#828282"/>
+			<leftPen lineWidth="0.5" lineColor="#828282"/>
+			<bottomPen lineWidth="0.5" lineColor="#828282"/>
+			<rightPen lineWidth="0.5" lineColor="#828282"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#CFDBE6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#828282"/>
+			<topPen lineWidth="0.5" lineColor="#828282"/>
+			<leftPen lineWidth="0.5" lineColor="#828282"/>
+			<bottomPen lineWidth="0.5" lineColor="#828282"/>
+			<rightPen lineWidth="0.5" lineColor="#828282"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#828282"/>
+			<topPen lineWidth="0.5" lineColor="#828282"/>
+			<leftPen lineWidth="0.5" lineColor="#828282"/>
+			<bottomPen lineWidth="0.5" lineColor="#828282"/>
+			<rightPen lineWidth="0.5" lineColor="#828282"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()%2==0)]]></conditionExpression>
+			<style mode="Opaque" backcolor="#C3E1FA"/>
+		</conditionalStyle>
+	</style>
+	<subDataset name="TableDS" uuid="4ff0e97f-4365-4864-af30-94a20661f1a3">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="FoodMart"/>
+		<queryString>
+			<![CDATA[SELECT 
+sales_fact_1997.store_id, 
+  sum(sales_fact_1997.store_sales) as store_sales, 
+  sum(sales_fact_1997.store_cost) as store_cost, 
+  sum(sales_fact_1997.unit_sales ) as unit_sales,
+  store.store_name
+FROM 
+  public.sales_fact_1997, 
+  public.store
+WHERE 
+sales_fact_1997.store_id  = store.store_id
+    GROUP BY store_name, sales_fact_1997.store_id
+  ORDER BY store_id]]>
+		</queryString>
+		<field name="store_name" class="java.lang.String"/>
+		<field name="unit_sales" class="java.math.BigDecimal"/>
+		<field name="store_sales" class="java.math.BigDecimal"/>
+		<field name="store_cost" class="java.math.BigDecimal"/>
+		<field name="store_id" class="java.lang.Integer"/>
+		<variable name="Profit" class="java.math.BigDecimal">
+			<variableExpression><![CDATA[$F{store_sales}.subtract($F{store_cost})]]></variableExpression>
+		</variable>
+		<variable name="TotalProfit" class="java.math.BigDecimal" calculation="Sum">
+			<variableExpression><![CDATA[$V{Profit}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[SELECT 1 as dummy]]>
+	</queryString>
+	<field name="dummy" class="java.lang.Integer"/>
+	<columnHeader>
+		<band height="15" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</columnHeader>
+	<summary>
+		<band height="100">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<componentElement>
+				<reportElement x="0" y="0" width="511" height="50" uuid="fc716c6d-0022-4033-8214-aa7cc1183413">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="TableDS" uuid="408a3078-3b75-4da3-9b2b-d700ca67236b">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="102" uuid="e8fb72c4-533a-4ce1-92fc-86513b5aaec1">
+						<jr:columnHeader style="Table_CH" height="20">
+							<staticText>
+								<reportElement x="0" y="0" width="102" height="20" uuid="11ebd3b2-84fd-491b-bf42-da3b6cc635a8"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Store Name]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField hyperlinkType="ReportExecution">
+								<reportElement x="0" y="0" width="102" height="30" forecolor="#035EA3" uuid="fbf0ccf9-6854-4c90-9bd3-86db82a85302"/>
+								<box leftPadding="5">
+									<topPen lineWidth="0.6" lineStyle="Solid" lineColor="#CFCFCF"/>
+									<leftPen lineWidth="0.6" lineStyle="Solid" lineColor="#CFCFCF"/>
+									<bottomPen lineWidth="0.6" lineStyle="Solid" lineColor="#CFCFCF"/>
+									<rightPen lineWidth="0.6" lineStyle="Solid" lineColor="#CFCFCF"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{store_name}]]></textFieldExpression>
+								<hyperlinkTooltipExpression><![CDATA["Show Details for "+$F{store_name}]]></hyperlinkTooltipExpression>
+								<hyperlinkParameter name="_report">
+									<hyperlinkParameterExpression><![CDATA["/public/Samples/Reports/StoreDetails"]]></hyperlinkParameterExpression>
+								</hyperlinkParameter>
+								<hyperlinkParameter name="reportTitle">
+									<hyperlinkParameterExpression><![CDATA["Store Details for " + $F{store_name}]]></hyperlinkParameterExpression>
+								</hyperlinkParameter>
+								<hyperlinkParameter name="parStoreId">
+									<hyperlinkParameterExpression><![CDATA[$F{store_id}]]></hyperlinkParameterExpression>
+								</hyperlinkParameter>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="102" uuid="8258bea1-1589-43be-89cc-cda408f56c35">
+						<jr:columnHeader style="Table_CH" height="20">
+							<staticText>
+								<reportElement x="0" y="0" width="102" height="20" uuid="fdd5540c-a948-4408-98c8-84703d732431"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Unit Sales]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField pattern="¤#,##0.00;¤(-#,##0.00)">
+								<reportElement x="0" y="0" width="102" height="30" uuid="ad8d0e53-50f8-4734-ac04-266b008f3bdb"/>
+								<box leftPadding="2" rightPadding="4"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{unit_sales}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="102" uuid="fb550538-81d1-4295-923e-220c41702449">
+						<jr:columnHeader style="Table_CH" height="20">
+							<staticText>
+								<reportElement x="0" y="0" width="102" height="20" uuid="b30fe473-42dc-4c65-ac67-934e9722d9b6"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Sales]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField pattern="¤#,##0.00;¤(-#,##0.00)">
+								<reportElement x="0" y="0" width="102" height="30" uuid="9a0bf75a-8d20-45bc-8b31-37a19843e87d"/>
+								<box leftPadding="2" rightPadding="4"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{store_sales}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="102" uuid="6f171d75-077d-49f5-8c10-ef3f9f485712">
+						<jr:columnHeader style="Table_CH" height="20">
+							<staticText>
+								<reportElement x="0" y="0" width="102" height="20" uuid="cd6c0f94-f799-414c-9a53-8d19a1f5d8ad"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Cost]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField pattern="¤#,##0.00;¤(-#,##0.00)">
+								<reportElement x="0" y="0" width="102" height="30" uuid="29ef4b03-ce18-437c-8bf0-41ff8a4de7a4"/>
+								<box leftPadding="2" rightPadding="4"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{store_cost}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="102" uuid="d5e1cb57-198c-4032-b470-3b77ae5a288d">
+						<jr:columnHeader style="Table_CH" height="20">
+							<staticText>
+								<reportElement x="0" y="0" width="102" height="20" uuid="d6b2dd63-e671-4065-b784-26f6027d9ec0"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Profit]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField pattern="¤#,##0.00;¤(-#,##0.00)" hyperlinkType="CustomViz">
+								<reportElement x="0" y="0" width="102" height="30" uuid="db4a58b9-9391-4959-8ef6-112ab091d302"/>
+								<box leftPadding="2" rightPadding="4"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$V{Profit}]]></textFieldExpression>
+								<hyperlinkParameter name="StoreID">
+									<hyperlinkParameterExpression><![CDATA[$F{store_id}]]></hyperlinkParameterExpression>
+								</hyperlinkParameter>
+								<hyperlinkParameter name="StoreName">
+									<hyperlinkParameterExpression><![CDATA[$F{store_name}]]></hyperlinkParameterExpression>
+								</hyperlinkParameter>
+								<hyperlinkParameter name="StoreProfit">
+									<hyperlinkParameterExpression><![CDATA[$V{Profit}]]></hyperlinkParameterExpression>
+								</hyperlinkParameter>
+								<hyperlinkParameter name="RuningProfit">
+									<hyperlinkParameterExpression><![CDATA[$V{TotalProfit}]]></hyperlinkParameterExpression>
+								</hyperlinkParameter>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inputControl exportedWithPermissions="true">
+    <folder>/public/Samples/Resources/Input_Controls</folder>
+    <name>decorate</name>
+    <version>0</version>
+    <label>Decorate</label>
+    <description>Decorate with SiteMesh: yes or no</description>
+    <creationDate>2014-12-18T02:01:38.607-08:00</creationDate>
+    <updateDate>2013-08-28T22:47:03.110-07:00</updateDate>
+    <type>3</type>
+    <mandatory>false</mandatory>
+    <readOnly>false</readOnly>
+    <visible>true</visible>
+    <listOfValues>
+        <uri>/public/Samples/Resources/Data_Types/YesOrNoList</uri>
+    </listOfValues>
+</inputControl>

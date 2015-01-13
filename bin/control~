@@ -1,0 +1,46 @@
+#!/bin/bash -eu
+
+PATH=/bin/:/usr/bin:$PATH
+
+source $OPENSHIFT_CARTRIDGE_SDK_BASH
+
+function start {
+  echo "Starting Jasper cartridge"
+  sh $OPENSHIFT_JASPER_DIR/ctlscript.sh start
+}
+PATH=/bin/:/usr/bin:$PATH
+function stop {
+  echo "Stopping Jasper cartridge"
+  sh $OPENSHIFT_JASPER_DIR/ctlscript.sh stop
+}
+
+function restart {
+  stop
+  start
+}
+
+function catchall {
+    echo "not yet implemented"
+}
+
+case "$1" in
+  start)                start ;;
+  stop)                 stop ;;
+  restart)              restart ;;
+  status)               catchall ;;
+  reload)               catchall ;;
+  tidy)                 catchall ;;
+  pre-build)            catchall ;;
+  build)                catchall ;;
+  deploy)               catchall ;;
+  post-deploy)          catchall ;;
+  pre-snapshot)         catchall ;;
+  post-snapshot)        catchall ;;
+  pre-restore)          catchall ;;
+  post-restore)         catchall ;;
+  pre-repo-archive)     catchall ;;
+  update-configuration) catchall ;;
+  *)           exit 0
+esac
+
+exit 0

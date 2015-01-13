@@ -1,0 +1,26 @@
+<tr class="producerRow">
+    <td class="filterColumn" rv-class-invisible="model.isHidden" rv-title="model.component:id | prependText '{{- i18n['tooltip.parameter'] }}'" rv-validation-error-class="model:name">
+        <input maxlength="255" rv-unless="model:id" rv-input="model:name" rv-on-blur="controller.checkNewProducerName" type="text"/>
+        <span rv-if="model:id" rv-text="model:name"></span>
+        <span class="message warning" rv-validation-error-text="model:name"></span>
+    </td>
+    <td class="selectConsumerColumn" colspan="2">
+        <table class='consumerTable'>
+            <tbody>
+            </tbody>
+        </table>
+    </td>
+    <td class="addConsumerColumn">
+        <button rv-if="model:id" rv-on-click="controller.addConsumer" class="button action simple add"></button>
+    </td>
+    <td class="removeConsumerColumn">
+        <span rv-if="controller.isValueModel">
+            <button rv-unless="model.consumers.length" rv-on-click="controller.removeProducer" class="button action simple delete"></button>
+        </span>
+
+        <table class='consumerTable'>
+            <tbody>
+            </tbody>
+        </table>
+    </td>
+</tr>

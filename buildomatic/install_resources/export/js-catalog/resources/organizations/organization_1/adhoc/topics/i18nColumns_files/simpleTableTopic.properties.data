@@ -1,0 +1,14 @@
+ShippedDate=Shipped Date
+ShipCountry=Ship Country 
+RequiredDate=Required Date 
+CustomerID=Customer ID
+OrderId=Order ID 
+ShipName=Ship Name
+ShipVia=Ship Via
+OrderDate=Order Date
+ShipCity=Ship City
+ShipAddress=Ship Address
+EmployeeID=Employee ID
+ShipRegion=Ship Region
+Freight=Freight
+

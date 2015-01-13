@@ -1,0 +1,1 @@
+define(["require","!domReady","messages/details/messageDetails","jrs.configs"],function(e){var s=e("!domReady"),i=e("messages/details/messageDetails"),a=e("jrs.configs");s(function(){i.initialize(a.messageDetailsInitOptions)})});

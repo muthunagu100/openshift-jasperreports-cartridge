@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder exportedWithPermissions="true">
+    <parent>/public/Samples/OLAP</parent>
+    <name>XMLA</name>
+    <label>XMLA</label>
+    <description>XMLA</description>
+    <creationDate>2014-12-18T02:01:25.904-08:00</creationDate>
+    <updateDate>2012-10-11T04:12:02.820-07:00</updateDate>
+    <resource>Foodmart</resource>
+</folder>

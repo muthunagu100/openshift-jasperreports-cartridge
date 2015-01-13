@@ -1,0 +1,18 @@
+<div class="section">
+    <label class="control dashletNameProperty" rv-validation-error-class="model:name">
+        <span class="wrap">{{-i18n["dashboard.component.dialog.properties.filter.name"]}}</span>
+        <input name="name" type="text" rv-input="model:name"/>
+        <span class="message warning" rv-validation-error-text="model:name"></span>
+    </label>
+
+    <label class="control resourceIdProperty">
+        <span class="wrap">{{-i18n["dashboard.base.dialog.properties.dashlet.id"]}}</span>
+        <span class="wrap resource" rv-text="model:id"></span>
+    </label>
+
+    <label class="control dashletNameProperty" rv-validation-error-class="model:label">
+        <span class="wrap">{{-i18n["dashboard.component.dialog.properties.filter.label"]}}</span>
+        <input name="label" type="text" rv-input="model:label | escapeCharacters"/>
+        <span class="message warning" rv-validation-error-text="model:label"></span>
+    </label>
+</div>

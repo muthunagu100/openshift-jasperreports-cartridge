@@ -1,0 +1,1 @@
+define(["require","./BaseComponentModel","../enum/jiveTypes"],function(e){var n=e("./BaseComponentModel"),t=e("../enum/jiveTypes");return n.extend({defaults:{id:null,instanceData:null,module:"jasperreports-map",type:t.GOOGLEMAP}})});

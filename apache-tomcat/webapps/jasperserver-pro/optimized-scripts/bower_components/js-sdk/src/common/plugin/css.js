@@ -1,0 +1,1 @@
+define(["require","requirejs.plugin.css","underscore","jrs.configs"],function(e){var r=e("requirejs.plugin.css"),n=e("underscore"),s=e("jrs.configs"),c=n.clone(r);return c.load=function(e,n,c,u){var i=s.currentThemePath||"themes/default";e=s.contextPath+"/"+i+"/"+e,r.load.call(this,e,n,c,u)},c});

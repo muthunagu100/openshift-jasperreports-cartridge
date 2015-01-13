@@ -1,0 +1,11 @@
+<tr class="consumerRow">
+    <td class="dashletColumn" rv-validation-error-class="model:id">
+        <select name="id" rv-value="model:id"></select>
+        <span class="message warning" rv-validation-error-text="model:id"></span>
+    </td>
+    <td class="parameterColumn" rv-validation-error-class="model:parameter">
+        <select name="parameter" rv-value="model:parameter" rv-if="model:parameter" rv-title="model:parameter | prependText '{{- i18n['tooltip.parameter'] }}'"></select>
+        <select name="parameter" rv-value="model:parameter" rv-unless="model:parameter" title="{{- i18n['dashboard.filter.manager.select.parameter'] }}"></select>
+        <span class="message warning" rv-validation-error-text="model:parameter"></span>
+    </td>
+</tr>

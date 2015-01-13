@@ -1,0 +1,8 @@
+#!/bin/sh
+LD_LIBRARY_PATH="<%= ENV['OPENSHIFT_JASPER_DIR'] %>/common/lib:$LD_LIBRARY_PATH"	   
+DYLD_LIBRARY_PATH="<%= ENV['OPENSHIFT_JASPER_DIR'] %>/common/lib:$DYLD_LIBRARY_PATH"	   
+OPENSSL_CONF="<%= ENV['OPENSHIFT_JASPER_DIR'] %>/common/openssl/openssl.cnf"
+export LD_LIBRARY_PATH
+export DYLD_LIBRARY_PATH
+export OPENSSL_CONF
+exec <%= ENV['OPENSHIFT_JASPER_DIR'] %>/common/bin/openssl.bin "$@"

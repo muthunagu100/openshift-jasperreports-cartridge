@@ -1,0 +1,1 @@
+define(["require","backbone"],function(e){var n=e("backbone");return n.Model.extend({})});

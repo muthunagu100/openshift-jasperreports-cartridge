@@ -1,0 +1,1 @@
+define(["require","common/extension/rivetsExtension"],function(i){var n=i("common/extension/rivetsExtension");return{bindRivets:function(){this.unbindRivets();var i={controller:this,model:this.model};this._rivetsBinding=n.bind(this.$el,i)},unbindRivets:function(){this._rivetsBinding&&this._rivetsBinding.unbind()}}});

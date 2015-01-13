@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/public/Samples/Reports</folder>
+    <name>02._Sales_Mix_by_Demographic_Report</name>
+    <version>0</version>
+    <label>02. Sales Mix by Demographic Report</label>
+    <description>Sample HTML5 Spider Line chart from OLAP source. Created from an Ad Hoc View.</description>
+    <creationDate>2014-12-18T02:01:36.969-08:00</creationDate>
+    <updateDate>2014-09-24T09:30:35.966-07:00</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="mainReportJrxml.data" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/02._Sales_Mix_by_Demographic_Report_files</folder>
+            <name>mainReportJrxml</name>
+            <version>0</version>
+            <label>mainReportJrxml</label>
+            <creationDate>2014-12-18T02:01:36.969-08:00</creationDate>
+            <updateDate>2014-09-24T09:30:35.966-07:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/public/Samples/Ad_Hoc_Views/02__Sales_Mix_by_Demographic</uri>
+    </dataSource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="stateXML.data" xsi:type="fileResource">
+            <folder>/public/Samples/Reports/02._Sales_Mix_by_Demographic_Report_files</folder>
+            <name>stateXML</name>
+            <version>0</version>
+            <label>stateXML</label>
+            <creationDate>2014-12-18T02:01:36.969-08:00</creationDate>
+            <updateDate>2014-09-24T09:30:35.966-07:00</updateDate>
+            <fileType>xml</fileType>
+        </localResource>
+    </resource>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>1</controlsLayout>
+</reportUnit>

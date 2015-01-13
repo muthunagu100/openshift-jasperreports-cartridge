@@ -1,0 +1,1 @@
+define(["require","backbone"],function(e){var r=e("backbone");return r.Model.extend({constructor:function(e,n){n||(n={}),this.parent=n.parent,r.Model.prototype.constructor.call(this,e,n)},_notify:function(e){this.parent._notify(e)},handleServerError:function(e){var r=this.get("uiModuleType");r&&r.handleServerError(e)}})});

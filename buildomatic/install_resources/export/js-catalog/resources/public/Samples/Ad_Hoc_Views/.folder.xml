@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder exportedWithPermissions="true">
+    <parent>/public/Samples</parent>
+    <name>Ad_Hoc_Views</name>
+    <label>Ad Hoc Views</label>
+    <description>Ad Hoc Views</description>
+    <creationDate>2014-12-18T02:01:25.364-08:00</creationDate>
+    <updateDate>2012-10-15T09:20:49.812-07:00</updateDate>
+    <resource>01__Geographic_Results_by_Segment</resource>
+    <resource>02__Sales_Mix_by_Demographic</resource>
+    <resource>03__Store_Segment_Performance</resource>
+    <resource>04__Product_Results_by_Store_Type</resource>
+    <resource>05__Unit_Sales_Trend</resource>
+    <resource>06__Sales_Mix_by_Gender</resource>
+    <resource>07__Brand_Sales_Analysis</resource>
+    <resource>08__Key_Performance_Metric_Trend</resource>
+    <resource>09__Store_Segment_Performance</resource>
+    <resource>10__Calculated_Fields_and_Measures</resource>
+    <resource>11__Brand_Performance_by_Area_Code</resource>
+    <resource>SalesPerCity</resource>
+</folder>

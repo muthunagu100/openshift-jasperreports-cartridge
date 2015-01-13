@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<adhocDataView exportedWithPermissions="true">
+    <folder>/public/Samples/Ad_Hoc_Views</folder>
+    <name>09__Store_Segment_Performance</name>
+    <version>0</version>
+    <label>09. Store Segment Performance</label>
+    <description>Sample HTML5 Bubble Chart with basic user defined calculations</description>
+    <creationDate>2014-12-18T02:01:28.234-08:00</creationDate>
+    <updateDate>2014-11-24T18:51:23.017-08:00</updateDate>
+    <dataSource>
+        <uri>/public/Samples/Domains/supermartDomain</uri>
+    </dataSource>
+    <inputControl>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="inputControl">
+            <folder>/public/Samples/Ad_Hoc_Views/09__Store_Segment_Performance_files</folder>
+            <name>sales__store__store_features__coffee_bar_1</name>
+            <version>0</version>
+            <label>$R{supermart.store.coffee_bar.label}</label>
+            <creationDate>2014-12-18T02:01:28.234-08:00</creationDate>
+            <updateDate>2014-11-24T18:51:23.017-08:00</updateDate>
+            <type>10</type>
+            <mandatory>false</mandatory>
+            <readOnly>false</readOnly>
+            <visible>true</visible>
+            <listOfValues>
+                <localResource exportedWithPermissions="false" xsi:type="listOfValues">
+                    <folder>/public/Samples/Ad_Hoc_Views/09__Store_Segment_Performance_files/sales__store__store_features__coffee_bar_1_files</folder>
+                    <name>sales__store__store_features__coffee_bar_1</name>
+                    <version>0</version>
+                    <label>$R{supermart.store.coffee_bar.label}</label>
+                    <creationDate>2014-12-18T02:01:28.234-08:00</creationDate>
+                    <updateDate>2014-11-24T18:51:23.017-08:00</updateDate>
+                    <item>
+                        <itemLabel>true</itemLabel>
+                        <itemValue xsi:type="java:java.lang.Boolean">true</itemValue>
+                    </item>
+                    <item>
+                        <itemLabel>false</itemLabel>
+                        <itemValue xsi:type="java:java.lang.Boolean">false</itemValue>
+                    </item>
+                </localResource>
+            </listOfValues>
+        </localResource>
+    </inputControl>
+    <inputControl>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="inputControl">
+            <folder>/public/Samples/Ad_Hoc_Views/09__Store_Segment_Performance_files</folder>
+            <name>sales__store__store_features__florist_1</name>
+            <version>0</version>
+            <label>$R{supermart.store.florist.label}</label>
+            <creationDate>2014-12-18T02:01:28.234-08:00</creationDate>
+            <updateDate>2014-11-24T18:51:23.017-08:00</updateDate>
+            <type>10</type>
+            <mandatory>false</mandatory>
+            <readOnly>false</readOnly>
+            <visible>true</visible>
+            <listOfValues>
+                <localResource exportedWithPermissions="false" xsi:type="listOfValues">
+                    <folder>/public/Samples/Ad_Hoc_Views/09__Store_Segment_Performance_files/sales__store__store_features__florist_1_files</folder>
+                    <name>sales__store__store_features__florist_1</name>
+                    <version>0</version>
+                    <label>$R{supermart.store.florist.label}</label>
+                    <creationDate>2014-12-18T02:01:28.234-08:00</creationDate>
+                    <updateDate>2014-11-24T18:51:23.017-08:00</updateDate>
+                    <item>
+                        <itemLabel>true</itemLabel>
+                        <itemValue xsi:type="java:java.lang.Boolean">true</itemValue>
+                    </item>
+                    <item>
+                        <itemLabel>false</itemLabel>
+                        <itemValue xsi:type="java:java.lang.Boolean">false</itemValue>
+                    </item>
+                </localResource>
+            </listOfValues>
+        </localResource>
+    </inputControl>
+    <inputControl>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="inputControl">
+            <folder>/public/Samples/Ad_Hoc_Views/09__Store_Segment_Performance_files</folder>
+            <name>sales__store__store_features__video_store_1</name>
+            <version>0</version>
+            <label>$R{supermart.store.video_store.label}</label>
+            <creationDate>2014-12-18T02:01:28.234-08:00</creationDate>
+            <updateDate>2014-11-24T18:51:23.017-08:00</updateDate>
+            <type>10</type>
+            <mandatory>false</mandatory>
+            <readOnly>false</readOnly>
+            <visible>true</visible>
+            <listOfValues>
+                <localResource exportedWithPermissions="false" xsi:type="listOfValues">
+                    <folder>/public/Samples/Ad_Hoc_Views/09__Store_Segment_Performance_files/sales__store__store_features__video_store_1_files</folder>
+                    <name>sales__store__store_features__video_store_1</name>
+                    <version>0</version>
+                    <label>$R{supermart.store.video_store.label}</label>
+                    <creationDate>2014-12-18T02:01:28.234-08:00</creationDate>
+                    <updateDate>2014-11-24T18:51:23.017-08:00</updateDate>
+                    <item>
+                        <itemLabel>true</itemLabel>
+                        <itemValue xsi:type="java:java.lang.Boolean">true</itemValue>
+                    </item>
+                    <item>
+                        <itemLabel>false</itemLabel>
+                        <itemValue xsi:type="java:java.lang.Boolean">false</itemValue>
+                    </item>
+                </localResource>
+            </listOfValues>
+        </localResource>
+    </inputControl>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/09__Store_Segment_Performance_files</folder>
+            <name>supermart_domain.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:28.234-08:00</creationDate>
+            <updateDate>2014-04-25T08:52:12.107-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain_en_US.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/09__Store_Segment_Performance_files</folder>
+            <name>supermart_domain_en_US.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:28.234-08:00</creationDate>
+            <updateDate>2014-04-25T08:52:12.107-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain_es.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/09__Store_Segment_Performance_files</folder>
+            <name>supermart_domain_es.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:28.234-08:00</creationDate>
+            <updateDate>2014-04-25T08:52:12.107-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain_fr.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/09__Store_Segment_Performance_files</folder>
+            <name>supermart_domain_fr.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:28.234-08:00</creationDate>
+            <updateDate>2014-04-25T08:52:12.107-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain_ja.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/09__Store_Segment_Performance_files</folder>
+            <name>supermart_domain_ja.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:28.234-08:00</creationDate>
+            <updateDate>2014-04-25T08:52:12.107-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain_zh_CN.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/09__Store_Segment_Performance_files</folder>
+            <name>supermart_domain_zh_CN.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:28.234-08:00</creationDate>
+            <updateDate>2014-04-25T08:52:12.107-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="supermart_domain_de.properties.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/09__Store_Segment_Performance_files</folder>
+            <name>supermart_domain_de.properties</name>
+            <version>0</version>
+            <label>bundle</label>
+            <description>bundle</description>
+            <creationDate>2014-12-18T02:01:28.234-08:00</creationDate>
+            <updateDate>2014-04-25T08:52:12.107-07:00</updateDate>
+            <fileType>prop</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="topicJRXML.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/09__Store_Segment_Performance_files</folder>
+            <name>topicJRXML</name>
+            <version>0</version>
+            <label>topicJRXML</label>
+            <creationDate>2014-12-18T02:01:28.234-08:00</creationDate>
+            <updateDate>2014-04-25T08:52:12.107-07:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </resource>
+    <resource>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" dataFile="stateXML.data" xsi:type="fileResource">
+            <folder>/public/Samples/Ad_Hoc_Views/09__Store_Segment_Performance_files</folder>
+            <name>stateXML</name>
+            <version>0</version>
+            <label>stateXML</label>
+            <creationDate>2014-12-18T02:01:28.234-08:00</creationDate>
+            <updateDate>2014-04-25T08:52:12.107-07:00</updateDate>
+            <fileType>xml</fileType>
+        </localResource>
+    </resource>
+    <reports>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="reportUnit">
+            <folder>/public/Samples/Ad_Hoc_Views/09__Store_Segment_Performance_files</folder>
+            <name>dashboardReport</name>
+            <version>1</version>
+            <label>dashboardReport</label>
+            <creationDate>2014-12-18T02:01:28.234-08:00</creationDate>
+            <updateDate>2014-11-24T18:51:23.017-08:00</updateDate>
+            <mainReport>
+                <localResource exportedWithPermissions="false"
+                    dataFile="mainReportJrxml.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Ad_Hoc_Views/09__Store_Segment_Performance_files/dashboardReport_files</folder>
+                    <name>mainReportJrxml</name>
+                    <version>0</version>
+                    <label>mainReportJrxml</label>
+                    <creationDate>2014-12-18T02:01:28.234-08:00</creationDate>
+                    <updateDate>2014-11-24T18:51:23.017-08:00</updateDate>
+                    <fileType>jrxml</fileType>
+                </localResource>
+            </mainReport>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Ad_Hoc_Views/09__Store_Segment_Performance_files/dashboardReport_files</folder>
+                    <name>supermart_domain.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:28.234-08:00</creationDate>
+                    <updateDate>2014-11-24T18:51:23.017-08:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain_en_US.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Ad_Hoc_Views/09__Store_Segment_Performance_files/dashboardReport_files</folder>
+                    <name>supermart_domain_en_US.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:28.234-08:00</creationDate>
+                    <updateDate>2014-11-24T18:51:23.017-08:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain_es.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Ad_Hoc_Views/09__Store_Segment_Performance_files/dashboardReport_files</folder>
+                    <name>supermart_domain_es.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:28.234-08:00</creationDate>
+                    <updateDate>2014-11-24T18:51:23.017-08:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain_fr.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Ad_Hoc_Views/09__Store_Segment_Performance_files/dashboardReport_files</folder>
+                    <name>supermart_domain_fr.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:28.234-08:00</creationDate>
+                    <updateDate>2014-11-24T18:51:23.017-08:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain_ja.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Ad_Hoc_Views/09__Store_Segment_Performance_files/dashboardReport_files</folder>
+                    <name>supermart_domain_ja.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:28.234-08:00</creationDate>
+                    <updateDate>2014-11-24T18:51:23.017-08:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain_zh_CN.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Ad_Hoc_Views/09__Store_Segment_Performance_files/dashboardReport_files</folder>
+                    <name>supermart_domain_zh_CN.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:28.234-08:00</creationDate>
+                    <updateDate>2014-11-24T18:51:23.017-08:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="supermart_domain_de.properties.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Ad_Hoc_Views/09__Store_Segment_Performance_files/dashboardReport_files</folder>
+                    <name>supermart_domain_de.properties</name>
+                    <version>0</version>
+                    <label>bundle</label>
+                    <description>bundle</description>
+                    <creationDate>2014-12-18T02:01:28.234-08:00</creationDate>
+                    <updateDate>2014-11-24T18:51:23.017-08:00</updateDate>
+                    <fileType>prop</fileType>
+                </localResource>
+            </resource>
+            <resource>
+                <localResource exportedWithPermissions="false"
+                    dataFile="stateXML.data" xsi:type="fileResource">
+                    <folder>/public/Samples/Ad_Hoc_Views/09__Store_Segment_Performance_files/dashboardReport_files</folder>
+                    <name>stateXML</name>
+                    <version>0</version>
+                    <label>stateXML</label>
+                    <creationDate>2014-12-18T02:01:28.234-08:00</creationDate>
+                    <updateDate>2014-11-24T18:51:23.017-08:00</updateDate>
+                    <fileType>xml</fileType>
+                </localResource>
+            </resource>
+            <alwaysPromptControls>false</alwaysPromptControls>
+            <controlsLayout>1</controlsLayout>
+        </localResource>
+    </reports>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>1</controlsLayout>
+</adhocDataView>

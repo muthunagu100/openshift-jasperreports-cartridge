@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mondrianXmlaDefinition exportedWithPermissions="true">
+    <folder>/organizations/organization_1/analysis/xmla/definitions</folder>
+    <name>SugarCRMXmlaDefinition</name>
+    <version>0</version>
+    <label>SugarCRM Mondrian XMLA definition</label>
+    <description>SugarCRM Mondrian XMLA definition</description>
+    <creationDate>2014-12-18T02:01:09.450-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:09.450-08:00</updateDate>
+    <catalog>SugarCRM</catalog>
+    <mondrianConnection>
+        <uri>/organizations/organization_1/analysis/connections/SugarCRM</uri>
+    </mondrianConnection>
+</mondrianXmlaDefinition>

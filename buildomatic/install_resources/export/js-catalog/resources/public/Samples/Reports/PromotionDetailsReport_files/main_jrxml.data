@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PromotionDetailsReport" language="groovy" pageWidth="579" pageHeight="740" columnWidth="579" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" resourceBundle="supermart" whenResourceMissingType="Key" uuid="c902dc67-7292-42f5-8af8-806e4321d09e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.jasperserver.reportUnit" value="/public/Samples/Reports/PromotionDetailsReport"/>
+	<property name="ireport.jasperserver.url" value="http://192.168.2.141:8102/jasperserver-pro/services/repository"/>
+	<property name="ireport.jasperserver.report.resource" value="/public/Samples/Reports/PromotionDetailsReport_files/main_jrxml"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<template><![CDATA["repo:/public/Samples/Resources/Extras/SampleReportStyles.jrtx"]]></template>
+	<style name="rowStyle" mode="Opaque" backcolor="#E9EFDD"/>
+	<parameter name="promotionId" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="promotionIdIsNull" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[$P{promotionId}==null ? new java.lang.Integer( 1 ) : new java.lang.Integer( 0 )]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     sum(sales_fact_1997.store_sales) AS store_sales,
+     sum(sales_fact_1997.unit_sales)  AS unit_sales,
+     promotion.promotion_name         AS promotion_promotion_name,
+     promotion.media_type             AS promotion_media_type,
+     promotion.cost                   AS promotion_cost,
+     promotion.start_date             AS promotion_start_date,
+     promotion.end_date               AS promotion_end_date,
+     promotion.promotion_district_id  AS promotion_promo_district_id,
+     promotion.promotion_id           AS promotion_promotion_id
+FROM
+     promotion promotion
+     INNER JOIN sales_fact_1997 sales_fact_1997 ON promotion.promotion_id = sales_fact_1997.promotion_id
+WHERE /* If promotionID is specified, then we get a single row. If it is null, then we return all rows. */
+     ( promotion.promotion_id = $P{promotionId} OR 1 = $P{promotionIdIsNull} )
+GROUP BY
+     promotion.promotion_name,
+     promotion.media_type,
+     promotion.cost,
+     promotion.start_date,
+     promotion.end_date,
+     promotion.promotion_district_id,
+     promotion.promotion_id
+ORDER BY
+     promotion.end_date DESC]]>
+	</queryString>
+	<field name="store_sales" class="java.math.BigDecimal"/>
+	<field name="unit_sales" class="java.math.BigDecimal"/>
+	<field name="promotion_promotion_name" class="java.lang.String"/>
+	<field name="promotion_media_type" class="java.lang.String"/>
+	<field name="promotion_cost" class="java.math.BigDecimal"/>
+	<field name="promotion_start_date" class="java.sql.Timestamp"/>
+	<field name="promotion_end_date" class="java.sql.Timestamp"/>
+	<field name="promotion_promo_district_id" class="java.lang.Integer"/>
+	<field name="promotion_promotion_id" class="java.lang.Integer"/>
+	<title>
+		<band height="36" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<image scaleImage="RetainShape">
+				<reportElement uuid="7fb541ad-afd7-422d-9c40-728b817556cb" x="409" y="4" width="146" height="26"/>
+				<imageExpression><![CDATA["repo:Jaspersoft_logo.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement uuid="21fd8196-020e-47b2-a155-75f5fc200fb5" key="staticText" mode="Opaque" x="12" y="2" width="385" height="30" forecolor="#004667">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{Promotion.ReportTitle}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="218" splitType="Stretch">
+			<frame>
+				<reportElement uuid="c2ae0d41-13d9-4b22-8e05-2d986f936ad3" mode="Opaque" x="12" y="10" width="555" height="207" backcolor="#F7F7F8">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+			</frame>
+			<rectangle radius="3">
+				<reportElement uuid="76fb8489-d039-4503-80e3-c9b2beb28b2b" mode="Opaque" x="22" y="20" width="535" height="189">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="1.0" lineColor="#D7DAD9"/>
+				</graphicElement>
+			</rectangle>
+			<textField pattern="¤ #,##0">
+				<reportElement uuid="b55efe5b-4e71-4173-86d3-2115ecf35916" key="StoreSales" style="h8" mode="Opaque" x="252" y="49" width="305" height="20" backcolor="#E9E9EB">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+				</reportElement>
+				<box leftPadding="10">
+					<topPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[($R{CurrencySymbol}.equals("CurrencySymbol") ? "\$" : $R{CurrencySymbol}) /* Uses dollar as default if key is not found */
++ " "
++ java.text.NumberFormat.getIntegerInstance($P{REPORT_LOCALE}).format( $F{store_sales}.longValue() )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="3c2e8c24-7c4f-44e9-9f67-7b97dc0cf104" key="" style="h7" mode="Opaque" x="22" y="149" width="230" height="20" backcolor="#DFE0E2">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box leftPadding="10">
+					<topPen lineWidth="0.0" lineColor="#91AC56"/>
+					<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$R{promotion_end_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a5e74f49-4077-4375-999a-cb0e9a75e954" key="" style="h7" mode="Opaque" x="22" y="89" width="230" height="20" backcolor="#E9E9EB">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box leftPadding="10">
+					<topPen lineWidth="0.0" lineColor="#91AC56"/>
+					<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$R{promotion_media_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6185ceaf-0c7f-4dd5-b90f-7bd1813d147c" key="" style="h7" mode="Opaque" x="22" y="69" width="230" height="20" backcolor="#DFE0E2">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box leftPadding="10">
+					<topPen lineWidth="0.0" lineColor="#91AC56"/>
+					<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$R{unit_sales}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b296b0f0-5e48-4b15-b125-8290ae8d014d" key="" style="h8" mode="Opaque" x="252" y="189" width="305" height="20" backcolor="#DFE0E2">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box leftPadding="10">
+					<topPen lineWidth="0.0" lineColor="#91AC56"/>
+					<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{promotion_promotion_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5869bb59-6b3f-4c8d-bca6-194e1c2df604" key="" style="h7" mode="Opaque" x="22" y="169" width="230" height="20" backcolor="#E9E9EB">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box leftPadding="10">
+					<topPen lineWidth="0.0" lineColor="#91AC56"/>
+					<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$R{promotion_promotion_district_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b97e8f57-70e9-4350-adf7-b1ca0f43185a" key="" style="h9" mode="Opaque" x="22" y="20" width="230" height="29" backcolor="#E9E9E8">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="25">
+					<topPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Calibri" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{promotion_promotion_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8503a953-9109-4cf4-9b19-e3760fde37a9" key="" style="h7" mode="Opaque" x="22" y="109" width="230" height="20" backcolor="#DFE0E2">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box leftPadding="10">
+					<topPen lineWidth="0.0" lineColor="#91AC56"/>
+					<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$R{promotion_cost}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="54befd3f-b80b-4729-a2f9-f9ee7a6bfc6d" style="h8" mode="Opaque" x="252" y="89" width="305" height="20" backcolor="#E9E9EB">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+				</reportElement>
+				<box leftPadding="10">
+					<topPen lineWidth="0.0" lineColor="#91AC56"/>
+					<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{promotion_media_type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="0b1eabb7-080d-442f-bd16-224ae1eee89c" key="" style="h9" mode="Opaque" x="252" y="20" width="305" height="29" backcolor="#E9E9E8">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="25">
+					<topPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{promotion_promotion_name}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd-MMM" isBlankWhenNull="false">
+				<reportElement uuid="f751fd3e-c242-498d-940a-c944f8c8a2e4" key="" style="h8" mode="Opaque" x="252" y="129" width="305" height="20" backcolor="#E9E9EB">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+				</reportElement>
+				<box leftPadding="10">
+					<topPen lineWidth="0.0" lineColor="#91AC56"/>
+					<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{promotion_start_date} == null ? "---" : $F{promotion_start_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="731c893f-ec2a-48b0-9b77-82f007ab4841" key="" style="h7" mode="Opaque" x="22" y="129" width="230" height="20" backcolor="#E9E9EB">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box leftPadding="10">
+					<topPen lineWidth="0.0" lineColor="#91AC56"/>
+					<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$R{promotion_start_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5f2506e5-e202-41fa-be87-96ffa8158558" key="" style="h7" mode="Opaque" x="22" y="49" width="230" height="20" backcolor="#E9E9EB">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box leftPadding="10">
+					<topPen lineWidth="0.0" lineColor="#91AC56"/>
+					<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$R{store_sales}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8a1f3adc-1626-454e-916a-0df6bc545ded" key="" style="h7" mode="Opaque" x="22" y="189" width="230" height="20" backcolor="#DFE0E2">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<box leftPadding="10">
+					<topPen lineWidth="0.0" lineColor="#91AC56"/>
+					<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$R{promotion_promotion_id}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd-MMM" isBlankWhenNull="false">
+				<reportElement uuid="70a615b4-e1b1-4604-baf2-56833d531f8c" key="" style="h8" mode="Opaque" x="252" y="149" width="305" height="20" backcolor="#DFE0E2">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+				</reportElement>
+				<box leftPadding="10">
+					<topPen lineWidth="0.0" lineColor="#91AC56"/>
+					<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{promotion_end_date} == null ? "---" : $F{promotion_end_date}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0">
+				<reportElement uuid="c1ccae8b-b5e6-425d-9bcf-50cba6278c08" key="" style="h8" mode="Opaque" x="252" y="69" width="305" height="20" backcolor="#DFE0E2">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+				</reportElement>
+				<box leftPadding="10">
+					<topPen lineWidth="0.0" lineColor="#91AC56"/>
+					<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{unit_sales}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d52b1a28-95d7-43d1-bdf0-8094f9d11ad8" key="" style="h8" mode="Opaque" x="252" y="169" width="305" height="20" backcolor="#E9E9EB">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+				</reportElement>
+				<box leftPadding="10">
+					<topPen lineWidth="0.0" lineColor="#91AC56"/>
+					<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{promotion_promo_district_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="07648f9e-9155-47ba-acc1-bdf6ed3d2d7d" style="h8" mode="Opaque" x="252" y="109" width="305" height="20" backcolor="#DFE0E2">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+				</reportElement>
+				<box leftPadding="10">
+					<topPen lineWidth="0.0" lineColor="#91AC56"/>
+					<leftPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<bottomPen lineWidth="1.0" lineColor="#D7DAD9"/>
+					<rightPen lineWidth="1.0" lineColor="#D7DAD9"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[($R{CurrencySymbol}.equals("CurrencySymbol") ? "\$" : $R{CurrencySymbol}) /* Uses dollar as default if key is not found */
++ " "
++ java.text.NumberFormat.getIntegerInstance($P{REPORT_LOCALE}).format( $F{promotion_cost}.longValue() )]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="25">
+			<textField>
+				<reportElement uuid="b63976b6-b0ad-4e88-9711-56e38e8462d8" x="15" y="5" width="205" height="20" forecolor="#58595B">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Calibri" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new Date()]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Page">
+				<reportElement uuid="ee75f376-1ae5-432b-9099-7ab9a4ae7c33" x="268" y="5" width="274" height="20" forecolor="#58595B">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="Calibri" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[msg($R{FooterPageNum}, $V{PAGE_NUMBER})]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="303c72d8-bff0-4ac1-bbf5-c3dab015c7e8" x="543" y="5" width="36" height="20" forecolor="#58595B"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="Calibri" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER} + ""]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="30">
+			<textField>
+				<reportElement uuid="1f916c77-0393-4360-b26c-688ada174e77" x="5" y="5" width="545" height="20" forecolor="#58595B"/>
+				<textElement>
+					<font fontName="Calibri" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[msg($R{NumRecordsFooter}, $V{REPORT_COUNT})]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

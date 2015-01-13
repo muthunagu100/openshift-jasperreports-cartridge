@@ -1,0 +1,1 @@
+define(["require","exports","module","common/bi/error/biComponentErrorFactory","./ReportStatusError"],function(r){var o=r("common/bi/error/biComponentErrorFactory"),t=r("./ReportStatusError");return o.reportStatus=function(r){return new t(r)},o});

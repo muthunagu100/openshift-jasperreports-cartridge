@@ -1,0 +1,21 @@
+#!/bin/sh
+echo $LD_LIBRARY_PATH | egrep "/home/vasanth/jasperreports-server-6.0.1/common" > /dev/null
+if [ $? -ne 0 ] ; then
+PATH="/home/vasanth/jasperreports-server-6.0.1/java/bin:/home/vasanth/jasperreports-server-6.0.1/postgresql/bin:/home/vasanth/jasperreports-server-6.0.1/common/bin:$PATH"
+export PATH
+LD_LIBRARY_PATH="/home/vasanth/jasperreports-server-6.0.1/postgresql/lib:/home/vasanth/jasperreports-server-6.0.1/common/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH
+fi
+
+##### JAVA ENV #####
+JAVA_HOME=/home/vasanth/jasperreports-server-6.0.1/java
+export JAVA_HOME
+
+##### POSTGRES ENV #####
+
+        ##### SSL ENV #####
+SSL_CERT_FILE=/home/vasanth/jasperreports-server-6.0.1/common/openssl/certs/curl-ca-bundle.crt
+export SSL_CERT_FILE
+
+
+. /home/vasanth/jasperreports-server-6.0.1/scripts/build-setenv.sh

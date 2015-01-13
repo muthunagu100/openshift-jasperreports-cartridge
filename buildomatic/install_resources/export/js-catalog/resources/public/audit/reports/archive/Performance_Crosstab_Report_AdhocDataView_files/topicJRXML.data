@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="adhocReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30" uuid="209abc9e-09ed-4c9f-a46c-b5279afcb6a0">
+	<parameter name="resource_org_type2_1" class="java.util.Collection">
+		<defaultValueExpression><![CDATA[java.util.Arrays.asList(new java.lang.String[] {})]]></defaultValueExpression>
+	</parameter>
+	<queryString language="sl">
+		<![CDATA[<query xmlns="http://www.jaspersoft.com/2007/SL/XMLSchema">
+  <queryFields>
+    <queryField id="audit_join2.audit_event_date2" />
+    <queryField id="audit_join2.audit_event_time2" />
+    <queryField id="audit_join2.resource_org_uri2" />
+    <queryField id="audit_join2.resource_org_type2" />
+    <queryField id="audit_join2.dataSourceURI" />
+    <queryField id="audit_join2.queryExecutionTime" />
+    <queryField id="audit_join2.reportRenderingTime" />
+    <queryField id="audit_join2.reportExecutionTime" />
+    <queryField id="audit_join2.query" />
+    <queryField id="audit_join2.username2" />
+    <queryField id="audit_join2.tenant_id2" />
+    <queryField id="audit_join2.crosstabGroupField" />
+  </queryFields>
+</query>]]>
+	</queryString>
+	<field name="audit_join2.audit_event_date2" class="java.util.Date">
+		<property name="adhoc.tree.uri" value="/audit_join2/audit_event_date2"/>
+		<property name="semantic.tree.uri" value="/audit_join2/audit_event_date2"/>
+		<property name="resourceId" value="JoinTree_2.jiauditevent2.au_date"/>
+		<property name="semantic.tree.sort.order" value="{&quot;username2&quot;:11,&quot;resource_org_type2&quot;:5,&quot;tenant_id2&quot;:12,&quot;audit_event_time2&quot;:3,&quot;reportExecutionTime&quot;:9,&quot;audit_join2&quot;:1,&quot;crosstabGroupField&quot;:13,&quot;dataSourceURI&quot;:6,&quot;query&quot;:10,&quot;audit_event_date2&quot;:2,&quot;resource_org_uri2&quot;:4,&quot;queryExecutionTime&quot;:7,&quot;reportRenderingTime&quot;:8}"/>
+		<property name="semantic.item.desc.id" value="AUDIT_JOIN2.DATE.DESCR"/>
+		<property name="defaultAgg"/>
+		<property name="adhoc.display" value="Date"/>
+		<property name="semantic.item.desc" value="audit_event_date"/>
+		<property name="defaultMask" value="short,hide"/>
+		<property name="slIsTableAsList" value="false"/>
+		<property name="adhoc.tree.labels" value="[{&quot;label&quot;:&quot;Audit for running reports&quot;,&quot;uri&quot;:&quot;/audit_join2&quot;,&quot;labelId&quot;:&quot;AUDIT_JOIN2.LABEL&quot;,&quot;resourceId&quot;:&quot;JoinTree_2&quot;}]"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[audit_join2.audit_event_date2]]></fieldDescription>
+	</field>
+	<field name="audit_join2.audit_event_time2" class="java.sql.Timestamp">
+		<property name="semantic.tree.uri" value="/audit_join2/audit_event_time2"/>
+		<property name="adhoc.tree.uri" value="/audit_join2/audit_event_time2"/>
+		<property name="resourceId" value="JoinTree_2.jiauditevent2.au_time"/>
+		<property name="semantic.tree.sort.order" value="1"/>
+		<property name="semantic.item.desc.id" value="AUDIT_JOIN2.TIME.DESCR"/>
+		<property name="defaultAgg"/>
+		<property name="adhoc.display" value="Time"/>
+		<property name="semantic.item.desc" value="audit_event_time"/>
+		<property name="defaultMask" value="HH:mm:ss"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[audit_join2.audit_event_time2]]></fieldDescription>
+	</field>
+	<field name="audit_join2.resource_org_uri2" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/audit_join2/resource_org_uri2"/>
+		<property name="adhoc.tree.uri" value="/audit_join2/resource_org_uri2"/>
+		<property name="resourceId" value="JoinTree_2.jiauditevent2.orguri"/>
+		<property name="semantic.tree.sort.order" value="2"/>
+		<property name="semantic.item.desc.id" value="AUDIT_JOIN2.RESOURCE_URI.DESCR"/>
+		<property name="defaultAgg"/>
+		<property name="adhoc.display" value="Resource URI"/>
+		<property name="semantic.item.desc" value="resource_org_uri"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[audit_join2.resource_org_uri2]]></fieldDescription>
+	</field>
+	<field name="audit_join2.resource_org_type2" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/audit_join2/resource_org_type2"/>
+		<property name="adhoc.tree.uri" value="/audit_join2/resource_org_type2"/>
+		<property name="resourceId" value="JoinTree_2.jiauditevent2.resource_type"/>
+		<property name="semantic.tree.sort.order" value="3"/>
+		<property name="semantic.item.desc.id" value="AUDIT_JOIN2.RESOURCE_TYPE.DESCR"/>
+		<property name="defaultAgg"/>
+		<property name="adhoc.display" value="Resource Type"/>
+		<property name="semantic.item.desc" value="resource_org_type"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[audit_join2.resource_org_type2]]></fieldDescription>
+	</field>
+	<field name="audit_join2.dataSourceURI" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/audit_join2/dataSourceURI"/>
+		<property name="adhoc.tree.uri" value="/audit_join2/dataSourceURI"/>
+		<property name="resourceId" value="JoinTree_2.dataSourceURI.value"/>
+		<property name="semantic.tree.sort.order" value="4"/>
+		<property name="semantic.item.desc.id" value="AUDIT_JOIN2.DATASOURCE_URI.DESCR"/>
+		<property name="defaultAgg"/>
+		<property name="adhoc.display" value="Datasource URI"/>
+		<property name="semantic.item.desc" value="dataSourceURI"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[audit_join2.dataSourceURI]]></fieldDescription>
+	</field>
+	<field name="audit_join2.queryExecutionTime" class="java.lang.Integer">
+		<property name="semantic.tree.uri" value="/audit_join2/queryExecutionTime"/>
+		<property name="adhoc.tree.uri" value="/audit_join2/queryExecutionTime"/>
+		<property name="resourceId" value="JoinTree_2.queryExecutionTime.queryExecutionTimeMS"/>
+		<property name="semantic.tree.sort.order" value="5"/>
+		<property name="semantic.item.desc.id" value="AUDIT_JOIN2.QUERY_EXEC_TIME.DESCR"/>
+		<property name="defaultAgg"/>
+		<property name="adhoc.display" value="Query Execution Time"/>
+		<property name="semantic.item.desc" value="queryExecutionTime"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="MEASURE"/>
+		<fieldDescription><![CDATA[audit_join2.queryExecutionTime]]></fieldDescription>
+	</field>
+	<field name="audit_join2.reportRenderingTime" class="java.lang.Integer">
+		<property name="semantic.tree.uri" value="/audit_join2/reportRenderingTime"/>
+		<property name="adhoc.tree.uri" value="/audit_join2/reportRenderingTime"/>
+		<property name="resourceId" value="JoinTree_2.reportRenderingTime.reportRenderingTimeMS"/>
+		<property name="semantic.tree.sort.order" value="6"/>
+		<property name="semantic.item.desc.id" value="AUDIT_JOIN2.REPORT_RENDER_TIME.DESCR"/>
+		<property name="defaultAgg"/>
+		<property name="adhoc.display" value="Report Rendering Time"/>
+		<property name="semantic.item.desc" value="reportRenderingTime"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="MEASURE"/>
+		<fieldDescription><![CDATA[audit_join2.reportRenderingTime]]></fieldDescription>
+	</field>
+	<field name="audit_join2.reportExecutionTime" class="java.lang.Integer">
+		<property name="semantic.tree.uri" value="/audit_join2/reportExecutionTime"/>
+		<property name="adhoc.tree.uri" value="/audit_join2/reportExecutionTime"/>
+		<property name="resourceId" value="JoinTree_2.reportExecutionTime.reportExecutionTimeMS"/>
+		<property name="semantic.tree.sort.order" value="7"/>
+		<property name="semantic.item.desc.id" value="AUDIT_JOIN2.REPORT_EXEC_TIME.DESCR"/>
+		<property name="defaultAgg"/>
+		<property name="adhoc.display" value="Report Execution Time"/>
+		<property name="semantic.item.desc" value="reportExecutionTime"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="MEASURE"/>
+		<fieldDescription><![CDATA[audit_join2.reportExecutionTime]]></fieldDescription>
+	</field>
+	<field name="audit_join2.query" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/audit_join2/query"/>
+		<property name="adhoc.tree.uri" value="/audit_join2/query"/>
+		<property name="resourceId" value="JoinTree_2.query.clob_value"/>
+		<property name="semantic.tree.sort.order" value="8"/>
+		<property name="semantic.item.desc.id" value="AUDIT_JOIN2.QUERY.DESCR"/>
+		<property name="defaultAgg"/>
+		<property name="adhoc.display" value="Query"/>
+		<property name="semantic.item.desc" value="query"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[audit_join2.query]]></fieldDescription>
+	</field>
+	<field name="audit_join2.username2" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/audit_join2/username2"/>
+		<property name="adhoc.tree.uri" value="/audit_join2/username2"/>
+		<property name="resourceId" value="JoinTree_2.jiuser2.username"/>
+		<property name="semantic.tree.sort.order" value="9"/>
+		<property name="semantic.item.desc.id" value="AUDIT_JOIN2.USERNAME.DESCR"/>
+		<property name="defaultAgg"/>
+		<property name="adhoc.display" value="User Name"/>
+		<property name="semantic.item.desc" value="username"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[audit_join2.username2]]></fieldDescription>
+	</field>
+	<field name="audit_join2.tenant_id2" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/audit_join2/tenant_id2"/>
+		<property name="adhoc.tree.uri" value="/audit_join2/tenant_id2"/>
+		<property name="resourceId" value="JoinTree_2.jitenant2.tenantId"/>
+		<property name="semantic.tree.sort.order" value="10"/>
+		<property name="semantic.item.desc.id" value="AUDIT_JOIN2.TENANT_ID.DESCR"/>
+		<property name="defaultAgg"/>
+		<property name="adhoc.display" value="Organization"/>
+		<property name="semantic.item.desc" value="tenant_id"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[audit_join2.tenant_id2]]></fieldDescription>
+	</field>
+	<field name="audit_join2.crosstabGroupField" class="java.lang.String">
+		<property name="semantic.tree.uri" value="/audit_join2/crosstabGroupField"/>
+		<property name="adhoc.tree.uri" value="/audit_join2/crosstabGroupField"/>
+		<property name="resourceId" value="JoinTree_2.jiauditevent2.crosstabGroupField"/>
+		<property name="semantic.tree.sort.order" value="11"/>
+		<property name="semantic.item.desc.id" value="AUDIT_JOIN2.CROSSTABGROUP.LABEL"/>
+		<property name="defaultAgg"/>
+		<property name="adhoc.display" value="Crosstab Group Field"/>
+		<property name="semantic.item.desc" value="crosstabGroupField"/>
+		<property name="defaultMask"/>
+		<property name="kind" value="DIMENSION"/>
+		<fieldDescription><![CDATA[audit_join2.crosstabGroupField]]></fieldDescription>
+	</field>
+</jasperReport>

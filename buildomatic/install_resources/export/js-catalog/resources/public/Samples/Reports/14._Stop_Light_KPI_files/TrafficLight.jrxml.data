@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 5.6.1.final using JasperReports Library version 5.6.1  -->
+<!-- 2014-11-06T16:55:32 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TrafiicLight" language="groovy" pageWidth="1000" pageHeight="65" columnWidth="1000" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" resourceBundle="supermart" uuid="3d90963a-305b-4c06-a0ba-d8baf76d934f">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Foodmart"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="ireport.jasperserver.url" value="http://172.17.10.34:8080/jasperserver-pro-branch/"/>
+	<property name="ireport.jasperserver.report.resource" value="/public/Samples/Reports/14._Stop_Light_KPI_files/TrafficLight.jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/public/Samples/Reports/14._Stop_Light_KPI"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Product_Family" class="java.lang.String">
+		<defaultValueExpression><![CDATA["All"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select ((a.CurrSales-b.PrevSales)/b.PrevSales) as Growth, (a.CurrSales/a.Customers) as AvgSales,
+a.Customers as Customers,(a.CurrSales-a.CurrCost) as Profit
+from
+(select 1 as CurrID,t.the_year as CurrYear, sum(fact.store_sales) as CurrSales,
+count(distinct fact.customer_id) as Customers, sum(fact.store_cost) as CurrCost
+from sales_fact_1998 fact
+inner join time_by_day t on t.time_id = fact.time_id
+inner join product p on p.product_id = fact.product_id
+inner join product_class pc on pc.product_class_id = p.product_class_id
+where ($P{Product_Family}='All' or pc.product_family=$P{Product_Family})
+group by t.the_year) a,
+(select 1 as PrevID, t.the_year as PrevYear, sum(fact.store_sales) as PrevSales
+from sales_fact_1997 fact
+inner join time_by_day t on t.time_id = fact.time_id
+inner join product p on p.product_id = fact.product_id
+inner join product_class pc on pc.product_class_id = p.product_class_id
+where ($P{Product_Family}='All' or pc.product_family=$P{Product_Family})
+group by t.the_year) b
+where a.CurrID = b.PrevID]]>
+	</queryString>
+	<field name="growth" class="java.math.BigDecimal"/>
+	<field name="avgsales" class="java.math.BigDecimal"/>
+	<field name="customers" class="java.lang.Long"/>
+	<field name="profit" class="java.math.BigDecimal"/>
+	<title>
+		<band height="65" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField pattern="¤#,##0;¤(#,##0)">
+				<reportElement x="10" y="20" width="190" height="42" forecolor="#58595B" uuid="edaa44d7-0d5c-4b12-949d-39a81d248ae5">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box rightPadding="10"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="30" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{profit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="130" y="5" width="70" height="20" forecolor="#58595B" uuid="58a02f83-f99b-4d03-89ca-51020a3a865e">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box rightPadding="10"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{Profit}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤#,##0;¤(#,##0)">
+				<reportElement x="320" y="20" width="130" height="42" forecolor="#58595B" uuid="7f01e238-557f-46ee-bf8f-2e939936d14f">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box rightPadding="10"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="30" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{avgsales}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="360" y="5" width="90" height="20" forecolor="#58595B" uuid="f8034046-f718-4bda-8a06-0af75c207f79">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box rightPadding="10"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{AvgSale}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.#%;(#,##0.#">
+				<reportElement x="554" y="20" width="145" height="42" forecolor="#58595B" uuid="cdf8fc75-4067-4cd8-87c8-93287f441371">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box rightPadding="10"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="30" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{growth}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="628" y="5" width="70" height="20" forecolor="#58595B" uuid="9035d11e-d753-4afb-9147-8b10e00e78c9">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box rightPadding="10"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{Growth}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0;(#,##0)">
+				<reportElement x="802" y="20" width="125" height="42" forecolor="#58595B" uuid="868a698d-7850-4e44-bd20-7dd675647bad">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box rightPadding="10"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="30" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{customers}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="837" y="5" width="90" height="20" forecolor="#58595B" uuid="1cc9bb21-0338-4e4f-acf8-f575f3bf4304">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box rightPadding="10"/>
+				<textElement textAlignment="Right">
+					<font fontName="Calibri" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{Customers}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="10" y="10" width="45" height="45" uuid="eaf9cc60-49a3-4f99-b16d-f35a70980f55">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA["repo:Green"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="300" y="10" width="45" height="45" uuid="674beb91-e1ea-4e05-ad66-591f2122430a">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA["repo:Red"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="540" y="10" width="45" height="45" uuid="96a04dac-1491-4c6d-922f-beba2f5a3996">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA["repo:Green"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="780" y="10" width="45" height="45" uuid="c35e6fa0-6b31-413d-b4c8-604645210868">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA["repo:Yellow"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+</jasperReport>

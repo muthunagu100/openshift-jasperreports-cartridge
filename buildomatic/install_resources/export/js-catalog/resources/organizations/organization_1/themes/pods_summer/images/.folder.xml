@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<folder exportedWithPermissions="true">
+    <parent>/organizations/organization_1/themes/pods_summer</parent>
+    <name>images</name>
+    <label>images</label>
+    <creationDate>2014-12-18T02:01:08.196-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:08.196-08:00</updateDate>
+    <resource>adhoc_toolbar_buttons_sprite.png</resource>
+    <resource>banner_bkgd.png</resource>
+    <resource>body_bkgnd.png</resource>
+    <resource>button_action_primary_sprite.png</resource>
+    <resource>button_capsule_sprite.png</resource>
+    <resource>disclosure_indicators_sprite.png</resource>
+    <resource>footer_bkgd.png</resource>
+    <resource>logo.png</resource>
+    <resource>menu_primaryNav_sprite.png</resource>
+    <resource>tabs_horizontal_sprite.png</resource>
+    <resource>tabs_vertical_sprite.png</resource>
+</folder>

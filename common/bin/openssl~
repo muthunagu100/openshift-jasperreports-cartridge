@@ -1,0 +1,8 @@
+#!/bin/sh
+LD_LIBRARY_PATH="/home/vasanth/jasperreports-server-6.0.1/common/lib:$LD_LIBRARY_PATH"	   
+DYLD_LIBRARY_PATH="/home/vasanth/jasperreports-server-6.0.1/common/lib:$DYLD_LIBRARY_PATH"	   
+OPENSSL_CONF="/home/vasanth/jasperreports-server-6.0.1/common/openssl/openssl.cnf"
+export LD_LIBRARY_PATH
+export DYLD_LIBRARY_PATH
+export OPENSSL_CONF
+exec /home/vasanth/jasperreports-server-6.0.1/common/bin/openssl.bin "$@"

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.0.0.final using JasperReports Library version 6.0.0  -->
+<!-- 2014-12-05T14:51:26 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="States" pageWidth="400" pageHeight="300" columnWidth="400" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="6c32e644-a7a8-498c-8c99-c9a60e11f5dc">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Foodmart"/>
+	<property name="ireport.jasperserver.url" value="http://172.17.10.53:8080/jasperserver-pro/"/>
+	<property name="ireport.jasperserver.report.resource" value="/public/Samples/Reports/States_files/main_jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/public/Samples/Reports/States"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="ireport.jasperserver.user" value="superuser"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT store.store_state,
+	sum(sales_fact_1997.store_sales) as sum_sales
+FROM store INNER JOIN sales_fact_1997 ON 
+	 sales_fact_1997.store_id = store.store_id 
+GROUP BY store.store_state]]>
+	</queryString>
+	<field name="store_state" class="java.lang.String"/>
+	<field name="sum_sales" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<summary>
+		<band height="282" splitType="Stretch">
+			<componentElement>
+				<reportElement x="0" y="0" width="400" height="282" uuid="b42792c6-ee19-48fa-81f5-bfda5f995396">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<hc:chart xmlns:hc="http://jaspersoft.com/highcharts" xsi:schemaLocation="http://jaspersoft.com/highcharts http://jaspersoft.com/schema/highcharts.xsd" type="Pie">
+					<hc:chartSetting name="default">
+						<hc:chartProperty name="chart.zoomType">
+							<hc:propertyExpression><![CDATA["xy"]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="credits.enabled">
+							<hc:propertyExpression><![CDATA[false]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="credits.href">
+							<hc:propertyExpression><![CDATA[""]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="credits.text">
+							<hc:propertyExpression><![CDATA[""]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="plotOptions.pie.showInLegend" value="true"/>
+						<hc:chartProperty name="title.text">
+							<hc:propertyExpression><![CDATA[""]]></hc:propertyExpression>
+						</hc:chartProperty>
+						<hc:chartProperty name="yAxis.title.text">
+							<hc:propertyExpression><![CDATA[""]]></hc:propertyExpression>
+						</hc:chartProperty>
+					</hc:chartSetting>
+					<multiAxisData>
+						<multiAxisDataset/>
+						<dataAxis axis="Rows">
+							<axisLevel name="State">
+								<labelExpression><![CDATA["Level Label expression"]]></labelExpression>
+								<axisLevelBucket class="java.lang.String">
+									<bucketExpression><![CDATA[$F{store_state}]]></bucketExpression>
+									<bucketProperty name="state"><![CDATA[$F{store_state}]]></bucketProperty>
+									<bucketProperty name="total_sales"><![CDATA[$F{sum_sales}]]></bucketProperty>
+								</axisLevelBucket>
+							</axisLevel>
+						</dataAxis>
+						<multiAxisMeasure name="Measure1" class="java.math.BigDecimal" calculation="Nothing">
+							<labelExpression><![CDATA["Sales"]]></labelExpression>
+							<valueExpression><![CDATA[$F{sum_sales}]]></valueExpression>
+						</multiAxisMeasure>
+					</multiAxisData>
+					<hc:series name="Measure1">
+						<hc:contributor name="SeriesItemHyperlink">
+							<hc:contributorProperty name="hyperlinkType" valueType="Constant" value="ReportExecution"/>
+							<hc:contributorProperty name="hyperlinkTarget" valueType="Constant" value="Self"/>
+							<hc:contributorProperty name="store_state" valueType="Bucket" value="State.state"/>
+							<hc:contributorProperty name="_report" valueType="Constant" value="/public/Samples/Reports/Cities"/>
+							<hc:contributorProperty name="reportInstance" valueType="Constant" value="slaveReport"/>
+							<hc:contributorProperty name="total_sales" valueType="Bucket" value="State.total_sales"/>
+							<hc:contributorProperty name="action" valueType="Constant" value="doThisAction"/>
+						</hc:contributor>
+					</hc:series>
+				</hc:chart>
+			</componentElement>
+		</band>
+	</summary>
+</jasperReport>

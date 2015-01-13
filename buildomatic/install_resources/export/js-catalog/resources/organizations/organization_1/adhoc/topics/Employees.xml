@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/organizations/organization_1/adhoc/topics</folder>
+    <name>Employees</name>
+    <version>0</version>
+    <label>Employees</label>
+    <description>Employee List topic based on Employee List report in /Reports/Samples folder</description>
+    <creationDate>2014-12-18T02:01:22.305-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:22.305-08:00</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="Employees.jrxml.data" xsi:type="fileResource">
+            <folder>/organizations/organization_1/adhoc/topics/Employees_files</folder>
+            <name>Employees.jrxml</name>
+            <version>0</version>
+            <label>Employees.jrxml file used by Employees topic</label>
+            <description>Employees.jrxml file used by Employees topic</description>
+            <creationDate>2014-12-18T02:01:22.305-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.305-08:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/organizations/organization_1/datasources/JServerJNDIDS</uri>
+    </dataSource>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>1</controlsLayout>
+</reportUnit>

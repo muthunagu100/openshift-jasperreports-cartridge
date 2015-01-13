@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reportUnit exportedWithPermissions="true">
+    <folder>/organizations/organization_1/adhoc/topics</folder>
+    <name>ShippingParam</name>
+    <version>0</version>
+    <label>Parameterized Report</label>
+    <description>Parameterized Report</description>
+    <creationDate>2014-12-18T02:01:22.527-08:00</creationDate>
+    <updateDate>2014-12-18T02:01:22.527-08:00</updateDate>
+    <mainReport>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false"
+            dataFile="ParametersJRXML.data" xsi:type="fileResource">
+            <folder>/organizations/organization_1/adhoc/topics/ShippingParam_files</folder>
+            <name>ParametersJRXML</name>
+            <version>0</version>
+            <label>ParametersJRXML_label</label>
+            <description>ParametersJRXML description</description>
+            <creationDate>2014-12-18T02:01:22.527-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.527-08:00</updateDate>
+            <fileType>jrxml</fileType>
+        </localResource>
+    </mainReport>
+    <dataSource>
+        <uri>/organizations/organization_1/datasources/JServerJNDIDS</uri>
+    </dataSource>
+    <inputControl>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="inputControl">
+            <folder>/organizations/organization_1/adhoc/topics/ShippingParam_files</folder>
+            <name>Country</name>
+            <version>0</version>
+            <label>Country</label>
+            <description>Country</description>
+            <creationDate>2014-12-18T02:01:22.527-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.527-08:00</updateDate>
+            <type>4</type>
+            <mandatory>true</mandatory>
+            <readOnly>false</readOnly>
+            <visible>true</visible>
+            <query>
+                <localResource exportedWithPermissions="false" xsi:type="query">
+                    <folder>/organizations/organization_1/adhoc/topics/ShippingParam_files/Country_files</folder>
+                    <name>CountryQuery</name>
+                    <version>0</version>
+                    <label>CountryQuery</label>
+                    <creationDate>2014-12-18T02:01:22.527-08:00</creationDate>
+                    <updateDate>2014-12-18T02:01:22.527-08:00</updateDate>
+                    <language>sql</language>
+                    <queryString>select distinct SHIPCOUNTRY from ORDERS</queryString>
+                    <dataSource>
+                        <uri>/organizations/organization_1/datasources/JServerJNDIDS</uri>
+                    </dataSource>
+                </localResource>
+            </query>
+            <queryVisibleColumn>SHIPCOUNTRY</queryVisibleColumn>
+            <queryValueColumn>SHIPCOUNTRY</queryValueColumn>
+        </localResource>
+    </inputControl>
+    <inputControl>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="inputControl">
+            <folder>/organizations/organization_1/adhoc/topics/ShippingParam_files</folder>
+            <name>RequestDate</name>
+            <version>0</version>
+            <label>RequestDate</label>
+            <description>RequestDate</description>
+            <creationDate>2014-12-18T02:01:22.527-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.527-08:00</updateDate>
+            <type>2</type>
+            <mandatory>false</mandatory>
+            <readOnly>false</readOnly>
+            <visible>true</visible>
+            <dataType>
+                <localResource exportedWithPermissions="false" xsi:type="dataType">
+                    <folder>/organizations/organization_1/adhoc/topics/ShippingParam_files/RequestDate_files</folder>
+                    <name>Date</name>
+                    <version>0</version>
+                    <label>Date_label</label>
+                    <description>Date description</description>
+                    <creationDate>2014-12-18T02:01:22.527-08:00</creationDate>
+                    <updateDate>2014-12-18T02:01:22.527-08:00</updateDate>
+                    <type>3</type>
+                    <strictMin>false</strictMin>
+                    <strictMax>false</strictMax>
+                </localResource>
+            </dataType>
+        </localResource>
+    </inputControl>
+    <inputControl>
+        <localResource
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            exportedWithPermissions="false" xsi:type="inputControl">
+            <folder>/organizations/organization_1/adhoc/topics/ShippingParam_files</folder>
+            <name>OrderId</name>
+            <version>0</version>
+            <label>OrderId</label>
+            <description>OrderId</description>
+            <creationDate>2014-12-18T02:01:22.527-08:00</creationDate>
+            <updateDate>2014-12-18T02:01:22.527-08:00</updateDate>
+            <type>2</type>
+            <mandatory>false</mandatory>
+            <readOnly>false</readOnly>
+            <visible>true</visible>
+            <dataType>
+                <localResource exportedWithPermissions="false" xsi:type="dataType">
+                    <folder>/organizations/organization_1/adhoc/topics/ShippingParam_files/OrderId_files</folder>
+                    <name>Number</name>
+                    <version>0</version>
+                    <label>Number_label</label>
+                    <description>Number description</description>
+                    <creationDate>2014-12-18T02:01:22.527-08:00</creationDate>
+                    <updateDate>2014-12-18T02:01:22.527-08:00</updateDate>
+                    <type>2</type>
+                    <strictMin>false</strictMin>
+                    <strictMax>false</strictMax>
+                </localResource>
+            </dataType>
+        </localResource>
+    </inputControl>
+    <alwaysPromptControls>false</alwaysPromptControls>
+    <controlsLayout>1</controlsLayout>
+</reportUnit>
