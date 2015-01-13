@@ -8,7 +8,7 @@ jboss7.profile = standalone
 ### Glassfish specific settings
 
 # Glassfish's asadmin path
-asadminPath = "<%= ENV['OPENSHIFT_JASPER_DIR'] %>"/apache-tomcat/bin
+asadminPath = <%= ENV['OPENSHIFT_JASPER_DIR'] %>/apache-tomcat/bin
 
 # Glassfish domain name (default is domain1)
 glassfishDomain=domain1
@@ -34,7 +34,7 @@ wlDomainName=wl_server
 wlServerName=examplesServer
 
 # path to Weblogic server domain
-wlDomainDir="<%= ENV['OPENSHIFT_JASPER_DIR'] %>"/apache-tomcat/samples/domains
+wlDomainDir=<%= ENV['OPENSHIFT_JASPER_DIR'] %>/apache-tomcat/samples/domains
 
 # url to connect to weblogic administration server
 wlAdminUrl=t3://localhost:7001

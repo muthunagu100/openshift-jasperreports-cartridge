@@ -1,5 +1,5 @@
 #! /bin/sh
-				ANT_HOME=<%= ENV['OPENSHIFT_JASPER_DIR'] %>/apache-ant
+				ANT_HOME=/var/lib/openshift/54b59a874382ecf02b00024d/jasper/apache-ant
 
 # Licensed to the Apache Software Foundation (ASF) under one or more
 # contributor license agreements.  See the NOTICE file distributed with
@@ -136,16 +136,16 @@ if [ -z "$JAVACMD" ] ; then
   if [ -n "$JAVA_HOME"  ] ; then
     # IBM's JDK on AIX uses strange locations for the executables
     if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
-      JAVACMD=<%= ENV['OPENSHIFT_JASPER_DIR'] %>/java/bin/java #"$JAVA_HOME/jre/sh/java"
+      JAVACMD=/var/lib/openshift/54b59a874382ecf02b00024d/jasper/java/bin/java #"$JAVA_HOME/jre/sh/java"
     elif [ -x "$JAVA_HOME/jre/bin/java" ] ; then
-      JAVACMD=<%= ENV['OPENSHIFT_JASPER_DIR'] %>/java/bin/java #"$JAVA_HOME/jre/bin/java"
+      JAVACMD=/var/lib/openshift/54b59a874382ecf02b00024d/jasper/java/bin/java #"$JAVA_HOME/jre/bin/java"
     else
-      JAVACMD=<%= ENV['OPENSHIFT_JASPER_DIR'] %>/java/bin/java #"$JAVA_HOME/bin/java"
+      JAVACMD=/var/lib/openshift/54b59a874382ecf02b00024d/jasper/java/bin/java #"$JAVA_HOME/bin/java"
     fi
   else
-    JAVACMD=<%= ENV['OPENSHIFT_JASPER_DIR'] %>/java/bin/java #`which java 2> /dev/null `
+    JAVACMD=/var/lib/openshift/54b59a874382ecf02b00024d/jasper/java/bin/java #`which java 2> /dev/null `
     if [ -z "$JAVACMD" ] ; then
-        JAVACMD=<%= ENV['OPENSHIFT_JASPER_DIR'] %>/java/bin/java #java
+        JAVACMD=/var/lib/openshift/54b59a874382ecf02b00024d/jasper/java/bin/java #java
     fi
   fi
 fi

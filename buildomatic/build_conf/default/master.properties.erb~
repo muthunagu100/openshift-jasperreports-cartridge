@@ -39,7 +39,7 @@
 appServerType = skipAppServerCheck
 
 # Tomcat app server root dir
-appServerDir="<%= ENV['OPENSHIFT_JASPER_DIR'] %>"/apache-tomcat
+appServerDir=<%= ENV['OPENSHIFT_JASPER_DIR'] %>/apache-tomcat
 # appServerDir = /home/devuser/apache-tomcat-7.0.26
 # if linux package managed tomcat instance, set two properties below
 # CATALINA_HOME = /usr/share/tomcat6

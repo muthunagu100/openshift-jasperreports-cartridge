@@ -1,9 +1,9 @@
 #!/bin/sh
 
-CATALINA_HOME=<%= ENV['OPENSHIFT_JASPER_DIR'] %>/apache-tomcat
-TOMCAT_BINDIR=<%= ENV['OPENSHIFT_JASPER_DIR'] %>/apache-tomcat/bin
-JRE_HOME=<%= ENV['OPENSHIFT_JASPER_DIR'] %>/java
-CATALINA_PID=<%= ENV['OPENSHIFT_JASPER_DIR'] %>/apache-tomcat/temp/catalina.pid
+CATALINA_HOME=/var/lib/openshift/54b59a874382ecf02b00024d/jasper/apache-tomcat
+TOMCAT_BINDIR=/var/lib/openshift/54b59a874382ecf02b00024d/jasper/apache-tomcat/bin
+JRE_HOME=/var/lib/openshift/54b59a874382ecf02b00024d/jasper/java
+CATALINA_PID=/var/lib/openshift/54b59a874382ecf02b00024d/jasper/apache-tomcat/temp/catalina.pid
 export CATALINA_PID
 TOMCAT_STATUS=""
 ERROR=0

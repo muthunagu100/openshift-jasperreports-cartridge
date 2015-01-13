@@ -31,7 +31,7 @@ if { [llength $existingApplication] > 0 } {
 ################################################
 # install the application
 ################################################
-$AdminApp install "<%= ENV['OPENSHIFT_JASPER_DIR'] %>/buildomatic/build_conf/default/${webAppName}.war" {-appname ${webAppName} -server server1 -contextroot /${webAppName} -usedefaultbindings -defaultbinding.force -defaultbinding.virtual.host default_host -createMBeansForResources}
+$AdminApp install "/var/lib/openshift/54b59a874382ecf02b00024d/jasper/buildomatic/build_conf/default/${webAppName}.war" {-appname ${webAppName} -server server1 -contextroot /${webAppName} -usedefaultbindings -defaultbinding.force -defaultbinding.virtual.host default_host -createMBeansForResources}
 $AdminConfig save
 
 ################################################

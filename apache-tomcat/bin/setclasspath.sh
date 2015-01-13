@@ -83,7 +83,7 @@ fi
 if [ -z "$JAVA_ENDORSED_DIRS" ]; then
   # Set the default -Djava.endorsed.dirs argument
   JAVA_ENDORSED_DIRS="$CATALINA_HOME"/endorsed
-JAVA_OPTS="$JAVA_OPTS "-Djs.license.directory=<%= ENV['OPENSHIFT_JASPER_DIR'] %>
+JAVA_OPTS="$JAVA_OPTS "-Djs.license.directory=/var/lib/openshift/54b59a874382ecf02b00024d/jasper
 fi
 
 # Set standard commands for invoking Java.

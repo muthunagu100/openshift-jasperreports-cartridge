@@ -1,0 +1,3 @@
+#!/bin/sh
+. /var/lib/openshift/54b59a874382ecf02b00024d/jasper/postgresql/bin/setenv.sh
+exec /var/lib/openshift/54b59a874382ecf02b00024d/jasper/postgresql/bin/dropuser.bin "$@"

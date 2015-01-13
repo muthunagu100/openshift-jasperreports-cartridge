@@ -1,0 +1,1 @@
+/var/lib/openshift/54b59a874382ecf02b00024d/jasper/postgresql/bin/postgres "-D" "/var/lib/openshift/54b59a874382ecf02b00024d/jasper/postgresql/data" "-p" "5433"

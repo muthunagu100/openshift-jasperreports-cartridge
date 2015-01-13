@@ -13,7 +13,7 @@ if [ -f "/usr/sbin/getenforce" ] && [ `id -u` = 0 ] ; then
     /usr/sbin/setenforce 0 2> /dev/null
 fi
 
-INSTALLDIR=<%= ENV['OPENSHIFT_JASPER_DIR'] %>
+INSTALLDIR=/var/lib/openshift/54b59a874382ecf02b00024d/jasper
 
 if [ -r "$INSTALLDIR/scripts/setenv.sh" ]; then
 . "$INSTALLDIR/scripts/setenv.sh"

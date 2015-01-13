@@ -1,0 +1,8 @@
+#!/bin/sh
+LD_LIBRARY_PATH="/var/lib/openshift/54b59a874382ecf02b00024d/jasper/common/lib:$LD_LIBRARY_PATH"	   
+DYLD_LIBRARY_PATH="/var/lib/openshift/54b59a874382ecf02b00024d/jasper/common/lib:$DYLD_LIBRARY_PATH"	   
+OPENSSL_CONF="/var/lib/openshift/54b59a874382ecf02b00024d/jasper/common/openssl/openssl.cnf"
+export LD_LIBRARY_PATH
+export DYLD_LIBRARY_PATH
+export OPENSSL_CONF
+exec /var/lib/openshift/54b59a874382ecf02b00024d/jasper/common/bin/openssl.bin "$@"
